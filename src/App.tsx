@@ -1,24 +1,21 @@
 import React from "react";
-import logo from "./logo.svg";
-import "./App.css";
+import ProductPage from "./pages/ProductPage";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import BasketPage from "./pages/BasketPage";
+import OrderListPage from "./pages/OrderListPage";
+import FinalizePage from "./pages/FinalizePage";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer">
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<ProductPage />} />
+        <Route path="/basket" element={<BasketPage />} />
+        <Route path="/order-list" element={<OrderListPage />} />
+        {/* think through about dynamic pathing */}
+        <Route path="/finalize" element={<FinalizePage />} />
+      </Routes>
+    </Router>
   );
 }
 
