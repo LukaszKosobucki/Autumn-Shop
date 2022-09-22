@@ -1,13 +1,13 @@
 {
-  "items": { 
-    "item1": { "name": "book1", "price":20,"category":"books" }, 
-    "item2": { "name": "test2" }, 
-    "item3": { "name": "test3" } 
-  },
+  "items": [
+    { "name": "book1", "price": 20, "category": "books" },
+    { "name": "test2" },
+    { "name": "test3" }
+  ],
   "order-list": {
-    "item1": { "name": "book1", "price":20,"category":"books" }
+    "item1": { "name": "book1", "price": 20, "category": "books" }
   },
-  "basket" : {
-    "item1": { "name": "book1", "price":20,"category":"books" }
+  "basket": {
+    "item1": { "name": "book1", "price": 20, "category": "books" }
   }
 }

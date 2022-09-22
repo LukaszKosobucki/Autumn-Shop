@@ -1,4 +1,4 @@
-const ProductList = ({ data }: string[]) => {
+const ProductList = () => {
   return <div>Product List</div>;
 };
 
