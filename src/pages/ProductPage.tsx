@@ -4,8 +4,7 @@ import axios from "axios";
 import { productType } from "../types/productType";
 
 const ProductPage = () => {
-  const [data, setData] = useState([{}]);
-
+  const [data, setData] = useState<productType[]>([{}] as productType[]);
   const options = {
     url: "http://localhost:3000/items/",
     method: "GET",
@@ -21,11 +20,12 @@ const ProductPage = () => {
       .then((response) => {
         return response.data;
       })
-      .then((data: productType[]) => {
-        data.map((item: {}, index: number) => {
+      .then((rawData: productType[]) => {
+        rawData.map((item: {}, index: number) => {
           items.push({ id: index, ...item } as productType);
+          return items;
         });
-        setData(data);
+        setData(items);
       });
   }, []);
 

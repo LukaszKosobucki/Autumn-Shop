@@ -1,7 +1,7 @@
 import ProductItem from "./ProductItem";
 import { productType } from "../../types/productType";
-const ProductList = ({ data }: any) => {
-  console.log(typeof data);
+import { productListInterface } from "../../interfaces/productListInterface";
+const ProductList = ({ data }: productListInterface) => {
   return (
     <ul>
       {data.map((item: productType) => (

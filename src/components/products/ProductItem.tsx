@@ -1,5 +1,5 @@
-import { productType } from "../../types/productType";
-const ProductItem = ({ props }: any) => {
+import { productInterface } from "../../interfaces/productInterface";
+const ProductItem = ({ props }: productInterface) => {
   return (
     <li key={props.id}>
       <p>{props.name}</p>
