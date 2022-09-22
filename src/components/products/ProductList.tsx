@@ -1,17 +1,20 @@
 import ProductItem from "./ProductItem";
 import { productType } from "../../types/productType";
 import { productListInterface } from "../../interfaces/productListInterface";
-import { Grid, Box } from "@mui/material";
-
+import { Box } from "@mui/material";
 const ProductList = ({ data }: productListInterface) => {
   return (
     <Box
       sx={{
-        display: "grid",
-        gridTemplateColumns: "repeat(auto-fill, 300px)", //the width of the card
+        display: "flex",
+        flexWrap: "wrap",
+        p: 2,
+        marginLeft: 75,
+        bgcolor: "background.paper",
+        maxWidth: 750,
+        borderRadius: 1,
         justifyContent: "center",
-        gridGap: "20px",
-        margin: "0 400px 0 400px",
+        alignItems: "center",
       }}
     >
       {data.map((item: productType) => (

@@ -7,7 +7,7 @@ import ProductFilter from "../components/products/ProductFilter";
 const ProductPage = () => {
   const [data, setData] = useState<productType[]>([{}] as productType[]);
   const options = {
-    url: "http://localhost:3000/items/",
+    url: "http://localhost:3000/items?limit=9",
     method: "GET",
     headers: {
       Accept: "application/json",
