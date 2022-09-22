@@ -1,8 +1,8 @@
 {
   "items": [
-    { "name": "book1", "price": 20, "category": "books" },
-    { "name": "test2" },
-    { "name": "test3" }
+    { "name": "jesienna książka", "price": 40, "category": "books" },
+    { "name": "jesienny kocyk", "price": 60, "category": "blankets" },
+    { "name": "jesienna kawa", "price": 90, "category": "coffee" }
   ],
   "order-list": {
     "item1": { "name": "book1", "price": 20, "category": "books" }
