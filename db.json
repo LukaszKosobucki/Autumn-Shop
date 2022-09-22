@@ -2,6 +2,18 @@
   "items": [
     { "name": "jesienna książka", "price": 40, "category": "books" },
     { "name": "jesienny kocyk", "price": 60, "category": "blankets" },
+    { "name": "jesienna książka", "price": 40, "category": "books" },
+    { "name": "jesienny kocyk", "price": 60, "category": "blankets" },
+    { "name": "jesienna książka", "price": 40, "category": "books" },
+    { "name": "jesienny kocyk", "price": 60, "category": "blankets" },
+    { "name": "jesienna kawa", "price": 90, "category": "coffee" },
+    { "name": "jesienny kocyk", "price": 60, "category": "blankets" },
+    { "name": "jesienna książka", "price": 40, "category": "books" },
+    { "name": "jesienny kocyk", "price": 60, "category": "blankets" },
+    { "name": "jesienna kawa", "price": 90, "category": "coffee" },
+    { "name": "jesienny kocyk", "price": 60, "category": "blankets" },
+    { "name": "jesienna książka", "price": 40, "category": "books" },
+    { "name": "jesienny kocyk", "price": 60, "category": "blankets" },
     { "name": "jesienna kawa", "price": 90, "category": "coffee" }
   ],
   "order-list": {

@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import ProductList from "../components/products/ProductList";
 import axios from "axios";
 import { productType } from "../types/productType";
+import ProductFilter from "../components/products/ProductFilter";
 
 const ProductPage = () => {
   const [data, setData] = useState<productType[]>([{}] as productType[]);
@@ -29,7 +30,12 @@ const ProductPage = () => {
       });
   }, []);
 
-  return <ProductList data={data} />;
+  return (
+    <>
+      <ProductFilter />
+      <ProductList data={data} />
+    </>
+  );
 };
 
 export default ProductPage;
