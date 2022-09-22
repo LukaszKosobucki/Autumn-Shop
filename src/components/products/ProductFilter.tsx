@@ -3,7 +3,7 @@ import FilterListIcon from "@mui/icons-material/FilterList";
 import { useState } from "react";
 import SortByAlphaIcon from "@mui/icons-material/SortByAlpha";
 import SortIcon from "@mui/icons-material/Sort";
-const ProductFilter = () => {
+const ProductFilter = ({ sortByLetter }: any) => {
   const categories: string[] = [
     "Coffee",
     "Tea",
@@ -40,7 +40,7 @@ const ProductFilter = () => {
           <IconButton>
             <SortIcon />
           </IconButton>
-          <IconButton>
+          <IconButton onClick={() => sortByLetter()}>
             <SortByAlphaIcon />
           </IconButton>
         </>
