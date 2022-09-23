@@ -12,15 +12,17 @@ const ProductPage = () => {
   const [data, setData] = useState<productType[]>([{}] as productType[]);
   const [load, setLoad] = useState<[boolean, number]>([true, 9]);
   const [sort, setSort] = useState<string>("");
-  const [isSortRise, setIsSortRise] = useState<boolean>(false);
+  const [order, setOrder] = useState<boolean>(false);
 
   const sortByLetter = (): void => {
     setSort("name");
+    setOrder(!order);
     setLoad([true, load[1]]);
   };
 
   const sortByPrice = (): void => {
     setSort("price");
+    setOrder(!order);
     setLoad([true, load[1]]);
   };
 
@@ -38,7 +40,11 @@ const ProductPage = () => {
   };
 
   const fetchData = async () => {
-    const responseData = await requestData(load[1], sort);
+    const responseData = await requestData(
+      load[1],
+      sort,
+      order ? "asc" : "desc"
+    );
     mapData(responseData);
     setLoad([false, load[1]]);
   };
