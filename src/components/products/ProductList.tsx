@@ -2,7 +2,10 @@ import ProductItem from "./ProductItem";
 import { productType } from "../../types/productType";
 import { productListInterface } from "../../interfaces/productListInterface";
 import { Box } from "@mui/material";
-const ProductList = ({ items }: productListInterface) => {
+import { useContext } from "react";
+import { dataContext } from "../../pages/ProductPage";
+const ProductList = () => {
+  const items = useContext(dataContext);
   return (
     <Box
       sx={{

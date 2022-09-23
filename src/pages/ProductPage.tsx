@@ -1,15 +1,18 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, createContext } from "react";
 import ProductList from "../components/products/ProductList";
 import { productType } from "../types/productType";
 import ProductFilter from "../components/products/ProductFilter";
+import uniqueId from "lodash.uniqueid";
 import { fetchData } from "../service/fetchData";
 import { Button } from "@mui/material";
 
+const dataContext = createContext<productType[]>([{}] as productType[]);
+
 const ProductPage = () => {
   const [data, setData] = useState<productType[]>([{}] as productType[]);
-  const [load, setLoad] = useState<boolean>(true);
+  const [load, setLoad] = useState<[boolean, number]>([true, 9]);
   const [filter, setFilter] = useState<boolean>(false);
-  const [loadSize, setLoadSize] = useState<number>(9);
+
   const sortByLetter = (): void => {
     setData(data.sort((a, b) => (a.name > b.name ? 1 : -1)));
     setFilter(true);
@@ -26,24 +29,21 @@ const ProductPage = () => {
 
   const mapData = (loadedData: any): void => {
     const items: productType[] = [];
-    for (
-      let key = 0;
-      key < (loadedData.length - loadSize >= 0 ? loadSize : loadedData.length);
-      key++
-    ) {
-      items.push({ key: key, ...loadedData[key] });
-    }
+    loadedData.map((item: productType) =>
+      items.push({ key: uniqueId("item_"), ...item })
+    );
+
     setData(items);
   };
 
   useEffect(() => {
-    if (load) {
+    if (load[0]) {
       const fetcha = async () => {
-        const responseData = await fetchData();
+        const responseData = await fetchData(load[1]);
         mapData(responseData);
       };
       fetcha();
-      setLoad(false);
+      setLoad([false, load[1]]);
     }
     setFilter(false);
   }, [load, filter]);
@@ -51,12 +51,14 @@ const ProductPage = () => {
   return (
     <>
       <ProductFilter sortByLetter={sortByLetter} sortByPrice={sortByPrice} />
-      <ProductList items={data} />
+      <dataContext.Provider value={data}>
+        <ProductList />
+      </dataContext.Provider>
+
       <Button
         variant="contained"
         onClick={() => {
-          setLoadSize(loadSize + 9);
-          setLoad(true);
+          setLoad([true, load[1] + 9]);
         }}
       >
         Load More...
@@ -65,4 +67,4 @@ const ProductPage = () => {
   );
 };
 
-export default ProductPage;
+export { ProductPage, dataContext };
