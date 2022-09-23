@@ -3,7 +3,7 @@ import ProductList from "../components/products/ProductList";
 import { productType } from "../types/productType";
 import ProductFilter from "../components/products/ProductFilter";
 import uniqueId from "lodash.uniqueid";
-import { fetchData } from "../service/fetchData";
+import { requestData } from "../service/requestData";
 import { Button } from "@mui/material";
 
 const dataContext = createContext<productType[]>([{}] as productType[]);
@@ -11,20 +11,22 @@ const dataContext = createContext<productType[]>([{}] as productType[]);
 const ProductPage = () => {
   const [data, setData] = useState<productType[]>([{}] as productType[]);
   const [load, setLoad] = useState<[boolean, number]>([true, 9]);
-  const [filter, setFilter] = useState<boolean>(false);
+  const [sort, setSort] = useState<string>("");
+  const [isSortRise, setIsSortRise] = useState<boolean>(false);
 
   const sortByLetter = (): void => {
-    setData(data.sort((a, b) => (a.name > b.name ? 1 : -1)));
-    setFilter(true);
+    setSort("name");
+    setLoad([true, load[1]]);
   };
 
   const sortByPrice = (): void => {
-    setData(data.sort((a, b) => (a.price > b.price ? 1 : -1)));
-    setFilter(true);
+    setSort("price");
+    setLoad([true, load[1]]);
   };
 
   const filterByName = (): void => {
-    setFilter(true);
+    setSort("name");
+    setLoad([true, load[1]]);
   };
 
   const mapData = (loadedData: any): void => {
@@ -32,21 +34,20 @@ const ProductPage = () => {
     loadedData.map((item: productType) =>
       items.push({ key: uniqueId("item_"), ...item })
     );
-
     setData(items);
+  };
+
+  const fetchData = async () => {
+    const responseData = await requestData(load[1], sort);
+    mapData(responseData);
+    setLoad([false, load[1]]);
   };
 
   useEffect(() => {
     if (load[0]) {
-      const fetcha = async () => {
-        const responseData = await fetchData(load[1]);
-        mapData(responseData);
-      };
-      fetcha();
-      setLoad([false, load[1]]);
+      fetchData();
     }
-    setFilter(false);
-  }, [load, filter]);
+  }, [load]);
 
   return (
     <>

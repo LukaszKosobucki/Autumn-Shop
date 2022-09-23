@@ -3,6 +3,7 @@ import FilterListIcon from "@mui/icons-material/FilterList";
 import { useState } from "react";
 import SortByAlphaIcon from "@mui/icons-material/SortByAlpha";
 import SortIcon from "@mui/icons-material/Sort";
+import uniqueId from "lodash.uniqueid";
 const ProductFilter = ({ sortByLetter, sortByPrice }: any) => {
   const categories: string[] = [
     "Coffee",
@@ -29,8 +30,8 @@ const ProductFilter = ({ sortByLetter, sortByPrice }: any) => {
         alignItems: "center",
       }}
     >
-      {categories.map((item: string, index: number) => (
-        <Button key={index}>{item}</Button>
+      {categories.map((item: string) => (
+        <Button key={uniqueId("filter_category_")}>{item}</Button>
       ))}
       <IconButton onClick={() => setExpand(!expand)}>
         <FilterListIcon />

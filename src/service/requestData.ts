@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const fetchData = async (loadSize: number) => {
+export const requestData = async (loadSize: number, sort: string) => {
   const options = {
     url: "http://localhost:3000/items",
     method: "GET",
@@ -10,6 +10,7 @@ export const fetchData = async (loadSize: number) => {
     },
     params: {
       _limit: loadSize,
+      _sort: sort,
     },
   };
 
