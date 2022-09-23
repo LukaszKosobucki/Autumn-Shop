@@ -8,7 +8,8 @@ import {
 } from "@mui/material";
 import { productInterface } from "../../interfaces/productInterface";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-const ProductItem = ({ props }: productInterface) => {
+import React from "react";
+const ProductItem = ({ item }: productInterface) => {
   return (
     <Box
       sx={{
@@ -28,13 +29,13 @@ const ProductItem = ({ props }: productInterface) => {
         />
         <CardContent>
           <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-            {props.name}
+            {item.name}
           </Typography>
           <Typography variant="h5" component="div">
-            {props.price}
+            {item.price}
           </Typography>
           <Typography sx={{ mb: 1.5 }} color="text.secondary">
-            {props.category}
+            {item.category}
           </Typography>
           <IconButton aria-label="delete">
             <ShoppingCartIcon />

@@ -2,7 +2,7 @@ import ProductItem from "./ProductItem";
 import { productType } from "../../types/productType";
 import { productListInterface } from "../../interfaces/productListInterface";
 import { Box } from "@mui/material";
-const ProductList = ({ data }: productListInterface) => {
+const ProductList = ({ items }: productListInterface) => {
   return (
     <Box
       sx={{
@@ -17,8 +17,8 @@ const ProductList = ({ data }: productListInterface) => {
         alignItems: "center",
       }}
     >
-      {data.map((item: productType) => (
-        <ProductItem props={item} />
+      {items.map((item: productType, index: number) => (
+        <ProductItem item={item} key={index} />
       ))}
     </Box>
   );
