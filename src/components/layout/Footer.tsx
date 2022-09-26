@@ -11,6 +11,9 @@ const Footer = () => {
         color: "#cac7b5",
         justifyContent: "space-around",
         alignItems: "center",
+        position: "relative",
+        left: 0,
+        bottom: 0,
       }}
     >
       <Box>

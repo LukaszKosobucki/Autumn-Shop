@@ -8,8 +8,8 @@ import MainLayout from "./components/layout/MainLayout";
 
 function App() {
   return (
-    <MainLayout>
-      <Router>
+    <Router>
+      <MainLayout>
         <Routes>
           <Route path="/" element={<ProductPage />} />
           <Route path="/basket" element={<BasketPage />} />
@@ -17,8 +17,8 @@ function App() {
           {/* think through about dynamic pathing */}
           <Route path="/finalize" element={<FinalizePage />} />
         </Routes>
-      </Router>
-    </MainLayout>
+      </MainLayout>
+    </Router>
   );
 }
 

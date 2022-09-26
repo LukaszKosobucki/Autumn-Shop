@@ -1,8 +1,9 @@
-import { Box, Typography, IconButton, Grid } from "@mui/material";
+import { Box, Typography, IconButton } from "@mui/material";
 import EmojiFoodBeverageIcon from "@mui/icons-material/EmojiFoodBeverage";
 import AccountBoxIcon from "@mui/icons-material/AccountBox";
 import ListIcon from "@mui/icons-material/List";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <Box
@@ -18,7 +19,7 @@ const Header = () => {
       }}
     >
       <Box>
-        <IconButton sx={{ color: "#3d405b" }}>
+        <IconButton sx={{ color: "#3d405b" }} component={Link} to="/">
           <EmojiFoodBeverageIcon fontSize="large" />
         </IconButton>
       </Box>
@@ -40,12 +41,16 @@ const Header = () => {
           </IconButton>
         </Box>
         <Box>
-          <IconButton sx={{ color: "#3d405b" }}>
+          <IconButton
+            sx={{ color: "#3d405b" }}
+            component={Link}
+            to="/order-list"
+          >
             <ListIcon fontSize="large" />
           </IconButton>
         </Box>
         <Box>
-          <IconButton sx={{ color: "#3d405b" }}>
+          <IconButton sx={{ color: "#3d405b" }} component={Link} to="/basket">
             <ShoppingCartIcon fontSize="large" />
           </IconButton>
         </Box>
