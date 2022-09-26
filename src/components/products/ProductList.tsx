@@ -17,8 +17,8 @@ const ProductList = () => {
         bgcolor: "#f7f4e1",
       }}
     >
-      {items.map((item: productType, index: number) => (
-        <ProductItem item={item} key={index} />
+      {items.map((item: productType) => (
+        <ProductItem item={item} key={item.key} />
       ))}
     </Box>
   );

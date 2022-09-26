@@ -5,6 +5,7 @@ import BasketPage from "./pages/BasketPage";
 import OrderListPage from "./pages/OrderListPage";
 import FinalizePage from "./pages/FinalizePage";
 import MainLayout from "./components/layout/MainLayout";
+import "@fontsource/red-rose";
 
 function App() {
   return (

@@ -57,9 +57,6 @@ const ProductItem = ({ item }: productInterface) => {
               <Typography variant="h5" component="div">
                 {item.price}
               </Typography>
-              <Typography sx={{ mb: 1.5 }} color="text.secondary">
-                {item.category}
-              </Typography>
             </Box>
             <Box
               sx={{

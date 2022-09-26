@@ -1,3 +1,7 @@
 import { createTheme } from "@mui/material";
-
-export const theme = createTheme({});
+import "@fontsource/red-rose";
+export const theme = createTheme({
+  typography: {
+    fontFamily: ["Red Rose"].join(","),
+  },
+});
