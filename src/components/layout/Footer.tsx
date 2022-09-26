@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 const Footer = () => {
   return (
     <Box
@@ -15,35 +15,35 @@ const Footer = () => {
     >
       <Box>
         <Box borderBottom={1}>
-          <p>hello world</p>
+          <Typography variant="subtitle2">FAQ</Typography>
         </Box>
         <Box>
-          <p>hello world</p>
+          <Typography variant="subtitle2">hello world</Typography>
         </Box>
         <Box>
-          <p>hello world</p>
+          <Typography variant="subtitle2">hello world</Typography>
         </Box>
       </Box>
       <Box>
         <Box borderBottom={1}>
-          <p>hello world</p>
+          <Typography variant="subtitle2">Contact</Typography>
         </Box>
         <Box>
-          <p>hello world</p>
+          <Typography variant="subtitle2">hello world</Typography>
         </Box>
         <Box>
-          <p>hello world</p>
+          <Typography variant="subtitle2">hello world</Typography>
         </Box>
       </Box>
       <Box>
         <Box borderBottom={1}>
-          <p>hello world</p>
+          <Typography variant="subtitle2">About</Typography>
         </Box>
         <Box>
-          <p>hello world</p>
+          <Typography variant="subtitle2">hello world</Typography>
         </Box>
         <Box>
-          <p>hello world</p>
+          <Typography variant="subtitle2">hello world</Typography>
         </Box>
       </Box>
     </Box>
