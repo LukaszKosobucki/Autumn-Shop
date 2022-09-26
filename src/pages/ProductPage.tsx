@@ -48,7 +48,7 @@ const ProductPage = () => {
       : setProcessedData(data);
   };
 
-  const mapData = (loadedData: any): void => {
+  const mapData = (loadedData: productType[]): void => {
     const items: productType[] = [];
     loadedData.map((item: productType) =>
       items.push({ key: item.id, ...item })
