@@ -4,7 +4,7 @@ import { productType } from "../types/productType";
 import ProductFilter from "../components/products/ProductFilter";
 import uniqueId from "lodash.uniqueid";
 import { requestData } from "../service/requestData";
-import { Button } from "@mui/material";
+import { Button, Box } from "@mui/material";
 
 const dataContext = createContext<productType[]>([] as productType[]);
 
@@ -70,7 +70,17 @@ const ProductPage = () => {
   }, [load, order, filter]);
 
   return (
-    <>
+    <Box
+      sx={{
+        display: "flex",
+        flexWrap: "wrap",
+        justifyContent: "flext-start",
+        alignItems: "center",
+        position: "relative",
+        flexDirection: "column",
+        minHeight: "100vh",
+      }}
+    >
       <ProductFilter
         sortByLetter={sortByLetter}
         sortByPrice={sortByPrice}
@@ -89,7 +99,7 @@ const ProductPage = () => {
       >
         Load More...
       </Button>
-    </>
+    </Box>
   );
 };
 
