@@ -11,24 +11,25 @@ const dataContext = createContext<productType[]>([{}] as productType[]);
 const ProductPage = () => {
   const [data, setData] = useState<productType[]>([{}] as productType[]);
   const [load, setLoad] = useState<[boolean, number]>([true, 9]);
-  const [sort, setSort] = useState<string>("");
   const [order, setOrder] = useState<boolean>(false);
+  const [filter, setFilter] = useState<string>("");
 
   const sortByLetter = (): void => {
-    setSort("name");
     setOrder(!order);
-    setLoad([true, load[1]]);
+    order
+      ? setData(data.sort((a, b) => (a.name > b.name ? 1 : -1)))
+      : setData(data.sort((a, b) => (a.name > b.name ? -1 : 1)));
   };
 
   const sortByPrice = (): void => {
-    setSort("price");
     setOrder(!order);
-    setLoad([true, load[1]]);
+    order
+      ? setData(data.sort((a, b) => (a.price > b.price ? 1 : -1)))
+      : setData(data.sort((a, b) => (a.price > b.price ? -1 : 1)));
   };
 
   const filterByName = (): void => {
-    setSort("name");
-    setLoad([true, load[1]]);
+    setData(data.filter((item) => item.category === filter));
   };
 
   const mapData = (loadedData: any): void => {
@@ -40,11 +41,7 @@ const ProductPage = () => {
   };
 
   const fetchData = async () => {
-    const responseData = await requestData(
-      load[1],
-      sort,
-      order ? "asc" : "desc"
-    );
+    const responseData = await requestData(load[1]);
     mapData(responseData);
     setLoad([false, load[1]]);
   };
@@ -53,11 +50,18 @@ const ProductPage = () => {
     if (load[0]) {
       fetchData();
     }
-  }, [load]);
+    if (filter !== "") {
+      filterByName();
+    }
+  }, [load, order, filter]);
 
   return (
     <>
-      <ProductFilter sortByLetter={sortByLetter} sortByPrice={sortByPrice} />
+      <ProductFilter
+        sortByLetter={sortByLetter}
+        sortByPrice={sortByPrice}
+        setFilter={setFilter}
+      />
       <dataContext.Provider value={data}>
         <ProductList />
       </dataContext.Provider>
