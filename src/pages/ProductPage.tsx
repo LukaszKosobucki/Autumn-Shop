@@ -4,40 +4,57 @@ import { productType } from "../types/productType";
 import ProductFilter from "../components/products/ProductFilter";
 import uniqueId from "lodash.uniqueid";
 import { requestData } from "../service/requestData";
-import { Button } from "@mui/material";
+import { Button, Box } from "@mui/material";
 
-const dataContext = createContext<productType[]>([{}] as productType[]);
+const dataContext = createContext<productType[]>([] as productType[]);
 
 const ProductPage = () => {
   const [data, setData] = useState<productType[]>([] as productType[]);
+  const [processedData, setProcessedData] = useState<productType[]>(
+    [] as productType[]
+  );
   const [load, setLoad] = useState<[boolean, number]>([true, 9]);
   const [order, setOrder] = useState<boolean>(false);
   const [filter, setFilter] = useState<string>("");
+  const [isHighlighted, setIsHighlighted] = useState<boolean>(true);
 
   const sortByLetter = (): void => {
     setOrder(!order);
     order
-      ? setData(data.sort((a, b) => (a.name > b.name ? 1 : -1)))
-      : setData(data.sort((a, b) => (a.name > b.name ? -1 : 1)));
+      ? setProcessedData(
+          processedData.sort((a, b) => (a.name > b.name ? 1 : -1))
+        )
+      : setProcessedData(
+          processedData.sort((a, b) => (a.name > b.name ? -1 : 1))
+        );
   };
 
   const sortByPrice = (): void => {
     setOrder(!order);
     order
-      ? setData(data.sort((a, b) => (a.price > b.price ? 1 : -1)))
-      : setData(data.sort((a, b) => (a.price > b.price ? -1 : 1)));
+      ? setProcessedData(
+          processedData.sort((a, b) => (a.price > b.price ? 1 : -1))
+        )
+      : setProcessedData(
+          processedData.sort((a, b) => (a.price > b.price ? -1 : 1))
+        );
   };
 
-  const filterByName = (): void => {
-    setData(data.filter((item) => item.category === filter));
+  const filterByCategory = (name: string): void => {
+    setFilter(name);
+    setIsHighlighted(!isHighlighted);
+    isHighlighted
+      ? setProcessedData(data.filter((item) => item.category === name))
+      : setProcessedData(data);
   };
 
-  const mapData = (loadedData: any): void => {
+  const mapData = (loadedData: productType[]): void => {
     const items: productType[] = [];
     loadedData.map((item: productType) =>
-      items.push({ key: uniqueId("item_"), ...item })
+      items.push({ key: item.id, ...item })
     );
     setData(items);
+    setProcessedData(items);
   };
 
   const fetchData = async () => {
@@ -50,19 +67,26 @@ const ProductPage = () => {
     if (load[0]) {
       fetchData();
     }
-    if (filter !== "") {
-      filterByName();
-    }
   }, [load, order, filter]);
 
   return (
-    <>
+    <Box
+      sx={{
+        display: "flex",
+        flexWrap: "wrap",
+        justifyContent: "flext-start",
+        alignItems: "center",
+        position: "relative",
+        flexDirection: "column",
+        minHeight: "100vh",
+      }}
+    >
       <ProductFilter
         sortByLetter={sortByLetter}
         sortByPrice={sortByPrice}
-        setFilter={setFilter}
+        filterByCategory={filterByCategory}
       />
-      <dataContext.Provider value={data}>
+      <dataContext.Provider value={processedData}>
         <ProductList />
       </dataContext.Provider>
 
@@ -75,7 +99,7 @@ const ProductPage = () => {
       >
         Load More...
       </Button>
-    </>
+    </Box>
   );
 };
 

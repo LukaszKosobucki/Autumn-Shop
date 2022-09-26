@@ -1,25 +1,109 @@
 {
   "items": [
-    { "name": "ajesienna książka", "price": 40, "category": "books" },
-    { "name": "bjesienny kocyk", "price": 60, "category": "blankets" },
-    { "name": "cjesienna książka", "price": 40, "category": "books" },
-    { "name": "djesienny kocyk", "price": 60, "category": "blankets" },
-    { "name": "ajesienna książka", "price": 40, "category": "books" },
-    { "name": "djesienny kocyk", "price": 60, "category": "blankets" },
-    { "name": "tjesienna kawa", "price": 90, "category": "coffee" },
-    { "name": "sjesienny kocyk", "price": 60, "category": "blankets" },
-    { "name": "ijesienna książka", "price": 40, "category": "books" },
-    { "name": "jesienny kocyk", "price": 60, "category": "blankets" },
-    { "name": "jesienna kawa", "price": 120, "category": "coffee" },
-    { "name": "jesienny kocyk", "price": 60, "category": "blankets" },
-    { "name": "jesienna książka", "price": 40, "category": "books" },
-    { "name": "jesienny kocyk", "price": 60, "category": "blankets" },
-    { "name": "jesienna kawa", "price": 90, "category": "coffee" }
+    {
+      "name": "ajesienna książka",
+      "price": 40,
+      "category": "category_1",
+      "id": "item_1"
+    },
+    {
+      "name": "bjesienny kocyk",
+      "price": 60,
+      "category": "category_2",
+      "id": "item_2"
+    },
+    {
+      "name": "cjesienna książka",
+      "price": 40,
+      "category": "category_1",
+      "id": "item_3"
+    },
+    {
+      "name": "djesienny kocyk",
+      "price": 60,
+      "category": "category_2",
+      "id": "item_4"
+    },
+    {
+      "name": "ajesienna książka",
+      "price": 40,
+      "category": "category_1",
+      "id": "item_5"
+    },
+    {
+      "name": "djesienny kocyk",
+      "price": 60,
+      "category": "category_2",
+      "id": "item_6"
+    },
+    {
+      "name": "tjesienna kawa",
+      "price": 90,
+      "category": "category_5",
+      "id": "item_7"
+    },
+    {
+      "name": "sjesienny kocyk",
+      "price": 60,
+      "category": "category_2",
+      "id": "item_8"
+    },
+    {
+      "name": "ijesienna książka",
+      "price": 40,
+      "category": "category_1",
+      "id": "item_9"
+    },
+    {
+      "name": "jesienny kocyk",
+      "price": 60,
+      "category": "category_2",
+      "id": "item_10"
+    },
+    {
+      "name": "jesienna kawa",
+      "price": 120,
+      "category": "category_5",
+      "id": "item_11"
+    },
+    {
+      "name": "jesienny kocyk",
+      "price": 60,
+      "category": "category_2",
+      "id": "item_12"
+    },
+    {
+      "name": "jesienna książka",
+      "price": 40,
+      "category": "category_1",
+      "id": "item_13"
+    },
+    {
+      "name": "jesienny kocyk",
+      "price": 60,
+      "category": "category_2",
+      "id": "item_14"
+    },
+    {
+      "name": "jesienna kawa",
+      "price": 90,
+      "category": "category_5",
+      "id": "item_15"
+    }
   ],
   "order-list": {
-    "item1": { "name": "book1", "price": 20, "category": "books" }
+    "item1": { "name": "book1", "price": 20, "category": "category_1" }
   },
   "basket": {
-    "item1": { "name": "book1", "price": 20, "category": "books" }
-  }
+    "item1": { "name": "book1", "price": 20, "category": "category_1" }
+  },
+  "categories": [
+    { "categoryName": "Books", "categoryId": "category_1" },
+    { "categoryName": "Blankets", "categoryId": "category_2" },
+    { "categoryName": "Sweaters", "categoryId": "category_3" },
+    { "categoryName": "Tea", "categoryId": "category_4" },
+    { "categoryName": "Coffee", "categoryId": "category_5" },
+    { "categoryName": "Tea Accessories", "categoryId": "category_6" },
+    { "categoryName": "Coffee Accessories", "categoryId": "category_7" }
+  ]
 }

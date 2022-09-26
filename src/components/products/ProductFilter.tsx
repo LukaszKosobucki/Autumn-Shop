@@ -1,21 +1,30 @@
 import { Box, Button, IconButton } from "@mui/material";
 import FilterListIcon from "@mui/icons-material/FilterList";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import SortByAlphaIcon from "@mui/icons-material/SortByAlpha";
 import SortIcon from "@mui/icons-material/Sort";
-import uniqueId from "lodash.uniqueid";
-const ProductFilter = ({ sortByLetter, sortByPrice, setFilter }: any) => {
-  const categories: string[] = [
-    "Coffee",
-    "Tea",
-    "Coffee Accessories",
-    "Tea Accessories",
-    "Blankets",
-    "Sweaters",
-    "Books",
-  ];
+import { requestCategories } from "../../service/requestCategories";
+import { categoryType } from "../../types/categoryType";
 
+const ProductFilter = ({
+  sortByLetter,
+  sortByPrice,
+  filterByCategory,
+}: any) => {
   const [expand, setExpand] = useState<boolean>(false);
+  const [categories, setCategories] = useState<categoryType[]>(
+    [] as categoryType[]
+  );
+
+  const fetchData = async () => {
+    const responseData = await requestCategories();
+    console.log(responseData);
+    setCategories(responseData);
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, []);
   return (
     <Box
       sx={{
@@ -28,14 +37,14 @@ const ProductFilter = ({ sortByLetter, sortByPrice, setFilter }: any) => {
         bgcolor: "#f7f4e1",
       }}
     >
-      {categories.map((item: string) => (
+      {categories.map((item: categoryType) => (
         <Button
           onClick={() => {
-            setFilter("books");
+            filterByCategory(item.categoryId);
           }}
-          key={uniqueId("filter_category_")}
+          key={item.categoryId}
         >
-          {item}
+          {item.categoryName}
         </Button>
       ))}
       <IconButton onClick={() => setExpand(!expand)}>
