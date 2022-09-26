@@ -14,6 +14,5 @@ export const requestData = async (loadSize: number) => {
   };
 
   const response = await axios(options);
-  console.log("tutaj", response.data);
   return response.data;
 };

@@ -18,7 +18,6 @@ const ProductFilter = ({
 
   const fetchData = async () => {
     const responseData = await requestCategories();
-    console.log(responseData);
     setCategories(responseData);
   };
 
@@ -37,10 +36,10 @@ const ProductFilter = ({
         bgcolor: "#f7f4e1",
       }}
     >
-      {categories.map((item: categoryType) => (
+      {categories.map((item: categoryType, index: number) => (
         <Button
           onClick={() => {
-            filterByCategory(item.categoryId);
+            filterByCategory(item.categoryId, index);
           }}
           key={item.categoryId}
         >

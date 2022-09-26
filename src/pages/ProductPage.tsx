@@ -15,8 +15,16 @@ const ProductPage = () => {
   );
   const [load, setLoad] = useState<[boolean, number]>([true, 9]);
   const [order, setOrder] = useState<boolean>(false);
-  const [filter, setFilter] = useState<string>("");
-  const [isHighlighted, setIsHighlighted] = useState<boolean>(true);
+  const [filter, setFilter] = useState<string[]>([]);
+  const [isHighlighted, setIsHighlighted] = useState<boolean[]>([
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+  ]);
 
   const sortByLetter = (): void => {
     setOrder(!order);
@@ -40,12 +48,23 @@ const ProductPage = () => {
         );
   };
 
-  const filterByCategory = (name: string): void => {
-    setFilter(name);
-    setIsHighlighted(!isHighlighted);
-    isHighlighted
-      ? setProcessedData(data.filter((item) => item.category === name))
-      : setProcessedData(data);
+  const setFilterCategories = (name: string, index: number): void => {
+    setIsHighlighted(
+      isHighlighted.map((item: boolean, idx: number) =>
+        idx === index ? !item : item
+      )
+    );
+    isHighlighted[index]
+      ? setFilter(filter.filter((category) => category !== name))
+      : setFilter((filter) => [...filter, name]);
+  };
+
+  const filterByCategory = (): void => {
+    setProcessedData(
+      filter.length > 0
+        ? data.filter((item) => filter.includes(item.category))
+        : data
+    );
   };
 
   const mapData = (loadedData: productType[]): void => {
@@ -67,6 +86,7 @@ const ProductPage = () => {
     if (load[0]) {
       fetchData();
     }
+    filterByCategory();
   }, [load, order, filter]);
 
   return (
@@ -84,7 +104,7 @@ const ProductPage = () => {
       <ProductFilter
         sortByLetter={sortByLetter}
         sortByPrice={sortByPrice}
-        filterByCategory={filterByCategory}
+        filterByCategory={setFilterCategories}
       />
       <dataContext.Provider value={processedData}>
         <ProductList />
