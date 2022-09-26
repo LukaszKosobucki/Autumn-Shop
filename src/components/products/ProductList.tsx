@@ -1,6 +1,6 @@
 import ProductItem from "./ProductItem";
 import { productType } from "../../types/productType";
-import { productListInterface } from "../../interfaces/productListInterface";
+
 import { Box } from "@mui/material";
 import { useContext } from "react";
 import { dataContext } from "../../pages/ProductPage";

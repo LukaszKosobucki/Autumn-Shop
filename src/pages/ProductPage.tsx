@@ -9,7 +9,7 @@ import { Button } from "@mui/material";
 const dataContext = createContext<productType[]>([{}] as productType[]);
 
 const ProductPage = () => {
-  const [data, setData] = useState<productType[]>([{}] as productType[]);
+  const [data, setData] = useState<productType[]>([] as productType[]);
   const [load, setLoad] = useState<[boolean, number]>([true, 9]);
   const [order, setOrder] = useState<boolean>(false);
   const [filter, setFilter] = useState<string>("");
