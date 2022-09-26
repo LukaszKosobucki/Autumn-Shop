@@ -71,6 +71,7 @@ const ProductPage = () => {
         onClick={() => {
           setLoad([true, load[1] + 9]);
         }}
+        sx={{ mt: 1 }}
       >
         Load More...
       </Button>

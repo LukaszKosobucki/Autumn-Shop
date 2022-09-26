@@ -22,12 +22,10 @@ const ProductFilter = ({ sortByLetter, sortByPrice, setFilter }: any) => {
         display: "flex",
         flexWrap: "wrap",
         p: 2,
-        marginLeft: 93,
-        bgcolor: "background.paper",
         maxWidth: 500,
-        borderRadius: 1,
         justifyContent: "center",
         alignItems: "center",
+        bgcolor: "#f7f4e1",
       }}
     >
       {categories.map((item: string) => (

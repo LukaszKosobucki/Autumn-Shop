@@ -13,11 +13,10 @@ const ProductItem = ({ item }: productInterface) => {
   return (
     <Box
       sx={{
-        p: 1,
         m: 1,
-        borderRadius: 2,
         fontSize: "0.875rem",
         fontWeight: "700",
+        width: 230,
       }}
     >
       <Card>
@@ -28,18 +27,55 @@ const ProductItem = ({ item }: productInterface) => {
           alt="green iguana"
         />
         <CardContent>
-          <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-            {item.name}
-          </Typography>
-          <Typography variant="h5" component="div">
-            {item.price}
-          </Typography>
-          <Typography sx={{ mb: 1.5 }} color="text.secondary">
-            {item.category}
-          </Typography>
-          <IconButton aria-label="delete">
-            <ShoppingCartIcon />
-          </IconButton>
+          <Box
+            sx={{
+              display: "flex",
+              flexWrap: "wrap",
+              color: "#3d405b",
+              justifyContent: "space-between",
+              alignItems: "flex-start",
+              flexDirection: "row",
+            }}
+          >
+            <Box
+              sx={{
+                display: "flex",
+                flexWrap: "wrap",
+                color: "#3d405b",
+                justifyContent: "flex-start",
+                alignItems: "flex-start",
+                flexDirection: "column",
+              }}
+            >
+              <Typography
+                sx={{ fontSize: 14 }}
+                color="text.secondary"
+                gutterBottom
+              >
+                {item.name}
+              </Typography>
+              <Typography variant="h5" component="div">
+                {item.price}
+              </Typography>
+              <Typography sx={{ mb: 1.5 }} color="text.secondary">
+                {item.category}
+              </Typography>
+            </Box>
+            <Box
+              sx={{
+                display: "flex",
+                flexWrap: "nowrap",
+                color: "#3d405b",
+                justifyContent: "flex-end",
+                alignSelf: "flex-end",
+                flexDirection: "column",
+              }}
+            >
+              <IconButton aria-label="delete">
+                <ShoppingCartIcon />
+              </IconButton>
+            </Box>
+          </Box>
         </CardContent>
       </Card>
     </Box>

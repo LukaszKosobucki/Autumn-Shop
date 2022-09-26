@@ -11,13 +11,10 @@ const ProductList = () => {
       sx={{
         display: "flex",
         flexWrap: "wrap",
-        p: 2,
-        marginLeft: 75,
-        bgcolor: "background.paper",
         maxWidth: 750,
-        borderRadius: 1,
         justifyContent: "center",
         alignItems: "center",
+        bgcolor: "#f7f4e1",
       }}
     >
       {items.map((item: productType, index: number) => (
