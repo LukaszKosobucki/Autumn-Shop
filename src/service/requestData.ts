@@ -1,8 +1,9 @@
 import axios from "axios";
+import { urls } from "./config";
 
 export const requestData = async (loadSize: number) => {
   const options = {
-    url: "http://localhost:3000/items",
+    url: urls.items,
     method: "GET",
     headers: {
       Accept: "application/json",

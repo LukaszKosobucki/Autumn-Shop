@@ -4,7 +4,7 @@ import { Box } from "@mui/material";
 const MainLayout = (props: any) => {
   return (
     <Box
-      component="body"
+      component="div"
       sx={{
         bgcolor: "#f7f4e1",
       }}

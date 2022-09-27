@@ -9,6 +9,8 @@ import {
 import { productInterface } from "../../interfaces/productInterface";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import React from "react";
+import { addProductToBasket } from "../../service/addProductToBasket";
+
 const ProductItem = ({ item }: productInterface) => {
   return (
     <Box

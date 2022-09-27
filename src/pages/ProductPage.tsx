@@ -30,10 +30,10 @@ const ProductPage = () => {
     setOrder(!order);
     order
       ? setProcessedData(
-          processedData.sort((a, b) => (a.name > b.name ? 1 : -1))
+          processedData.sort((a, b) => a.name.localeCompare(b.name))
         )
       : setProcessedData(
-          processedData.sort((a, b) => (a.name > b.name ? -1 : 1))
+          processedData.sort((a, b) => b.name.localeCompare(a.name))
         );
   };
 
