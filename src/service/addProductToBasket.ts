@@ -1,14 +1,15 @@
 import axios from "axios";
 import { urls } from "./config";
 
-export const requestCategories = async () => {
+export const addProductToBasket = async (data: any) => {
   const options = {
-    url: urls.categories,
-    method: "GET",
+    url: urls.basket,
+    method: "POST",
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json;charset=UTF-8",
     },
+    data: data,
   };
 
   const response = await axios(options);
