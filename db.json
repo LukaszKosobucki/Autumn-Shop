@@ -98,12 +98,12 @@
     "item1": { "name": "book1", "price": 20, "category": "category_1" }
   },
   "categories": [
-    { "categoryName": "Books", "categoryId": "category_1" },
+    { "categoryName": "Coffee", "categoryId": "category_5" },
+    { "categoryName": "Tea", "categoryId": "category_4" },
+    { "categoryName": "Coffee Accessories", "categoryId": "category_7" },
+    { "categoryName": "Tea Accessories", "categoryId": "category_6" },
     { "categoryName": "Blankets", "categoryId": "category_2" },
     { "categoryName": "Sweaters", "categoryId": "category_3" },
-    { "categoryName": "Tea", "categoryId": "category_4" },
-    { "categoryName": "Coffee", "categoryId": "category_5" },
-    { "categoryName": "Tea Accessories", "categoryId": "category_6" },
-    { "categoryName": "Coffee Accessories", "categoryId": "category_7" }
+    { "categoryName": "Books", "categoryId": "category_1" }
   ]
 }

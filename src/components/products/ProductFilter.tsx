@@ -58,9 +58,7 @@ const ProductFilter = ({
             <SortByAlphaIcon />
           </IconButton>
         </>
-      ) : (
-        <></>
-      )}
+      ) : null}
     </Box>
   );
 };
