@@ -5,6 +5,7 @@ import ProductFilter from "../components/products/ProductFilter";
 import uniqueId from "lodash.uniqueid";
 import { requestData } from "../service/requestData";
 import { Button, Box } from "@mui/material";
+import { basketType } from "../types/basketType";
 
 const dataContext = createContext<productType[]>([] as productType[]);
 
@@ -25,6 +26,9 @@ const ProductPage = () => {
     false,
     false,
   ]);
+  const [basketData, setBasketData] = useState<basketType[]>(
+    [] as basketType[]
+  );
 
   const sortByLetter = (): void => {
     setOrder(!order);

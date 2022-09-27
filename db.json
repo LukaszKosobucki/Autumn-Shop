@@ -94,9 +94,8 @@
   "order-list": {
     "item1": { "name": "book1", "price": 20, "category": "category_1" }
   },
-  "basket": {
-    "item1": { "name": "book1", "price": 20, "category": "category_1" }
-  },
+  "basket": [{ "id": "item_15" }],
+
   "categories": [
     { "categoryName": "Coffee", "categoryId": "category_5" },
     { "categoryName": "Tea", "categoryId": "category_4" },
