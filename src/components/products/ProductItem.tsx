@@ -9,9 +9,8 @@ import {
 import { productInterface } from "../../interfaces/productInterface";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import React from "react";
-import { addProductToBasket } from "../../service/addProductToBasket";
 
-const ProductItem = ({ item }: productInterface) => {
+const ProductItem = ({ item, addToBasket }: any) => {
   return (
     <Box
       sx={{
@@ -70,7 +69,10 @@ const ProductItem = ({ item }: productInterface) => {
                 flexDirection: "column",
               }}
             >
-              <IconButton aria-label="delete">
+              <IconButton
+                aria-label="delete"
+                onClick={() => addToBasket(item.id)}
+              >
                 <ShoppingCartIcon />
               </IconButton>
             </Box>
