@@ -16,15 +16,6 @@ const ProductPage = () => {
   const [load, setLoad] = useState<[boolean, number]>([true, 9]);
   const [order, setOrder] = useState<boolean>(false);
   const [filter, setFilter] = useState<string[]>([]);
-  const [isHighlighted, setIsHighlighted] = useState<boolean[]>([
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-  ]);
 
   const sortByLetter = (): void => {
     setOrder(!order);
@@ -48,15 +39,10 @@ const ProductPage = () => {
         );
   };
 
-  const setFilterCategories = (name: string, index: number): void => {
-    setIsHighlighted(
-      isHighlighted.map((item: boolean, idx: number) =>
-        idx === index ? !item : item
-      )
-    );
-    isHighlighted[index]
-      ? setFilter(filter.filter((category) => category !== name))
-      : setFilter((filter) => [...filter, name]);
+  const setFilterCategories = (category: string): void => {
+    if (filter.includes(category)) {
+      setFilter(filter.filter((item) => item !== category));
+    } else setFilter((filter) => [...filter, category]);
   };
 
   const filterByCategory = (): void => {
