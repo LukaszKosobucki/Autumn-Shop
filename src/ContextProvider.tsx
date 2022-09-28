@@ -10,8 +10,18 @@ const ContextProvider = ({ children }: any) => {
   const [basketData, setBasketData] = useState<basketType[]>(
     [] as basketType[]
   );
+  const [filter, setFilter] = useState<string[]>([]);
 
-  const values = { data, setData, setLoad, load, basketData, setBasketData };
+  const values = {
+    filter,
+    setFilter,
+    data,
+    setData,
+    setLoad,
+    load,
+    basketData,
+    setBasketData,
+  };
   return <dataContext.Provider value={values}>{children}</dataContext.Provider>;
 };
 export default ContextProvider;
