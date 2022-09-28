@@ -6,11 +6,17 @@ import {
   CardMedia,
   IconButton,
 } from "@mui/material";
-import { productInterface } from "../../interfaces/productInterface";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import React from "react";
+import { productType } from "../../types/productType";
 
-const ProductItem = ({ item, addToBasket }: any) => {
+const ProductItem = ({
+  item,
+  addToBasket,
+}: {
+  item: productType;
+  addToBasket: (item: string) => void;
+}) => {
   return (
     <Box
       sx={{

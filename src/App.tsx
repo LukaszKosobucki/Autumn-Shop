@@ -6,19 +6,21 @@ import OrderListPage from "./pages/OrderListPage";
 import FinalizePage from "./pages/FinalizePage";
 import MainLayout from "./components/layout/MainLayout";
 import "@fontsource/red-rose";
-
+import ContextProvider from "./ContextProvider";
 function App() {
   return (
     <Router>
-      <MainLayout>
-        <Routes>
-          <Route path="/" element={<ProductPage />} />
-          <Route path="/basket" element={<BasketPage />} />
-          <Route path="/order-list" element={<OrderListPage />} />
-          {/* think through about dynamic pathing */}
-          <Route path="/finalize" element={<FinalizePage />} />
-        </Routes>
-      </MainLayout>
+      <ContextProvider>
+        <MainLayout>
+          <Routes>
+            <Route path="/" element={<ProductPage />} />
+            <Route path="/basket" element={<BasketPage />} />
+            <Route path="/order-list" element={<OrderListPage />} />
+            {/* think through about dynamic pathing */}
+            <Route path="/finalize" element={<FinalizePage />} />
+          </Routes>
+        </MainLayout>
+      </ContextProvider>
     </Router>
   );
 }

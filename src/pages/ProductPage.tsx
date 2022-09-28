@@ -1,30 +1,16 @@
-import { useEffect, useState, createContext } from "react";
+import { useEffect, useState, useContext } from "react";
 import ProductList from "../components/products/ProductList";
 import { productType } from "../types/productType";
 import ProductFilter from "../components/products/ProductFilter";
-import uniqueId from "lodash.uniqueid";
-import { requestData } from "../service/requestData";
 import { Button, Box } from "@mui/material";
-
-const dataContext = createContext<productType[]>([] as productType[]);
+import { dataContext } from "../ContextProvider";
+import { requestData } from "../service/requestData";
 
 const ProductPage = () => {
-  const [data, setData] = useState<productType[]>([] as productType[]);
-  const [processedData, setProcessedData] = useState<productType[]>(
-    [] as productType[]
-  );
-  const [load, setLoad] = useState<[boolean, number]>([true, 9]);
+  const { data, setData, setLoad, load } = useContext(dataContext);
+  const [processedData, setProcessedData] = useState<productType[]>(data);
   const [order, setOrder] = useState<boolean>(false);
   const [filter, setFilter] = useState<string[]>([]);
-  const [isHighlighted, setIsHighlighted] = useState<boolean[]>([
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-    false,
-  ]);
 
   const sortByLetter = (): void => {
     setOrder(!order);
@@ -48,21 +34,16 @@ const ProductPage = () => {
         );
   };
 
-  const setFilterCategories = (name: string, index: number): void => {
-    setIsHighlighted(
-      isHighlighted.map((item: boolean, idx: number) =>
-        idx === index ? !item : item
-      )
-    );
-    isHighlighted[index]
-      ? setFilter(filter.filter((category) => category !== name))
-      : setFilter((filter) => [...filter, name]);
+  const setFilterCategories = (category: string): void => {
+    if (filter.includes(category)) {
+      setFilter(filter.filter((item) => item !== category));
+    } else setFilter((filter) => [...filter, category]);
   };
 
-  const filterByCategory = (): void => {
+  const filterByCategories = (): void => {
     setProcessedData(
       filter.length > 0
-        ? data.filter((item) => filter.includes(item.category))
+        ? data.filter((item: any) => filter.includes(item.category))
         : data
     );
   };
@@ -86,7 +67,7 @@ const ProductPage = () => {
     if (load[0]) {
       fetchData();
     }
-    filterByCategory();
+    filterByCategories();
   }, [load, order, filter]);
 
   return (
@@ -106,9 +87,8 @@ const ProductPage = () => {
         sortByPrice={sortByPrice}
         filterByCategory={setFilterCategories}
       />
-      <dataContext.Provider value={processedData}>
-        <ProductList />
-      </dataContext.Provider>
+
+      <ProductList items={processedData} />
 
       <Button
         variant="contained"

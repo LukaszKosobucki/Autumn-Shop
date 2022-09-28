@@ -39,7 +39,7 @@ const ProductFilter = ({
       {categories.map((item: categoryType, index: number) => (
         <Button
           onClick={() => {
-            filterByCategory(item.categoryId, index);
+            filterByCategory(item.categoryId);
           }}
           key={item.categoryId}
         >
