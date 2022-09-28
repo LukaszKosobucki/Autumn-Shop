@@ -7,10 +7,10 @@ import { dataContext } from "../ContextProvider";
 import { requestData } from "../service/requestData";
 
 const ProductPage = () => {
-  const { data, setData, setLoad, load } = useContext(dataContext);
+  const { data, setData, setLoad, load, setFilter, filter } =
+    useContext(dataContext);
   const [processedData, setProcessedData] = useState<productType[]>(data);
   const [order, setOrder] = useState<boolean>(false);
-  const [filter, setFilter] = useState<string[]>([]);
 
   const sortByLetter = (): void => {
     setOrder(!order);
@@ -36,8 +36,8 @@ const ProductPage = () => {
 
   const setFilterCategories = (category: string): void => {
     if (filter.includes(category)) {
-      setFilter(filter.filter((item) => item !== category));
-    } else setFilter((filter) => [...filter, category]);
+      setFilter(filter.filter((item: string) => item !== category));
+    } else setFilter((filter: string[]) => [...filter, category]);
   };
 
   const filterByCategories = (): void => {

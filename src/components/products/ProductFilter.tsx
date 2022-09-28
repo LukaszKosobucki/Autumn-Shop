@@ -1,10 +1,16 @@
-import { Box, Button, IconButton } from "@mui/material";
+import {
+  Box,
+  ToggleButton,
+  IconButton,
+  ToggleButtonGroup,
+} from "@mui/material";
 import FilterListIcon from "@mui/icons-material/FilterList";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import SortByAlphaIcon from "@mui/icons-material/SortByAlpha";
 import SortIcon from "@mui/icons-material/Sort";
 import { requestCategories } from "../../service/requestCategories";
 import { categoryType } from "../../types/categoryType";
+import { dataContext } from "../../ContextProvider";
 
 const ProductFilter = ({
   sortByLetter,
@@ -15,7 +21,7 @@ const ProductFilter = ({
   const [categories, setCategories] = useState<categoryType[]>(
     [] as categoryType[]
   );
-
+  const { filter } = useContext(dataContext);
   const fetchData = async () => {
     const responseData = await requestCategories();
     setCategories(responseData);
@@ -37,15 +43,19 @@ const ProductFilter = ({
       }}
     >
       {categories.map((item: categoryType, index: number) => (
-        <Button
-          onClick={() => {
-            filterByCategory(item.categoryId);
-          }}
-          key={item.categoryId}
-        >
-          {item.categoryName}
-        </Button>
+        <ToggleButtonGroup value={filter} key={item.categoryId}>
+          <ToggleButton
+            onClick={() => {
+              filterByCategory(item.categoryId);
+            }}
+            value={item.categoryId}
+            sx={{ m: 0.4 }}
+          >
+            {item.categoryName}
+          </ToggleButton>
+        </ToggleButtonGroup>
       ))}
+
       <IconButton onClick={() => setExpand(!expand)}>
         <FilterListIcon />
       </IconButton>
