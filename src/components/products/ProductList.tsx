@@ -26,15 +26,17 @@ const ProductList = ({ items }: any) => {
         { id: item, quantity: 1 },
       ]);
     }
+
+    localStorage.setItem("basketData", JSON.stringify(basketData));
+    console.log(
+      "local",
+      JSON.parse(localStorage.getItem("basketData") || "[]")
+    );
   };
 
   // const delFromBasket = (item) => {
   //   setBasketData([item]);
   // };
-
-  useEffect(() => {
-    console.log(basketData);
-  }, [basketData]);
 
   return (
     <Box

@@ -8,7 +8,7 @@ const ContextProvider = ({ children }: any) => {
   const [load, setLoad] = useState<[boolean, number]>([true, 9]);
   const [data, setData] = useState<productType[]>([] as productType[]);
   const [basketData, setBasketData] = useState<basketType[]>(
-    [] as basketType[]
+    JSON.parse(localStorage.getItem("basketData") || "[]")
   );
   const [filter, setFilter] = useState<string[]>([]);
 

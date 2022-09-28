@@ -11,11 +11,12 @@ const BasketList = () => {
 
   const mapData = (): void => {
     const items: any = [];
+    console.log(basketData);
+    console.log(data);
     data.map((item: productType) => {
       basketData.map((product: basketType) => {
         if (item.id === product.id) {
           items.push({ ...item, quantity: product.quantity });
-          console.log(items);
         }
       });
     });
@@ -23,8 +24,9 @@ const BasketList = () => {
   };
 
   useEffect(() => {
+    console.log(basketData);
     mapData();
-  }, [basketData]);
+  }, [data]);
 
   return (
     <Box
