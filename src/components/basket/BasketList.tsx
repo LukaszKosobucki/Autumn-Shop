@@ -6,13 +6,13 @@ import { productType } from "../../types/productType";
 import BasketItem from "./BasketItem";
 
 const BasketList = () => {
-  const { basketData, res } = useContext(dataContext);
+  const { basketData, data } = useContext(dataContext);
   const [basketProcessedData, setBasketProcessedData] = useState<any>([]);
 
   const mapData = (): void => {
     const items: any = [];
-    console.log(res);
-    res.map((item: productType) => {
+    console.log(data);
+    data.map((item: productType) => {
       basketData.map((product: basketType) => {
         if (item.id === product.id) {
           items.push({ ...item, quantity: product.quantity });
@@ -25,8 +25,8 @@ const BasketList = () => {
   useEffect(() => {
     mapData();
 
-    console.log("???", res);
-  }, [res]);
+    console.log("???", data);
+  }, [data]);
 
   return (
     <Box

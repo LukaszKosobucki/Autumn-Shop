@@ -4,11 +4,10 @@ import { productType } from "../types/productType";
 import ProductFilter from "../components/products/ProductFilter";
 import { Button, Box } from "@mui/material";
 import { dataContext } from "../ContextProvider";
-import { requestData } from "../service/requestData";
 
 const ProductPage = () => {
-  const { res, setLoad, load, setFilter, filter } = useContext(dataContext);
-  const [processedData, setProcessedData] = useState<productType[]>(res);
+  const { data, setLoad, load, setFilter, filter } = useContext(dataContext);
+  const [processedData, setProcessedData] = useState<productType[]>(data);
   const [order, setOrder] = useState<boolean>(false);
 
   const sortByLetter = (): void => {
@@ -42,14 +41,14 @@ const ProductPage = () => {
   const filterByCategories = (): void => {
     setProcessedData(
       filter.length > 0
-        ? res.filter((item: any) => filter.includes(item.category))
-        : res
+        ? data.filter((item: any) => filter.includes(item.category))
+        : data
     );
   };
 
   useEffect(() => {
     filterByCategories();
-  }, [res, order, filter]);
+  }, [data, order, filter]);
 
   return (
     <Box
@@ -74,7 +73,7 @@ const ProductPage = () => {
       <Button
         variant="contained"
         onClick={() => {
-          setLoad([true, load[1] + 9]);
+          setLoad(load + 9);
         }}
         sx={{ mt: 1 }}
       >

@@ -7,21 +7,11 @@ import FinalizePage from "./pages/FinalizePage";
 import MainLayout from "./components/layout/MainLayout";
 import "@fontsource/red-rose";
 import ContextProvider from "./ContextProvider";
-import { requestData } from "./service/requestData";
 
 function App() {
-  let [stala, setStala] = useState<any>([]);
-  useEffect(() => {
-    const fetchData = async () => {
-      const responseData = await requestData(9);
-
-      setStala(responseData);
-    };
-    fetchData();
-  }, []);
   return (
     <Router>
-      <ContextProvider res={stala}>
+      <ContextProvider>
         <MainLayout>
           <Routes>
             <Route path="/" element={<ProductPage />} />

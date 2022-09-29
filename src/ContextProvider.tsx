@@ -5,38 +5,33 @@ import { productType } from "./types/productType";
 
 export const dataContext = createContext<any>({});
 
-const ContextProvider = ({ children, res }: any) => {
-  const [load, setLoad] = useState<[boolean, number]>([true, 9]);
-  const [data, setData] = useState<productType[]>([] as productType[]);
+const ContextProvider = ({ children }: any) => {
   const [basketData, setBasketData] = useState<basketType[]>(
     JSON.parse(localStorage.getItem("basketData") || "[]")
   );
 
   const [filter, setFilter] = useState<string[]>([]);
+  const [data, setData] = useState<productType[]>([]);
+  const [load, setLoad] = useState<number>(9);
+  useEffect(() => {
+    const fetchData = async () => {
+      const responseData = await requestData(load);
+      setData(responseData);
+    };
+    fetchData();
+  }, [load]);
 
   const trueValues = useMemo(
     () => ({
       filter,
       setFilter,
-      data,
-      setData,
       setLoad,
       load,
       basketData,
       setBasketData,
-      res,
+      data,
     }),
-    [
-      filter,
-      setFilter,
-      data,
-      setData,
-      setLoad,
-      load,
-      basketData,
-      setBasketData,
-      res,
-    ]
+    [filter, setFilter, setLoad, load, basketData, setBasketData, data]
   );
 
   // const values = {};
