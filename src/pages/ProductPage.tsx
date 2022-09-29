@@ -7,9 +7,8 @@ import { dataContext } from "../ContextProvider";
 import { requestData } from "../service/requestData";
 
 const ProductPage = () => {
-  const { data, setData, setLoad, load, setFilter, filter } =
-    useContext(dataContext);
-  const [processedData, setProcessedData] = useState<productType[]>(data);
+  const { res, setLoad, load, setFilter, filter } = useContext(dataContext);
+  const [processedData, setProcessedData] = useState<productType[]>(res);
   const [order, setOrder] = useState<boolean>(false);
 
   const sortByLetter = (): void => {
@@ -43,32 +42,14 @@ const ProductPage = () => {
   const filterByCategories = (): void => {
     setProcessedData(
       filter.length > 0
-        ? data.filter((item: any) => filter.includes(item.category))
-        : data
+        ? res.filter((item: any) => filter.includes(item.category))
+        : res
     );
-  };
-
-  const mapData = (loadedData: productType[]): void => {
-    const items: productType[] = [];
-    loadedData.map((item: productType) =>
-      items.push({ key: item.id, ...item })
-    );
-    setData(items);
-    setProcessedData(items);
-  };
-
-  const fetchData = async () => {
-    const responseData = await requestData(load[1]);
-    mapData(responseData);
-    setLoad([false, load[1]]);
   };
 
   useEffect(() => {
-    if (load[0]) {
-      fetchData();
-    }
     filterByCategories();
-  }, [load, order, filter]);
+  }, [res, order, filter]);
 
   return (
     <Box

@@ -40,12 +40,12 @@ const BasketItem = ({ item }: any) => {
               justifyContent: "flex-start",
               alignItems: "center",
               flexDirection: "row",
-              width: 150,
+              width: 100,
             }}
           >
             <CardMedia
               component="img"
-              height="150"
+              height="100"
               image="https://images.unsplash.com/photo-1515471897120-85416077e011?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8Y29mZmVlJTIwYmFnfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
               alt="green iguana"
             />
@@ -59,7 +59,7 @@ const BasketItem = ({ item }: any) => {
             >
               {item.name}
             </Typography>
-            <Typography variant="h5" component="div">
+            <Typography variant="h6" component="div">
               price: {item.price}$
             </Typography>
           </CardContent>
@@ -78,8 +78,8 @@ const BasketItem = ({ item }: any) => {
           <IconButton>
             <RemoveShoppingCartOutlinedIcon fontSize="large" />
           </IconButton>
-          <Typography variant="h5" component="div">
-            quantity: {item.quantity}
+          <Typography variant="h6" component="span">
+            {item.quantity}
           </Typography>
           <IconButton>
             <AddShoppingCartOutlinedIcon fontSize="large" />

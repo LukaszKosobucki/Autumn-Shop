@@ -1,4 +1,5 @@
 import axios from "axios";
+import { productType } from "../types/productType";
 import { urls } from "./config";
 
 export const requestData = async (loadSize: number) => {
@@ -14,6 +15,16 @@ export const requestData = async (loadSize: number) => {
     },
   };
 
-  const response = await axios(options);
-  return response.data;
+  const mapData = (loadedData: productType[]): productType[] => {
+    const items: productType[] = [];
+    loadedData.map((item: productType) =>
+      items.push({ key: item.id, ...item })
+    );
+    return items;
+  };
+  const response = await axios(options).then((response) =>
+    mapData(response.data)
+  );
+
+  return response;
 };
