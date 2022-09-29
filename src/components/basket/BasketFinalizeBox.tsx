@@ -1,6 +1,8 @@
 import { Box, Typography, Button } from "@mui/material";
 import { useContext, useEffect, useState } from "react";
 import { dataContext } from "../../ContextProvider";
+import { Link } from "react-router-dom";
+
 const BasketFinalizeBox = () => {
   const { basketProcessedData } = useContext(dataContext);
   const [price, setPrice] = useState<number>(0);
@@ -23,14 +25,14 @@ const BasketFinalizeBox = () => {
         flexWrap: " wrap",
         color: "#3d405b",
         justifyContent: "flex-start",
-        alignItems: "center",
+        alignItems: "flex-start",
         flexDirection: "column",
         position: "sticky",
-        top: 50,
+        top: 90,
         ml: 5,
-        p: 5,
+        p: 4,
         bgcolor: "#e0ddcb",
-        borderRadius: "3%",
+        borderRadius: "5%",
       }}
     >
       <Typography sx={{ fontSize: 14 }} color="#3d405b" gutterBottom>
@@ -42,7 +44,11 @@ const BasketFinalizeBox = () => {
       <Typography sx={{ fontSize: 14 }} color="#3d405b" gutterBottom>
         Total Price: {price + 20}$
       </Typography>
-      <Button>
+      <Button
+        component={Link}
+        to="/finalize"
+        sx={{ bgcolor: "#f4f1de", pb: 0, borderRadius: "0%" }}
+      >
         <Typography sx={{ fontSize: 14 }} color="#3d405b" gutterBottom>
           Finalize
         </Typography>
