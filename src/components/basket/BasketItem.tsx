@@ -16,7 +16,7 @@ const BasketItem = ({
   deleteBasketItem,
 }: any) => {
   return (
-    <Card sx={{ m: 0.5 }}>
+    <Card sx={{ m: 0.5, borderRadius: "0%", bgcolor: "#e0ddcb" }}>
       <Box
         sx={{
           display: "flex",
@@ -25,7 +25,7 @@ const BasketItem = ({
           justifyContent: "space-between",
           alignItems: "center",
           flexDirection: "row",
-          width: 700,
+          width: 600,
           minWidth: 500,
         }}
       >

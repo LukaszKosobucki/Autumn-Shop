@@ -12,6 +12,7 @@ const ContextProvider = ({ children }: any) => {
   const [filter, setFilter] = useState<string[]>([]);
   const [data, setData] = useState<productType[]>([]);
   const [loadLimit, setLoadLimit] = useState<number>(9);
+  const [basketProcessedData, setBasketProcessedData] = useState<any>([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -30,6 +31,8 @@ const ContextProvider = ({ children }: any) => {
       data,
       loadLimit,
       setLoadLimit,
+      basketProcessedData,
+      setBasketProcessedData,
     }),
     [
       filter,
@@ -39,6 +42,8 @@ const ContextProvider = ({ children }: any) => {
       data,
       loadLimit,
       setLoadLimit,
+      basketProcessedData,
+      setBasketProcessedData,
     ]
   );
 
