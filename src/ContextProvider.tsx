@@ -9,29 +9,37 @@ const ContextProvider = ({ children }: any) => {
   const [basketData, setBasketData] = useState<basketType[]>(
     JSON.parse(localStorage.getItem("basketData") || "[]")
   );
-
   const [filter, setFilter] = useState<string[]>([]);
   const [data, setData] = useState<productType[]>([]);
-  const [load, setLoad] = useState<number>(9);
+  const [loadLimit, setLoadLimit] = useState<number>(9);
+
   useEffect(() => {
     const fetchData = async () => {
-      const responseData = await requestData(load);
+      const responseData = await requestData();
       setData(responseData);
     };
     fetchData();
-  }, [load]);
+  }, []);
 
   const trueValues = useMemo(
     () => ({
       filter,
       setFilter,
-      setLoad,
-      load,
       basketData,
       setBasketData,
       data,
+      loadLimit,
+      setLoadLimit,
     }),
-    [filter, setFilter, setLoad, load, basketData, setBasketData, data]
+    [
+      filter,
+      setFilter,
+      basketData,
+      setBasketData,
+      data,
+      loadLimit,
+      setLoadLimit,
+    ]
   );
 
   // const values = {};

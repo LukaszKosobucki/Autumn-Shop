@@ -2,16 +2,13 @@ import axios from "axios";
 import { productType } from "../types/productType";
 import { urls } from "./config";
 
-export const requestData = async (loadSize: number) => {
+export const requestData = async () => {
   const options = {
     url: urls.items,
     method: "GET",
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json;charset=UTF-8",
-    },
-    params: {
-      _limit: loadSize,
     },
   };
 

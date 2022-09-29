@@ -6,7 +6,8 @@ import { Button, Box } from "@mui/material";
 import { dataContext } from "../ContextProvider";
 
 const ProductPage = () => {
-  const { data, setLoad, load, setFilter, filter } = useContext(dataContext);
+  const { data, setLoadLimit, loadLimit, setFilter, filter } =
+    useContext(dataContext);
   const [processedData, setProcessedData] = useState<productType[]>(data);
   const [order, setOrder] = useState<boolean>(false);
 
@@ -48,6 +49,7 @@ const ProductPage = () => {
 
   useEffect(() => {
     filterByCategories();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data, order, filter]);
 
   return (
@@ -73,7 +75,7 @@ const ProductPage = () => {
       <Button
         variant="contained"
         onClick={() => {
-          setLoad(load + 9);
+          setLoadLimit(loadLimit + 9);
         }}
         sx={{ mt: 1 }}
       >

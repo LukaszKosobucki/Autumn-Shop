@@ -1,6 +1,5 @@
 import { Box } from "@mui/material";
 import { useContext, useEffect, useState } from "react";
-import { json } from "stream/consumers";
 import { dataContext } from "../../ContextProvider";
 import { basketType } from "../../types/basketType";
 import { productType } from "../../types/productType";
@@ -50,6 +49,7 @@ const BasketList = () => {
 
   useEffect(() => {
     mapData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data, basketData]);
 
   return (
