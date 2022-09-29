@@ -8,10 +8,12 @@ import {
 } from "@mui/material";
 import AddShoppingCartOutlinedIcon from "@mui/icons-material/AddShoppingCartOutlined";
 import RemoveShoppingCartOutlinedIcon from "@mui/icons-material/RemoveShoppingCartOutlined";
+import DeleteForeverOutlinedIcon from "@mui/icons-material/DeleteForeverOutlined";
 const BasketItem = ({
   item,
   reduceBasketItemQuant,
   increaseBasketItemQuant,
+  deleteBasketItem,
 }: any) => {
   return (
     <Card sx={{ m: 0.5 }}>
@@ -87,7 +89,7 @@ const BasketItem = ({
             <RemoveShoppingCartOutlinedIcon fontSize="large" />
           </IconButton>
           <Typography variant="h6" component="span">
-            {item.quantity}
+            quant: {item.quantity}
           </Typography>
           <IconButton
             onClick={() => {
@@ -95,6 +97,13 @@ const BasketItem = ({
             }}
           >
             <AddShoppingCartOutlinedIcon fontSize="large" />
+          </IconButton>
+          <IconButton
+            onClick={() => {
+              deleteBasketItem(item.id);
+            }}
+          >
+            <DeleteForeverOutlinedIcon fontSize="large" />
           </IconButton>
         </Box>
       </Box>

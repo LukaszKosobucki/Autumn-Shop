@@ -2,7 +2,7 @@ import ProductItem from "./ProductItem";
 import { productType } from "../../types/productType";
 
 import { Box } from "@mui/material";
-import { useEffect, useContext } from "react";
+import { useContext } from "react";
 
 import { basketType } from "../../types/basketType";
 import { addProductToBasket } from "../../service/addProductToBasket";

@@ -40,6 +40,10 @@ const BasketList = () => {
     setBasketData([...newBasketData]);
   };
 
+  const deleteBasketItem = (id: string) => {
+    setBasketData(basketData.filter((item: basketType) => item.id !== id));
+  };
+
   useEffect(() => {
     localStorage.setItem("basketData", JSON.stringify(basketData));
   }, [basketData]);
@@ -65,6 +69,7 @@ const BasketList = () => {
             item={item}
             reduceBasketItemQuant={reduceBasketItemQuant}
             increaseBasketItemQuant={increaseBasketItemQuant}
+            deleteBasketItem={deleteBasketItem}
           />
         );
       })}
