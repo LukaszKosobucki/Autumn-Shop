@@ -1,5 +1,6 @@
 import { Box } from "@mui/material";
 import BasketList from "../components/basket/BasketList";
+import BasketFinalizeBox from "../components/basket/BasketFinalizeBox";
 
 const BasketPage = () => {
   return (
@@ -8,13 +9,14 @@ const BasketPage = () => {
         display: "flex",
         flexWrap: "wrap",
         justifyContent: "flext-start",
-        alignItems: "center",
+        alignItems: "flex-start",
         position: "relative",
-        flexDirection: "column",
+        flexDirection: "row",
         minHeight: "100vh",
       }}
     >
       <BasketList />
+      <BasketFinalizeBox />
     </Box>
   );
 };

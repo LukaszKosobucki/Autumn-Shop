@@ -62,7 +62,7 @@ const ProductItem = ({
                 {item.name}
               </Typography>
               <Typography variant="h5" component="div">
-                {item.price}
+                {item.price}$
               </Typography>
             </Box>
             <Box

@@ -1,28 +1,56 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useEffect, useState, useMemo } from "react";
+import { requestData } from "./service/requestData";
 import { basketType } from "./types/basketType";
 import { productType } from "./types/productType";
 
 export const dataContext = createContext<any>({});
 
 const ContextProvider = ({ children }: any) => {
-  const [load, setLoad] = useState<[boolean, number]>([true, 9]);
-  const [data, setData] = useState<productType[]>([] as productType[]);
   const [basketData, setBasketData] = useState<basketType[]>(
-    [] as basketType[]
+    JSON.parse(localStorage.getItem("basketData") || "[]")
   );
   const [filter, setFilter] = useState<string[]>([]);
+  const [data, setData] = useState<productType[]>([]);
+  const [loadLimit, setLoadLimit] = useState<number>(9);
+  const [basketProcessedData, setBasketProcessedData] = useState<any>([]);
 
-  const values = {
-    filter,
-    setFilter,
-    data,
-    setData,
-    setLoad,
-    load,
-    basketData,
-    setBasketData,
-  };
-  return <dataContext.Provider value={values}>{children}</dataContext.Provider>;
+  useEffect(() => {
+    const fetchData = async () => {
+      const responseData = await requestData();
+      setData(responseData);
+    };
+    fetchData();
+  }, []);
+
+  const trueValues = useMemo(
+    () => ({
+      filter,
+      setFilter,
+      basketData,
+      setBasketData,
+      data,
+      loadLimit,
+      setLoadLimit,
+      basketProcessedData,
+      setBasketProcessedData,
+    }),
+    [
+      filter,
+      setFilter,
+      basketData,
+      setBasketData,
+      data,
+      loadLimit,
+      setLoadLimit,
+      basketProcessedData,
+      setBasketProcessedData,
+    ]
+  );
+
+  // const values = {};
+  return (
+    <dataContext.Provider value={trueValues}>{children}</dataContext.Provider>
+  );
 };
 export default ContextProvider;
 /**

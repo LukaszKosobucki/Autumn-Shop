@@ -1,40 +1,31 @@
 import ProductItem from "./ProductItem";
 import { productType } from "../../types/productType";
-
 import { Box } from "@mui/material";
-import { useEffect, useContext } from "react";
-
+import { useContext, useState } from "react";
 import { basketType } from "../../types/basketType";
-import { addProductToBasket } from "../../service/addProductToBasket";
+// import { addProductToBasket } from "../../service/addProductToBasket";
 import { dataContext } from "../../ContextProvider";
 const ProductList = ({ items }: any) => {
-  const { basketData, setBasketData } = useContext(dataContext);
+  const { basketData, setBasketData, loadLimit } = useContext(dataContext);
 
-  const postData = (data: basketType[]) => {
-    addProductToBasket(data);
-  };
+  // const postData = (data: basketType[]) => {
+  //   addProductToBasket(data);
+  // };
 
   const addToBasket = (item: string) => {
-    if (basketData.some((e: any) => e.id === item)) {
-      const index = basketData.findIndex((e: any) => e.id === item);
+    if (basketData.some((e: basketType) => e.id === item)) {
+      const index = basketData.findIndex((e: basketType) => e.id === item);
       const newBasketData = basketData;
       newBasketData[index].quantity += 1;
       setBasketData([...newBasketData]);
     } else {
-      setBasketData((basketData: any) => [
+      setBasketData((basketData: basketType[]) => [
         ...basketData,
         { id: item, quantity: 1 },
       ]);
     }
+    localStorage.setItem("basketData", JSON.stringify(basketData));
   };
-
-  // const delFromBasket = (item) => {
-  //   setBasketData([item]);
-  // };
-
-  useEffect(() => {
-    console.log(basketData);
-  }, [basketData]);
 
   return (
     <Box
@@ -47,7 +38,7 @@ const ProductList = ({ items }: any) => {
         bgcolor: "#f7f4e1",
       }}
     >
-      {items.map((item: productType) => (
+      {items.slice(0, loadLimit).map((item: productType) => (
         <ProductItem item={item} key={item.key} addToBasket={addToBasket} />
       ))}
     </Box>

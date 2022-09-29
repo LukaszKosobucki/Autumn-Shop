@@ -4,10 +4,9 @@ import { productType } from "../types/productType";
 import ProductFilter from "../components/products/ProductFilter";
 import { Button, Box } from "@mui/material";
 import { dataContext } from "../ContextProvider";
-import { requestData } from "../service/requestData";
 
 const ProductPage = () => {
-  const { data, setData, setLoad, load, setFilter, filter } =
+  const { data, setLoadLimit, loadLimit, setFilter, filter } =
     useContext(dataContext);
   const [processedData, setProcessedData] = useState<productType[]>(data);
   const [order, setOrder] = useState<boolean>(false);
@@ -48,27 +47,10 @@ const ProductPage = () => {
     );
   };
 
-  const mapData = (loadedData: productType[]): void => {
-    const items: productType[] = [];
-    loadedData.map((item: productType) =>
-      items.push({ key: item.id, ...item })
-    );
-    setData(items);
-    setProcessedData(items);
-  };
-
-  const fetchData = async () => {
-    const responseData = await requestData(load[1]);
-    mapData(responseData);
-    setLoad([false, load[1]]);
-  };
-
   useEffect(() => {
-    if (load[0]) {
-      fetchData();
-    }
     filterByCategories();
-  }, [load, order, filter]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [data, order, filter]);
 
   return (
     <Box
@@ -93,7 +75,7 @@ const ProductPage = () => {
       <Button
         variant="contained"
         onClick={() => {
-          setLoad([true, load[1] + 9]);
+          setLoadLimit(loadLimit + 9);
         }}
         sx={{ mt: 1 }}
       >

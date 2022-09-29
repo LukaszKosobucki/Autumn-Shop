@@ -49,7 +49,7 @@ const ProductFilter = ({
               filterByCategory(item.categoryId);
             }}
             value={item.categoryId}
-            sx={{ m: 0.4 }}
+            sx={{ m: 0.4, p: 0.6 }}
           >
             {item.categoryName}
           </ToggleButton>
