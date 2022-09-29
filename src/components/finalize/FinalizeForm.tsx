@@ -10,6 +10,8 @@ const FinalizeForm = () => {
         alignItems: "flex-start",
         position: "relative",
         flexDirection: "column",
+
+        p: 5,
       }}
     >
       <Box
@@ -20,6 +22,8 @@ const FinalizeForm = () => {
           alignItems: "flex-start",
           position: "relative",
           flexDirection: "row",
+          width: "100%",
+          pb: 2,
         }}
       >
         <Button sx={{ color: "#3d405b", bgcolor: "#e0ddcb" }}>Register</Button>
@@ -36,6 +40,8 @@ const FinalizeForm = () => {
             alignItems: "flex-start",
             position: "relative",
             flexDirection: "column",
+            bgcolor: "#e0ddcb",
+            p: 5,
           }}
         >
           <FormControl>

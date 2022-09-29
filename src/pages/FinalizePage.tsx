@@ -1,6 +1,6 @@
 import FinalizeForm from "../components/finalize/FinalizeForm";
 import { Box } from "@mui/material";
-import MethodCard from "../components/finalize/MethodCard";
+import MethodList from "../components/finalize/MethodList";
 import BasketFinalizeBox from "../components/basket/BasketFinalizeBox";
 
 const FinalizePage = () => {
@@ -18,8 +18,8 @@ const FinalizePage = () => {
     >
       <Box>
         <FinalizeForm />
-        <MethodCard />
-        <MethodCard />
+        <MethodList />
+        <MethodList />
       </Box>
       <BasketFinalizeBox />
     </Box>
