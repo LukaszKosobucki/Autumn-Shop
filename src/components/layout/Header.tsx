@@ -16,6 +16,9 @@ const Header = () => {
         color: "#3d405b",
         justifyContent: "space-around",
         alignItems: "center",
+        position: "sticky",
+        top: 0,
+        zIndex: 1,
       }}
     >
       <Box>
