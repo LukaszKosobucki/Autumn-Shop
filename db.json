@@ -104,18 +104,17 @@
     { "categoryName": "Blankets", "categoryId": "category_2" },
     { "categoryName": "Sweaters", "categoryId": "category_3" },
     { "categoryName": "Books", "categoryId": "category_1" }
-  ]
-  "deliverOptions": [
-    {"name": "DHL", "imgUrl": "url", "selected": true},
-    {"name": "DHL2", "imgUrl": "url", "selected":false},
-    {"name": "DHL3", "imgUrl": "url", "selected":false},
-    {"name": "DHL4", "imgUrl": "url", "selected":false}
-
-  ]
+  ],
+  "deliveryOptions": [
+    { "name": "DHL", "imgUrl": "url", "selected": true },
+    { "name": "DHL2", "imgUrl": "url", "selected": false },
+    { "name": "DHL3", "imgUrl": "url", "selected": false },
+    { "name": "DHL4", "imgUrl": "url", "selected": false }
+  ],
   "paymentOptions": [
-    {"name": "money", "imgUrl": "url", "selected":true},
-    {"name": "money2", "imgUrl": "url", "selected":false},
-    {"name": "money3", "imgUrl": "url", "selected":false},
-    {"name": "money4", "imgUrl": "url", "selected":false}
+    { "name": "money", "imgUrl": "url", "selected": true },
+    { "name": "money2", "imgUrl": "url", "selected": false },
+    { "name": "money3", "imgUrl": "url", "selected": false },
+    { "name": "money4", "imgUrl": "url", "selected": false }
   ]
 }

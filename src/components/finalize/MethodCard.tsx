@@ -9,7 +9,7 @@ import CheckIcon from "@mui/icons-material/Check";
 import { useContext } from "react";
 import { dataContext } from "../../ContextProvider";
 
-const MethodCard = ({ name, imgUrl }: any) => {
+const MethodCard = ({ name }: any) => {
   const { selected, setSelected } = useContext(dataContext);
   return (
     <Box
@@ -42,7 +42,7 @@ const MethodCard = ({ name, imgUrl }: any) => {
 
       <CardContent>
         <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-          name
+          {name}
         </Typography>
         <ToggleButton
           value="check"

@@ -2,13 +2,15 @@ import MethodCard from "./MethodCard";
 import { dataContext } from "../../ContextProvider";
 import { useContext } from "react";
 
-const MethodList = ({ list }: any) => {
-  const { selected, setSelected } = useContext(dataContext);
+const MethodList = ({ options }: any) => {
+  const { selected } = useContext(dataContext);
   return (
     <div>
       {selected
         ? null
-        : list.map((card: any) => <MethodCard name={card.name} />)}
+        : options.map((option: any) => (
+            <MethodCard name={option.name} key={option.key} />
+          ))}
     </div>
   );
 };
