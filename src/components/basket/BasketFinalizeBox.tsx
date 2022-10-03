@@ -3,7 +3,7 @@ import { useContext, useEffect, useState } from "react";
 import { dataContext } from "../../ContextProvider";
 import { Link } from "react-router-dom";
 
-const BasketFinalizeBox = () => {
+const BasketFinalizeBox = ({ text }: any) => {
   const { basketProcessedData } = useContext(dataContext);
   const [price, setPrice] = useState<number>(0);
 
@@ -51,7 +51,7 @@ const BasketFinalizeBox = () => {
         sx={{ bgcolor: "#f4f1de", pb: 0, borderRadius: "0%" }}
       >
         <Typography sx={{ fontSize: 14 }} color="#3d405b" gutterBottom>
-          Finalize
+          {text}
         </Typography>
       </Button>
     </Box>
