@@ -16,7 +16,7 @@ const BasketPage = () => {
       }}
     >
       <BasketList />
-      <BasketFinalizeBox text="Next" />
+      <BasketFinalizeBox text="Next" link={true} />
     </Box>
   );
 };

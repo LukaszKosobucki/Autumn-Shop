@@ -44,29 +44,29 @@ const FinalizeForm = () => {
             p: 5,
           }}
         >
-          <FormControl>
+          <FormControl required>
             <InputLabel htmlFor="Name">Name</InputLabel>
-            <Input id="Name" aria-describedby="my-helper-text" />
+            <Input id="Name" sx={{ mb: 1 }} />
           </FormControl>
-          <FormControl>
+          <FormControl required>
             <InputLabel htmlFor="Surname">Surname</InputLabel>
-            <Input id="Surname" aria-describedby="my-helper-text" />
+            <Input id="Surname" sx={{ mb: 1 }} />
           </FormControl>
-          <FormControl>
+          <FormControl required>
             <InputLabel htmlFor="Email-address">Email address</InputLabel>
-            <Input id="Email-address" aria-describedby="my-helper-text" />
+            <Input id="Email-address" sx={{ mb: 1 }} />
           </FormControl>
-          <FormControl>
+          <FormControl required>
             <InputLabel htmlFor="Zip-Code">Zip Code</InputLabel>
-            <Input id="Zip-Code" />
+            <Input id="Zip-Code" sx={{ mb: 1 }} />
           </FormControl>
-          <FormControl>
+          <FormControl required>
             <InputLabel htmlFor="State">State</InputLabel>
-            <Input id="State" />
+            <Input id="State" sx={{ mb: 1 }} />
           </FormControl>
-          <FormControl>
+          <FormControl required>
             <InputLabel htmlFor="City">City</InputLabel>
-            <Input id="City" />
+            <Input id="City" sx={{ mb: 1 }} />
           </FormControl>
         </Box>
       </form>

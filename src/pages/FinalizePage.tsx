@@ -24,7 +24,7 @@ const FinalizePage = () => {
         <MethodList options={deliveryOptions} />
         <MethodList options={paymentOptions} />
       </Box>
-      <BasketFinalizeBox text="Finalize" />
+      <BasketFinalizeBox text="Finalize" link={false} />
     </Box>
   );
 };
