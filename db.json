@@ -106,15 +106,47 @@
     { "categoryName": "Books", "categoryId": "category_1" }
   ],
   "deliveryOptions": [
-    { "name": "DHL", "imgUrl": "url", "selected": true },
-    { "name": "DHL2", "imgUrl": "url", "selected": false },
-    { "name": "DHL3", "imgUrl": "url", "selected": false },
-    { "name": "DHL4", "imgUrl": "url", "selected": false }
+    {
+      "name": "DHL Courier",
+      "imgUrl": "https://images.unsplash.com/photo-1593317767442-f2eab1512c1f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80",
+      "selected": true
+    },
+    {
+      "name": "DPD Courier",
+      "imgUrl": "https://images.unsplash.com/photo-1580674285054-bed31e145f59?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+      "selected": false
+    },
+    {
+      "name": "Inpost Paczkomaty",
+      "imgUrl": "https://images.unsplash.com/photo-1578517485388-cfd411a5c499?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+      "selected": false
+    },
+    {
+      "name": "Take Directly from shop",
+      "imgUrl": "https://images.unsplash.com/photo-1601647998802-5c86158216f6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=755&q=80",
+      "selected": false
+    }
   ],
   "paymentOptions": [
-    { "name": "money", "imgUrl": "url", "selected": true },
-    { "name": "money2", "imgUrl": "url", "selected": false },
-    { "name": "money3", "imgUrl": "url", "selected": false },
-    { "name": "money4", "imgUrl": "url", "selected": false }
+    {
+      "name": "Cash",
+      "imgUrl": "https://images.unsplash.com/photo-1565372594646-7e38ab4547c4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+      "selected": true
+    },
+    {
+      "name": "Card",
+      "imgUrl": "https://images.unsplash.com/photo-1591030434469-3d78c7b17820?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80",
+      "selected": false
+    },
+    {
+      "name": "Apple Pay",
+      "imgUrl": "https://images.unsplash.com/photo-1621768216002-5ac171876625?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1174&q=80",
+      "selected": false
+    },
+    {
+      "name": "Blik",
+      "imgUrl": "https://images.unsplash.com/photo-1608286022625-bc07f7a21154?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+      "selected": false
+    }
   ]
 }

@@ -9,8 +9,9 @@ import CheckIcon from "@mui/icons-material/Check";
 import { useContext } from "react";
 import { dataContext } from "../../ContextProvider";
 
-const MethodCard = ({ name }: any) => {
+const MethodCard = ({ name, imgUrl }: any) => {
   const { selected, setSelected } = useContext(dataContext);
+
   return (
     <Box
       sx={{
@@ -35,7 +36,7 @@ const MethodCard = ({ name }: any) => {
         <CardMedia
           component="img"
           height="100"
-          image="https://images.unsplash.com/photo-1515471897120-85416077e011?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8Y29mZmVlJTIwYmFnfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+          image={imgUrl}
           alt="green iguana"
         />
       </Box>
