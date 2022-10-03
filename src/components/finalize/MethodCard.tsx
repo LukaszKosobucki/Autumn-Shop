@@ -8,10 +8,32 @@ import {
 import CheckIcon from "@mui/icons-material/Check";
 import { useContext } from "react";
 import { dataContext } from "../../ContextProvider";
+import { finalizeOptionsType } from "../../types/finalizeOptionsType";
 
-const MethodCard = ({ name, imgUrl }: any) => {
-  const { selected, setSelected } = useContext(dataContext);
-
+const MethodCard = ({ name, imgUrl, selected }: any) => {
+  const {
+    deliveryOptions,
+    setDeliveryOptions,
+    paymentOptions,
+    setPaymentOptions,
+  } = useContext(dataContext);
+  const placeholderOnClick = (): void => {
+    if (deliveryOptions.some((e: finalizeOptionsType) => e.name === name)) {
+      const index = deliveryOptions.findIndex(
+        (e: finalizeOptionsType) => e.name === name
+      );
+      const newDeliveryOptions = deliveryOptions;
+      newDeliveryOptions[index].selected = !deliveryOptions[index].selected;
+      setDeliveryOptions([...newDeliveryOptions]);
+    } else {
+      const index = paymentOptions.findIndex(
+        (e: finalizeOptionsType) => e.name === name
+      );
+      const newPaymentOptions = paymentOptions;
+      newPaymentOptions[index].selected = !paymentOptions[index].selected;
+      setPaymentOptions([...newPaymentOptions]);
+    }
+  };
   return (
     <Box
       sx={{
@@ -21,6 +43,8 @@ const MethodCard = ({ name, imgUrl }: any) => {
         justifyContent: "flex-start",
         alignItems: "center",
         flexDirection: "row",
+        minWidth: 320,
+        mb: 1,
       }}
     >
       <Box
@@ -49,10 +73,10 @@ const MethodCard = ({ name, imgUrl }: any) => {
           value="check"
           selected={selected}
           onChange={() => {
-            setSelected(!selected);
+            placeholderOnClick();
           }}
         >
-          {selected ? <CheckIcon /> : null}
+          {selected ? <CheckIcon sx={{ p: 0, m: 0 }} /> : null}
         </ToggleButton>
       </CardContent>
     </Box>
