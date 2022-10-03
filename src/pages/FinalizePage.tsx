@@ -18,8 +18,8 @@ const FinalizePage = () => {
     >
       <Box>
         <FinalizeForm />
-        <MethodList />
-        <MethodList />
+        <MethodList list={[{ name: "dhl" }, { name: "dhl2" }]} />
+        <MethodList list={[{ name: "dhl" }, { name: "dhl2" }]} />
       </Box>
       <BasketFinalizeBox />
     </Box>

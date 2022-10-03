@@ -6,11 +6,11 @@ import {
   ToggleButton,
 } from "@mui/material";
 import CheckIcon from "@mui/icons-material/Check";
-import { useState } from "react";
+import { useContext } from "react";
+import { dataContext } from "../../ContextProvider";
 
-const MethodCard = () => {
-  const [selected, setSelected] = useState(false);
-
+const MethodCard = ({ name, imgUrl }: any) => {
+  const { selected, setSelected } = useContext(dataContext);
   return (
     <Box
       sx={{
@@ -42,7 +42,7 @@ const MethodCard = () => {
 
       <CardContent>
         <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
-          DHL Courier
+          name
         </Typography>
         <ToggleButton
           value="check"
@@ -51,7 +51,7 @@ const MethodCard = () => {
             setSelected(!selected);
           }}
         >
-          <CheckIcon />
+          {selected ? <CheckIcon /> : null}
         </ToggleButton>
       </CardContent>
     </Box>
