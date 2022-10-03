@@ -57,6 +57,10 @@ const FinalizeForm = () => {
             <Input id="Email-address" sx={{ mb: 1 }} />
           </FormControl>
           <FormControl required>
+            <InputLabel htmlFor="Phone">Phone</InputLabel>
+            <Input id="Phone" sx={{ mb: 1 }} />
+          </FormControl>
+          <FormControl required>
             <InputLabel htmlFor="Zip-Code">Zip Code</InputLabel>
             <Input id="Zip-Code" sx={{ mb: 1 }} />
           </FormControl>

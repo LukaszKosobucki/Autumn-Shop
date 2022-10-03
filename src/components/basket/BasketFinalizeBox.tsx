@@ -2,6 +2,7 @@ import { Box, Typography, Button } from "@mui/material";
 import { useContext, useEffect, useState } from "react";
 import { dataContext } from "../../ContextProvider";
 import { Link } from "react-router-dom";
+import { mapBasketData } from "../../mappers/mapBasketData";
 
 const BasketFinalizeBox = ({ text, link }: { text: string; link: boolean }) => {
   const { basketProcessedData } = useContext(dataContext);

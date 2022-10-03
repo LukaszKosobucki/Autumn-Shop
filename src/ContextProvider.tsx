@@ -1,4 +1,5 @@
 import React, { createContext, useEffect, useState, useMemo } from "react";
+import { mapBasketData } from "./mappers/mapBasketData";
 import { getDeliveryOptions } from "./service/getDeliveryOptions";
 import { getPaymentOptions } from "./service/getPaymentOptions";
 import { requestData } from "./service/requestData";
@@ -29,6 +30,10 @@ const ContextProvider = ({ children }: any) => {
     };
     fetchData();
   }, []);
+
+  useEffect(() => {
+    mapBasketData(data, basketData, setBasketProcessedData);
+  }, [data]);
 
   const trueValues = useMemo(
     () => ({

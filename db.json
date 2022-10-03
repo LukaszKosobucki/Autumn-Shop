@@ -91,9 +91,27 @@
       "id": "item_15"
     }
   ],
-  "order-list": {
-    "item1": { "name": "book1", "price": 20, "category": "category_1" }
-  },
+  "order_list": [
+    {
+      "order_id": "order_1",
+      "items": [
+        { "item_id": "item_15", "quantity": 5 },
+        { "item_id": "item_13", "quantity": 3 },
+        { "item_id": "item_10", "quantity": 1 }
+      ],
+      "date": "10/15/2022",
+      "delivery_information": {
+        "name": "Lukasz",
+        "surname": "Kosobucki",
+        "email": "abc@gmail.com",
+        "zipcode": "51-357",
+        "state": "Silesia",
+        "City": "Wroclaw",
+        "phone": "+48533980909"
+      }
+    }
+  ],
+
   "basket": [{ "id": "item_15", "quantity": 1 }],
 
   "categories": [
@@ -105,6 +123,7 @@
     { "categoryName": "Sweaters", "categoryId": "category_3" },
     { "categoryName": "Books", "categoryId": "category_1" }
   ],
+
   "deliveryOptions": [
     {
       "name": "DHL Courier",
@@ -127,6 +146,7 @@
       "selected": false
     }
   ],
+
   "paymentOptions": [
     {
       "name": "Cash",

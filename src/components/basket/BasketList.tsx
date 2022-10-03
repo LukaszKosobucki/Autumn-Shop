@@ -2,8 +2,8 @@ import { Box } from "@mui/material";
 import { useContext, useEffect, useState } from "react";
 import { dataContext } from "../../ContextProvider";
 import { basketType } from "../../types/basketType";
-import { productType } from "../../types/productType";
 import BasketItem from "./BasketItem";
+import { mapBasketData } from "../../mappers/mapBasketData";
 
 const BasketList = () => {
   const {
@@ -13,19 +13,6 @@ const BasketList = () => {
     basketProcessedData,
     setBasketProcessedData,
   } = useContext(dataContext);
-
-  const mapData = (): void => {
-    const items: any = [];
-
-    data.map((item: productType) => {
-      basketData.map((product: basketType) => {
-        if (item.id === product.id) {
-          items.push({ ...item, quantity: product.quantity });
-        }
-      });
-    });
-    setBasketProcessedData(items);
-  };
 
   const reduceBasketItemQuant = (id: string) => {
     const index = basketData.findIndex((e: basketType) => e.id === id);
@@ -53,7 +40,7 @@ const BasketList = () => {
   }, [basketData]);
 
   useEffect(() => {
-    mapData();
+    mapBasketData(data, basketData, setBasketProcessedData);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data, basketData]);
 
