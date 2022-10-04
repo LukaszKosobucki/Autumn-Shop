@@ -1,6 +1,16 @@
 import { Box, Button, FormControl, Input, InputLabel } from "@mui/material";
 
 const FinalizeForm = () => {
+  const formData = [
+    "Name",
+    "Surname",
+    "Email",
+    "Phone",
+    "ZipCode",
+    "State",
+    "City",
+  ];
+
   return (
     <Box
       sx={{
@@ -10,8 +20,8 @@ const FinalizeForm = () => {
         alignItems: "flex-start",
         position: "relative",
         flexDirection: "column",
-
-        p: 5,
+        width: "100%",
+        pb: 2,
       }}
     >
       <Box
@@ -41,37 +51,16 @@ const FinalizeForm = () => {
             position: "relative",
             flexDirection: "column",
             bgcolor: "#e0ddcb",
+            minWidth: 320,
             p: 5,
           }}
         >
-          <FormControl required>
-            <InputLabel htmlFor="Name">Name</InputLabel>
-            <Input id="Name" sx={{ mb: 1 }} />
-          </FormControl>
-          <FormControl required>
-            <InputLabel htmlFor="Surname">Surname</InputLabel>
-            <Input id="Surname" sx={{ mb: 1 }} />
-          </FormControl>
-          <FormControl required>
-            <InputLabel htmlFor="Email-address">Email address</InputLabel>
-            <Input id="Email-address" sx={{ mb: 1 }} />
-          </FormControl>
-          <FormControl required>
-            <InputLabel htmlFor="Phone">Phone</InputLabel>
-            <Input id="Phone" sx={{ mb: 1 }} />
-          </FormControl>
-          <FormControl required>
-            <InputLabel htmlFor="Zip-Code">Zip Code</InputLabel>
-            <Input id="Zip-Code" sx={{ mb: 1 }} />
-          </FormControl>
-          <FormControl required>
-            <InputLabel htmlFor="State">State</InputLabel>
-            <Input id="State" sx={{ mb: 1 }} />
-          </FormControl>
-          <FormControl required>
-            <InputLabel htmlFor="City">City</InputLabel>
-            <Input id="City" sx={{ mb: 1 }} />
-          </FormControl>
+          {formData.map((text) => (
+            <FormControl required>
+              <InputLabel htmlFor={text}>{text}</InputLabel>
+              <Input id={text} sx={{ mb: 1, minWidth: 300 }} />
+            </FormControl>
+          ))}
         </Box>
       </form>
     </Box>

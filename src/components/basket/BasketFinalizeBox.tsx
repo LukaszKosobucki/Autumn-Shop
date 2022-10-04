@@ -58,7 +58,7 @@ const BasketFinalizeBox = ({ text, link }: { text: string; link: boolean }) => {
         </Button>
       ) : (
         <Button
-          onClick={() => console.log("add a post here")}
+          onClick={(e) => console.log("add post here")}
           sx={{ bgcolor: "#f4f1de", pb: 0, borderRadius: "0%" }}
         >
           <Typography sx={{ fontSize: 14 }} color="#3d405b" gutterBottom>

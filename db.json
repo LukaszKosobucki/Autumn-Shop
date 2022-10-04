@@ -106,7 +106,7 @@
         "email": "abc@gmail.com",
         "zipcode": "51-357",
         "state": "Silesia",
-        "City": "Wroclaw",
+        "city": "Wroclaw",
         "phone": "+48533980909"
       }
     }
