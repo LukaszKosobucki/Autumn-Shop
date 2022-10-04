@@ -49,8 +49,9 @@ const ProductPage = () => {
 
   useEffect(() => {
     filterByCategories();
+    console.log(data.length);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [data, order, filter]);
+  }, [data, filter]);
 
   return (
     <Box
@@ -71,16 +72,17 @@ const ProductPage = () => {
       />
 
       <ProductList items={processedData} />
-
-      <Button
-        variant="contained"
-        onClick={() => {
-          setLoadLimit(loadLimit + 9);
-        }}
-        sx={{ mt: 1 }}
-      >
-        Load More...
-      </Button>
+      {processedData.length - loadLimit > 0 ? (
+        <Button
+          variant="contained"
+          onClick={() => {
+            setLoadLimit(loadLimit + 9);
+          }}
+          sx={{ mt: 1 }}
+        >
+          Load More...
+        </Button>
+      ) : null}
     </Box>
   );
 };
