@@ -3,7 +3,7 @@ import EmojiFoodBeverageIcon from "@mui/icons-material/EmojiFoodBeverage";
 import AccountBoxIcon from "@mui/icons-material/AccountBox";
 import ListIcon from "@mui/icons-material/List";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 const Header = () => {
   return (
     <Box
@@ -18,11 +18,20 @@ const Header = () => {
         alignItems: "center",
         position: "sticky",
         top: 0,
-        zIndex: 1,
+        zIndex: 2,
       }}
     >
       <Box>
-        <IconButton sx={{ color: "#3d405b" }} component={Link} to="/">
+        <IconButton
+          sx={{ color: "#3d405b" }}
+          component={Link}
+          to="/"
+          onClick={() =>
+            window.location.href === "http://localhost:3005/"
+              ? window.location.reload()
+              : null
+          }
+        >
           <EmojiFoodBeverageIcon fontSize="large" />
         </IconButton>
       </Box>

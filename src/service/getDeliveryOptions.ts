@@ -1,19 +1,18 @@
 import axios from "axios";
 import { urls } from "./config";
-import { mapData } from "../mappers/mapData";
+import { mapFinalizingOptions } from "../mappers/mapFinalizingOptions";
 
-export const requestData = async () => {
+export const getDeliveryOptions = async () => {
   const options = {
-    url: urls.items,
+    url: urls.deliveryOptions,
     method: "GET",
     headers: {
       Accept: "application/json",
       "Content-Type": "application/json;charset=UTF-8",
     },
   };
-
   const response = await axios(options).then((response) =>
-    mapData(response.data)
+    mapFinalizingOptions(response.data)
   );
 
   return response;

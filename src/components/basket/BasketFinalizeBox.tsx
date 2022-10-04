@@ -2,8 +2,9 @@ import { Box, Typography, Button } from "@mui/material";
 import { useContext, useEffect, useState } from "react";
 import { dataContext } from "../../ContextProvider";
 import { Link } from "react-router-dom";
+import { mapBasketData } from "../../mappers/mapBasketData";
 
-const BasketFinalizeBox = () => {
+const BasketFinalizeBox = ({ text, link }: { text: string; link: boolean }) => {
   const { basketProcessedData } = useContext(dataContext);
   const [price, setPrice] = useState<number>(0);
 
@@ -17,6 +18,7 @@ const BasketFinalizeBox = () => {
 
   useEffect(() => {
     addPricesOfBasketItems();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [basketProcessedData]);
   return (
     <Box
@@ -44,15 +46,26 @@ const BasketFinalizeBox = () => {
       <Typography sx={{ fontSize: 14 }} color="#3d405b" gutterBottom>
         Total Price: {price + 20}$
       </Typography>
-      <Button
-        component={Link}
-        to="/finalize"
-        sx={{ bgcolor: "#f4f1de", pb: 0, borderRadius: "0%" }}
-      >
-        <Typography sx={{ fontSize: 14 }} color="#3d405b" gutterBottom>
-          Finalize
-        </Typography>
-      </Button>
+      {link ? (
+        <Button
+          component={Link}
+          to="/finalize"
+          sx={{ bgcolor: "#f4f1de", pb: 0, borderRadius: "0%" }}
+        >
+          <Typography sx={{ fontSize: 14 }} color="#3d405b" gutterBottom>
+            {text}
+          </Typography>
+        </Button>
+      ) : (
+        <Button
+          onClick={(e) => console.log("add post here")}
+          sx={{ bgcolor: "#f4f1de", pb: 0, borderRadius: "0%" }}
+        >
+          <Typography sx={{ fontSize: 14 }} color="#3d405b" gutterBottom>
+            {text}
+          </Typography>
+        </Button>
+      )}
     </Box>
   );
 };

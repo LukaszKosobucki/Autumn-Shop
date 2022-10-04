@@ -91,9 +91,27 @@
       "id": "item_15"
     }
   ],
-  "order-list": {
-    "item1": { "name": "book1", "price": 20, "category": "category_1" }
-  },
+  "order_list": [
+    {
+      "order_id": "order_1",
+      "items": [
+        { "item_id": "item_15", "quantity": 5 },
+        { "item_id": "item_13", "quantity": 3 },
+        { "item_id": "item_10", "quantity": 1 }
+      ],
+      "date": "10/15/2022",
+      "delivery_information": {
+        "name": "Lukasz",
+        "surname": "Kosobucki",
+        "email": "abc@gmail.com",
+        "zipcode": "51-357",
+        "state": "Silesia",
+        "city": "Wroclaw",
+        "phone": "+48533980909"
+      }
+    }
+  ],
+
   "basket": [{ "id": "item_15", "quantity": 1 }],
 
   "categories": [
@@ -104,5 +122,51 @@
     { "categoryName": "Blankets", "categoryId": "category_2" },
     { "categoryName": "Sweaters", "categoryId": "category_3" },
     { "categoryName": "Books", "categoryId": "category_1" }
+  ],
+
+  "deliveryOptions": [
+    {
+      "name": "DHL Courier",
+      "imgUrl": "https://images.unsplash.com/photo-1593317767442-f2eab1512c1f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1074&q=80",
+      "selected": true
+    },
+    {
+      "name": "DPD Courier",
+      "imgUrl": "https://images.unsplash.com/photo-1580674285054-bed31e145f59?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+      "selected": false
+    },
+    {
+      "name": "Inpost Paczkomaty",
+      "imgUrl": "https://images.unsplash.com/photo-1578517485388-cfd411a5c499?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+      "selected": false
+    },
+    {
+      "name": "Take Directly from shop",
+      "imgUrl": "https://images.unsplash.com/photo-1601647998802-5c86158216f6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=755&q=80",
+      "selected": false
+    }
+  ],
+
+  "paymentOptions": [
+    {
+      "name": "Cash",
+      "imgUrl": "https://images.unsplash.com/photo-1565372594646-7e38ab4547c4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+      "selected": true
+    },
+    {
+      "name": "Card",
+      "imgUrl": "https://images.unsplash.com/photo-1591030434469-3d78c7b17820?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1632&q=80",
+      "selected": false
+    },
+    {
+      "name": "Apple Pay",
+      "imgUrl": "https://images.unsplash.com/photo-1621768216002-5ac171876625?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1174&q=80",
+      "selected": false
+    },
+    {
+      "name": "Blik",
+      "imgUrl": "https://images.unsplash.com/photo-1608286022625-bc07f7a21154?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+      "selected": false
+    }
   ]
 }

@@ -1,4 +1,7 @@
 import React, { createContext, useEffect, useState, useMemo } from "react";
+import { mapBasketData } from "./mappers/mapBasketData";
+import { getDeliveryOptions } from "./service/getDeliveryOptions";
+import { getPaymentOptions } from "./service/getPaymentOptions";
 import { requestData } from "./service/requestData";
 import { basketType } from "./types/basketType";
 import { productType } from "./types/productType";
@@ -13,14 +16,24 @@ const ContextProvider = ({ children }: any) => {
   const [data, setData] = useState<productType[]>([]);
   const [loadLimit, setLoadLimit] = useState<number>(9);
   const [basketProcessedData, setBasketProcessedData] = useState<any>([]);
-
+  const [deliveryOptions, setDeliveryOptions] = useState<any>([]);
+  const [paymentOptions, setPaymentOptions] = useState<any>([]);
+  const [open, setOpen] = useState<boolean>(false);
   useEffect(() => {
     const fetchData = async () => {
       const responseData = await requestData();
       setData(responseData);
+      const responseDelivery = await getDeliveryOptions();
+      setDeliveryOptions(responseDelivery);
+      const responsePayment = await getPaymentOptions();
+      setPaymentOptions(responsePayment);
     };
     fetchData();
   }, []);
+
+  useEffect(() => {
+    mapBasketData(data, basketData, setBasketProcessedData);
+  }, [data]);
 
   const trueValues = useMemo(
     () => ({
@@ -33,6 +46,12 @@ const ContextProvider = ({ children }: any) => {
       setLoadLimit,
       basketProcessedData,
       setBasketProcessedData,
+      deliveryOptions,
+      setDeliveryOptions,
+      paymentOptions,
+      setPaymentOptions,
+      open,
+      setOpen,
     }),
     [
       filter,
@@ -44,6 +63,12 @@ const ContextProvider = ({ children }: any) => {
       setLoadLimit,
       basketProcessedData,
       setBasketProcessedData,
+      deliveryOptions,
+      setDeliveryOptions,
+      paymentOptions,
+      setPaymentOptions,
+      open,
+      setOpen,
     ]
   );
 
