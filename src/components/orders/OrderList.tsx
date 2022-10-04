@@ -6,7 +6,6 @@ import { orderType } from "../../types/orderType";
 
 const OrderList = () => {
   const { orderData } = useContext(dataContext);
-  const placeholderList = ["item1", "item2"];
   return (
     <Box
       sx={{

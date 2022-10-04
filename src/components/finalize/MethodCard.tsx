@@ -76,7 +76,7 @@ const MethodCard = ({ name, imgUrl, selected }: any) => {
             placeholderOnClick();
           }}
         >
-          {selected ? <CheckIcon sx={{ p: 0, m: 0 }} /> : null}
+          {selected && <CheckIcon sx={{ p: 0, m: 0 }} />}
         </ToggleButton>
       </CardContent>
     </Box>

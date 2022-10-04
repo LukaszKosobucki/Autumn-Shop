@@ -3,7 +3,7 @@ import { Box } from "@mui/material";
 import MethodList from "../components/finalize/MethodList";
 import BasketFinalizeBox from "../components/basket/BasketFinalizeBox";
 import { dataContext } from "../ContextProvider";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 
 const FinalizePage = () => {
   const { deliveryOptions, paymentOptions } = useContext(dataContext);
