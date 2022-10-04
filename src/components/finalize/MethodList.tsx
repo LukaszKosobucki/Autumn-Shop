@@ -73,6 +73,7 @@ const MethodList = ({ options }: { options: any }) => {
       {isTrue() ? (
         <Button
           onClick={() => resetOptions()}
+          key="xd"
           sx={{ bgcolor: "#f4f1de", pb: 0, borderRadius: "0%" }}
         >
           <Typography sx={{ fontSize: 14 }} color="#3d405b" gutterBottom>

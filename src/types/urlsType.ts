@@ -4,4 +4,5 @@ export type urlsType = {
   items: string;
   deliveryOptions: string;
   paymentOptions: string;
+  order_list: string;
 };
