@@ -9,6 +9,7 @@ import {
 import AddShoppingCartOutlinedIcon from "@mui/icons-material/AddShoppingCartOutlined";
 import RemoveShoppingCartOutlinedIcon from "@mui/icons-material/RemoveShoppingCartOutlined";
 import DeleteForeverOutlinedIcon from "@mui/icons-material/DeleteForeverOutlined";
+import ProductSnackBar from "../products/ProductSnackBar";
 const BasketItem = ({
   item,
   reduceBasketItemQuant,
@@ -105,6 +106,7 @@ const BasketItem = ({
           >
             <DeleteForeverOutlinedIcon fontSize="large" />
           </IconButton>
+          <ProductSnackBar text="Product deleted from the basket" />
         </Box>
       </Box>
     </Card>

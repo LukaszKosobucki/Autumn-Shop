@@ -18,7 +18,7 @@ const ContextProvider = ({ children }: any) => {
   const [basketProcessedData, setBasketProcessedData] = useState<any>([]);
   const [deliveryOptions, setDeliveryOptions] = useState<any>([]);
   const [paymentOptions, setPaymentOptions] = useState<any>([]);
-
+  const [open, setOpen] = useState<boolean>(false);
   useEffect(() => {
     const fetchData = async () => {
       const responseData = await requestData();
@@ -50,6 +50,8 @@ const ContextProvider = ({ children }: any) => {
       setDeliveryOptions,
       paymentOptions,
       setPaymentOptions,
+      open,
+      setOpen,
     }),
     [
       filter,
@@ -65,6 +67,8 @@ const ContextProvider = ({ children }: any) => {
       setDeliveryOptions,
       paymentOptions,
       setPaymentOptions,
+      open,
+      setOpen,
     ]
   );
 

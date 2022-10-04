@@ -9,6 +9,7 @@ import {
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import React from "react";
 import { productType } from "../../types/productType";
+import ProductSnackBar from "./ProductSnackBar";
 
 const ProductItem = ({
   item,
@@ -81,6 +82,7 @@ const ProductItem = ({
               >
                 <ShoppingCartIcon />
               </IconButton>
+              <ProductSnackBar text="Product added to the basket" />
             </Box>
           </Box>
         </CardContent>

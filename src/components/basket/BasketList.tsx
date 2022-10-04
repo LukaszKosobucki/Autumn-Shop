@@ -12,6 +12,7 @@ const BasketList = () => {
     setBasketData,
     basketProcessedData,
     setBasketProcessedData,
+    setOpen,
   } = useContext(dataContext);
 
   const reduceBasketItemQuant = (id: string) => {
@@ -33,6 +34,7 @@ const BasketList = () => {
 
   const deleteBasketItem = (id: string) => {
     setBasketData(basketData.filter((item: basketType) => item.id !== id));
+    setOpen(true);
   };
 
   useEffect(() => {

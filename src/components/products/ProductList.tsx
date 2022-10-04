@@ -6,12 +6,8 @@ import { basketType } from "../../types/basketType";
 // import { addProductToBasket } from "../../service/addProductToBasket";
 import { dataContext } from "../../ContextProvider";
 const ProductList = ({ items }: any) => {
-  const { basketData, setBasketData, loadLimit } = useContext(dataContext);
-
-  // const postData = (data: basketType[]) => {
-  //   addProductToBasket(data);
-  // };
-
+  const { basketData, setBasketData, loadLimit, setOpen } =
+    useContext(dataContext);
   const addToBasket = (item: string) => {
     if (basketData.some((e: basketType) => e.id === item)) {
       const index = basketData.findIndex((e: basketType) => e.id === item);
@@ -24,6 +20,7 @@ const ProductList = ({ items }: any) => {
         { id: item, quantity: 1 },
       ]);
     }
+    setOpen(true);
     localStorage.setItem("basketData", JSON.stringify(basketData));
   };
 
