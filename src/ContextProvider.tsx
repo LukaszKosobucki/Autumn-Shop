@@ -55,6 +55,7 @@ const ContextProvider = ({ children }: childrenInterface) => {
 
   useEffect(() => {
     mapBasketData(data, basketData, setBasketProcessedData);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data]);
 
   const trueValues = useMemo(
