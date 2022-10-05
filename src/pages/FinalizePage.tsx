@@ -1,9 +1,9 @@
-import FinalizeForm from "../components/finalize/FinalizeForm";
 import { Box } from "@mui/material";
 import MethodList from "../components/finalize/MethodList";
 import BasketFinalizeBox from "../components/basket/BasketFinalizeBox";
 import { dataContext } from "../ContextProvider";
 import { useContext } from "react";
+import FinalizeForm from "../components/finalize/FinalizeForm";
 
 const FinalizePage = () => {
   const { deliveryOptions, paymentOptions } = useContext(dataContext);

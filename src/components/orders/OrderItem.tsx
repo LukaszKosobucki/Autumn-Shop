@@ -24,8 +24,17 @@ const OrderItem = ({ orderItem }: { orderItem: orderType }) => {
         minWidth: 500,
       }}
     >
-      <Box sx={{ borderRight: "1px solid black", px: 1, py: 0.5, my: 0.5 }}>
-        <Link onClick={() => handleOpen()}>{orderItem.order_id}</Link>
+      <Box
+        sx={{
+          borderRight: "1px solid black",
+          px: 1,
+          py: 0.5,
+          my: 0.5,
+        }}
+      >
+        <Link onClick={() => handleOpen()} sx={{ cursor: "pointer" }}>
+          {orderItem.order_id}
+        </Link>
         <OrderDetails
           orderItem={orderItem}
           handleClose={handleClose}
