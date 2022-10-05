@@ -90,7 +90,6 @@
       "category": "category_2",
       "id": "item_18"
     },
-
     {
       "name": "jesienny kocyk",
       "price": 60,
@@ -112,199 +111,607 @@
   ],
   "order_list": [
     {
-      "order_id": 124151512460,
-      "items": [
-        { "id": "item_15", "quantity": 5 },
-        { "id": "item_13", "quantity": 3 },
-        { "id": "item_10", "quantity": 1 }
-      ],
-      "date": "10/15/2022",
-      "delivery_information": {
-        "name": "Lukasz",
-        "surname": "Kosobucki",
-        "email": "abc@gmail.com",
-        "zipcode": "51-357",
-        "state": "Silesia",
-        "city": "Wroclaw",
-        "phone": "+48533980909"
-      },
+      "id": 1664969091974,
+      "date": "10/5/2022",
       "delivery_option": "DHL Courier",
-      "payment_option": "Cash"
+      "payment_option": "Cash",
+      "items": [
+        {
+          "id": "item_1",
+          "quantity": 14
+        },
+        {
+          "id": "item_2",
+          "quantity": 1
+        },
+        {
+          "id": "item_3",
+          "quantity": 3
+        },
+        {
+          "id": "item_6",
+          "quantity": 1
+        },
+        {
+          "id": "item_4",
+          "quantity": 1
+        }
+      ],
+      "delivery_information": {
+        "name": "Mati",
+        "surname": "Kox",
+        "email": "matikox@gmail.com",
+        "phone": "89769786",
+        "zipcode": "34234",
+        "state": "kozakowo",
+        "city": "kozackie"
+      }
     },
     {
-      "order_id": 124151512459,
-      "items": [
-        { "id": "item_15", "quantity": 5 },
-        { "id": "item_13", "quantity": 3 },
-        { "id": "item_10", "quantity": 1 }
-      ],
-      "date": "10/15/2022",
-      "delivery_information": {
-        "name": "Lukasz",
-        "surname": "Kosobucki",
-        "email": "abc@gmail.com",
-        "zipcode": "51-357",
-        "state": "Silesia",
-        "city": "Wroclaw",
-        "phone": "+48533980909"
-      },
+      "id": 1664969165377,
+      "date": "10/5/2022",
       "delivery_option": "DHL Courier",
-      "payment_option": "Cash"
+      "payment_option": "Cash",
+      "items": [
+        {
+          "id": "item_1",
+          "quantity": 14
+        },
+        {
+          "id": "item_2",
+          "quantity": 1
+        },
+        {
+          "id": "item_3",
+          "quantity": 3
+        },
+        {
+          "id": "item_6",
+          "quantity": 1
+        },
+        {
+          "id": "item_4",
+          "quantity": 1
+        }
+      ],
+      "delivery_information": {
+        "name": "asdf",
+        "surname": "asdf",
+        "email": "adf",
+        "phone": "asdf",
+        "zipcode": "asdf",
+        "state": "asdf",
+        "city": "asdf"
+      }
     },
     {
-      "order_id": 124151512458,
-      "items": [
-        { "id": "item_15", "quantity": 5 },
-        { "id": "item_13", "quantity": 3 },
-        { "id": "item_10", "quantity": 1 }
-      ],
-      "date": "10/15/2022",
-      "delivery_information": {
-        "name": "Lukasz",
-        "surname": "Kosobucki",
-        "email": "abc@gmail.com",
-        "zipcode": "51-357",
-        "state": "Silesia",
-        "city": "Wroclaw",
-        "phone": "+48533980909"
-      },
+      "id": 1664969167257,
+      "date": "10/5/2022",
       "delivery_option": "DHL Courier",
-      "payment_option": "Cash"
+      "payment_option": "Cash",
+      "items": [
+        {
+          "id": "item_1",
+          "quantity": 14
+        },
+        {
+          "id": "item_2",
+          "quantity": 1
+        },
+        {
+          "id": "item_3",
+          "quantity": 3
+        },
+        {
+          "id": "item_6",
+          "quantity": 1
+        },
+        {
+          "id": "item_4",
+          "quantity": 1
+        }
+      ],
+      "delivery_information": {
+        "name": "asdf",
+        "surname": "asdf",
+        "email": "adf",
+        "phone": "asdf",
+        "zipcode": "asdf",
+        "state": "asdf",
+        "city": "asdf"
+      }
     },
     {
-      "order_id": 124151512457,
-      "items": [
-        { "id": "item_15", "quantity": 5 },
-        { "id": "item_13", "quantity": 3 },
-        { "id": "item_10", "quantity": 1 }
-      ],
-      "date": "10/15/2022",
-      "delivery_information": {
-        "name": "Lukasz",
-        "surname": "Kosobucki",
-        "email": "abc@gmail.com",
-        "zipcode": "51-357",
-        "state": "Silesia",
-        "city": "Wroclaw",
-        "phone": "+48533980909"
-      },
+      "id": 1664969168262,
+      "date": "10/5/2022",
       "delivery_option": "DHL Courier",
-      "payment_option": "Cash"
+      "payment_option": "Cash",
+      "items": [
+        {
+          "id": "item_1",
+          "quantity": 14
+        },
+        {
+          "id": "item_2",
+          "quantity": 1
+        },
+        {
+          "id": "item_3",
+          "quantity": 3
+        },
+        {
+          "id": "item_6",
+          "quantity": 1
+        },
+        {
+          "id": "item_4",
+          "quantity": 1
+        }
+      ],
+      "delivery_information": {
+        "name": "asdf",
+        "surname": "asdf",
+        "email": "adf",
+        "phone": "asdf",
+        "zipcode": "asdf",
+        "state": "asdf",
+        "city": "asdf"
+      }
     },
     {
-      "order_id": 124151512456,
-      "items": [
-        { "id": "item_15", "quantity": 5 },
-        { "id": "item_13", "quantity": 3 },
-        { "id": "item_10", "quantity": 1 }
-      ],
-      "date": "10/15/2022",
-      "delivery_information": {
-        "name": "Lukasz",
-        "surname": "Kosobucki",
-        "email": "abc@gmail.com",
-        "zipcode": "51-357",
-        "state": "Silesia",
-        "city": "Wroclaw",
-        "phone": "+48533980909"
-      },
+      "id": 1664969168730,
+      "date": "10/5/2022",
       "delivery_option": "DHL Courier",
-      "payment_option": "Cash"
+      "payment_option": "Cash",
+      "items": [
+        {
+          "id": "item_1",
+          "quantity": 14
+        },
+        {
+          "id": "item_2",
+          "quantity": 1
+        },
+        {
+          "id": "item_3",
+          "quantity": 3
+        },
+        {
+          "id": "item_6",
+          "quantity": 1
+        },
+        {
+          "id": "item_4",
+          "quantity": 1
+        }
+      ],
+      "delivery_information": {
+        "name": "asdf",
+        "surname": "asdf",
+        "email": "adf",
+        "phone": "asdf",
+        "zipcode": "asdf",
+        "state": "asdf",
+        "city": "asdf"
+      }
     },
     {
-      "order_id": 124151512455,
-      "items": [
-        { "id": "item_15", "quantity": 5 },
-        { "id": "item_13", "quantity": 3 },
-        { "id": "item_10", "quantity": 1 }
-      ],
-      "date": "10/15/2022",
-      "delivery_information": {
-        "name": "Lukasz",
-        "surname": "Kosobucki",
-        "email": "abc@gmail.com",
-        "zipcode": "51-357",
-        "state": "Silesia",
-        "city": "Wroclaw",
-        "phone": "+48533980909"
-      },
+      "id": 1664969169811,
+      "date": "10/5/2022",
       "delivery_option": "DHL Courier",
-      "payment_option": "Cash"
+      "payment_option": "Cash",
+      "items": [
+        {
+          "id": "item_1",
+          "quantity": 14
+        },
+        {
+          "id": "item_2",
+          "quantity": 1
+        },
+        {
+          "id": "item_3",
+          "quantity": 3
+        },
+        {
+          "id": "item_6",
+          "quantity": 1
+        },
+        {
+          "id": "item_4",
+          "quantity": 1
+        }
+      ],
+      "delivery_information": {
+        "name": "asdf",
+        "surname": "asdf",
+        "email": "adf",
+        "phone": "asdf",
+        "zipcode": "asdf",
+        "state": "asdf",
+        "city": "asdf"
+      }
     },
     {
-      "order_id": 124151512454,
-      "items": [
-        { "id": "item_15", "quantity": 5 },
-        { "id": "item_13", "quantity": 3 },
-        { "id": "item_10", "quantity": 1 }
-      ],
-      "date": "10/15/2022",
-      "delivery_information": {
-        "name": "Lukasz",
-        "surname": "Kosobucki",
-        "email": "abc@gmail.com",
-        "zipcode": "51-357",
-        "state": "Silesia",
-        "city": "Wroclaw",
-        "phone": "+48533980909"
-      },
+      "id": 1664969170115,
+      "date": "10/5/2022",
       "delivery_option": "DHL Courier",
-      "payment_option": "Cash"
+      "payment_option": "Cash",
+      "items": [
+        {
+          "id": "item_1",
+          "quantity": 14
+        },
+        {
+          "id": "item_2",
+          "quantity": 1
+        },
+        {
+          "id": "item_3",
+          "quantity": 3
+        },
+        {
+          "id": "item_6",
+          "quantity": 1
+        },
+        {
+          "id": "item_4",
+          "quantity": 1
+        }
+      ],
+      "delivery_information": {
+        "name": "asdf",
+        "surname": "asdf",
+        "email": "adf",
+        "phone": "asdf",
+        "zipcode": "asdf",
+        "state": "asdf",
+        "city": "asdf"
+      }
     },
     {
-      "order_id": 124151512452,
-      "items": [
-        { "id": "item_15", "quantity": 5 },
-        { "id": "item_13", "quantity": 3 },
-        { "id": "item_10", "quantity": 1 }
-      ],
-      "date": "10/15/2022",
-      "delivery_information": {
-        "name": "Lukasz",
-        "surname": "Kosobucki",
-        "email": "abc@gmail.com",
-        "zipcode": "51-357",
-        "state": "Silesia",
-        "city": "Wroclaw",
-        "phone": "+48533980909"
-      },
+      "id": 1664969171035,
+      "date": "10/5/2022",
       "delivery_option": "DHL Courier",
-      "payment_option": "Cash"
+      "payment_option": "Cash",
+      "items": [
+        {
+          "id": "item_1",
+          "quantity": 14
+        },
+        {
+          "id": "item_2",
+          "quantity": 1
+        },
+        {
+          "id": "item_3",
+          "quantity": 3
+        },
+        {
+          "id": "item_6",
+          "quantity": 1
+        },
+        {
+          "id": "item_4",
+          "quantity": 1
+        }
+      ],
+      "delivery_information": {
+        "name": "asdf",
+        "surname": "asdf",
+        "email": "adf",
+        "phone": "asdf",
+        "zipcode": "asdf",
+        "state": "asdf",
+        "city": "asdf"
+      }
     },
     {
-      "order_id": 124151512451,
-      "items": [
-        { "id": "item_15", "quantity": 5 },
-        { "id": "item_13", "quantity": 3 },
-        { "id": "item_10", "quantity": 1 }
-      ],
-      "date": "10/15/2022",
-      "delivery_information": {
-        "name": "Lukasz",
-        "surname": "Kosobucki",
-        "email": "abc@gmail.com",
-        "zipcode": "51-357",
-        "state": "Silesia",
-        "city": "Wroclaw",
-        "phone": "+48533980909"
-      },
+      "id": 1664969171862,
+      "date": "10/5/2022",
       "delivery_option": "DHL Courier",
-      "payment_option": "Cash"
+      "payment_option": "Cash",
+      "items": [
+        {
+          "id": "item_1",
+          "quantity": 14
+        },
+        {
+          "id": "item_2",
+          "quantity": 1
+        },
+        {
+          "id": "item_3",
+          "quantity": 3
+        },
+        {
+          "id": "item_6",
+          "quantity": 1
+        },
+        {
+          "id": "item_4",
+          "quantity": 1
+        }
+      ],
+      "delivery_information": {
+        "name": "asdf",
+        "surname": "asdf",
+        "email": "adf",
+        "phone": "asdf",
+        "zipcode": "asdf",
+        "state": "asdf",
+        "city": "asdf"
+      }
+    },
+    {
+      "id": 1664969198153,
+      "date": "10/5/2022",
+      "delivery_option": "DHL Courier",
+      "payment_option": "Cash",
+      "items": [
+        {
+          "id": "item_1",
+          "quantity": 14
+        },
+        {
+          "id": "item_2",
+          "quantity": 1
+        },
+        {
+          "id": "item_3",
+          "quantity": 3
+        },
+        {
+          "id": "item_6",
+          "quantity": 1
+        },
+        {
+          "id": "item_4",
+          "quantity": 1
+        }
+      ],
+      "delivery_information": {
+        "name": "asdf",
+        "surname": "dasf",
+        "email": "asdf",
+        "phone": "asdf",
+        "zipcode": "asdf",
+        "state": "asdfa",
+        "city": "df"
+      }
+    },
+    {
+      "id": 1664969699105,
+      "date": "10/5/2022",
+      "delivery_option": "DHL Courier",
+      "payment_option": "Cash",
+      "items": [
+        {
+          "id": "item_1",
+          "quantity": 14
+        },
+        {
+          "id": "item_2",
+          "quantity": 1
+        },
+        {
+          "id": "item_3",
+          "quantity": 3
+        },
+        {
+          "id": "item_6",
+          "quantity": 1
+        },
+        {
+          "id": "item_4",
+          "quantity": 1
+        }
+      ],
+      "delivery_information": {
+        "name": "asdf",
+        "surname": "asdf",
+        "email": "asdf",
+        "phone": "adsf",
+        "zipcode": "asdf",
+        "state": "asdf",
+        "city": "asdf"
+      }
+    },
+    {
+      "id": 1664970254684,
+      "date": "10/5/2022",
+      "delivery_option": "DHL Courier",
+      "payment_option": "Cash",
+      "items": [
+        {
+          "id": "item_2",
+          "quantity": 1
+        },
+        {
+          "id": "item_1",
+          "quantity": 2
+        }
+      ],
+      "delivery_information": {
+        "name": "fasdf",
+        "surname": "sdaf",
+        "email": "asdf",
+        "phone": "asdf",
+        "zipcode": "asdfasd",
+        "state": "fsad",
+        "city": "fsadfasd"
+      }
+    },
+    {
+      "id": 1664970467635,
+      "date": "10/5/2022",
+      "delivery_option": "DHL Courier",
+      "payment_option": "Cash",
+      "items": [
+        {
+          "id": "item_1",
+          "quantity": 3
+        },
+        {
+          "id": "item_2",
+          "quantity": 4
+        },
+        {
+          "id": "item_3",
+          "quantity": 4
+        }
+      ],
+      "delivery_information": {
+        "name": "fasdf",
+        "surname": "dsfasd",
+        "email": "fdsafsd",
+        "phone": "afasdfasd",
+        "zipcode": "fasdfsd",
+        "state": "fasdfasd",
+        "city": "fsdafsdf"
+      }
+    },
+    {
+      "id": 1664970496947,
+      "date": "10/5/2022",
+      "delivery_option": "DHL Courier",
+      "payment_option": "Cash",
+      "items": [
+        {
+          "id": "item_1",
+          "quantity": 2
+        },
+        {
+          "id": "item_2",
+          "quantity": 2
+        }
+      ],
+      "delivery_information": {
+        "name": "asdfasdf",
+        "surname": "sdaf",
+        "email": "sadfasdf",
+        "phone": "asdfasdf",
+        "zipcode": "sadfsdaf",
+        "state": "sdfsd",
+        "city": "afasdfas"
+      }
+    },
+    {
+      "id": 1664970540475,
+      "date": "10/5/2022",
+      "delivery_option": "DHL Courier",
+      "payment_option": "Cash",
+      "items": [
+        {
+          "id": "item_1",
+          "quantity": 3
+        },
+        {
+          "id": "item_2",
+          "quantity": 3
+        }
+      ],
+      "delivery_information": {
+        "name": "afsdfa",
+        "surname": "fasdf",
+        "email": "asdfasd",
+        "phone": "fasdf",
+        "zipcode": "asdf",
+        "state": "sadfasdf",
+        "city": "asdfasdf"
+      }
+    },
+    {
+      "id": 1664970776946,
+      "date": "10/5/2022",
+      "delivery_option": "DHL Courier",
+      "payment_option": "Cash",
+      "items": [
+        {
+          "id": "item_1",
+          "quantity": 3
+        },
+        {
+          "id": "item_2",
+          "quantity": 3
+        }
+      ],
+      "delivery_information": {
+        "name": "asdf",
+        "surname": "adsf",
+        "email": "asdf",
+        "phone": "asdf",
+        "zipcode": "asdf",
+        "state": "asdf",
+        "city": "asdf"
+      }
+    },
+    {
+      "id": 1664976039316,
+      "date": "10/5/2022",
+      "delivery_option": "DHL Courier",
+      "payment_option": "Cash",
+      "items": [
+        {
+          "id": "item_1",
+          "quantity": 3
+        },
+        {
+          "id": "item_2",
+          "quantity": 3
+        },
+        {
+          "id": "item_6",
+          "quantity": 3
+        }
+      ],
+      "delivery_information": {
+        "name": "asdf",
+        "surname": "asdf",
+        "email": "asdf",
+        "phone": "asdf",
+        "zipcode": "asdf",
+        "state": "asdf",
+        "city": "asdf"
+      }
     }
   ],
-
-  "basket": [{ "id": "item_15", "quantity": 1 }],
-
-  "categories": [
-    { "categoryName": "Coffee", "categoryId": "category_5" },
-    { "categoryName": "Tea", "categoryId": "category_4" },
-    { "categoryName": "Coffee Accessories", "categoryId": "category_7" },
-    { "categoryName": "Tea Accessories", "categoryId": "category_6" },
-    { "categoryName": "Blankets", "categoryId": "category_2" },
-    { "categoryName": "Sweaters", "categoryId": "category_3" },
-    { "categoryName": "Books", "categoryId": "category_1" }
+  "basket": [
+    {
+      "id": "item_15",
+      "quantity": 1
+    }
   ],
-
+  "categories": [
+    {
+      "categoryName": "Coffee",
+      "categoryId": "category_5"
+    },
+    {
+      "categoryName": "Tea",
+      "categoryId": "category_4"
+    },
+    {
+      "categoryName": "Coffee Accessories",
+      "categoryId": "category_7"
+    },
+    {
+      "categoryName": "Tea Accessories",
+      "categoryId": "category_6"
+    },
+    {
+      "categoryName": "Blankets",
+      "categoryId": "category_2"
+    },
+    {
+      "categoryName": "Sweaters",
+      "categoryId": "category_3"
+    },
+    {
+      "categoryName": "Books",
+      "categoryId": "category_1"
+    }
+  ],
   "deliveryOptions": [
     {
       "name": "DHL Courier",
@@ -327,7 +734,6 @@
       "selected": false
     }
   ],
-
   "paymentOptions": [
     {
       "name": "Cash",

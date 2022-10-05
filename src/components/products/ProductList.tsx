@@ -5,7 +5,7 @@ import { useContext, useState } from "react";
 import { basketType } from "../../types/basketType";
 // import { addProductToBasket } from "../../service/addProductToBasket";
 import { dataContext } from "../../ContextProvider";
-const ProductList = ({ items }: any) => {
+const ProductList = ({ items }: { items: productType[] }) => {
   const { basketData, setBasketData, loadLimit, setOpen } =
     useContext(dataContext);
   const addToBasket = (item: string) => {

@@ -4,6 +4,7 @@ import { dataContext } from "../../ContextProvider";
 import { basketType } from "../../types/basketType";
 import BasketItem from "./BasketItem";
 import { mapBasketData } from "../../mappers/mapBasketData";
+import { basketProcessedType } from "../../types/basketProcessedType";
 
 const BasketList = () => {
   const {
@@ -38,10 +39,6 @@ const BasketList = () => {
   };
 
   useEffect(() => {
-    localStorage.setItem("basketData", JSON.stringify(basketData));
-  }, [basketData]);
-
-  useEffect(() => {
     mapBasketData(data, basketData, setBasketProcessedData);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data, basketData]);
@@ -56,7 +53,7 @@ const BasketList = () => {
         flexDirection: "column",
       }}
     >
-      {basketProcessedData.map((item: any) => {
+      {basketProcessedData.map((item: basketProcessedType) => {
         return (
           <BasketItem
             key={item.key}

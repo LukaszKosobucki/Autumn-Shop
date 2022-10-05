@@ -1,7 +1,8 @@
 import Footer from "./Footer";
 import Header from "./Header";
 import { Box } from "@mui/material";
-const MainLayout = (props: any) => {
+import { childrenInterface } from "../../interfaces/childrenInterface";
+const MainLayout = ({ children }: childrenInterface) => {
   return (
     <Box
       component="div"
@@ -22,7 +23,7 @@ const MainLayout = (props: any) => {
           minHeight: "100vh",
         }}
       >
-        {props.children}
+        {children}
       </Box>
 
       <Footer />

@@ -17,7 +17,7 @@ const OrderList = () => {
       }}
     >
       {orderData.map((orderItem: orderType) => (
-        <OrderItem key={orderItem.order_id} orderItem={orderItem} />
+        <OrderItem key={orderItem.id} orderItem={orderItem} />
       ))}
     </Box>
   );

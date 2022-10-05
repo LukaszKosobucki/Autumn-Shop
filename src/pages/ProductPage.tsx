@@ -42,14 +42,13 @@ const ProductPage = () => {
   const filterByCategories = (): void => {
     setProcessedData(
       filter.length > 0
-        ? data.filter((item: any) => filter.includes(item.category))
+        ? data.filter((item: productType) => filter.includes(item.category))
         : data
     );
   };
 
   useEffect(() => {
     filterByCategories();
-    console.log(data.length);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data, filter]);
 

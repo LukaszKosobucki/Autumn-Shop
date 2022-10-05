@@ -5,7 +5,7 @@ import { finalizeOptionsType } from "../../types/finalizeOptionsType";
 import { dataContext } from "../../ContextProvider";
 import { useContext } from "react";
 
-const MethodList = ({ options }: { options: any }) => {
+const MethodList = ({ options }: { options: finalizeOptionsType[] }) => {
   const {
     deliveryOptions,
     setDeliveryOptions,
