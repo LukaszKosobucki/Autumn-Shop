@@ -59,7 +59,7 @@ const FinalizeForm = ({
         }}
       >
         {formData.map((text) => (
-          <FormControl required>
+          <FormControl required key={text}>
             <InputLabel htmlFor={text}>{text}</InputLabel>
             <Input
               id={text}
