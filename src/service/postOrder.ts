@@ -10,8 +10,10 @@ export const postOrder = async (data: orderType) => {
       Accept: "application/json",
       "Content-Type": "application/json;charset=UTF-8",
     },
-    data: { data },
+    data: data,
   };
 
-  axios(options).catch((e) => console.log(e.response.data));
+  axios(options)
+    .then((response) => console.log(response.status))
+    .catch((e) => console.log(e.response.data));
 };

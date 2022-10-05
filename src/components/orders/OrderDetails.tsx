@@ -41,7 +41,7 @@ const OrderDetails = ({
       keepMounted
       onClose={handleClose}
     >
-      <DialogTitle>{orderItem.order_id}</DialogTitle>
+      <DialogTitle>{orderItem.id}</DialogTitle>
       <Box
         sx={{
           display: "flex",

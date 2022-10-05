@@ -33,7 +33,7 @@ const OrderItem = ({ orderItem }: { orderItem: orderType }) => {
         }}
       >
         <Link onClick={() => handleOpen()} sx={{ cursor: "pointer" }}>
-          {orderItem.order_id}
+          {orderItem.id}
         </Link>
         <OrderDetails
           orderItem={orderItem}

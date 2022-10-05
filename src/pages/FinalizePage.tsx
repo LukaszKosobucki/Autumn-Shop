@@ -5,7 +5,6 @@ import { dataContext } from "../ContextProvider";
 import { useContext } from "react";
 import FinalizeForm from "../components/finalize/FinalizeForm";
 import { orderType } from "../types/orderType";
-import { uniqueId } from "lodash";
 import { finalizeOptionsType } from "../types/finalizeOptionsType";
 import { useForm } from "react-hook-form";
 import { deliveryInformationType } from "../types/deliveryInformationType";
@@ -21,8 +20,8 @@ const FinalizePage = () => {
   ): Promise<void> => {
     const timeElapsed = Date.now();
     const today = new Date(timeElapsed);
-    const date = await today.toLocaleDateString();
-    const orderId = 1;
+    const date = today.toLocaleDateString();
+    const orderId: number = Math.floor(Date.now() + Math.random() * 1000);
     const deliveryOption = await deliveryOptions[
       deliveryOptions.findIndex((e: finalizeOptionsType) => e.selected === true)
     ].name;
@@ -30,9 +29,9 @@ const FinalizePage = () => {
       paymentOptions.findIndex((e: finalizeOptionsType) => e.selected === true)
     ].name;
 
-    const postData: orderType = await {
+    const postData: orderType = {
+      id: orderId,
       date: date,
-      order_id: orderId,
       delivery_option: deliveryOption,
       payment_option: paymentOption,
       items: basketData,
