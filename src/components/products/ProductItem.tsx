@@ -82,6 +82,7 @@ const ProductItem = ({
               >
                 <ShoppingCartIcon />
               </IconButton>
+
               <ProductSnackBar text="Product added to the basket" />
             </Box>
           </Box>

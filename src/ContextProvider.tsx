@@ -1,9 +1,12 @@
 import React, { createContext, useEffect, useState, useMemo } from "react";
 import { mapBasketData } from "./mappers/mapBasketData";
 import { getDeliveryOptions } from "./service/getDeliveryOptions";
+import { getOrderData } from "./service/getOrderData";
 import { getPaymentOptions } from "./service/getPaymentOptions";
 import { requestData } from "./service/requestData";
 import { basketType } from "./types/basketType";
+import { finalizeOptionsType } from "./types/finalizeOptionsType";
+import { orderType } from "./types/orderType";
 import { productType } from "./types/productType";
 
 export const dataContext = createContext<any>({});
@@ -16,9 +19,15 @@ const ContextProvider = ({ children }: any) => {
   const [data, setData] = useState<productType[]>([]);
   const [loadLimit, setLoadLimit] = useState<number>(9);
   const [basketProcessedData, setBasketProcessedData] = useState<any>([]);
-  const [deliveryOptions, setDeliveryOptions] = useState<any>([]);
-  const [paymentOptions, setPaymentOptions] = useState<any>([]);
+  const [deliveryOptions, setDeliveryOptions] = useState<finalizeOptionsType[]>(
+    []
+  );
+  const [paymentOptions, setPaymentOptions] = useState<finalizeOptionsType[]>(
+    []
+  );
   const [open, setOpen] = useState<boolean>(false);
+  const [orderData, setOrderData] = useState<orderType[]>([]);
+
   useEffect(() => {
     const fetchData = async () => {
       const responseData = await requestData();
@@ -27,6 +36,8 @@ const ContextProvider = ({ children }: any) => {
       setDeliveryOptions(responseDelivery);
       const responsePayment = await getPaymentOptions();
       setPaymentOptions(responsePayment);
+      const responseOrderData = await getOrderData();
+      setOrderData(responseOrderData);
     };
     fetchData();
   }, []);
@@ -52,6 +63,8 @@ const ContextProvider = ({ children }: any) => {
       setPaymentOptions,
       open,
       setOpen,
+      orderData,
+      setOrderData,
     }),
     [
       filter,
@@ -69,6 +82,8 @@ const ContextProvider = ({ children }: any) => {
       setPaymentOptions,
       open,
       setOpen,
+      orderData,
+      setOrderData,
     ]
   );
 

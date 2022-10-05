@@ -52,15 +52,16 @@ const MethodList = ({ options }: { options: any }) => {
       }}
     >
       {isTrue()
-        ? options.map((option: finalizeOptionsType) =>
-            option.selected ? (
-              <MethodCard
-                name={option.name}
-                key={option.key}
-                imgUrl={option.imgUrl}
-                selected={option.selected}
-              />
-            ) : null
+        ? options.map(
+            (option: finalizeOptionsType) =>
+              option.selected && (
+                <MethodCard
+                  name={option.name}
+                  key={option.key}
+                  imgUrl={option.imgUrl}
+                  selected={option.selected}
+                />
+              )
           )
         : options.map((option: finalizeOptionsType) => (
             <MethodCard
@@ -70,16 +71,17 @@ const MethodList = ({ options }: { options: any }) => {
               selected={option.selected}
             />
           ))}
-      {isTrue() ? (
+      {isTrue() && (
         <Button
           onClick={() => resetOptions()}
+          key="xd"
           sx={{ bgcolor: "#f4f1de", pb: 0, borderRadius: "0%" }}
         >
           <Typography sx={{ fontSize: 14 }} color="#3d405b" gutterBottom>
             Change Options
           </Typography>
         </Button>
-      ) : null}
+      )}
     </Box>
   );
 };

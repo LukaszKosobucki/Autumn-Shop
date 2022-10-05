@@ -6,4 +6,5 @@ export const urls: urlsType = {
   basket: "http://localhost:3000/basket",
   deliveryOptions: "http://localhost:3000/deliveryOptions",
   paymentOptions: "http://localhost:3000/paymentOptions",
+  order_list: "http://localhost:3000/order_list",
 };

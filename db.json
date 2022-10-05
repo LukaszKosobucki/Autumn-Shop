@@ -85,6 +85,25 @@
       "id": "item_14"
     },
     {
+      "name": "jesienny kocyk",
+      "price": 60,
+      "category": "category_2",
+      "id": "item_18"
+    },
+
+    {
+      "name": "jesienny kocyk",
+      "price": 60,
+      "category": "category_2",
+      "id": "item_19"
+    },
+    {
+      "name": "jesienny kocyk",
+      "price": 60,
+      "category": "category_2",
+      "id": "item_20"
+    },
+    {
       "name": "jesienna kawa",
       "price": 90,
       "category": "category_5",
@@ -93,11 +112,11 @@
   ],
   "order_list": [
     {
-      "order_id": "order_1",
+      "order_id": 124151512460,
       "items": [
-        { "item_id": "item_15", "quantity": 5 },
-        { "item_id": "item_13", "quantity": 3 },
-        { "item_id": "item_10", "quantity": 1 }
+        { "id": "item_15", "quantity": 5 },
+        { "id": "item_13", "quantity": 3 },
+        { "id": "item_10", "quantity": 1 }
       ],
       "date": "10/15/2022",
       "delivery_information": {
@@ -108,7 +127,169 @@
         "state": "Silesia",
         "city": "Wroclaw",
         "phone": "+48533980909"
-      }
+      },
+      "delivery_option": "DHL Courier",
+      "payment_option": "Cash"
+    },
+    {
+      "order_id": 124151512459,
+      "items": [
+        { "id": "item_15", "quantity": 5 },
+        { "id": "item_13", "quantity": 3 },
+        { "id": "item_10", "quantity": 1 }
+      ],
+      "date": "10/15/2022",
+      "delivery_information": {
+        "name": "Lukasz",
+        "surname": "Kosobucki",
+        "email": "abc@gmail.com",
+        "zipcode": "51-357",
+        "state": "Silesia",
+        "city": "Wroclaw",
+        "phone": "+48533980909"
+      },
+      "delivery_option": "DHL Courier",
+      "payment_option": "Cash"
+    },
+    {
+      "order_id": 124151512458,
+      "items": [
+        { "id": "item_15", "quantity": 5 },
+        { "id": "item_13", "quantity": 3 },
+        { "id": "item_10", "quantity": 1 }
+      ],
+      "date": "10/15/2022",
+      "delivery_information": {
+        "name": "Lukasz",
+        "surname": "Kosobucki",
+        "email": "abc@gmail.com",
+        "zipcode": "51-357",
+        "state": "Silesia",
+        "city": "Wroclaw",
+        "phone": "+48533980909"
+      },
+      "delivery_option": "DHL Courier",
+      "payment_option": "Cash"
+    },
+    {
+      "order_id": 124151512457,
+      "items": [
+        { "id": "item_15", "quantity": 5 },
+        { "id": "item_13", "quantity": 3 },
+        { "id": "item_10", "quantity": 1 }
+      ],
+      "date": "10/15/2022",
+      "delivery_information": {
+        "name": "Lukasz",
+        "surname": "Kosobucki",
+        "email": "abc@gmail.com",
+        "zipcode": "51-357",
+        "state": "Silesia",
+        "city": "Wroclaw",
+        "phone": "+48533980909"
+      },
+      "delivery_option": "DHL Courier",
+      "payment_option": "Cash"
+    },
+    {
+      "order_id": 124151512456,
+      "items": [
+        { "id": "item_15", "quantity": 5 },
+        { "id": "item_13", "quantity": 3 },
+        { "id": "item_10", "quantity": 1 }
+      ],
+      "date": "10/15/2022",
+      "delivery_information": {
+        "name": "Lukasz",
+        "surname": "Kosobucki",
+        "email": "abc@gmail.com",
+        "zipcode": "51-357",
+        "state": "Silesia",
+        "city": "Wroclaw",
+        "phone": "+48533980909"
+      },
+      "delivery_option": "DHL Courier",
+      "payment_option": "Cash"
+    },
+    {
+      "order_id": 124151512455,
+      "items": [
+        { "id": "item_15", "quantity": 5 },
+        { "id": "item_13", "quantity": 3 },
+        { "id": "item_10", "quantity": 1 }
+      ],
+      "date": "10/15/2022",
+      "delivery_information": {
+        "name": "Lukasz",
+        "surname": "Kosobucki",
+        "email": "abc@gmail.com",
+        "zipcode": "51-357",
+        "state": "Silesia",
+        "city": "Wroclaw",
+        "phone": "+48533980909"
+      },
+      "delivery_option": "DHL Courier",
+      "payment_option": "Cash"
+    },
+    {
+      "order_id": 124151512454,
+      "items": [
+        { "id": "item_15", "quantity": 5 },
+        { "id": "item_13", "quantity": 3 },
+        { "id": "item_10", "quantity": 1 }
+      ],
+      "date": "10/15/2022",
+      "delivery_information": {
+        "name": "Lukasz",
+        "surname": "Kosobucki",
+        "email": "abc@gmail.com",
+        "zipcode": "51-357",
+        "state": "Silesia",
+        "city": "Wroclaw",
+        "phone": "+48533980909"
+      },
+      "delivery_option": "DHL Courier",
+      "payment_option": "Cash"
+    },
+    {
+      "order_id": 124151512452,
+      "items": [
+        { "id": "item_15", "quantity": 5 },
+        { "id": "item_13", "quantity": 3 },
+        { "id": "item_10", "quantity": 1 }
+      ],
+      "date": "10/15/2022",
+      "delivery_information": {
+        "name": "Lukasz",
+        "surname": "Kosobucki",
+        "email": "abc@gmail.com",
+        "zipcode": "51-357",
+        "state": "Silesia",
+        "city": "Wroclaw",
+        "phone": "+48533980909"
+      },
+      "delivery_option": "DHL Courier",
+      "payment_option": "Cash"
+    },
+    {
+      "order_id": 124151512451,
+      "items": [
+        { "id": "item_15", "quantity": 5 },
+        { "id": "item_13", "quantity": 3 },
+        { "id": "item_10", "quantity": 1 }
+      ],
+      "date": "10/15/2022",
+      "delivery_information": {
+        "name": "Lukasz",
+        "surname": "Kosobucki",
+        "email": "abc@gmail.com",
+        "zipcode": "51-357",
+        "state": "Silesia",
+        "city": "Wroclaw",
+        "phone": "+48533980909"
+      },
+      "delivery_option": "DHL Courier",
+      "payment_option": "Cash"
     }
   ],
 
