@@ -1,4 +1,4 @@
-import { Box, Typography, Button } from "@mui/material";
+import { Box, Typography, Button, Input } from "@mui/material";
 import { useContext, useEffect, useState } from "react";
 import { dataContext } from "../../ContextProvider";
 import { Link } from "react-router-dom";
@@ -60,9 +60,7 @@ const BasketFinalizeBox = ({ text, link }: { text: string; link: boolean }) => {
           onClick={(e) => console.log("add post here")}
           sx={{ bgcolor: "#f4f1de", pb: 0, borderRadius: "0%" }}
         >
-          <Typography sx={{ fontSize: 14 }} color="#3d405b" gutterBottom>
-            {text}
-          </Typography>
+          <Input type="submit" value={text} />
         </Button>
       )}
     </Box>

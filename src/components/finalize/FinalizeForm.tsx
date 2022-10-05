@@ -1,6 +1,5 @@
 import { Box, Button, FormControl, Input, InputLabel } from "@mui/material";
-
-const FinalizeForm = () => {
+const FinalizeForm = ({ register }: any) => {
   const formData = [
     "Name",
     "Surname",
@@ -40,29 +39,30 @@ const FinalizeForm = () => {
         <Button sx={{ color: "#3d405b", bgcolor: "#e0ddcb" }}>Login</Button>
       </Box>
 
-      <form>
-        {" "}
-        <Box
-          sx={{
-            display: "flex",
-            flexWrap: "wrap",
-            justifyContent: "flext-start",
-            alignItems: "flex-start",
-            position: "relative",
-            flexDirection: "column",
-            bgcolor: "#e0ddcb",
-            minWidth: 320,
-            p: 5,
-          }}
-        >
-          {formData.map((text) => (
-            <FormControl required>
-              <InputLabel htmlFor={text}>{text}</InputLabel>
-              <Input id={text} sx={{ mb: 1, minWidth: 300 }} />
-            </FormControl>
-          ))}
-        </Box>
-      </form>
+      <Box
+        sx={{
+          display: "flex",
+          flexWrap: "wrap",
+          justifyContent: "flext-start",
+          alignItems: "flex-start",
+          position: "relative",
+          flexDirection: "column",
+          bgcolor: "#e0ddcb",
+          minWidth: 320,
+          p: 5,
+        }}
+      >
+        {formData.map((text) => (
+          <FormControl required>
+            <InputLabel htmlFor={text}>{text}</InputLabel>
+            <Input
+              id={text}
+              sx={{ mb: 1, minWidth: 300 }}
+              {...register(text.toLowerCase())}
+            />
+          </FormControl>
+        ))}
+      </Box>
     </Box>
   );
 };
