@@ -11,7 +11,7 @@ import { deliveryInformationType } from "../types/deliveryInformationType";
 import { postOrder } from "../service/postOrder";
 
 const FinalizePage = () => {
-  const { deliveryOptions, paymentOptions, basketData } =
+  const { deliveryOptions, paymentOptions, basketData, setBasketData } =
     useContext(dataContext);
   const { register, handleSubmit } = useForm<deliveryInformationType>();
 
@@ -39,7 +39,8 @@ const FinalizePage = () => {
     };
 
     console.log(postData);
-    postOrder(postData);
+    const res = await postOrder(postData);
+    res === 201 && setBasketData([]);
   };
 
   return (

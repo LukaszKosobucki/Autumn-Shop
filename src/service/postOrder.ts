@@ -13,7 +13,8 @@ export const postOrder = async (data: orderType) => {
     data: data,
   };
 
-  axios(options)
-    .then((response) => console.log(response.status))
+  const response = await axios(options)
+    .then((response) => response.status)
     .catch((e) => console.log(e.response.data));
+  return response;
 };
