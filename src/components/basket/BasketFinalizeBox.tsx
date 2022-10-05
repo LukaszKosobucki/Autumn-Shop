@@ -2,6 +2,7 @@ import { Box, Typography, Button, Input } from "@mui/material";
 import { useContext, useEffect, useState } from "react";
 import { dataContext } from "../../ContextProvider";
 import { Link } from "react-router-dom";
+import { basketProcessedType } from "../../types/basketProcessedType";
 
 const BasketFinalizeBox = ({ text, link }: { text: string; link: boolean }) => {
   const { basketProcessedData } = useContext(dataContext);
@@ -9,7 +10,7 @@ const BasketFinalizeBox = ({ text, link }: { text: string; link: boolean }) => {
 
   const addPricesOfBasketItems = () => {
     let prices: number = 0;
-    basketProcessedData.forEach((item: any) => {
+    basketProcessedData.forEach((item: basketProcessedType) => {
       prices += item.price * item.quantity;
     });
     setPrice(prices);
@@ -56,10 +57,7 @@ const BasketFinalizeBox = ({ text, link }: { text: string; link: boolean }) => {
           </Typography>
         </Button>
       ) : (
-        <Button
-          onClick={(e) => console.log("add post here")}
-          sx={{ bgcolor: "#f4f1de", pb: 0, borderRadius: "0%" }}
-        >
+        <Button sx={{ bgcolor: "#f4f1de", pb: 0, borderRadius: "0%" }}>
           <Input type="submit" value={text} />
         </Button>
       )}

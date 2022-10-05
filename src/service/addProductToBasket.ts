@@ -1,7 +1,8 @@
 import axios from "axios";
+import { basketType } from "../types/basketType";
 import { urls } from "./config";
 
-export const addProductToBasket = async (data: any) => {
+export const addProductToBasket = async (data: basketType[]) => {
   const options = {
     url: urls.basket,
     method: "POST",

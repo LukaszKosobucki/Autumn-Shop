@@ -1,5 +1,11 @@
 import { Box, Button, FormControl, Input, InputLabel } from "@mui/material";
-const FinalizeForm = ({ register }: any) => {
+import { UseFormRegister, FieldValues } from "react-hook-form";
+
+const FinalizeForm = ({
+  register,
+}: {
+  register: UseFormRegister<FieldValues>;
+}) => {
   const formData = [
     "Name",
     "Surname",

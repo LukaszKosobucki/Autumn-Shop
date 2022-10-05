@@ -9,14 +9,17 @@ import { finalizeOptionsType } from "../types/finalizeOptionsType";
 import { useForm } from "react-hook-form";
 import { deliveryInformationType } from "../types/deliveryInformationType";
 import { postOrder } from "../service/postOrder";
+import { useNavigate } from "react-router-dom";
+import { FieldValues } from "react-hook-form";
 
 const FinalizePage = () => {
   const { deliveryOptions, paymentOptions, basketData, setBasketData } =
     useContext(dataContext);
-  const { register, handleSubmit } = useForm<deliveryInformationType>();
+  const { register, handleSubmit } = useForm<FieldValues>();
+  const navigate = useNavigate();
 
   const postDataFn = async (
-    deliveryInformation: deliveryInformationType
+    deliveryInformation: FieldValues
   ): Promise<void> => {
     const timeElapsed = Date.now();
     const today = new Date(timeElapsed);
@@ -35,12 +38,15 @@ const FinalizePage = () => {
       delivery_option: deliveryOption,
       payment_option: paymentOption,
       items: basketData,
-      delivery_information: deliveryInformation,
+      delivery_information: deliveryInformation as deliveryInformationType,
     };
 
-    console.log(postData);
     const res = await postOrder(postData);
-    res === 201 && setBasketData([]);
+
+    if (res === 201) {
+      setBasketData([]);
+      navigate("/", { replace: true });
+    }
   };
 
   return (

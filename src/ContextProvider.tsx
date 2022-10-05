@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useState, useMemo } from "react";
+import { createContext, useEffect, useState, useMemo } from "react";
 import { mapBasketData } from "./mappers/mapBasketData";
 import { getDeliveryOptions } from "./service/getDeliveryOptions";
 import { getOrderData } from "./service/getOrderData";
@@ -8,17 +8,24 @@ import { basketType } from "./types/basketType";
 import { finalizeOptionsType } from "./types/finalizeOptionsType";
 import { orderType } from "./types/orderType";
 import { productType } from "./types/productType";
+import { childrenInterface } from "./interfaces/childrenInterface";
+import { basketProcessedType } from "./types/basketProcessedType";
+import { contextProviderInterface } from "./interfaces/contextProviderInterface";
 
-export const dataContext = createContext<any>({});
+export const dataContext = createContext<contextProviderInterface>(
+  {} as contextProviderInterface
+);
 
-const ContextProvider = ({ children }: any) => {
+const ContextProvider = ({ children }: childrenInterface) => {
   const [basketData, setBasketData] = useState<basketType[]>(
     JSON.parse(localStorage.getItem("basketData") || "[]")
   );
   const [filter, setFilter] = useState<string[]>([]);
   const [data, setData] = useState<productType[]>([]);
   const [loadLimit, setLoadLimit] = useState<number>(9);
-  const [basketProcessedData, setBasketProcessedData] = useState<any>([]);
+  const [basketProcessedData, setBasketProcessedData] = useState<
+    basketProcessedType[]
+  >([]);
   const [deliveryOptions, setDeliveryOptions] = useState<finalizeOptionsType[]>(
     []
   );
@@ -41,6 +48,10 @@ const ContextProvider = ({ children }: any) => {
     };
     fetchData();
   }, []);
+
+  useEffect(() => {
+    localStorage.setItem("basketData", JSON.stringify(basketData));
+  }, [basketData]);
 
   useEffect(() => {
     mapBasketData(data, basketData, setBasketProcessedData);
@@ -93,6 +104,3 @@ const ContextProvider = ({ children }: any) => {
   );
 };
 export default ContextProvider;
-/**
- * zrób context provider dla danych i może dodaj do niego jakieś state'ty co by zrobić redux dla ubogich
- */

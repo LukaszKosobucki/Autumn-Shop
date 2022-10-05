@@ -11,12 +11,13 @@ import SortIcon from "@mui/icons-material/Sort";
 import { requestCategories } from "../../service/requestCategories";
 import { categoryType } from "../../types/categoryType";
 import { dataContext } from "../../ContextProvider";
+import { productFilterInterface } from "../../interfaces/productFilterInterface";
 
 const ProductFilter = ({
   sortByLetter,
   sortByPrice,
   filterByCategory,
-}: any) => {
+}: productFilterInterface) => {
   const [expand, setExpand] = useState<boolean>(false);
   const [categories, setCategories] = useState<categoryType[]>(
     [] as categoryType[]

@@ -10,12 +10,14 @@ import AddShoppingCartOutlinedIcon from "@mui/icons-material/AddShoppingCartOutl
 import RemoveShoppingCartOutlinedIcon from "@mui/icons-material/RemoveShoppingCartOutlined";
 import DeleteForeverOutlinedIcon from "@mui/icons-material/DeleteForeverOutlined";
 import ProductSnackBar from "../products/ProductSnackBar";
+import { basketItemInterface } from "../../interfaces/basketItemInterface";
+
 const BasketItem = ({
   item,
   reduceBasketItemQuant,
   increaseBasketItemQuant,
   deleteBasketItem,
-}: any) => {
+}: basketItemInterface) => {
   return (
     <Card sx={{ m: 0.5, borderRadius: "0%", bgcolor: "#e0ddcb" }}>
       <Box

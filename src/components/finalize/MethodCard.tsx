@@ -9,8 +9,9 @@ import CheckIcon from "@mui/icons-material/Check";
 import { useContext } from "react";
 import { dataContext } from "../../ContextProvider";
 import { finalizeOptionsType } from "../../types/finalizeOptionsType";
+import { methodCardInterface } from "../../interfaces/methodCardInterface";
 
-const MethodCard = ({ name, imgUrl, selected }: any) => {
+const MethodCard = ({ name, imgUrl, selected }: methodCardInterface) => {
   const {
     deliveryOptions,
     setDeliveryOptions,
