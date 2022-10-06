@@ -1,5 +1,5 @@
 export interface productFilterInterface {
-  sortByLetter: () => void;
   sortByPrice: () => void;
+  sortByLetter: () => void;
   filterByCategory: (arg: string) => void;
 }
