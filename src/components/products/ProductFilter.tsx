@@ -3,6 +3,7 @@ import {
   ToggleButton,
   IconButton,
   ToggleButtonGroup,
+  Typography,
 } from "@mui/material";
 import FilterListIcon from "@mui/icons-material/FilterList";
 import { useState, useEffect, useContext } from "react";
@@ -73,9 +74,10 @@ const ProductFilter = ({ filterByCategory }: productFilterInterface) => {
               filterByCategory(item.categoryId);
             }}
             value={item.categoryId}
-            sx={{ m: 0.4, p: 0.6 }}
           >
-            {item.categoryName}
+            <Typography color="primary" variant="button">
+              {item.categoryName}
+            </Typography>
           </ToggleButton>
         </ToggleButtonGroup>
       ))}
