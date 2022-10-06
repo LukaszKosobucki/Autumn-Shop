@@ -60,7 +60,7 @@ const ProductFilter = ({
       <IconButton onClick={() => setExpand(!expand)}>
         <FilterListIcon />
       </IconButton>
-      {expand ? (
+      {expand && (
         <>
           <IconButton onClick={() => sortByPrice()}>
             <SortIcon />
@@ -69,7 +69,7 @@ const ProductFilter = ({
             <SortByAlphaIcon />
           </IconButton>
         </>
-      ) : null}
+      )}
     </Box>
   );
 };

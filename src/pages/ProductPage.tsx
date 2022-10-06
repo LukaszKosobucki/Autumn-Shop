@@ -71,7 +71,7 @@ const ProductPage = () => {
       />
 
       <ProductList items={processedData} />
-      {processedData.length - loadLimit > 0 ? (
+      {processedData.length - loadLimit > 0 && (
         <Button
           variant="contained"
           onClick={() => {
@@ -81,7 +81,7 @@ const ProductPage = () => {
         >
           Load More...
         </Button>
-      ) : null}
+      )}
     </Box>
   );
 };
