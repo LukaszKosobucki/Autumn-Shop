@@ -33,4 +33,6 @@ export interface contextProviderInterface {
   setOrder: React.Dispatch<React.SetStateAction<boolean>>;
   sort: string;
   setSort: React.Dispatch<React.SetStateAction<string>>;
+  processedData: productType[];
+  setProcessedData: React.Dispatch<React.SetStateAction<productType[]>>;
 }

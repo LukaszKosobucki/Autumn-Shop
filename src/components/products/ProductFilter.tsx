@@ -18,7 +18,8 @@ const ProductFilter = ({ filterByCategory }: productFilterInterface) => {
   const [categories, setCategories] = useState<categoryType[]>(
     [] as categoryType[]
   );
-  const { filter, setOrder, setSort, order, sort } = useContext(dataContext);
+  const { filter, setOrder, setSort, order, sort, processedData } =
+    useContext(dataContext);
   const fetchData = async () => {
     const responseData = await requestCategories();
     setCategories(responseData);
@@ -27,11 +28,19 @@ const ProductFilter = ({ filterByCategory }: productFilterInterface) => {
   const sortByLetter = (): void => {
     setOrder(!order);
     setSort("letter");
+    console.log("onclick", order);
+    order
+      ? processedData.sort((a, b) => (a.name > b.name ? -1 : 1))
+      : processedData.sort((a, b) => (a.name > b.name ? 1 : -1));
   };
 
   const sortByPrice = (): void => {
     setOrder(!order);
     setSort("price");
+    console.log("onclick", order);
+    order
+      ? processedData.sort((a, b) => b.price - a.price)
+      : processedData.sort((a, b) => a.price - b.price);
   };
 
   useEffect(() => {

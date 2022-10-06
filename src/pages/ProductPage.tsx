@@ -6,9 +6,15 @@ import { Button, Box } from "@mui/material";
 import { dataContext } from "../ContextProvider";
 
 const ProductPage = () => {
-  const { data, setLoadLimit, loadLimit, setFilter, filter } =
-    useContext(dataContext);
-  const [processedData, setProcessedData] = useState<productType[]>(data);
+  const {
+    data,
+    setLoadLimit,
+    loadLimit,
+    setFilter,
+    filter,
+    processedData,
+    setProcessedData,
+  } = useContext(dataContext);
 
   const setFilterCategories = (category: string): void => {
     if (filter.includes(category)) {
