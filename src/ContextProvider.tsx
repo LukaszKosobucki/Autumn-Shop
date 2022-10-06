@@ -34,6 +34,12 @@ const ContextProvider = ({ children }: childrenInterface) => {
   );
   const [open, setOpen] = useState<boolean>(false);
   const [orderData, setOrderData] = useState<orderType[]>([]);
+  const [order, setOrder] = useState<boolean>(
+    JSON.parse(localStorage.getItem("order") || "false")
+  );
+  const [sort, setSort] = useState<string>(
+    localStorage.getItem("sort") || "price"
+  );
 
   useEffect(() => {
     const fetchData = async () => {
@@ -77,6 +83,10 @@ const ContextProvider = ({ children }: childrenInterface) => {
       setOpen,
       orderData,
       setOrderData,
+      order,
+      setOrder,
+      sort,
+      setSort,
     }),
     [
       filter,
@@ -96,6 +106,10 @@ const ContextProvider = ({ children }: childrenInterface) => {
       setOpen,
       orderData,
       setOrderData,
+      order,
+      setOrder,
+      sort,
+      setSort,
     ]
   );
 

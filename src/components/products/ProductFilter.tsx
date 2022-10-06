@@ -13,20 +13,34 @@ import { categoryType } from "../../types/categoryType";
 import { dataContext } from "../../ContextProvider";
 import { productFilterInterface } from "../../interfaces/productFilterInterface";
 
-const ProductFilter = ({
-  sortByLetter,
-  sortByPrice,
-  filterByCategory,
-}: productFilterInterface) => {
+const ProductFilter = ({ filterByCategory }: productFilterInterface) => {
   const [expand, setExpand] = useState<boolean>(false);
   const [categories, setCategories] = useState<categoryType[]>(
     [] as categoryType[]
   );
-  const { filter } = useContext(dataContext);
+  const { filter, setOrder, setSort, order, sort } = useContext(dataContext);
   const fetchData = async () => {
     const responseData = await requestCategories();
     setCategories(responseData);
   };
+
+  const sortByLetter = (): void => {
+    setOrder(!order);
+    setSort("letter");
+  };
+
+  const sortByPrice = (): void => {
+    setOrder(!order);
+    setSort("price");
+  };
+
+  useEffect(() => {
+    localStorage.setItem("order", JSON.stringify(order));
+  }, [order]);
+
+  useEffect(() => {
+    localStorage.setItem("sort", sort);
+  }, [sort]);
 
   useEffect(() => {
     fetchData();
