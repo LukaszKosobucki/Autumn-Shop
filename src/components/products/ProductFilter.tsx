@@ -13,20 +13,43 @@ import { categoryType } from "../../types/categoryType";
 import { dataContext } from "../../ContextProvider";
 import { productFilterInterface } from "../../interfaces/productFilterInterface";
 
-const ProductFilter = ({
-  sortByLetter,
-  sortByPrice,
-  filterByCategory,
-}: productFilterInterface) => {
+const ProductFilter = ({ filterByCategory }: productFilterInterface) => {
   const [expand, setExpand] = useState<boolean>(false);
   const [categories, setCategories] = useState<categoryType[]>(
     [] as categoryType[]
   );
-  const { filter } = useContext(dataContext);
+  const { filter, setOrder, setSort, order, sort, processedData } =
+    useContext(dataContext);
   const fetchData = async () => {
     const responseData = await requestCategories();
     setCategories(responseData);
   };
+
+  const sortByLetter = (): void => {
+    setOrder(!order);
+    setSort("letter");
+    console.log("onclick", order);
+    order
+      ? processedData.sort((a, b) => (a.name > b.name ? -1 : 1))
+      : processedData.sort((a, b) => (a.name > b.name ? 1 : -1));
+  };
+
+  const sortByPrice = (): void => {
+    setOrder(!order);
+    setSort("price");
+    console.log("onclick", order);
+    order
+      ? processedData.sort((a, b) => b.price - a.price)
+      : processedData.sort((a, b) => a.price - b.price);
+  };
+
+  useEffect(() => {
+    localStorage.setItem("order", JSON.stringify(order));
+  }, [order]);
+
+  useEffect(() => {
+    localStorage.setItem("sort", sort);
+  }, [sort]);
 
   useEffect(() => {
     fetchData();

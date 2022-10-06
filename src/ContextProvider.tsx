@@ -26,6 +26,8 @@ const ContextProvider = ({ children }: childrenInterface) => {
   const [basketProcessedData, setBasketProcessedData] = useState<
     basketProcessedType[]
   >([]);
+  const [processedData, setProcessedData] = useState<productType[]>(data);
+
   const [deliveryOptions, setDeliveryOptions] = useState<finalizeOptionsType[]>(
     []
   );
@@ -34,6 +36,12 @@ const ContextProvider = ({ children }: childrenInterface) => {
   );
   const [open, setOpen] = useState<boolean>(false);
   const [orderData, setOrderData] = useState<orderType[]>([]);
+  const [order, setOrder] = useState<boolean>(
+    JSON.parse(localStorage.getItem("order") || "false")
+  );
+  const [sort, setSort] = useState<string>(
+    localStorage.getItem("sort") || "price"
+  );
 
   useEffect(() => {
     const fetchData = async () => {
@@ -55,6 +63,20 @@ const ContextProvider = ({ children }: childrenInterface) => {
 
   useEffect(() => {
     mapBasketData(data, basketData, setBasketProcessedData);
+
+    if (sort === "price") {
+      console.log(order);
+      order
+        ? data.sort((a, b) => (a.price > b.price ? 1 : -1))
+        : data.sort((a, b) => (a.price > b.price ? -1 : 1));
+    } else if (sort === "letter") {
+      console.log(order);
+      order
+        ? data.sort((a, b) => (a.name > b.name ? 1 : -1))
+        : data.sort((a, b) => (a.name > b.name ? -1 : 1));
+    }
+    setProcessedData(data);
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data]);
 
@@ -77,6 +99,12 @@ const ContextProvider = ({ children }: childrenInterface) => {
       setOpen,
       orderData,
       setOrderData,
+      order,
+      setOrder,
+      sort,
+      setSort,
+      processedData,
+      setProcessedData,
     }),
     [
       filter,
@@ -96,6 +124,12 @@ const ContextProvider = ({ children }: childrenInterface) => {
       setOpen,
       orderData,
       setOrderData,
+      order,
+      setOrder,
+      sort,
+      setSort,
+      processedData,
+      setProcessedData,
     ]
   );
 

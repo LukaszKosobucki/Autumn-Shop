@@ -1,12 +1,12 @@
 import ProductItem from "./ProductItem";
 import { productType } from "../../types/productType";
 import { Box } from "@mui/material";
-import { useContext, useState } from "react";
+import { useContext, useLayoutEffect, useState } from "react";
 import { basketType } from "../../types/basketType";
 // import { addProductToBasket } from "../../service/addProductToBasket";
 import { dataContext } from "../../ContextProvider";
 const ProductList = ({ items }: { items: productType[] }) => {
-  const { basketData, setBasketData, loadLimit, setOpen } =
+  const { basketData, setBasketData, loadLimit, setOpen, order, sort } =
     useContext(dataContext);
   const addToBasket = (item: string) => {
     if (basketData.some((e: basketType) => e.id === item)) {

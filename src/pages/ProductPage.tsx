@@ -6,32 +6,15 @@ import { Button, Box } from "@mui/material";
 import { dataContext } from "../ContextProvider";
 
 const ProductPage = () => {
-  const { data, setLoadLimit, loadLimit, setFilter, filter } =
-    useContext(dataContext);
-  const [processedData, setProcessedData] = useState<productType[]>(data);
-  const [order, setOrder] = useState<boolean>(false);
-
-  const sortByLetter = (): void => {
-    setOrder(!order);
-    order
-      ? setProcessedData(
-          processedData.sort((a, b) => a.name.localeCompare(b.name))
-        )
-      : setProcessedData(
-          processedData.sort((a, b) => b.name.localeCompare(a.name))
-        );
-  };
-
-  const sortByPrice = (): void => {
-    setOrder(!order);
-    order
-      ? setProcessedData(
-          processedData.sort((a, b) => (a.price > b.price ? 1 : -1))
-        )
-      : setProcessedData(
-          processedData.sort((a, b) => (a.price > b.price ? -1 : 1))
-        );
-  };
+  const {
+    data,
+    setLoadLimit,
+    loadLimit,
+    setFilter,
+    filter,
+    processedData,
+    setProcessedData,
+  } = useContext(dataContext);
 
   const setFilterCategories = (category: string): void => {
     if (filter.includes(category)) {
@@ -64,11 +47,7 @@ const ProductPage = () => {
         minHeight: "100vh",
       }}
     >
-      <ProductFilter
-        sortByLetter={sortByLetter}
-        sortByPrice={sortByPrice}
-        filterByCategory={setFilterCategories}
-      />
+      <ProductFilter filterByCategory={setFilterCategories} />
 
       <ProductList items={processedData} />
       {processedData.length - loadLimit > 0 ? (
