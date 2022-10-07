@@ -1,9 +1,9 @@
 import { createTheme } from "@mui/material";
-// import "@fontsource/red-rose";
-import RedRose from "./fonts/RedRose.ttf";
+import "@fontsource/red-rose/700.css";
+
 export const theme = createTheme({
   typography: {
-    fontFamily: [{ RedRose }].join(","),
+    fontFamily: "Red Rose",
     fontSize: 16,
     h2: {
       fontSize: "2.5rem",
