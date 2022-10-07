@@ -30,7 +30,6 @@ const BasketFinalizeBox = ({ text, link }: { text: string; link: boolean }) => {
         alignItems: "flex-start",
         flexDirection: "column",
         position: "sticky",
-        maxWidth: "auto",
         top: 90,
         ml: 5,
         p: 3,

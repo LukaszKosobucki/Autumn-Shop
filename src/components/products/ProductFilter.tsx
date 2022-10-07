@@ -29,7 +29,6 @@ const ProductFilter = ({ filterByCategory }: productFilterInterface) => {
   const sortByLetter = (): void => {
     setOrder(!order);
     setSort("letter");
-    console.log("onclick", order);
     order
       ? processedData.sort((a, b) => (a.name > b.name ? -1 : 1))
       : processedData.sort((a, b) => (a.name > b.name ? 1 : -1));
@@ -38,7 +37,6 @@ const ProductFilter = ({ filterByCategory }: productFilterInterface) => {
   const sortByPrice = (): void => {
     setOrder(!order);
     setSort("price");
-    console.log("onclick", order);
     order
       ? processedData.sort((a, b) => b.price - a.price)
       : processedData.sort((a, b) => a.price - b.price);

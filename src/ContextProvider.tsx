@@ -66,12 +66,10 @@ const ContextProvider = ({ children }: childrenInterface) => {
     mapBasketData(data, basketData, setBasketProcessedData);
 
     if (sort === "price") {
-      console.log(order);
       order
         ? data.sort((a, b) => (a.price > b.price ? 1 : -1))
         : data.sort((a, b) => (a.price > b.price ? -1 : 1));
     } else if (sort === "letter") {
-      console.log(order);
       order
         ? data.sort((a, b) => (a.name > b.name ? 1 : -1))
         : data.sort((a, b) => (a.name > b.name ? -1 : 1));

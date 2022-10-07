@@ -16,7 +16,7 @@ const MainLayout = ({ children }: childrenInterface) => {
           minHeight: "100vh",
           minWidth: "100%",
           margin: 0,
-          overflow: "hidden",
+          overflowX: "clip",
         }}
       >
         {children}

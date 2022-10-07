@@ -67,6 +67,7 @@ const FinalizePage = () => {
           position: "relative",
           flexDirection: "row",
           minHeight: "100vh",
+          mt: 5,
         }}
       >
         <Box>
