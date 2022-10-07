@@ -4,12 +4,12 @@ const ProductImageBg = () => {
     <Box
       sx={{
         height: 315,
-        width: "100vw",
+        width: "100%",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
         overflow: "hidden",
-        position: "relative",
+        flexWrap: "nowrap",
       }}
     >
       <Box

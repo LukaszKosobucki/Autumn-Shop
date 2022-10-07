@@ -14,7 +14,6 @@ export const theme = createTheme({
       fontStyle: "normal",
       textDecoration: "none",
       textTransform: "none",
-      display: "block",
       wordWrap: "break-word",
     },
     h2: {

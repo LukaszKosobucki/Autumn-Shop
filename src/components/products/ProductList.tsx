@@ -31,7 +31,7 @@ const ProductList = ({ items }: { items: productType[] }) => {
         display: "flex",
         flexWrap: "wrap",
         maxWidth: 750,
-        justifyContent: "center",
+        justifyContent: "flex-start",
         alignItems: "center",
       }}
     >

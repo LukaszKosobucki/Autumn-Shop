@@ -37,7 +37,7 @@ const ProductPage = () => {
   }, [data, filter]);
 
   return (
-    <Box sx={{ overflow: "hidden", position: "relative" }}>
+    <Box sx={{ width: "100vw", p: 0 }}>
       <ProductImageBg />
       <Box
         sx={{
