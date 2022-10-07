@@ -11,7 +11,6 @@ export const theme = createTheme({
       fontFamily: "Red Rose",
       fontWeight: 700,
       fontStyle: "normal",
-
       textDecoration: "none",
       textTransform: "none",
     },
@@ -19,7 +18,6 @@ export const theme = createTheme({
       fontSize: "2.5rem",
       fontWeight: 700,
       fontStyle: "normal",
-
       textDecoration: "none",
       textTransform: "none",
       fontFamily: "Red Rose",
@@ -29,7 +27,6 @@ export const theme = createTheme({
       fontFamily: "Red Rose",
       fontWeight: 700,
       fontStyle: "normal",
-      lineHeight: "120%",
       textDecoration: "none",
       textTransform: "none",
     },
@@ -38,7 +35,6 @@ export const theme = createTheme({
       fontFamily: "Red Rose",
       fontWeight: 700,
       fontStyle: "normal",
-      lineHeight: "120%",
       textDecoration: "none",
       textTransform: "none",
     },
@@ -58,8 +54,6 @@ export const theme = createTheme({
           borderRadius: 15,
           backgroundColor: styles.colorAutumnLeaf400,
           border: 0,
-          py: 10,
-          px: 20,
           margin: "0.4rem",
           transitionDuration: "0.3s",
           "&.Mui-selected": {
@@ -79,14 +73,13 @@ export const theme = createTheme({
         },
       },
     },
-
     MuiButton: {
       styleOverrides: {
         root: {
           borderRadius: 0,
           backgroundColor: styles.colorAutumnLight200,
           py: 10,
-          px: 20,
+          px: 10,
           margin: "0.4rem",
           transitionDuration: "0.3s",
           ":hover": {
@@ -94,6 +87,14 @@ export const theme = createTheme({
             backgroundColor: styles.colorAutumnLight200,
             transitionDuration: "0.3s",
           },
+        },
+      },
+    },
+    MuiCard: {
+      styleOverrides: {
+        root: {
+          boxShadow: "4px 4px 4px rgba(0, 0, 0, 0.25)",
+          ":hover": { boxShadow: "6px 6px 5px rgba(0, 0, 0, 0.35)" },
         },
       },
     },

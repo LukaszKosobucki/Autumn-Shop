@@ -1,45 +1,45 @@
 {
   "items": [
     {
-      "name": "ajesienna książka",
+      "name": "book",
       "price": 40,
       "category": "category_1",
       "id": "item_1"
     },
     {
-      "name": "bjesienny kocyk",
+      "name": "blanket",
       "price": 60,
       "category": "category_2",
       "id": "item_2"
     },
     {
-      "name": "cjesienna książka",
+      "name": "Sweater",
       "price": 40,
-      "category": "category_1",
+      "category": "category_3",
       "id": "item_3"
     },
     {
-      "name": "djesienny kocyk",
+      "name": "Tea",
       "price": 60,
-      "category": "category_2",
+      "category": "category_4",
       "id": "item_4"
     },
     {
-      "name": "ajesienna książka",
+      "name": "Coffee",
       "price": 40,
-      "category": "category_1",
+      "category": "category_5",
       "id": "item_5"
     },
     {
-      "name": "djesienny kocyk",
+      "name": "Tea Accessory",
       "price": 60,
-      "category": "category_2",
+      "category": "category_6",
       "id": "item_6"
     },
     {
-      "name": "tjesienna kawa",
+      "name": "Coffee Accessory",
       "price": 90,
-      "category": "category_5",
+      "category": "category_7",
       "id": "item_7"
     },
     {
@@ -715,6 +715,43 @@
         "zipcode": "sdfasdf",
         "state": "sdaf",
         "city": "asdfsdaf"
+      }
+    },
+    {
+      "id": 1665132820298,
+      "date": "10/7/2022",
+      "delivery_option": "DHL Courier",
+      "payment_option": "Cash",
+      "items": [
+        {
+          "id": "item_7",
+          "quantity": 2
+        },
+        {
+          "id": "item_8",
+          "quantity": 2
+        },
+        {
+          "id": "item_15",
+          "quantity": 1
+        },
+        {
+          "id": "item_4",
+          "quantity": 1
+        },
+        {
+          "id": "item_2",
+          "quantity": 1
+        }
+      ],
+      "delivery_information": {
+        "name": "Asia",
+        "surname": "Dobroszek",
+        "email": "jd@gmai.com",
+        "phone": "69696969",
+        "zipcode": "69-420",
+        "state": "jd",
+        "city": "jd"
       }
     }
   ],

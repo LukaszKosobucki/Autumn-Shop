@@ -19,72 +19,68 @@ const ProductItem = ({
   addToBasket: (item: string) => void;
 }) => {
   return (
-    <Box
+    <Card
       sx={{
         m: 1,
-        fontSize: "0.875rem",
-        fontWeight: "700",
+        borderRadius: 0,
+        minWidth: 150,
         width: 230,
       }}
     >
-      <Card>
-        <CardMedia
-          component="img"
-          height="250"
-          image="https://images.unsplash.com/photo-1515471897120-85416077e011?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8Y29mZmVlJTIwYmFnfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
-          alt="green iguana"
-        />
-        <CardContent>
+      <CardMedia
+        component="img"
+        height="250"
+        image="https://images.unsplash.com/photo-1515471897120-85416077e011?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8Y29mZmVlJTIwYmFnfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+        alt="green iguana"
+      />
+      <CardContent>
+        <Box
+          sx={{
+            display: "flex",
+            flexWrap: "wrap",
+            justifyContent: "space-between",
+            alignItems: "flex-start",
+            flexDirection: "row",
+          }}
+        >
           <Box
             sx={{
               display: "flex",
               flexWrap: "wrap",
-              color: "#3d405b",
-              justifyContent: "space-between",
+              justifyContent: "flex-start",
               alignItems: "flex-start",
-              flexDirection: "row",
+              flexDirection: "column",
             }}
           >
-            <Box
-              sx={{
-                display: "flex",
-                flexWrap: "wrap",
-                color: "#3d405b",
-                justifyContent: "flex-start",
-                alignItems: "flex-start",
-                flexDirection: "column",
-              }}
-            >
-              <Typography color="primary" gutterBottom variant="caption">
-                {item.name}
-              </Typography>
-              <Typography variant="h5" component="div">
-                {item.price}$
-              </Typography>
-            </Box>
-            <Box
-              sx={{
-                display: "flex",
-                flexWrap: "nowrap",
-                color: "#3d405b",
-                justifyContent: "flex-end",
-                alignSelf: "flex-end",
-                flexDirection: "column",
-              }}
-            >
-              <IconButton
-                aria-label="delete"
-                onClick={() => addToBasket(item.id)}
-              >
-                <ShoppingCartIcon />
-              </IconButton>
-
-              <ProductSnackBar text="Product added to the basket" />
-            </Box>
+            <Typography color="primary" gutterBottom variant="caption">
+              {item.name}
+            </Typography>
+            <Typography variant="h5" component="div">
+              {item.price}$
+            </Typography>
           </Box>
-        </CardContent>
-      </Card>
-    </Box>
+          <Box
+            sx={{
+              display: "flex",
+              flexWrap: "nowrap",
+              justifyContent: "flex-end",
+              alignSelf: "flex-end",
+              flexDirection: "column",
+              height: "100%",
+            }}
+          >
+            <IconButton
+              aria-label="delete"
+              onClick={() => addToBasket(item.id)}
+            >
+              <ShoppingCartIcon />
+            </IconButton>
+
+            <ProductSnackBar text="Product added to the basket" />
+          </Box>
+        </Box>
+      </CardContent>
+    </Card>
   );
 };
 
