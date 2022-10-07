@@ -55,11 +55,7 @@ const ProductItem = ({
                 flexDirection: "column",
               }}
             >
-              <Typography
-                sx={{ fontSize: 14 }}
-                color="text.secondary"
-                gutterBottom
-              >
+              <Typography color="primary" gutterBottom variant="caption">
                 {item.name}
               </Typography>
               <Typography variant="h5" component="div">

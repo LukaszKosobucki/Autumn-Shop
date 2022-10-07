@@ -1,0 +1,172 @@
+$colorAutumnLight50: #f7f4e1;
+$colorAutumnLight100: #e0ddcb;
+$colorAutumnLight200: #cac7b5;
+$colorAutumnLight300: #b4b19f;
+$colorAutumnLight400: #9e9c8a;
+$colorAutumnLight500: #898776;
+$colorAutumnLight600: #757262;
+$colorAutumnLight700: #615f4f;
+$colorAutumnLight800: #4e4c3c;
+$colorAutumnLight900: #3b3a2b;
+$colorAutumnLightAutumnLight: #f4f1de;
+$colorAutumnLeaf50: #ffd7b7;
+$colorAutumnLeaf100: #ffc0a1;
+$colorAutumnLeaf200: #ffaa8c;
+$colorAutumnLeaf300: #fe9478;
+$colorAutumnLeaf400: #e67f64;
+$colorAutumnLeaf500: #cd6a50;
+$colorAutumnLeaf600: #b5563d;
+$colorAutumnLeaf700: #9e412b;
+$colorAutumnLeaf800: #862d1a;
+$colorAutumnLeaf900: #6f1907;
+$colorAutumnLeafAutumnLeaf: #e07a5f;
+$colorAutumnDusk50: #f0f1ff;
+$colorAutumnDusk100: #d9dafc;
+$colorAutumnDusk200: #c2c4e5;
+$colorAutumnDusk300: #acaece;
+$colorAutumnDusk400: #9799b8;
+$colorAutumnDusk500: #8284a3;
+$colorAutumnDusk600: #6e708e;
+$colorAutumnDusk700: #5a5c79;
+$colorAutumnDusk800: #474965;
+$colorAutumnDusk900: #343752;
+$colorAutumnDuskAutumnDusk: #3d405b;
+$colorAutumnEarly50: #cbffe5;
+$colorAutumnEarly100: #b5e8cf;
+$colorAutumnEarly200: #9fd1b9;
+$colorAutumnEarly300: #8abba3;
+$colorAutumnEarly400: #75a58e;
+$colorAutumnEarly500: #609079;
+$colorAutumnEarly600: #4d7b65;
+$colorAutumnEarly700: #396752;
+$colorAutumnEarly800: #265440;
+$colorAutumnEarly900: #11412e;
+$colorAutumnEarlyAutumnEarly: #81b29a;
+$colorAutumnDawn50: #ffeeaf;
+$colorAutumnDawn100: #fed79a;
+$colorAutumnDawn200: #e6c185;
+$colorAutumnDawn300: #cfab70;
+$colorAutumnDawn400: #b8965c;
+$colorAutumnDawn500: #a28148;
+$colorAutumnDawn600: #8c6d35;
+$colorAutumnDawn700: #765a22;
+$colorAutumnDawn800: #61470f;
+$colorAutumnDawn900: #4d3500;
+$colorAutumnDawnAutumnDawn: #f2cc8f;
+@mixin textStyleLabel {
+  font-size: 1rem;
+  font-family: "Red Rose";
+  font-weight: 700;
+  font-style: normal;
+  line-height: 120%;
+  text-decoration: none;
+  text-transform: none;
+}
+@mixin textStyleHeadingsHeading6 {
+  font-size: 1rem;
+  font-family: "Red Rose";
+  font-weight: 700;
+  font-style: normal;
+  line-height: 19px;
+  text-decoration: none;
+  text-transform: none;
+}
+@mixin textStyleHeadingsHeading5 {
+  font-size: 1.25rem;
+  font-family: "Red Rose";
+  font-weight: 700;
+  font-style: normal;
+  line-height: 24px;
+  text-decoration: none;
+  text-transform: none;
+}
+@mixin textStyleHeadingsHeading4 {
+  font-size: 1.5rem;
+  font-family: "Red Rose";
+  font-weight: 700;
+  font-style: normal;
+  line-height: 30px;
+  text-decoration: none;
+  text-transform: none;
+}
+@mixin textStyleHeadingsHeading3 {
+  font-size: 2rem;
+  font-family: "Red Rose";
+  font-weight: 700;
+  font-style: normal;
+  line-height: 37px;
+  text-decoration: none;
+  text-transform: none;
+}
+@mixin textStyleHeadingsHeading2 {
+  font-size: 2.5rem;
+  font-family: "Red Rose";
+  font-weight: 700;
+  font-style: normal;
+  line-height: 47px;
+  text-decoration: none;
+  text-transform: none;
+}
+@mixin textStyleHeadingsHeading1 {
+  font-size: 3rem;
+  font-family: "Red Rose";
+  font-weight: 700;
+  font-style: normal;
+  line-height: 60px;
+  text-decoration: none;
+  text-transform: none;
+}
+@mixin textStyleLabelsLight {
+  font-size: 1rem;
+  font-family: "Red Rose";
+  font-weight: 300;
+  font-style: normal;
+  line-height: 120%;
+  text-decoration: none;
+  text-transform: none;
+}
+@mixin textStyleLabelsMedium {
+  font-size: 1rem;
+  font-family: "Red Rose";
+  font-weight: 700;
+  font-style: normal;
+  line-height: 120%;
+  text-decoration: none;
+  text-transform: none;
+}
+@mixin textStyleLabelsStrong {
+  font-size: 1rem;
+  font-family: "Red Rose";
+  font-weight: 700;
+  font-style: normal;
+  line-height: 120%;
+  text-decoration: none;
+  text-transform: none;
+}
+@mixin textStyleParagraphsLarge {
+  font-size: 1.5rem;
+  font-family: "Red Rose";
+  font-weight: 400;
+  font-style: normal;
+  line-height: 150%;
+  text-decoration: none;
+  text-transform: none;
+}
+@mixin textStyleParagraphsBase {
+  font-size: 1rem;
+  font-family: "Red Rose";
+  font-weight: 400;
+  font-style: normal;
+  line-height: 175%;
+  text-decoration: none;
+  text-transform: none;
+}
+@mixin textStyleParagraphsSmall {
+  font-size: 0.75rem;
+  font-family: "Red Rose";
+  font-weight: 400;
+  font-style: normal;
+  line-height: 175%;
+  text-decoration: none;
+  text-transform: none;
+}
