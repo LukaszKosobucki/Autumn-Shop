@@ -4,6 +4,7 @@ import { productType } from "../types/productType";
 import ProductFilter from "../components/products/ProductFilter";
 import { Button, Box, Typography } from "@mui/material";
 import { dataContext } from "../ContextProvider";
+import ProductImageBg from "../components/products/ProductImageBg";
 
 const ProductPage = () => {
   const {
@@ -36,31 +37,34 @@ const ProductPage = () => {
   }, [data, filter]);
 
   return (
-    <Box
-      sx={{
-        display: "flex",
-        flexWrap: "wrap",
-        justifyContent: "flext-start",
-        alignItems: "center",
-        flexDirection: "column",
-        minHeight: "100vh",
-      }}
-    >
-      <ProductFilter filterByCategory={setFilterCategories} />
+    <Box sx={{ overflow: "hidden", position: "relative" }}>
+      <ProductImageBg />
+      <Box
+        sx={{
+          display: "flex",
+          flexWrap: "wrap",
+          justifyContent: "flext-start",
+          alignItems: "center",
+          flexDirection: "column",
+          minHeight: "100vh",
+        }}
+      >
+        <ProductFilter filterByCategory={setFilterCategories} />
 
-      <ProductList items={processedData} />
-      {processedData.length - loadLimit > 0 && (
-        <Button
-          onClick={() => {
-            setLoadLimit(loadLimit + 9);
-          }}
-          sx={{ mt: 2 }}
-        >
-          <Typography variant="button" color="primary">
-            Load More...
-          </Typography>
-        </Button>
-      )}
+        <ProductList items={processedData} />
+        {processedData.length - loadLimit > 0 && (
+          <Button
+            onClick={() => {
+              setLoadLimit(loadLimit + 9);
+            }}
+            sx={{ mt: 2 }}
+          >
+            <Typography variant="button" color="primary">
+              Load More...
+            </Typography>
+          </Button>
+        )}
+      </Box>
     </Box>
   );
 };

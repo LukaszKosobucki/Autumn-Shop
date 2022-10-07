@@ -18,6 +18,7 @@ const Header = () => {
         position: "sticky",
         top: 0,
         zIndex: 2,
+        mb: 0,
       }}
     >
       <Box>
