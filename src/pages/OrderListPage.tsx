@@ -1,5 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import OrderList from "../components/orders/OrderList";
+import OrderImageBg from "../components/orders/OrderImageBg";
 
 const OrderListPage = () => {
   return (
@@ -13,8 +14,10 @@ const OrderListPage = () => {
         position: "relative",
         minHeight: "100vh",
         color: "#3d405b",
+        minWidth: "100%",
       }}
     >
+      <OrderImageBg />
       <Typography variant="h3">--Order List--</Typography>
       <OrderList />
     </Box>
