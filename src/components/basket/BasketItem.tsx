@@ -19,12 +19,11 @@ const BasketItem = ({
   deleteBasketItem,
 }: basketItemInterface) => {
   return (
-    <Card sx={{ m: 0.5, borderRadius: "0%", bgcolor: "#e0ddcb" }}>
+    <Card>
       <Box
         sx={{
           display: "flex",
           flexWrap: " wrap",
-          color: "#3d405b",
           justifyContent: "space-between",
           alignItems: "center",
           flexDirection: "row",
@@ -36,7 +35,6 @@ const BasketItem = ({
           sx={{
             display: "flex",
             flexWrap: "wrap",
-            color: "#3d405b",
             justifyContent: "flex-start",
             alignItems: "center",
             flexDirection: "row",
@@ -45,7 +43,6 @@ const BasketItem = ({
           <Box
             sx={{
               flexWrap: "wrap",
-              color: "#3d405b",
               justifyContent: "flex-start",
               alignItems: "center",
               flexDirection: "row",
@@ -61,14 +58,10 @@ const BasketItem = ({
           </Box>
 
           <CardContent>
-            <Typography
-              sx={{ fontSize: 14 }}
-              color="text.secondary"
-              gutterBottom
-            >
+            <Typography color="primary" variant="caption">
               {item.name}
             </Typography>
-            <Typography variant="h6" component="div">
+            <Typography variant="h5" color="primary">
               price: {item.price}$
             </Typography>
           </CardContent>
@@ -78,7 +71,6 @@ const BasketItem = ({
           sx={{
             display: "flex",
             flexWrap: "wrap",
-            color: "#3d405b",
             justifyContent: "center",
             alignItems: "center",
             flexDirection: "row",
@@ -88,16 +80,18 @@ const BasketItem = ({
             onClick={() => {
               reduceBasketItemQuant(item.id);
             }}
+            color="primary"
           >
             <RemoveShoppingCartOutlinedIcon fontSize="large" />
           </IconButton>
-          <Typography variant="h6" component="span">
+          <Typography variant="h5" color="primary">
             quant: {item.quantity}
           </Typography>
           <IconButton
             onClick={() => {
               increaseBasketItemQuant(item.id);
             }}
+            color="primary"
           >
             <AddShoppingCartOutlinedIcon fontSize="large" />
           </IconButton>
@@ -105,6 +99,7 @@ const BasketItem = ({
             onClick={() => {
               deleteBasketItem(item.id);
             }}
+            color="primary"
           >
             <DeleteForeverOutlinedIcon fontSize="large" />
           </IconButton>

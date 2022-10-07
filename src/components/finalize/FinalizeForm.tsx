@@ -1,5 +1,13 @@
-import { Box, Button, FormControl, Input, InputLabel } from "@mui/material";
+import {
+  Box,
+  Button,
+  FormControl,
+  Input,
+  InputLabel,
+  Typography,
+} from "@mui/material";
 import { UseFormRegister, FieldValues } from "react-hook-form";
+import styles from "../../palette.module.scss";
 
 const FinalizeForm = ({
   register,
@@ -41,8 +49,16 @@ const FinalizeForm = ({
           pb: 2,
         }}
       >
-        <Button sx={{ color: "#3d405b", bgcolor: "#e0ddcb" }}>Register</Button>
-        <Button sx={{ color: "#3d405b", bgcolor: "#e0ddcb" }}>Login</Button>
+        <Button>
+          <Typography color="primary" variant="caption">
+            Register
+          </Typography>
+        </Button>
+        <Button>
+          <Typography color="primary" variant="caption">
+            Login
+          </Typography>
+        </Button>
       </Box>
 
       <Box
@@ -53,7 +69,7 @@ const FinalizeForm = ({
           alignItems: "flex-start",
           position: "relative",
           flexDirection: "column",
-          bgcolor: "#e0ddcb",
+          bgcolor: styles.colorAutumnLight100,
           minWidth: 320,
           p: 5,
         }}
@@ -63,7 +79,8 @@ const FinalizeForm = ({
             <InputLabel htmlFor={text}>{text}</InputLabel>
             <Input
               id={text}
-              sx={{ mb: 1, minWidth: 300 }}
+              color="primary"
+              sx={{ mb: 1.5, minWidth: 18.75 }}
               {...register(text.toLowerCase())}
             />
           </FormControl>

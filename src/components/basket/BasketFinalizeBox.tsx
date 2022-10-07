@@ -1,8 +1,9 @@
-import { Box, Typography, Button, Input } from "@mui/material";
+import { Box, Typography, Button } from "@mui/material";
 import { useContext, useEffect, useState } from "react";
 import { dataContext } from "../../ContextProvider";
 import { Link } from "react-router-dom";
 import { basketProcessedType } from "../../types/basketProcessedType";
+import styles from "../../palette.module.scss";
 
 const BasketFinalizeBox = ({ text, link }: { text: string; link: boolean }) => {
   const { basketProcessedData } = useContext(dataContext);
@@ -25,40 +26,38 @@ const BasketFinalizeBox = ({ text, link }: { text: string; link: boolean }) => {
       sx={{
         display: "flex",
         flexWrap: " wrap",
-        color: "#3d405b",
         justifyContent: "flex-start",
         alignItems: "flex-start",
         flexDirection: "column",
         position: "sticky",
+        maxWidth: "auto",
         top: 90,
         ml: 5,
-        p: 4,
-        bgcolor: "#e0ddcb",
-        borderRadius: "5%",
+        p: 3,
+        bgcolor: styles.colorAutumnLight100,
+        borderRadius: 2,
       }}
     >
-      <Typography sx={{ fontSize: 14 }} color="#3d405b" gutterBottom>
+      <Typography color="primary" variant="caption">
         Products Price: {price}$
       </Typography>
-      <Typography sx={{ fontSize: 14 }} color="#3d405b" gutterBottom>
+      <Typography color="primary" variant="caption">
         Delivery Price: {20}$
       </Typography>
-      <Typography sx={{ fontSize: 14 }} color="#3d405b" gutterBottom>
+      <Typography color="primary" variant="caption">
         Total Price: {price + 20}$
       </Typography>
       {link ? (
-        <Button
-          component={Link}
-          to="/finalize"
-          sx={{ bgcolor: "#f4f1de", pb: 0, borderRadius: "0%" }}
-        >
-          <Typography sx={{ fontSize: 14 }} color="#3d405b" gutterBottom>
+        <Button component={Link} to="/finalize">
+          <Typography color="primary" variant="caption">
             {text}
           </Typography>
         </Button>
       ) : (
-        <Button sx={{ bgcolor: "#f4f1de", pb: 0, borderRadius: "0%" }}>
-          <Input type="submit" value={text} />
+        <Button type="submit">
+          <Typography color="primary" variant="caption">
+            {text}
+          </Typography>
         </Button>
       )}
     </Box>

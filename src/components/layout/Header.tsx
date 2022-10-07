@@ -3,17 +3,16 @@ import EmojiFoodBeverageIcon from "@mui/icons-material/EmojiFoodBeverage";
 import AccountBoxIcon from "@mui/icons-material/AccountBox";
 import ListIcon from "@mui/icons-material/List";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
+import styles from "../../palette.module.scss";
+
 const Header = () => {
   return (
     <Box
       sx={{
         display: "flex",
         flexWrap: "wrap",
-        px: 10,
-        py: 0,
-        bgcolor: "#f2cc8f",
-        color: "#3d405b",
+        bgcolor: styles.colorAutumnDawnAutumnDawn,
         justifyContent: "space-around",
         alignItems: "center",
         position: "sticky",
@@ -23,7 +22,7 @@ const Header = () => {
     >
       <Box>
         <IconButton
-          sx={{ color: "#3d405b" }}
+          color="primary"
           component={Link}
           to="/"
           onClick={() =>
@@ -36,7 +35,9 @@ const Header = () => {
         </IconButton>
       </Box>
       <Box>
-        <Typography variant="h2">Jesieniara-ecommerce</Typography>
+        <Typography variant="h2" color="primary">
+          Jesieniara-ecommerce
+        </Typography>
       </Box>
       <Box
         sx={{
@@ -48,21 +49,17 @@ const Header = () => {
         }}
       >
         <Box>
-          <IconButton sx={{ color: "#3d405b" }}>
+          <IconButton color="primary">
             <AccountBoxIcon fontSize="large" />
           </IconButton>
         </Box>
         <Box>
-          <IconButton
-            sx={{ color: "#3d405b" }}
-            component={Link}
-            to="/order-list"
-          >
+          <IconButton color="primary" component={Link} to="/order-list">
             <ListIcon fontSize="large" />
           </IconButton>
         </Box>
         <Box>
-          <IconButton sx={{ color: "#3d405b" }} component={Link} to="/basket">
+          <IconButton color="primary" component={Link} to="/basket">
             <ShoppingCartIcon fontSize="large" />
           </IconButton>
         </Box>

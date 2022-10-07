@@ -13,8 +13,14 @@ import { useNavigate } from "react-router-dom";
 import { FieldValues } from "react-hook-form";
 
 const FinalizePage = () => {
-  const { deliveryOptions, paymentOptions, basketData, setBasketData } =
-    useContext(dataContext);
+  const {
+    deliveryOptions,
+    paymentOptions,
+    basketData,
+    setBasketData,
+    setOrderData,
+    orderData,
+  } = useContext(dataContext);
   const { register, handleSubmit } = useForm<FieldValues>();
   const navigate = useNavigate();
 
@@ -46,6 +52,7 @@ const FinalizePage = () => {
     if (res === 201) {
       setBasketData([]);
       navigate("/", { replace: true });
+      setOrderData([...orderData, postData]);
     }
   };
 

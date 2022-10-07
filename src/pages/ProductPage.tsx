@@ -1,8 +1,8 @@
-import { useEffect, useState, useContext } from "react";
+import { useEffect, useContext } from "react";
 import ProductList from "../components/products/ProductList";
 import { productType } from "../types/productType";
 import ProductFilter from "../components/products/ProductFilter";
-import { Button, Box } from "@mui/material";
+import { Button, Box, Typography } from "@mui/material";
 import { dataContext } from "../ContextProvider";
 
 const ProductPage = () => {
@@ -42,7 +42,6 @@ const ProductPage = () => {
         flexWrap: "wrap",
         justifyContent: "flext-start",
         alignItems: "center",
-        position: "relative",
         flexDirection: "column",
         minHeight: "100vh",
       }}
@@ -50,17 +49,18 @@ const ProductPage = () => {
       <ProductFilter filterByCategory={setFilterCategories} />
 
       <ProductList items={processedData} />
-      {processedData.length - loadLimit > 0 ? (
+      {processedData.length - loadLimit > 0 && (
         <Button
-          variant="contained"
           onClick={() => {
             setLoadLimit(loadLimit + 9);
           }}
-          sx={{ mt: 1 }}
+          sx={{ mt: 2 }}
         >
-          Load More...
+          <Typography variant="button" color="primary">
+            Load More...
+          </Typography>
         </Button>
-      ) : null}
+      )}
     </Box>
   );
 };
