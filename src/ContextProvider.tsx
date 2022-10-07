@@ -23,6 +23,7 @@ const ContextProvider = ({ children }: childrenInterface) => {
   const [filter, setFilter] = useState<string[]>([]);
   const [data, setData] = useState<productType[]>([]);
   const [loadLimit, setLoadLimit] = useState<number>(9);
+  const [orderLoadLimit, setOrderLoadLimit] = useState<number>(20);
   const [basketProcessedData, setBasketProcessedData] = useState<
     basketProcessedType[]
   >([]);
@@ -105,6 +106,8 @@ const ContextProvider = ({ children }: childrenInterface) => {
       setSort,
       processedData,
       setProcessedData,
+      orderLoadLimit,
+      setOrderLoadLimit,
     }),
     [
       filter,
@@ -130,6 +133,8 @@ const ContextProvider = ({ children }: childrenInterface) => {
       setSort,
       processedData,
       setProcessedData,
+      orderLoadLimit,
+      setOrderLoadLimit,
     ]
   );
 
