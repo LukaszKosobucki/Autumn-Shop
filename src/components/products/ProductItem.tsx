@@ -7,9 +7,9 @@ import {
   IconButton,
 } from "@mui/material";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import React from "react";
 import { productType } from "../../types/productType";
 import ProductSnackBar from "./ProductSnackBar";
+import { colors } from "../../utils/helpers";
 
 const ProductItem = ({
   item,
@@ -23,6 +23,7 @@ const ProductItem = ({
       sx={{
         minWidth: 150,
         width: 230,
+        bgcolor: colors[item.category],
       }}
     >
       <CardMedia
@@ -50,10 +51,10 @@ const ProductItem = ({
               flexDirection: "column",
             }}
           >
-            <Typography color="primary" gutterBottom variant="caption">
+            <Typography color="primary" variant="caption">
               {item.name}
             </Typography>
-            <Typography variant="h5" component="div">
+            <Typography variant="h5" color="primary">
               {item.price}$
             </Typography>
           </Box>
