@@ -42,7 +42,6 @@ const ProductPage = () => {
         flexWrap: "wrap",
         justifyContent: "flext-start",
         alignItems: "center",
-        position: "relative",
         flexDirection: "column",
         minHeight: "100vh",
       }}

@@ -6,6 +6,7 @@ export const theme = createTheme({
   typography: {
     fontFamily: "Red Rose",
     fontSize: 16,
+
     h5: {
       fontSize: "1.25rem",
       fontFamily: "Red Rose",
@@ -13,6 +14,8 @@ export const theme = createTheme({
       fontStyle: "normal",
       textDecoration: "none",
       textTransform: "none",
+      display: "block",
+      wordWrap: "break-word",
     },
     h2: {
       fontSize: "2.5rem",
@@ -80,7 +83,7 @@ export const theme = createTheme({
           backgroundColor: styles.colorAutumnLight200,
           py: 10,
           px: 10,
-          margin: "0.4rem",
+          margin: "0.4rem 0.4rem 0 0 ",
           transitionDuration: "0.3s",
           ":hover": {
             boxShadow: " 4px 4px 4px rgba(0, 0, 0, 0.25)",
@@ -93,6 +96,9 @@ export const theme = createTheme({
     MuiCard: {
       styleOverrides: {
         root: {
+          margin: 8,
+          borderRadius: "0%",
+          backgroundColor: styles.colorAutumnLight100,
           boxShadow: "4px 4px 4px rgba(0, 0, 0, 0.25)",
           ":hover": { boxShadow: "6px 6px 5px rgba(0, 0, 0, 0.35)" },
         },

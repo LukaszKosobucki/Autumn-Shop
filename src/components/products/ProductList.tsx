@@ -33,7 +33,6 @@ const ProductList = ({ items }: { items: productType[] }) => {
         maxWidth: 750,
         justifyContent: "center",
         alignItems: "center",
-        bgcolor: "#f7f4e1",
       }}
     >
       {items.slice(0, loadLimit).map((item: productType) => (

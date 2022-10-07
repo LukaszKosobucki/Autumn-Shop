@@ -4,15 +4,15 @@ import AccountBoxIcon from "@mui/icons-material/AccountBox";
 import ListIcon from "@mui/icons-material/List";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { Link } from "react-router-dom";
+import styles from "../../palette.module.scss";
+
 const Header = () => {
   return (
     <Box
       sx={{
         display: "flex",
         flexWrap: "wrap",
-        px: 10,
-        py: 0,
-        bgcolor: "#f2cc8f",
+        bgcolor: styles.colorAutumnDawnAutumnDawn,
         justifyContent: "space-around",
         alignItems: "center",
         position: "sticky",

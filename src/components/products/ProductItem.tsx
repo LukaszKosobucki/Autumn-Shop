@@ -21,8 +21,6 @@ const ProductItem = ({
   return (
     <Card
       sx={{
-        m: 1,
-        borderRadius: 0,
         minWidth: 150,
         width: 230,
       }}
@@ -66,12 +64,12 @@ const ProductItem = ({
               justifyContent: "flex-end",
               alignSelf: "flex-end",
               flexDirection: "column",
-              height: "100%",
             }}
           >
             <IconButton
               aria-label="delete"
               onClick={() => addToBasket(item.id)}
+              color="primary"
             >
               <ShoppingCartIcon />
             </IconButton>

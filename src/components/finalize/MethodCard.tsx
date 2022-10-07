@@ -3,14 +3,14 @@ import {
   CardContent,
   CardMedia,
   Typography,
-  ToggleButton,
+  IconButton,
 } from "@mui/material";
-import CheckIcon from "@mui/icons-material/Check";
+import CheckBoxOutlinedIcon from "@mui/icons-material/CheckBoxOutlined";
 import { useContext } from "react";
 import { dataContext } from "../../ContextProvider";
 import { finalizeOptionsType } from "../../types/finalizeOptionsType";
 import { methodCardInterface } from "../../interfaces/methodCardInterface";
-
+import CheckBoxOutlineBlankOutlinedIcon from "@mui/icons-material/CheckBoxOutlineBlankOutlined";
 const MethodCard = ({ name, imgUrl, selected }: methodCardInterface) => {
   const {
     deliveryOptions,
@@ -44,7 +44,7 @@ const MethodCard = ({ name, imgUrl, selected }: methodCardInterface) => {
         justifyContent: "flex-start",
         alignItems: "center",
         flexDirection: "row",
-        minWidth: 320,
+        width: "100%",
         mb: 1,
       }}
     >
@@ -66,19 +66,39 @@ const MethodCard = ({ name, imgUrl, selected }: methodCardInterface) => {
         />
       </Box>
 
-      <CardContent>
-        <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
+      <CardContent
+        sx={{
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "space-between",
+          alignItems: "center",
+          width: 180,
+        }}
+      >
+        <Typography color="primary" variant="h5" sx={{ maxWidth: 150 }}>
           {name}
         </Typography>
-        <ToggleButton
-          value="check"
-          selected={selected}
-          onChange={() => {
-            placeholderOnClick();
-          }}
-        >
-          {selected && <CheckIcon sx={{ p: 0, m: 0 }} />}
-        </ToggleButton>
+
+        {selected ? (
+          <IconButton
+            onClick={() => {
+              placeholderOnClick();
+            }}
+          >
+            <CheckBoxOutlinedIcon fontSize="medium" color="primary" />
+          </IconButton>
+        ) : (
+          <IconButton
+            onClick={() => {
+              placeholderOnClick();
+            }}
+          >
+            <CheckBoxOutlineBlankOutlinedIcon
+              fontSize="medium"
+              color="primary"
+            />
+          </IconButton>
+        )}
       </CardContent>
     </Box>
   );

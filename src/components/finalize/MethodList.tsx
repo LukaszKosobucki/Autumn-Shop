@@ -1,9 +1,9 @@
 import MethodCard from "./MethodCard";
-
 import { Box, Button, Typography } from "@mui/material";
 import { finalizeOptionsType } from "../../types/finalizeOptionsType";
 import { dataContext } from "../../ContextProvider";
 import { useContext } from "react";
+import styles from "../../palette.module.scss";
 
 const MethodList = ({ options }: { options: finalizeOptionsType[] }) => {
   const {
@@ -46,9 +46,10 @@ const MethodList = ({ options }: { options: finalizeOptionsType[] }) => {
         alignItems: "center",
         position: "relative",
         flexDirection: "column",
-        bgcolor: "#e0ddcb",
+        bgcolor: styles.colorAutumnLight100,
         p: 5,
         mb: 2,
+        transition: "0.5s",
       }}
     >
       {isTrue()
@@ -72,12 +73,8 @@ const MethodList = ({ options }: { options: finalizeOptionsType[] }) => {
             />
           ))}
       {isTrue() && (
-        <Button
-          onClick={() => resetOptions()}
-          key="xd"
-          sx={{ bgcolor: "#f4f1de", pb: 0, borderRadius: "0%" }}
-        >
-          <Typography sx={{ fontSize: 14 }} color="#3d405b" gutterBottom>
+        <Button onClick={() => resetOptions()}>
+          <Typography color="primary" variant="caption">
             Change Options
           </Typography>
         </Button>
