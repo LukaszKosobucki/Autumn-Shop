@@ -1,7 +1,7 @@
-import { Box } from "@mui/material";
+import { Grid, Box } from "@mui/material";
 const ProductImageBg = () => {
   return (
-    <Box
+    <Grid
       sx={{
         height: 315,
         width: "100%",
@@ -24,7 +24,7 @@ const ProductImageBg = () => {
         alt="BG for products Page"
         src="https://images.unsplash.com/photo-1507546530-14a03f8d180a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=642&q=80"
       />
-    </Box>
+    </Grid>
   );
 };
 

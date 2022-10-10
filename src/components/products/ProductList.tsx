@@ -1,6 +1,6 @@
 import ProductItem from "./ProductItem";
 import { productType } from "../../types/productType";
-import { Box } from "@mui/material";
+import { Grid } from "@mui/material";
 import { useContext } from "react";
 import { basketType } from "../../types/basketType";
 import { dataContext } from "../../ContextProvider";
@@ -26,7 +26,7 @@ const ProductList = ({ items }: { items: productType[] }) => {
   };
 
   return (
-    <Box
+    <Grid
       sx={{
         display: "flex",
         flexWrap: "wrap",
@@ -38,7 +38,7 @@ const ProductList = ({ items }: { items: productType[] }) => {
       {items.slice(0, loadLimit).map((item: productType) => (
         <ProductItem item={item} key={item.key} addToBasket={addToBasket} />
       ))}
-    </Box>
+    </Grid>
   );
 };
 

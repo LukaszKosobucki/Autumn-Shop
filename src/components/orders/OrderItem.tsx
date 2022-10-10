@@ -1,4 +1,4 @@
-import { Box, Link } from "@mui/material";
+import { Grid, Link, Box } from "@mui/material";
 import { useState } from "react";
 import { orderType } from "../../types/orderType";
 import OrderDetails from "./OrderDetails";
@@ -12,7 +12,7 @@ const OrderItem = ({ orderItem }: { orderItem: orderType }) => {
     setOpenDetails(false);
   };
   return (
-    <Box
+    <Grid
       sx={{
         display: "flex",
         flexWrap: " wrap",
@@ -47,7 +47,7 @@ const OrderItem = ({ orderItem }: { orderItem: orderType }) => {
       <Box sx={{ borderLeft: "1px solid black", px: 1, py: 0.5, my: 0.5 }}>
         {orderItem.date}
       </Box>
-    </Box>
+    </Grid>
   );
 };
 

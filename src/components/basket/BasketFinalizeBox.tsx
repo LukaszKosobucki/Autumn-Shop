@@ -1,4 +1,4 @@
-import { Box, Typography, Button } from "@mui/material";
+import { Grid, Typography, Button } from "@mui/material";
 import { useContext, useEffect, useState } from "react";
 import { dataContext } from "../../ContextProvider";
 import { Link } from "react-router-dom";
@@ -22,7 +22,7 @@ const BasketFinalizeBox = ({ text, link }: { text: string; link: boolean }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [basketProcessedData]);
   return (
-    <Box
+    <Grid
       sx={{
         display: "flex",
         flexWrap: " wrap",
@@ -59,7 +59,7 @@ const BasketFinalizeBox = ({ text, link }: { text: string; link: boolean }) => {
           </Typography>
         </Button>
       )}
-    </Box>
+    </Grid>
   );
 };
 

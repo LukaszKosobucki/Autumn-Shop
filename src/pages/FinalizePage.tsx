@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Grid, Box } from "@mui/material";
 import MethodList from "../components/finalize/MethodList";
 import BasketFinalizeBox from "../components/basket/BasketFinalizeBox";
 import { dataContext } from "../ContextProvider";
@@ -58,7 +58,7 @@ const FinalizePage = () => {
 
   return (
     <form onSubmit={handleSubmit(postDataFn)}>
-      <Box
+      <Grid
         sx={{
           display: "flex",
           flexWrap: "wrap",
@@ -76,7 +76,7 @@ const FinalizePage = () => {
           <MethodList options={paymentOptions} />
         </Box>
         <BasketFinalizeBox text="Finalize" link={false} />
-      </Box>
+      </Grid>
     </form>
   );
 };

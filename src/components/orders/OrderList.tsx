@@ -1,5 +1,5 @@
 import OrderItem from "./OrderItem";
-import { Box } from "@mui/material";
+import { Grid } from "@mui/material";
 import { dataContext } from "../../ContextProvider";
 import { useContext } from "react";
 import { orderType } from "../../types/orderType";
@@ -7,7 +7,7 @@ import { orderType } from "../../types/orderType";
 const OrderList = () => {
   const { orderData, orderLoadLimit } = useContext(dataContext);
   return (
-    <Box
+    <Grid
       sx={{
         display: "flex",
         flexWrap: "wrap",
@@ -20,7 +20,7 @@ const OrderList = () => {
       {orderData.slice(0, orderLoadLimit).map((orderItem: orderType) => (
         <OrderItem key={orderItem.id} orderItem={orderItem} />
       ))}
-    </Box>
+    </Grid>
   );
 };
 

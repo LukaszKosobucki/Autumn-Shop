@@ -2,7 +2,7 @@ import { useEffect, useContext } from "react";
 import ProductList from "../components/products/ProductList";
 import { productType } from "../types/productType";
 import ProductFilter from "../components/products/ProductFilter";
-import { Button, Box, Typography } from "@mui/material";
+import { Button, Grid, Box, Typography } from "@mui/material";
 import { dataContext } from "../ContextProvider";
 import ProductImageBg from "../components/products/ProductImageBg";
 
@@ -39,7 +39,7 @@ const ProductPage = () => {
   return (
     <Box sx={{ width: "100vw", p: 0 }}>
       <ProductImageBg />
-      <Box
+      <Grid
         sx={{
           display: "flex",
           flexWrap: "wrap",
@@ -64,7 +64,7 @@ const ProductPage = () => {
             </Typography>
           </Button>
         )}
-      </Box>
+      </Grid>
     </Box>
   );
 };

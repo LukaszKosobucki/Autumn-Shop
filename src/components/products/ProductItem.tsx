@@ -1,7 +1,7 @@
 import {
   Card,
   CardContent,
-  Box,
+  Grid,
   Typography,
   CardMedia,
   IconButton,
@@ -33,7 +33,7 @@ const ProductItem = ({
         alt="green iguana"
       />
       <CardContent>
-        <Box
+        <Grid
           sx={{
             display: "flex",
             flexWrap: "wrap",
@@ -42,7 +42,7 @@ const ProductItem = ({
             flexDirection: "row",
           }}
         >
-          <Box
+          <Grid
             sx={{
               display: "flex",
               flexWrap: "wrap",
@@ -57,8 +57,8 @@ const ProductItem = ({
             <Typography variant="h5" color="primary">
               {item.price}$
             </Typography>
-          </Box>
-          <Box
+          </Grid>
+          <Grid
             sx={{
               display: "flex",
               flexWrap: "nowrap",
@@ -76,8 +76,8 @@ const ProductItem = ({
             </IconButton>
 
             <ProductSnackBar text="Product added to the basket" />
-          </Box>
-        </Box>
+          </Grid>
+        </Grid>
       </CardContent>
     </Card>
   );

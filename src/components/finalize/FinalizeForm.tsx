@@ -1,5 +1,5 @@
 import {
-  Box,
+  Grid,
   Button,
   FormControl,
   Input,
@@ -25,7 +25,7 @@ const FinalizeForm = ({
   ];
 
   return (
-    <Box
+    <Grid
       sx={{
         display: "flex",
         flexWrap: "wrap",
@@ -37,7 +37,7 @@ const FinalizeForm = ({
         pb: 2,
       }}
     >
-      <Box
+      <Grid
         sx={{
           display: "flex",
           flexWrap: "wrap",
@@ -59,9 +59,9 @@ const FinalizeForm = ({
             Login
           </Typography>
         </Button>
-      </Box>
+      </Grid>
 
-      <Box
+      <Grid
         sx={{
           display: "flex",
           flexWrap: "wrap",
@@ -85,8 +85,8 @@ const FinalizeForm = ({
             />
           </FormControl>
         ))}
-      </Box>
-    </Box>
+      </Grid>
+    </Grid>
   );
 };
 

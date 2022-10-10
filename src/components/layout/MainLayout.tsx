@@ -1,12 +1,12 @@
 import Footer from "./Footer";
 import Header from "./Header";
-import { Box } from "@mui/material";
+import { Grid, Box } from "@mui/material";
 import { childrenInterface } from "../../interfaces/childrenInterface";
 const MainLayout = ({ children }: childrenInterface) => {
   return (
     <Box component="main">
       <Header />
-      <Box
+      <Grid
         sx={{
           display: "flex",
           justifyContent: "center",
@@ -20,7 +20,7 @@ const MainLayout = ({ children }: childrenInterface) => {
         }}
       >
         {children}
-      </Box>
+      </Grid>
 
       <Footer />
     </Box>

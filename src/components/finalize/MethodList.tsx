@@ -1,5 +1,5 @@
 import MethodCard from "./MethodCard";
-import { Box, Button, Typography } from "@mui/material";
+import { Grid, Button, Typography } from "@mui/material";
 import { finalizeOptionsType } from "../../types/finalizeOptionsType";
 import { dataContext } from "../../ContextProvider";
 import { useContext } from "react";
@@ -38,7 +38,7 @@ const MethodList = ({ options }: { options: finalizeOptionsType[] }) => {
   };
 
   return (
-    <Box
+    <Grid
       sx={{
         display: "flex",
         flexWrap: "wrap",
@@ -79,7 +79,7 @@ const MethodList = ({ options }: { options: finalizeOptionsType[] }) => {
           </Typography>
         </Button>
       )}
-    </Box>
+    </Grid>
   );
 };
 

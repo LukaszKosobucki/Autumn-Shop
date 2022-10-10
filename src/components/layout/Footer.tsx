@@ -1,7 +1,7 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, Grid } from "@mui/material";
 const Footer = () => {
   return (
-    <Box
+    <Grid
       sx={{
         display: "flex",
         flexWrap: "wrap",
@@ -49,7 +49,7 @@ const Footer = () => {
           <Typography variant="subtitle2">hello world</Typography>
         </Box>
       </Box>
-    </Box>
+    </Grid>
   );
 };
 

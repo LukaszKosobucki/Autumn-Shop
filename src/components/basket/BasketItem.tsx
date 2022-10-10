@@ -1,5 +1,5 @@
 import {
-  Box,
+  Grid,
   Card,
   CardMedia,
   CardContent,
@@ -20,7 +20,7 @@ const BasketItem = ({
 }: basketItemInterface) => {
   return (
     <Card>
-      <Box
+      <Grid
         sx={{
           display: "flex",
           flexWrap: " wrap",
@@ -31,7 +31,7 @@ const BasketItem = ({
           minWidth: 500,
         }}
       >
-        <Box
+        <Grid
           sx={{
             display: "flex",
             flexWrap: "wrap",
@@ -40,7 +40,7 @@ const BasketItem = ({
             flexDirection: "row",
           }}
         >
-          <Box
+          <Grid
             sx={{
               flexWrap: "wrap",
               justifyContent: "flex-start",
@@ -55,7 +55,7 @@ const BasketItem = ({
               image="https://images.unsplash.com/photo-1515471897120-85416077e011?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8Y29mZmVlJTIwYmFnfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
               alt="green iguana"
             />
-          </Box>
+          </Grid>
 
           <CardContent>
             <Typography color="primary" variant="caption">
@@ -65,9 +65,9 @@ const BasketItem = ({
               price: {item.price}$
             </Typography>
           </CardContent>
-        </Box>
+        </Grid>
 
-        <Box
+        <Grid
           sx={{
             display: "flex",
             flexWrap: "wrap",
@@ -104,8 +104,8 @@ const BasketItem = ({
             <DeleteForeverOutlinedIcon fontSize="large" />
           </IconButton>
           <ProductSnackBar text="Product deleted from the basket" />
-        </Box>
-      </Box>
+        </Grid>
+      </Grid>
     </Card>
   );
 };

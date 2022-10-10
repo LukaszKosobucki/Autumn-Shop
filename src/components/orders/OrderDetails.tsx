@@ -5,7 +5,7 @@ import {
   DialogContentText,
   Slide,
   Typography,
-  Box,
+  Grid,
 } from "@mui/material";
 import { TransitionProps } from "@mui/material/transitions";
 import React, { useContext } from "react";
@@ -42,7 +42,7 @@ const OrderDetails = ({
       onClose={handleClose}
     >
       <DialogTitle>{orderItem.id}</DialogTitle>
-      <Box
+      <Grid
         sx={{
           display: "flex",
           flexWrap: " wrap",
@@ -90,7 +90,7 @@ const OrderDetails = ({
         <Typography>Date: {orderItem.date}</Typography>
         <Typography>Delivery Option: {orderItem.delivery_option}</Typography>
         <Typography>Payment Option: {orderItem.payment_option}</Typography>
-      </Box>
+      </Grid>
     </Dialog>
   );
 };

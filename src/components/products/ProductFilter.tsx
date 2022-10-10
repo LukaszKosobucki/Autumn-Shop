@@ -1,5 +1,5 @@
 import {
-  Box,
+  Grid,
   ToggleButton,
   IconButton,
   ToggleButtonGroup,
@@ -54,7 +54,7 @@ const ProductFilter = ({ filterByCategory }: productFilterInterface) => {
     fetchData();
   }, []);
   return (
-    <Box
+    <Grid
       sx={{
         display: "flex",
         flexWrap: "wrap",
@@ -93,7 +93,7 @@ const ProductFilter = ({ filterByCategory }: productFilterInterface) => {
           </IconButton>
         </>
       ) : null}
-    </Box>
+    </Grid>
   );
 };
 

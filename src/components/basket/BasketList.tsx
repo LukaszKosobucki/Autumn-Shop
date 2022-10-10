@@ -1,5 +1,5 @@
-import { Box } from "@mui/material";
-import { useContext, useEffect, useState } from "react";
+import { Grid } from "@mui/material";
+import { useContext, useEffect } from "react";
 import { dataContext } from "../../ContextProvider";
 import { basketType } from "../../types/basketType";
 import BasketItem from "./BasketItem";
@@ -44,7 +44,7 @@ const BasketList = () => {
   }, [data, basketData]);
 
   return (
-    <Box
+    <Grid
       sx={{
         display: "flex",
         flexWrap: "wrap",
@@ -64,7 +64,7 @@ const BasketList = () => {
           />
         );
       })}
-    </Box>
+    </Grid>
   );
 };
 export default BasketList;

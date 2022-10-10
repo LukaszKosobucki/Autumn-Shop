@@ -1,5 +1,5 @@
 import {
-  Box,
+  Grid,
   CardContent,
   CardMedia,
   Typography,
@@ -50,7 +50,7 @@ const MethodCard = ({ name, imgUrl, selected }: methodCardInterface) => {
         bgcolor: "#f7f4e1",
       }}
     >
-      <Box
+      <Grid
         sx={{
           flexWrap: "wrap",
           color: "#3d405b",
@@ -66,7 +66,7 @@ const MethodCard = ({ name, imgUrl, selected }: methodCardInterface) => {
           image={imgUrl}
           alt="green iguana"
         />
-      </Box>
+      </Grid>
 
       <CardContent
         sx={{
