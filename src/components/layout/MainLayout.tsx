@@ -3,8 +3,15 @@ import Header from "./Header";
 import { Grid, Box } from "@mui/material";
 import { childrenInterface } from "../../interfaces/childrenInterface";
 import colors from "../../palette.module.scss";
+import { useEffect } from "react";
+import { useLocation } from "react-router";
 
 const MainLayout = ({ children }: childrenInterface) => {
+  const location = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
+
   return (
     <Box component="main">
       <Header />
