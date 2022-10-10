@@ -84,6 +84,7 @@ export const theme = createTheme({
           px: 10,
           margin: "0.4rem 0.4rem 0 0 ",
           transitionDuration: "0.3s",
+
           ":hover": {
             boxShadow: " 4px 4px 4px rgba(0, 0, 0, 0.25)",
             backgroundColor: styles.colorAutumnLight200,
@@ -100,6 +101,19 @@ export const theme = createTheme({
           backgroundColor: styles.colorAutumnLight100,
           boxShadow: "4px 4px 4px rgba(0, 0, 0, 0.25)",
           ":hover": { boxShadow: "6px 6px 5px rgba(0, 0, 0, 0.35)" },
+        },
+      },
+    },
+    MuiGrid: {
+      styleOverrides: {
+        root: {
+          padding: 0,
+          margin: 0,
+          display: "flex",
+          flexWrap: "wrap",
+          justifyContent: "flext-start",
+          alignItems: "flex-start",
+          flexDirection: "column",
         },
       },
     },

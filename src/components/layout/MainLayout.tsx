@@ -1,18 +1,25 @@
 import Footer from "./Footer";
 import Header from "./Header";
-import { Box } from "@mui/material";
+import { Grid, Box } from "@mui/material";
 import { childrenInterface } from "../../interfaces/childrenInterface";
+import colors from "../../palette.module.scss";
+import { useEffect } from "react";
+import { useLocation } from "react-router";
+
 const MainLayout = ({ children }: childrenInterface) => {
+  const location = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
+
   return (
     <Box component="main">
       <Header />
-      <Box
+      <Grid
         sx={{
-          display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          flexDirection: "column",
-          bgcolor: "#f7f4e1",
+          bgcolor: colors.colorAutumnLight50,
           minHeight: "100vh",
           minWidth: "100%",
           margin: 0,
@@ -20,7 +27,7 @@ const MainLayout = ({ children }: childrenInterface) => {
         }}
       >
         {children}
-      </Box>
+      </Grid>
 
       <Footer />
     </Box>

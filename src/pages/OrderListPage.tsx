@@ -1,4 +1,4 @@
-import { Box, Button, Typography } from "@mui/material";
+import { Grid, Button, Typography } from "@mui/material";
 import OrderList from "../components/orders/OrderList";
 import OrderImageBg from "../components/orders/OrderImageBg";
 import { dataContext } from "../ContextProvider";
@@ -8,16 +8,10 @@ const OrderListPage = () => {
   const { orderLoadLimit, setOrderLoadLimit, orderData } =
     useContext(dataContext);
   return (
-    <Box
+    <Grid
       sx={{
-        display: "flex",
-        flexWrap: "wrap",
-        justifyContent: "flext-start",
         alignItems: "center",
-        flexDirection: "column",
-        position: "relative",
         minHeight: "100vh",
-        color: "#3d405b",
         minWidth: "100%",
       }}
     >
@@ -38,7 +32,7 @@ const OrderListPage = () => {
           </Typography>
         </Button>
       )}
-    </Box>
+    </Grid>
   );
 };
 

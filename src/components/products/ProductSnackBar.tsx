@@ -2,6 +2,7 @@ import { Alert, Button, IconButton, Snackbar } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import { dataContext } from "../../ContextProvider";
 import { useContext } from "react";
+import colors from "../../palette.module.scss";
 
 const ProductSnackBar = ({ text }: { text: string }) => {
   const { open, setOpen } = useContext(dataContext);
@@ -42,7 +43,7 @@ const ProductSnackBar = ({ text }: { text: string }) => {
       <Alert
         action={action}
         severity="success"
-        sx={{ width: "100%", bgcolor: "#e0ddcb" }}
+        sx={{ width: "100%", bgcolor: colors.colorAutumnLight100 }}
       >
         {text}
       </Alert>

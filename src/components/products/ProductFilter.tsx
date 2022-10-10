@@ -1,5 +1,5 @@
 import {
-  Box,
+  Grid,
   ToggleButton,
   IconButton,
   ToggleButtonGroup,
@@ -54,15 +54,13 @@ const ProductFilter = ({ filterByCategory }: productFilterInterface) => {
     fetchData();
   }, []);
   return (
-    <Box
+    <Grid
       sx={{
-        display: "flex",
-        flexWrap: "wrap",
-        p: 2,
-        maxWidth: 500,
+        p: "1rem",
+        maxWidth: "37.5rem",
         justifyContent: "center",
         alignItems: "center",
-        bgcolor: "#f7f4e1",
+        flexDirection: "row",
       }}
     >
       {categories.map((item: categoryType, index: number) => (
@@ -93,7 +91,7 @@ const ProductFilter = ({ filterByCategory }: productFilterInterface) => {
           </IconButton>
         </>
       ) : null}
-    </Box>
+    </Grid>
   );
 };
 

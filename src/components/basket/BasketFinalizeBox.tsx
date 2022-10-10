@@ -1,4 +1,4 @@
-import { Box, Typography, Button } from "@mui/material";
+import { Grid, Typography, Button } from "@mui/material";
 import { useContext, useEffect, useState } from "react";
 import { dataContext } from "../../ContextProvider";
 import { Link } from "react-router-dom";
@@ -22,19 +22,14 @@ const BasketFinalizeBox = ({ text, link }: { text: string; link: boolean }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [basketProcessedData]);
   return (
-    <Box
+    <Grid
       sx={{
-        display: "flex",
-        flexWrap: " wrap",
-        justifyContent: "flex-start",
-        alignItems: "flex-start",
-        flexDirection: "column",
         position: "sticky",
         top: 90,
-        ml: 5,
-        p: 3,
+        ml: "2.5rem",
+        p: "1.5rem",
         bgcolor: styles.colorAutumnLight100,
-        borderRadius: 2,
+        borderRadius: "1rem",
       }}
     >
       <Typography color="primary" variant="caption">
@@ -59,7 +54,7 @@ const BasketFinalizeBox = ({ text, link }: { text: string; link: boolean }) => {
           </Typography>
         </Button>
       )}
-    </Box>
+    </Grid>
   );
 };
 

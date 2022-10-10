@@ -1,5 +1,5 @@
 import {
-  Box,
+  Grid,
   Button,
   FormControl,
   Input,
@@ -25,28 +25,18 @@ const FinalizeForm = ({
   ];
 
   return (
-    <Box
+    <Grid
       sx={{
-        display: "flex",
-        flexWrap: "wrap",
-        justifyContent: "flext-start",
-        alignItems: "flex-start",
-        position: "relative",
-        flexDirection: "column",
         width: "100%",
-        pb: 2,
+        pb: "1rem",
       }}
     >
-      <Box
+      <Grid
         sx={{
-          display: "flex",
-          flexWrap: "wrap",
           justifyContent: "space-around",
-          alignItems: "flex-start",
-          position: "relative",
           flexDirection: "row",
           width: "100%",
-          pb: 2,
+          pb: "1rem",
         }}
       >
         <Button>
@@ -59,19 +49,13 @@ const FinalizeForm = ({
             Login
           </Typography>
         </Button>
-      </Box>
+      </Grid>
 
-      <Box
+      <Grid
         sx={{
-          display: "flex",
-          flexWrap: "wrap",
-          justifyContent: "flext-start",
-          alignItems: "flex-start",
-          position: "relative",
-          flexDirection: "column",
           bgcolor: styles.colorAutumnLight100,
-          minWidth: 320,
-          p: 5,
+          minWidth: "20rem",
+          p: "2.5rem",
         }}
       >
         {formData.map((text) => (
@@ -80,13 +64,13 @@ const FinalizeForm = ({
             <Input
               id={text}
               color="primary"
-              sx={{ mb: 1.5, minWidth: 18.75 }}
+              sx={{ mb: "0.75rem", minWidth: "9.375rem" }}
               {...register(text.toLowerCase())}
             />
           </FormControl>
         ))}
-      </Box>
-    </Box>
+      </Grid>
+    </Grid>
   );
 };
 

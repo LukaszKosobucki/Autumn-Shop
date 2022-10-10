@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material";
+import { Grid, Typography } from "@mui/material";
 import BasketList from "../components/basket/BasketList";
 import BasketFinalizeBox from "../components/basket/BasketFinalizeBox";
 import { dataContext } from "../ContextProvider";
@@ -7,16 +7,11 @@ import { useContext } from "react";
 const BasketPage = () => {
   const { basketData } = useContext(dataContext);
   return (
-    <Box
+    <Grid
       sx={{
-        display: "flex",
-        flexWrap: "wrap",
-        justifyContent: "flext-start",
-        alignItems: "flex-start",
-        position: "relative",
         flexDirection: "row",
         minHeight: "100vh",
-        mt: 5,
+        mt: "2.5rem",
       }}
     >
       {basketData.length > 0 ? (
@@ -30,7 +25,7 @@ const BasketPage = () => {
           further
         </Typography>
       )}
-    </Box>
+    </Grid>
   );
 };
 

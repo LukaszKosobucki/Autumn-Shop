@@ -2,7 +2,7 @@ import { useEffect, useContext } from "react";
 import ProductList from "../components/products/ProductList";
 import { productType } from "../types/productType";
 import ProductFilter from "../components/products/ProductFilter";
-import { Button, Box, Typography } from "@mui/material";
+import { Button, Grid, Box, Typography } from "@mui/material";
 import { dataContext } from "../ContextProvider";
 import ProductImageBg from "../components/products/ProductImageBg";
 
@@ -39,13 +39,9 @@ const ProductPage = () => {
   return (
     <Box sx={{ width: "100vw", p: 0 }}>
       <ProductImageBg />
-      <Box
+      <Grid
         sx={{
-          display: "flex",
-          flexWrap: "wrap",
-          justifyContent: "flext-start",
           alignItems: "center",
-          flexDirection: "column",
           minHeight: "100vh",
         }}
       >
@@ -57,14 +53,14 @@ const ProductPage = () => {
             onClick={() => {
               setLoadLimit(loadLimit + 9);
             }}
-            sx={{ mt: 2 }}
+            sx={{ my: 2 }}
           >
             <Typography variant="button" color="primary">
               Load More...
             </Typography>
           </Button>
         )}
-      </Box>
+      </Grid>
     </Box>
   );
 };

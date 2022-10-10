@@ -1,4 +1,4 @@
-import { Box, Typography, IconButton } from "@mui/material";
+import { Grid, Typography, IconButton, Box } from "@mui/material";
 import EmojiFoodBeverageIcon from "@mui/icons-material/EmojiFoodBeverage";
 import AccountBoxIcon from "@mui/icons-material/AccountBox";
 import ListIcon from "@mui/icons-material/List";
@@ -8,14 +8,13 @@ import styles from "../../palette.module.scss";
 
 const Header = () => {
   return (
-    <Box
+    <Grid
       sx={{
-        display: "flex",
-        flexWrap: "wrap",
         bgcolor: styles.colorAutumnDawnAutumnDawn,
         justifyContent: "space-around",
         alignItems: "center",
         position: "sticky",
+        flexDirection: "row",
         top: 0,
         zIndex: 2,
         mb: 0,
@@ -40,10 +39,8 @@ const Header = () => {
           Jesieniara-ecommerce
         </Typography>
       </Box>
-      <Box
+      <Grid
         sx={{
-          display: "flex",
-          flexWrap: "wrap",
           justifyContent: "space-around",
           alignItems: "center",
           flexDirection: "row",
@@ -64,8 +61,8 @@ const Header = () => {
             <ShoppingCartIcon fontSize="large" />
           </IconButton>
         </Box>
-      </Box>
-    </Box>
+      </Grid>
+    </Grid>
   );
 };
 export default Header;

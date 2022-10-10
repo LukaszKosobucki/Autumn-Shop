@@ -1,5 +1,5 @@
 import {
-  Box,
+  Grid,
   CardContent,
   CardMedia,
   Typography,
@@ -12,6 +12,8 @@ import { dataContext } from "../../ContextProvider";
 import { finalizeOptionsType } from "../../types/finalizeOptionsType";
 import { methodCardInterface } from "../../interfaces/methodCardInterface";
 import CheckBoxOutlineBlankOutlinedIcon from "@mui/icons-material/CheckBoxOutlineBlankOutlined";
+import colors from "../../palette.module.scss";
+
 const MethodCard = ({ name, imgUrl, selected }: methodCardInterface) => {
   const {
     deliveryOptions,
@@ -46,18 +48,15 @@ const MethodCard = ({ name, imgUrl, selected }: methodCardInterface) => {
         alignItems: "center",
         flexDirection: "row",
         width: "100%",
-        mb: 1,
-        bgcolor: "#f7f4e1",
+        mb: "0.5rem",
+        bgcolor: colors.colorAutumnLight50,
       }}
     >
-      <Box
+      <Grid
         sx={{
-          flexWrap: "wrap",
-          color: "#3d405b",
-          justifyContent: "flex-start",
           alignItems: "center",
           flexDirection: "row",
-          width: 100,
+          width: "6.25rem",
         }}
       >
         <CardMedia
@@ -66,7 +65,7 @@ const MethodCard = ({ name, imgUrl, selected }: methodCardInterface) => {
           image={imgUrl}
           alt="green iguana"
         />
-      </Box>
+      </Grid>
 
       <CardContent
         sx={{
@@ -74,10 +73,10 @@ const MethodCard = ({ name, imgUrl, selected }: methodCardInterface) => {
           flexDirection: "row",
           justifyContent: "space-between",
           alignItems: "center",
-          width: 180,
+          width: "11.25rem",
         }}
       >
-        <Typography color="primary" variant="h5" sx={{ maxWidth: 150 }}>
+        <Typography color="primary" variant="h5" sx={{ maxWidth: "9.375rem" }}>
           {name}
         </Typography>
 

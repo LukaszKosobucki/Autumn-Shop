@@ -1,7 +1,7 @@
 import {
   Card,
   CardContent,
-  Box,
+  Grid,
   Typography,
   CardMedia,
   IconButton,
@@ -21,8 +21,13 @@ const ProductItem = ({
   return (
     <Card
       sx={{
-        minWidth: 150,
-        width: 230,
+        display: "flex",
+        flexWrap: "wrap",
+        justifyContent: "flext-start",
+        alignItems: "space-between",
+        flexDirection: "column",
+        minWidth: "9.375rem",
+        width: "14.375rem",
         bgcolor: colors[item.category],
       }}
     >
@@ -33,38 +38,25 @@ const ProductItem = ({
         alt="green iguana"
       />
       <CardContent>
-        <Box
+        <Grid
           sx={{
-            display: "flex",
-            flexWrap: "wrap",
             justifyContent: "space-between",
-            alignItems: "flex-start",
             flexDirection: "row",
           }}
         >
-          <Box
-            sx={{
-              display: "flex",
-              flexWrap: "wrap",
-              justifyContent: "flex-start",
-              alignItems: "flex-start",
-              flexDirection: "column",
-            }}
-          >
+          <Grid>
             <Typography color="primary" variant="caption">
               {item.name}
             </Typography>
             <Typography variant="h5" color="primary">
               {item.price}$
             </Typography>
-          </Box>
-          <Box
+          </Grid>
+          <Grid
             sx={{
-              display: "flex",
               flexWrap: "nowrap",
               justifyContent: "flex-end",
               alignSelf: "flex-end",
-              flexDirection: "column",
             }}
           >
             <IconButton
@@ -76,8 +68,8 @@ const ProductItem = ({
             </IconButton>
 
             <ProductSnackBar text="Product added to the basket" />
-          </Box>
-        </Box>
+          </Grid>
+        </Grid>
       </CardContent>
     </Card>
   );

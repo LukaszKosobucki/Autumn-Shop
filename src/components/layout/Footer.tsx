@@ -1,55 +1,72 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, Grid } from "@mui/material";
+import colors from "../../palette.module.scss";
+
 const Footer = () => {
   return (
-    <Box
+    <Grid
       sx={{
-        display: "flex",
-        flexWrap: "wrap",
-        px: 10,
-        py: 4,
-        bgcolor: "#3d405b",
-        color: "#cac7b5",
+        px: "5rem",
+        py: "2rem",
+        bgcolor: colors.colorAutumnDuskAutumnDusk,
         justifyContent: "space-around",
         alignItems: "center",
-        position: "relative",
         left: 0,
         bottom: 0,
+        flexDirection: "row",
       }}
     >
       <Box>
-        <Box borderBottom={1}>
-          <Typography variant="subtitle2">FAQ</Typography>
+        <Box sx={{ borderBottom: "1px solid #f4f1de" }}>
+          <Typography variant="caption" color="secondary">
+            FAQ
+          </Typography>
         </Box>
         <Box>
-          <Typography variant="subtitle2">hello world</Typography>
+          <Typography variant="caption" color="secondary">
+            hello world
+          </Typography>
         </Box>
         <Box>
-          <Typography variant="subtitle2">hello world</Typography>
+          <Typography variant="caption" color="secondary">
+            hello world
+          </Typography>
         </Box>
       </Box>
       <Box>
-        <Box borderBottom={1}>
-          <Typography variant="subtitle2">Contact</Typography>
+        <Box sx={{ borderBottom: "1px solid #f4f1de" }}>
+          <Typography variant="caption" color="secondary">
+            Contact
+          </Typography>
         </Box>
         <Box>
-          <Typography variant="subtitle2">hello world</Typography>
+          <Typography variant="caption" color="secondary">
+            hello world
+          </Typography>
         </Box>
         <Box>
-          <Typography variant="subtitle2">hello world</Typography>
+          <Typography variant="caption" color="secondary">
+            hello world
+          </Typography>
         </Box>
       </Box>
       <Box>
-        <Box borderBottom={1}>
-          <Typography variant="subtitle2">About</Typography>
+        <Box sx={{ borderBottom: "1px solid #f4f1de" }}>
+          <Typography variant="caption" color="secondary">
+            About
+          </Typography>
         </Box>
         <Box>
-          <Typography variant="subtitle2">hello world</Typography>
+          <Typography variant="caption" color="secondary">
+            hello world
+          </Typography>
         </Box>
         <Box>
-          <Typography variant="subtitle2">hello world</Typography>
+          <Typography variant="caption" color="secondary">
+            hello world
+          </Typography>
         </Box>
       </Box>
-    </Box>
+    </Grid>
   );
 };
 
