@@ -4,6 +4,7 @@ import {
   CardMedia,
   Typography,
   IconButton,
+  Card,
 } from "@mui/material";
 import CheckBoxOutlinedIcon from "@mui/icons-material/CheckBoxOutlined";
 import { useContext } from "react";
@@ -36,7 +37,7 @@ const MethodCard = ({ name, imgUrl, selected }: methodCardInterface) => {
     }
   };
   return (
-    <Box
+    <Card
       sx={{
         display: "flex",
         flexWrap: "wrap",
@@ -46,6 +47,7 @@ const MethodCard = ({ name, imgUrl, selected }: methodCardInterface) => {
         flexDirection: "row",
         width: "100%",
         mb: 1,
+        bgcolor: "#f7f4e1",
       }}
     >
       <Box
@@ -100,7 +102,7 @@ const MethodCard = ({ name, imgUrl, selected }: methodCardInterface) => {
           </IconButton>
         )}
       </CardContent>
-    </Box>
+    </Card>
   );
 };
 
