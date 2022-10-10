@@ -52,9 +52,6 @@ const MethodCard = ({ name, imgUrl, selected }: methodCardInterface) => {
     >
       <Grid
         sx={{
-          flexWrap: "wrap",
-          color: "#3d405b",
-          justifyContent: "flex-start",
           alignItems: "center",
           flexDirection: "row",
           width: 100,

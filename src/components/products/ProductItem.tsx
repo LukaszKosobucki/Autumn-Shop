@@ -35,22 +35,11 @@ const ProductItem = ({
       <CardContent>
         <Grid
           sx={{
-            display: "flex",
-            flexWrap: "wrap",
             justifyContent: "space-between",
-            alignItems: "flex-start",
             flexDirection: "row",
           }}
         >
-          <Grid
-            sx={{
-              display: "flex",
-              flexWrap: "wrap",
-              justifyContent: "flex-start",
-              alignItems: "flex-start",
-              flexDirection: "column",
-            }}
-          >
+          <Grid>
             <Typography color="primary" variant="caption">
               {item.name}
             </Typography>
@@ -60,11 +49,9 @@ const ProductItem = ({
           </Grid>
           <Grid
             sx={{
-              display: "flex",
               flexWrap: "nowrap",
               justifyContent: "flex-end",
               alignSelf: "flex-end",
-              flexDirection: "column",
             }}
           >
             <IconButton

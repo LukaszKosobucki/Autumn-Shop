@@ -44,15 +44,7 @@ const BasketList = () => {
   }, [data, basketData]);
 
   return (
-    <Grid
-      sx={{
-        display: "flex",
-        flexWrap: "wrap",
-        justifyContent: "flext-start",
-        alignItems: "flex-start",
-        flexDirection: "column",
-      }}
-    >
+    <Grid>
       {basketProcessedData.map((item: basketProcessedType) => {
         return (
           <BasketItem

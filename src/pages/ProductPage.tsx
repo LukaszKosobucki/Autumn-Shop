@@ -41,11 +41,7 @@ const ProductPage = () => {
       <ProductImageBg />
       <Grid
         sx={{
-          display: "flex",
-          flexWrap: "wrap",
-          justifyContent: "flext-start",
           alignItems: "center",
-          flexDirection: "column",
           minHeight: "100vh",
         }}
       >
@@ -57,7 +53,7 @@ const ProductPage = () => {
             onClick={() => {
               setLoadLimit(loadLimit + 9);
             }}
-            sx={{ mt: 2 }}
+            sx={{ my: 2 }}
           >
             <Typography variant="button" color="primary">
               Load More...

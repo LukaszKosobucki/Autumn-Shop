@@ -22,8 +22,6 @@ const BasketItem = ({
     <Card>
       <Grid
         sx={{
-          display: "flex",
-          flexWrap: " wrap",
           justifyContent: "space-between",
           alignItems: "center",
           flexDirection: "row",
@@ -33,17 +31,12 @@ const BasketItem = ({
       >
         <Grid
           sx={{
-            display: "flex",
-            flexWrap: "wrap",
-            justifyContent: "flex-start",
             alignItems: "center",
             flexDirection: "row",
           }}
         >
           <Grid
             sx={{
-              flexWrap: "wrap",
-              justifyContent: "flex-start",
               alignItems: "center",
               flexDirection: "row",
               width: 100,
@@ -69,8 +62,6 @@ const BasketItem = ({
 
         <Grid
           sx={{
-            display: "flex",
-            flexWrap: "wrap",
             justifyContent: "center",
             alignItems: "center",
             flexDirection: "row",

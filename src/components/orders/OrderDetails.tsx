@@ -44,8 +44,6 @@ const OrderDetails = ({
       <DialogTitle>{orderItem.id}</DialogTitle>
       <Grid
         sx={{
-          display: "flex",
-          flexWrap: " wrap",
           color: "#3d405b",
           justifyContent: "space-between",
           alignItems: "center",

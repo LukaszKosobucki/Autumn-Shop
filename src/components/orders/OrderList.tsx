@@ -9,11 +9,6 @@ const OrderList = () => {
   return (
     <Grid
       sx={{
-        display: "flex",
-        flexWrap: "wrap",
-        justifyContent: "flext-start",
-        alignItems: "flex-start",
-        flexDirection: "column",
         my: 3,
       }}
     >

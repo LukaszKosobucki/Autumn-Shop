@@ -27,22 +27,14 @@ const FinalizeForm = ({
   return (
     <Grid
       sx={{
-        display: "flex",
-        flexWrap: "wrap",
-        justifyContent: "flext-start",
-        alignItems: "flex-start",
         position: "relative",
-        flexDirection: "column",
         width: "100%",
         pb: 2,
       }}
     >
       <Grid
         sx={{
-          display: "flex",
-          flexWrap: "wrap",
           justifyContent: "space-around",
-          alignItems: "flex-start",
           position: "relative",
           flexDirection: "row",
           width: "100%",
@@ -63,12 +55,7 @@ const FinalizeForm = ({
 
       <Grid
         sx={{
-          display: "flex",
-          flexWrap: "wrap",
-          justifyContent: "flext-start",
-          alignItems: "flex-start",
           position: "relative",
-          flexDirection: "column",
           bgcolor: styles.colorAutumnLight100,
           minWidth: 320,
           p: 5,

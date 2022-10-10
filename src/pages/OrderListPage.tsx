@@ -10,14 +10,9 @@ const OrderListPage = () => {
   return (
     <Grid
       sx={{
-        display: "flex",
-        flexWrap: "wrap",
-        justifyContent: "flext-start",
         alignItems: "center",
-        flexDirection: "column",
         position: "relative",
         minHeight: "100vh",
-        color: "#3d405b",
         minWidth: "100%",
       }}
     >

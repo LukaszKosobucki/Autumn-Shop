@@ -9,10 +9,6 @@ const BasketPage = () => {
   return (
     <Grid
       sx={{
-        display: "flex",
-        flexWrap: "wrap",
-        justifyContent: "flext-start",
-        alignItems: "flex-start",
         position: "relative",
         flexDirection: "row",
         minHeight: "100vh",

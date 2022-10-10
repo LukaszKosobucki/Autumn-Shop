@@ -10,12 +10,11 @@ const Header = () => {
   return (
     <Grid
       sx={{
-        display: "flex",
-        flexWrap: "wrap",
         bgcolor: styles.colorAutumnDawnAutumnDawn,
         justifyContent: "space-around",
         alignItems: "center",
         position: "sticky",
+        flexDirection: "row",
         top: 0,
         zIndex: 2,
         mb: 0,
@@ -42,8 +41,6 @@ const Header = () => {
       </Box>
       <Grid
         sx={{
-          display: "flex",
-          flexWrap: "wrap",
           justifyContent: "space-around",
           alignItems: "center",
           flexDirection: "row",

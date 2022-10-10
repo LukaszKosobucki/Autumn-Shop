@@ -24,11 +24,6 @@ const BasketFinalizeBox = ({ text, link }: { text: string; link: boolean }) => {
   return (
     <Grid
       sx={{
-        display: "flex",
-        flexWrap: " wrap",
-        justifyContent: "flex-start",
-        alignItems: "flex-start",
-        flexDirection: "column",
         position: "sticky",
         top: 90,
         ml: 5,

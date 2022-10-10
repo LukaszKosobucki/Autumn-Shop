@@ -56,12 +56,11 @@ const ProductFilter = ({ filterByCategory }: productFilterInterface) => {
   return (
     <Grid
       sx={{
-        display: "flex",
-        flexWrap: "wrap",
         p: 2,
         maxWidth: 500,
         justifyContent: "center",
         alignItems: "center",
+        flexDirection: "row",
         bgcolor: "#f7f4e1",
       }}
     >

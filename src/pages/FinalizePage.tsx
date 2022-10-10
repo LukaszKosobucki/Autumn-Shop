@@ -60,10 +60,6 @@ const FinalizePage = () => {
     <form onSubmit={handleSubmit(postDataFn)}>
       <Grid
         sx={{
-          display: "flex",
-          flexWrap: "wrap",
-          justifyContent: "flext-start",
-          alignItems: "flex-start",
           position: "relative",
           flexDirection: "row",
           minHeight: "100vh",

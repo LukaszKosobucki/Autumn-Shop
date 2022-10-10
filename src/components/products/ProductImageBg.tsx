@@ -5,11 +5,11 @@ const ProductImageBg = () => {
       sx={{
         height: 315,
         width: "100%",
-        display: "flex",
         alignItems: "center",
         justifyContent: "center",
         overflow: "hidden",
         flexWrap: "nowrap",
+        flexDirection: "row",
       }}
     >
       <Box

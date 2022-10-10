@@ -40,12 +40,8 @@ const MethodList = ({ options }: { options: finalizeOptionsType[] }) => {
   return (
     <Grid
       sx={{
-        display: "flex",
-        flexWrap: "wrap",
-        justifyContent: "flext-start",
         alignItems: "center",
         position: "relative",
-        flexDirection: "column",
         bgcolor: styles.colorAutumnLight100,
         p: 5,
         mb: 2,

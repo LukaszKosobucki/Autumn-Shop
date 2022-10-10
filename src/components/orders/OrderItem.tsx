@@ -14,8 +14,6 @@ const OrderItem = ({ orderItem }: { orderItem: orderType }) => {
   return (
     <Grid
       sx={{
-        display: "flex",
-        flexWrap: " wrap",
         color: "#3d405b",
         justifyContent: "space-between",
         alignItems: "center",
