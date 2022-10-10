@@ -35,4 +35,6 @@ export interface contextProviderInterface {
   setSort: React.Dispatch<React.SetStateAction<string>>;
   processedData: productType[];
   setProcessedData: React.Dispatch<React.SetStateAction<productType[]>>;
+  orderLoadLimit: number;
+  setOrderLoadLimit: React.Dispatch<React.SetStateAction<number>>;
 }

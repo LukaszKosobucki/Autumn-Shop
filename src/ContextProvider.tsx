@@ -23,6 +23,7 @@ const ContextProvider = ({ children }: childrenInterface) => {
   const [filter, setFilter] = useState<string[]>([]);
   const [data, setData] = useState<productType[]>([]);
   const [loadLimit, setLoadLimit] = useState<number>(9);
+  const [orderLoadLimit, setOrderLoadLimit] = useState<number>(20);
   const [basketProcessedData, setBasketProcessedData] = useState<
     basketProcessedType[]
   >([]);
@@ -65,12 +66,10 @@ const ContextProvider = ({ children }: childrenInterface) => {
     mapBasketData(data, basketData, setBasketProcessedData);
 
     if (sort === "price") {
-      console.log(order);
       order
         ? data.sort((a, b) => (a.price > b.price ? 1 : -1))
         : data.sort((a, b) => (a.price > b.price ? -1 : 1));
     } else if (sort === "letter") {
-      console.log(order);
       order
         ? data.sort((a, b) => (a.name > b.name ? 1 : -1))
         : data.sort((a, b) => (a.name > b.name ? -1 : 1));
@@ -105,6 +104,8 @@ const ContextProvider = ({ children }: childrenInterface) => {
       setSort,
       processedData,
       setProcessedData,
+      orderLoadLimit,
+      setOrderLoadLimit,
     }),
     [
       filter,
@@ -130,6 +131,8 @@ const ContextProvider = ({ children }: childrenInterface) => {
       setSort,
       processedData,
       setProcessedData,
+      orderLoadLimit,
+      setOrderLoadLimit,
     ]
   );
 

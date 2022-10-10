@@ -4,23 +4,19 @@ import { Box } from "@mui/material";
 import { childrenInterface } from "../../interfaces/childrenInterface";
 const MainLayout = ({ children }: childrenInterface) => {
   return (
-    <Box
-      component="div"
-      sx={{
-        bgcolor: "#f7f4e1",
-      }}
-    >
+    <Box component="main">
       <Header />
       <Box
-        component="main"
         sx={{
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
           flexDirection: "column",
-          m: 2,
           bgcolor: "#f7f4e1",
           minHeight: "100vh",
+          minWidth: "100%",
+          margin: 0,
+          overflowX: "clip",
         }}
       >
         {children}

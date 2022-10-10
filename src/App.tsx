@@ -8,10 +8,8 @@ import MainLayout from "./components/layout/MainLayout";
 import ContextProvider from "./ContextProvider";
 import { ThemeProvider } from "@mui/material/styles";
 import { theme } from "./theme";
-import palette from "./palette.module.scss";
 
 function App() {
-  console.log(palette);
   return (
     <ThemeProvider theme={theme}>
       <Router>

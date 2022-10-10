@@ -16,6 +16,7 @@ const BasketPage = () => {
         position: "relative",
         flexDirection: "row",
         minHeight: "100vh",
+        mt: 5,
       }}
     >
       {basketData.length > 0 ? (
