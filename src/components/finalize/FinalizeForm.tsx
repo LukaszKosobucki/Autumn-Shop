@@ -27,7 +27,6 @@ const FinalizeForm = ({
   return (
     <Grid
       sx={{
-        position: "relative",
         width: "100%",
         pb: 2,
       }}
@@ -35,7 +34,6 @@ const FinalizeForm = ({
       <Grid
         sx={{
           justifyContent: "space-around",
-          position: "relative",
           flexDirection: "row",
           width: "100%",
           pb: 2,
@@ -55,7 +53,6 @@ const FinalizeForm = ({
 
       <Grid
         sx={{
-          position: "relative",
           bgcolor: styles.colorAutumnLight100,
           minWidth: 320,
           p: 5,

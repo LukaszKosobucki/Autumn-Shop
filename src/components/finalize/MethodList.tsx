@@ -41,7 +41,6 @@ const MethodList = ({ options }: { options: finalizeOptionsType[] }) => {
     <Grid
       sx={{
         alignItems: "center",
-        position: "relative",
         bgcolor: styles.colorAutumnLight100,
         p: 5,
         mb: 2,

@@ -11,7 +11,6 @@ const OrderListPage = () => {
     <Grid
       sx={{
         alignItems: "center",
-        position: "relative",
         minHeight: "100vh",
         minWidth: "100%",
       }}
