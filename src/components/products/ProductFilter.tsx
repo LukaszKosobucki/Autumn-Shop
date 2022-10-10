@@ -56,12 +56,11 @@ const ProductFilter = ({ filterByCategory }: productFilterInterface) => {
   return (
     <Grid
       sx={{
-        p: 2,
-        maxWidth: 500,
+        p: "1rem",
+        maxWidth: "37.5rem",
         justifyContent: "center",
         alignItems: "center",
         flexDirection: "row",
-        bgcolor: "#f7f4e1",
       }}
     >
       {categories.map((item: categoryType, index: number) => (

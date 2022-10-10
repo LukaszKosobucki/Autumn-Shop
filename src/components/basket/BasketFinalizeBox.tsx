@@ -26,10 +26,10 @@ const BasketFinalizeBox = ({ text, link }: { text: string; link: boolean }) => {
       sx={{
         position: "sticky",
         top: 90,
-        ml: 5,
-        p: 3,
+        ml: "2.5rem",
+        p: "1.5rem",
         bgcolor: styles.colorAutumnLight100,
-        borderRadius: 2,
+        borderRadius: "1rem",
       }}
     >
       <Typography color="primary" variant="caption">

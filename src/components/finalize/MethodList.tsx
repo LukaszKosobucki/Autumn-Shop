@@ -42,8 +42,8 @@ const MethodList = ({ options }: { options: finalizeOptionsType[] }) => {
       sx={{
         alignItems: "center",
         bgcolor: styles.colorAutumnLight100,
-        p: 5,
-        mb: 2,
+        p: "2.5rem",
+        mb: "1rem",
         transition: "0.5s",
       }}
     >

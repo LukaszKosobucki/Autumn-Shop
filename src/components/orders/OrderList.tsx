@@ -9,7 +9,7 @@ const OrderList = () => {
   return (
     <Grid
       sx={{
-        my: 3,
+        my: "1.5rem",
       }}
     >
       {orderData.slice(0, orderLoadLimit).map((orderItem: orderType) => (

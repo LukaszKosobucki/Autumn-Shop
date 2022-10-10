@@ -28,9 +28,10 @@ const ProductList = ({ items }: { items: productType[] }) => {
   return (
     <Grid
       sx={{
-        maxWidth: 750,
+        maxWidth: "47rem",
         alignItems: "center",
         flexDirection: "row",
+        mb: "2rem",
       }}
     >
       {items.slice(0, loadLimit).map((item: productType) => (

@@ -1,11 +1,13 @@
 import { Box, Typography, Grid } from "@mui/material";
+import colors from "../../palette.module.scss";
+
 const Footer = () => {
   return (
     <Grid
       sx={{
-        px: 10,
-        py: 4,
-        bgcolor: "#3d405b",
+        px: "5rem",
+        py: "2rem",
+        bgcolor: colors.colorAutumnDuskAutumnDusk,
         justifyContent: "space-around",
         alignItems: "center",
         left: 0,

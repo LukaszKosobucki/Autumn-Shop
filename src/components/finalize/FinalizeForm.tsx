@@ -28,7 +28,7 @@ const FinalizeForm = ({
     <Grid
       sx={{
         width: "100%",
-        pb: 2,
+        pb: "1rem",
       }}
     >
       <Grid
@@ -36,7 +36,7 @@ const FinalizeForm = ({
           justifyContent: "space-around",
           flexDirection: "row",
           width: "100%",
-          pb: 2,
+          pb: "1rem",
         }}
       >
         <Button>
@@ -54,8 +54,8 @@ const FinalizeForm = ({
       <Grid
         sx={{
           bgcolor: styles.colorAutumnLight100,
-          minWidth: 320,
-          p: 5,
+          minWidth: "20rem",
+          p: "2.5rem",
         }}
       >
         {formData.map((text) => (
@@ -64,7 +64,7 @@ const FinalizeForm = ({
             <Input
               id={text}
               color="primary"
-              sx={{ mb: 1.5, minWidth: 18.75 }}
+              sx={{ mb: "0.75rem", minWidth: "9.375rem" }}
               {...register(text.toLowerCase())}
             />
           </FormControl>

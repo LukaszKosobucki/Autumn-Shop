@@ -3,7 +3,7 @@ const ProductImageBg = () => {
   return (
     <Grid
       sx={{
-        height: 315,
+        height: "19.6875rem",
         width: "100%",
         alignItems: "center",
         justifyContent: "center",
@@ -15,8 +15,8 @@ const ProductImageBg = () => {
       <Box
         component="img"
         sx={{
-          height: 1934,
-          width: 315,
+          height: "120.875rem",
+          width: "19.6875rem",
           transform: "rotate(270deg)",
           objectPosition: "48% 0",
           objectFit: "cover",

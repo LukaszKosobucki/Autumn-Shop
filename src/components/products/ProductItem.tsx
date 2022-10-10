@@ -21,8 +21,13 @@ const ProductItem = ({
   return (
     <Card
       sx={{
-        minWidth: 150,
-        width: 230,
+        display: "flex",
+        flexWrap: "wrap",
+        justifyContent: "flext-start",
+        alignItems: "space-between",
+        flexDirection: "column",
+        minWidth: "9.375rem",
+        width: "14.375rem",
         bgcolor: colors[item.category],
       }}
     >

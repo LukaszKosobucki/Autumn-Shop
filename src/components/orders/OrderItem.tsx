@@ -18,16 +18,16 @@ const OrderItem = ({ orderItem }: { orderItem: orderType }) => {
         justifyContent: "space-between",
         alignItems: "center",
         flexDirection: "row",
-        width: 600,
-        minWidth: 500,
+        width: "37.5rem",
+        minWidth: "31.25rem",
       }}
     >
       <Box
         sx={{
           borderRight: "1px solid black",
-          px: 1,
-          py: 0.5,
-          my: 0.5,
+          px: "0.5rem",
+          py: "0.25rem",
+          my: "0.25rem",
         }}
       >
         <Link onClick={() => handleOpen()} sx={{ cursor: "pointer" }}>
@@ -42,7 +42,14 @@ const OrderItem = ({ orderItem }: { orderItem: orderType }) => {
       <Box>
         {orderItem.payment_option} / {orderItem.delivery_option}
       </Box>
-      <Box sx={{ borderLeft: "1px solid black", px: 1, py: 0.5, my: 0.5 }}>
+      <Box
+        sx={{
+          borderLeft: "1px solid black",
+          px: "0.5rem",
+          py: "0.25rem",
+          my: "0.25rem",
+        }}
+      >
         {orderItem.date}
       </Box>
     </Grid>
