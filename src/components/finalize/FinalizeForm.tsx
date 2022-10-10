@@ -54,7 +54,7 @@ const FinalizeForm = ({
       <Grid
         sx={{
           bgcolor: styles.colorAutumnLight100,
-          minWidth: "20rem",
+          minWidth: "26rem",
           p: "2.5rem",
         }}
       >
