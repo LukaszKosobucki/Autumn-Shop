@@ -49,7 +49,7 @@ const ContextProvider = ({ children }: childrenInterface) => {
       const responseData = await requestData();
       setData(responseData);
       const responseDelivery = await getDeliveryOptions();
-      setDeliveryOptions(responseDelivery);
+      responseDelivery && setDeliveryOptions(responseDelivery);
       const responsePayment = await getPaymentOptions();
       setPaymentOptions(responsePayment);
       const responseOrderData = await getOrderData();

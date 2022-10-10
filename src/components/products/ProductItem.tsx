@@ -7,17 +7,11 @@ import {
   IconButton,
 } from "@mui/material";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import { productType } from "../../types/productType";
 import ProductSnackBar from "./ProductSnackBar";
 import { colors } from "../../utils/helpers";
+import { productItemInterface } from "../../interfaces/productItemInterface";
 
-const ProductItem = ({
-  item,
-  addToBasket,
-}: {
-  item: productType;
-  addToBasket: (item: string) => void;
-}) => {
+const ProductItem = ({ item, addToBasket }: productItemInterface) => {
   return (
     <Card
       sx={{

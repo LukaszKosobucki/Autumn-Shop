@@ -26,9 +26,8 @@ const Header = () => {
           component={Link}
           to="/"
           onClick={() =>
-            window.location.href === "http://localhost:3005/"
-              ? window.location.reload()
-              : null
+            window.location.href === "http://localhost:3005/" &&
+            window.location.reload()
           }
         >
           <EmojiFoodBeverageIcon fontSize="large" />

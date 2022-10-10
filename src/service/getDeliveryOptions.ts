@@ -11,9 +11,9 @@ export const getDeliveryOptions = async () => {
       "Content-Type": "application/json;charset=UTF-8",
     },
   };
-  const response = await axios(options).then((response) =>
-    mapFinalizingOptions(response.data)
-  );
+  const response = await axios(options)
+    .then((response) => mapFinalizingOptions(response.data))
+    .catch((err) => console.log(err));
 
   return response;
 };
