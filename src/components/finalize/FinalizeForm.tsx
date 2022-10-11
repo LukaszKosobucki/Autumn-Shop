@@ -6,24 +6,17 @@ import {
   InputLabel,
   Typography,
 } from "@mui/material";
-import { UseFormRegister, FieldValues } from "react-hook-form";
+import { UseFormRegister, FieldValues, FieldErrorsImpl } from "react-hook-form";
 import styles from "../../palette.module.scss";
+import { formData } from "../../utils/formData";
 
 const FinalizeForm = ({
   register,
+  errors,
 }: {
   register: UseFormRegister<FieldValues>;
+  errors: FieldErrorsImpl<{ [x: string]: any }>;
 }) => {
-  const formData = [
-    "Name",
-    "Surname",
-    "Email",
-    "Phone",
-    "ZipCode",
-    "State",
-    "City",
-  ];
-
   return (
     <Grid
       sx={{
@@ -58,15 +51,37 @@ const FinalizeForm = ({
           p: "2.5rem",
         }}
       >
-        {formData.map((text) => (
-          <FormControl required key={text}>
-            <InputLabel htmlFor={text}>{text}</InputLabel>
+        {formData.map((input) => (
+          <FormControl key={input.name}>
+            <InputLabel color="primary" htmlFor={input.name}>
+              {input.name}
+            </InputLabel>
             <Input
-              id={text}
+              id={input.name}
               color="primary"
-              sx={{ mb: "0.75rem", minWidth: "9.375rem" }}
-              {...register(text.toLowerCase())}
+              sx={{
+                mb: "0.75rem",
+                minWidth: "20rem",
+              }}
+              {...register(input.name.toLowerCase(), {
+                pattern: input.pattern,
+                minLength: input.minLength,
+                maxLength: input.maxLength,
+                required: input.required,
+              })}
             />
+            {errors[input.name.toLowerCase()] && (
+              <Typography
+                color="error"
+                variant="body2"
+                sx={{
+                  maxWidth: "20rem",
+                  mb: "0.75rem",
+                }}
+              >
+                {input.error}
+              </Typography>
+            )}
           </FormControl>
         ))}
       </Grid>

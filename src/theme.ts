@@ -40,6 +40,15 @@ export const theme = createTheme({
       textDecoration: "none",
       textTransform: "none",
     },
+    body2: {
+      fontSize: "0.8rem",
+      fontFamily: "Red Rose",
+      fontWeight: 400,
+      fontStyle: "normal",
+      textDecoration: "none",
+      textTransform: "none",
+      wordWrap: "break-word",
+    },
   },
   palette: {
     primary: {
@@ -47,6 +56,9 @@ export const theme = createTheme({
     },
     secondary: {
       main: styles.colorAutumnLightAutumnLight,
+    },
+    error: {
+      main: styles.colorAutumnLeaf600,
     },
   },
   components: {

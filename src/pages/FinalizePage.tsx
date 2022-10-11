@@ -21,7 +21,11 @@ const FinalizePage = () => {
     setOrderData,
     orderData,
   } = useContext(dataContext);
-  const { register, handleSubmit } = useForm<FieldValues>();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<FieldValues>();
   const navigate = useNavigate();
 
   const postDataFn = async (
@@ -66,7 +70,7 @@ const FinalizePage = () => {
         }}
       >
         <Box>
-          <FinalizeForm register={register} />
+          <FinalizeForm register={register} errors={errors} />
           <MethodList options={deliveryOptions} />
           <MethodList options={paymentOptions} />
         </Box>
