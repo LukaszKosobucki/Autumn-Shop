@@ -13,6 +13,7 @@ describe("testing BasketItem component", () => {
             category: "category_1",
             id: "1",
             quantity: 2,
+            imgUrl: "",
           }}
           reduceBasketItemQuant={() => {}}
           increaseBasketItemQuant={() => {}}

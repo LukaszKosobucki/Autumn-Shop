@@ -12,6 +12,7 @@ describe("testing <ProductItem/> render", () => {
             price: 20,
             category: "category_1",
             id: "item_1",
+            imgUrl: "",
           }}
         />
       )

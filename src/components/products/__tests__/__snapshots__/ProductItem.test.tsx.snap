@@ -8,7 +8,6 @@ exports[`testing <ProductItem/> render ProductItem Renders Correctly 1`] = `
     alt="green iguana"
     className="MuiCardMedia-root MuiCardMedia-media MuiCardMedia-img css-o69gx8-MuiCardMedia-root"
     height="250"
-    src="https://images.unsplash.com/photo-1515471897120-85416077e011?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8Y29mZmVlJTIwYmFnfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
   />
   <div
     className="MuiCardContent-root css-46bh2p-MuiCardContent-root"
