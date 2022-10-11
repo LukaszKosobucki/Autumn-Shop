@@ -13,7 +13,6 @@ describe("testing <ProductItem/> render", () => {
             category: "category_1",
             id: "item_1",
           }}
-          addToBasket={() => jest.fn()}
         />
       )
       .toJSON();

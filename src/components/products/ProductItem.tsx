@@ -10,8 +10,28 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import ProductSnackBar from "./ProductSnackBar";
 import { colors } from "../../utils/helpers";
 import { productItemInterface } from "../../interfaces/productItemInterface";
+import { dataContext } from "../../ContextProvider";
+import { useContext } from "react";
+import { basketType } from "../../types/basketType";
 
-const ProductItem = ({ item, addToBasket }: productItemInterface) => {
+const ProductItem = ({ item }: productItemInterface) => {
+  const { basketData, setBasketData, setOpen } = useContext(dataContext);
+  const addToBasket = (item: string) => {
+    if (basketData.some((e: basketType) => e.id === item)) {
+      const index = basketData.findIndex((e: basketType) => e.id === item);
+      const newBasketData = basketData;
+      newBasketData[index].quantity += 1;
+      setBasketData([...newBasketData]);
+    } else {
+      setBasketData((basketData: basketType[]) => [
+        ...basketData,
+        { id: item, quantity: 1 },
+      ]);
+    }
+    setOpen(true);
+    localStorage.setItem("basketData", JSON.stringify(basketData));
+  };
+
   return (
     <Card
       sx={{

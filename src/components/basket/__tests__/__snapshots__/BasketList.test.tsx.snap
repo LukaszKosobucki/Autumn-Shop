@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`testing BasketList component BasketList Renders Correctly 1`] = `
+<div
+  className="MuiGrid-root css-vj1n65-MuiGrid-root"
+/>
+`;
