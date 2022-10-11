@@ -23,7 +23,7 @@ const Header = () => {
         mb: 0,
       }}
     >
-      <Box>
+      <Box sx={{ display: "flex", flex: 1, justifyContent: "center" }}>
         <IconButton
           color="primary"
           component={Link}
@@ -36,16 +36,17 @@ const Header = () => {
           <EmojiFoodBeverageIcon fontSize="large" />
         </IconButton>
       </Box>
-      <Box>
+      <Box sx={{ justifyContent: "center" }}>
         <Typography variant="h2" color="primary">
           Jesieniara-ecommerce
         </Typography>
       </Box>
       <Grid
         sx={{
-          justifyContent: "space-around",
+          justifyContent: "center",
           alignItems: "center",
           flexDirection: "row",
+          flex: 1,
         }}
       >
         <Box>
