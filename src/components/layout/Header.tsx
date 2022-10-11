@@ -1,12 +1,15 @@
-import { Grid, Typography, IconButton, Box } from "@mui/material";
+import { Grid, Typography, IconButton, Box, Badge } from "@mui/material";
 import EmojiFoodBeverageIcon from "@mui/icons-material/EmojiFoodBeverage";
 import AccountBoxIcon from "@mui/icons-material/AccountBox";
 import ListIcon from "@mui/icons-material/List";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { Link } from "react-router-dom";
 import styles from "../../palette.module.scss";
+import { useContext } from "react";
+import { dataContext } from "../../ContextProvider";
 
 const Header = () => {
+  const { basketData } = useContext(dataContext);
   return (
     <Grid
       sx={{
@@ -57,7 +60,9 @@ const Header = () => {
         </Box>
         <Box>
           <IconButton color="primary" component={Link} to="/basket">
-            <ShoppingCartIcon fontSize="large" />
+            <Badge badgeContent={basketData.length} color="primary">
+              <ShoppingCartIcon fontSize="large" />
+            </Badge>
           </IconButton>
         </Box>
       </Grid>

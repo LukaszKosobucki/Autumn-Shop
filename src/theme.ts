@@ -129,5 +129,15 @@ export const theme = createTheme({
         },
       },
     },
+    MuiBadge: {
+      styleOverrides: {
+        badge: {
+          right: "0.1rem",
+          top: "0.5rem",
+          border: `2px solid ${styles.colorAutumnDawnAutumnDawn}`,
+          padding: "0 0.25rem",
+        },
+      },
+    },
   },
 });
