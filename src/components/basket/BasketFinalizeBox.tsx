@@ -2,23 +2,15 @@ import { Grid, Typography, Button } from "@mui/material";
 import { useContext, useEffect, useState } from "react";
 import { dataContext } from "../../ContextProvider";
 import { Link } from "react-router-dom";
-import { basketProcessedType } from "../../types/basketProcessedType";
 import styles from "../../palette.module.scss";
+import addPricesOfBasketItems from "../../utils/addPricesOfBasketItems";
 
 const BasketFinalizeBox = ({ text, link }: { text: string; link: boolean }) => {
   const { basketProcessedData } = useContext(dataContext);
   const [price, setPrice] = useState<number>(0);
 
-  const addPricesOfBasketItems = () => {
-    let prices: number = 0;
-    basketProcessedData.forEach((item: basketProcessedType) => {
-      prices += item.price * item.quantity;
-    });
-    setPrice(prices);
-  };
-
   useEffect(() => {
-    addPricesOfBasketItems();
+    setPrice(addPricesOfBasketItems(basketProcessedData));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [basketProcessedData]);
   return (

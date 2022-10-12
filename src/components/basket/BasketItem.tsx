@@ -6,18 +6,20 @@ import {
   Typography,
   IconButton,
 } from "@mui/material";
+import { dataContext } from "../../ContextProvider";
 import AddShoppingCartOutlinedIcon from "@mui/icons-material/AddShoppingCartOutlined";
 import RemoveShoppingCartOutlinedIcon from "@mui/icons-material/RemoveShoppingCartOutlined";
 import DeleteForeverOutlinedIcon from "@mui/icons-material/DeleteForeverOutlined";
 import ProductSnackBar from "../products/ProductSnackBar";
 import { basketItemInterface } from "../../interfaces/basketItemInterface";
+import { useContext } from "react";
+import reduceBasketItemQuant from "../../utils/reduceBasketItemQuant";
+import increaseBasketItemQuant from "../../utils/increaseBasketItemQuant";
+import deleteBasketItem from "../../utils/deleteBasketItem";
 
-const BasketItem = ({
-  item,
-  reduceBasketItemQuant,
-  increaseBasketItemQuant,
-  deleteBasketItem,
-}: basketItemInterface) => {
+const BasketItem = ({ item }: basketItemInterface) => {
+  const { basketData, setBasketData, setOpen } = useContext(dataContext);
+
   return (
     <Card
       sx={{
@@ -70,7 +72,9 @@ const BasketItem = ({
       >
         <IconButton
           onClick={() => {
-            reduceBasketItemQuant(item.id);
+            setBasketData(
+              reduceBasketItemQuant(item.id, basketData).setbasketdata
+            );
           }}
           color="primary"
         >
@@ -81,7 +85,9 @@ const BasketItem = ({
         </Typography>
         <IconButton
           onClick={() => {
-            increaseBasketItemQuant(item.id);
+            setBasketData(
+              increaseBasketItemQuant(item.id, basketData).setbasketdata
+            );
           }}
           color="primary"
         >
@@ -89,7 +95,8 @@ const BasketItem = ({
         </IconButton>
         <IconButton
           onClick={() => {
-            deleteBasketItem(item.id);
+            setOpen(deleteBasketItem(item.id, basketData).setopen);
+            setBasketData(deleteBasketItem(item.id, basketData).setbasketdata);
           }}
           color="primary"
         >

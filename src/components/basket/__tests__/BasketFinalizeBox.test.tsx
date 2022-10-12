@@ -3,28 +3,39 @@ import renderer from "react-test-renderer";
 import ContextProvider from "../../../ContextProvider";
 import BasketFinalizeBox from "../BasketFinalizeBox";
 import { MemoryRouter as Router } from "react-router-dom";
+import { render } from "@testing-library/react";
+import { screen } from "@testing-library/dom";
 
 describe("testing BasketFinalizeBox component", () => {
-  it("BasketFinalizeBox Renders Correctly", () => {
-    const basketFinalizeBox = renderer
-      .create(
+  const wrapper = (linkBool: boolean) => {
+    return (
+      <Router>
         <ContextProvider>
-          <BasketFinalizeBox text="proceed" link={false} />
+          <BasketFinalizeBox text="proceed" link={true} />
         </ContextProvider>
-      )
-      .toJSON();
+      </Router>
+    );
+  };
+  it("Renders Correctly without link", async () => {
+    const basketFinalizeBox = renderer.create(wrapper(false)).toJSON();
     expect(basketFinalizeBox).toMatchSnapshot();
+    // expect(basketFinalizeBox.contains(<Button />)).toBe(true);
+    //expect onclick type submit
   });
-  it("BasketFinalizeBox Renders Correctly with a link", () => {
-    const basketFinalizeBox = renderer
-      .create(
-        <Router>
-          <ContextProvider>
-            <BasketFinalizeBox text="proceed" link={true} />
-          </ContextProvider>
-        </Router>
-      )
-      .toJSON();
+  it("Renders Correctly with a link", () => {
+    const basketFinalizeBox = renderer.create(wrapper(true)).toJSON();
     expect(basketFinalizeBox).toMatchSnapshot();
+    //expect is there a button (exist)
+    //expect onclick route
+  });
+  it("check if button exist with link true", () => {
+    render(wrapper(true));
+    const button = screen.getByText("proceed");
+    expect(button).toBeTruthy();
+  });
+  it("check if button exist with link false", () => {
+    render(wrapper(false));
+    const button = screen.getByText("proceed");
+    expect(button).toBeTruthy();
   });
 });

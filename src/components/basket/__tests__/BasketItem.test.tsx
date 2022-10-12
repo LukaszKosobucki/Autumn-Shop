@@ -15,9 +15,6 @@ describe("testing BasketItem component", () => {
             quantity: 2,
             imgUrl: "",
           }}
-          reduceBasketItemQuant={() => {}}
-          increaseBasketItemQuant={() => {}}
-          deleteBasketItem={() => {}}
         />
       )
       .toJSON();
