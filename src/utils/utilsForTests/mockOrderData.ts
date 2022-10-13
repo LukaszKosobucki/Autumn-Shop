@@ -12,7 +12,7 @@ export const mockDeliveryInformation: deliveryInformationType = {
   city: "asdfas",
 };
 
-export const mockOrderData: orderType[] = [
+export const mockOrderDataArray: orderType[] = [
   {
     id: 1234,
     items: mockBasketData,
@@ -30,3 +30,12 @@ export const mockOrderData: orderType[] = [
     payment_option: "cash",
   },
 ];
+
+export const mockOrderData: orderType = {
+  id: 1234,
+  items: mockBasketData,
+  date: "1/1/2022",
+  delivery_information: mockDeliveryInformation,
+  delivery_option: "DHL",
+  payment_option: "cash",
+};

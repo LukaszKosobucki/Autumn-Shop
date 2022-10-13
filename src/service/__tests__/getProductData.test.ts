@@ -8,7 +8,7 @@ import {
   mockProductDataResult,
 } from "../../utils/utilsForTests/mockProductData";
 
-describe("testimg getProductData", () => {
+describe("testing getProductData", () => {
   let mock: any;
   beforeAll(() => {
     mock = new MockAdapter(axios);

@@ -73,7 +73,7 @@ const BasketItem = ({ item }: basketItemInterface) => {
         <IconButton
           onClick={() => {
             setBasketData(
-              reduceBasketItemQuant(item.id, basketData).setbasketdata
+              reduceBasketItemQuant(item.id, basketData).basketData
             );
           }}
           color="primary"
@@ -86,7 +86,7 @@ const BasketItem = ({ item }: basketItemInterface) => {
         <IconButton
           onClick={() => {
             setBasketData(
-              increaseBasketItemQuant(item.id, basketData).setbasketdata
+              increaseBasketItemQuant(item.id, basketData).basketData
             );
           }}
           color="primary"
@@ -95,8 +95,8 @@ const BasketItem = ({ item }: basketItemInterface) => {
         </IconButton>
         <IconButton
           onClick={() => {
-            setOpen(deleteBasketItem(item.id, basketData).setopen);
-            setBasketData(deleteBasketItem(item.id, basketData).setbasketdata);
+            setOpen(deleteBasketItem(item.id, basketData).isOpen);
+            setBasketData(deleteBasketItem(item.id, basketData).basketData);
           }}
           color="primary"
         >

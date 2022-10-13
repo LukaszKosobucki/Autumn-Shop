@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`testing BasketPage render BasketPage Renders Correctly 1`] = `
+<div
+  className="MuiGrid-root css-1scve0q-MuiGrid-root"
+>
+  <p
+    className="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+  >
+    The Basket is empty, go to the main page and add some items to proceed further
+  </p>
+</div>
+`;

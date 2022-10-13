@@ -3,15 +3,15 @@ import { basketType } from "../types/basketType";
 const deleteBasketItem = (
   id: string,
   basketData: basketType[]
-): { setbasketdata: basketType[]; setopen: boolean } => {
+): { basketData: basketType[]; isOpen: boolean } => {
   if (id && basketData.map((item) => id in item))
     return {
-      setopen: true,
-      setbasketdata: basketData.filter((item: basketType) => item.id !== id),
+      isOpen: true,
+      basketData: basketData.filter((item: basketType) => item.id !== id),
     };
   return {
-    setopen: false,
-    setbasketdata: basketData,
+    isOpen: false,
+    basketData: basketData,
   };
 };
 

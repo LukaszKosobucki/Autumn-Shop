@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`testing OrderListPage render OrderListPage Renders Correctly 1`] = `
+<div
+  className="MuiGrid-root css-1xsjdn8-MuiGrid-root"
+>
+  <div
+    className="MuiGrid-root css-b7ixwv-MuiGrid-root"
+  >
+    <img
+      alt="BG for products Page"
+      className="MuiBox-root css-oo92pk"
+      src="https://images.unsplash.com/photo-1603984719659-7af2c6f02a79?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80"
+    />
+  </div>
+  <h3
+    className="MuiTypography-root MuiTypography-h3 css-1biy274-MuiTypography-root"
+  >
+    --Order List--
+  </h3>
+  <span
+    className="MuiTypography-root MuiTypography-caption css-1d9s20a-MuiTypography-root"
+  >
+    There is no orders yet, please do a first order to see the history of orders
+  </span>
+</div>
+`;

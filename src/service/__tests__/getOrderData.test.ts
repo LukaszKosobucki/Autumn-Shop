@@ -3,8 +3,8 @@ import { getOrderData } from "../getOrderData";
 import { urls } from "../config";
 import MockAdapter from "axios-mock-adapter";
 import { waitFor } from "@testing-library/react";
-import { mockOrderData } from "../../utils/utilsForTests/mockOrderData";
-describe("testign getOrderData", () => {
+import { mockOrderDataArray } from "../../utils/utilsForTests/mockOrderData";
+describe("testing getOrderData", () => {
   let mock: any;
   beforeAll(() => {
     mock = new MockAdapter(axios);
@@ -12,9 +12,9 @@ describe("testign getOrderData", () => {
   //   const errorMessage = "Network Error";
 
   it("get order data", async () => {
-    mock.onGet(urls.order_list).reply(200, mockOrderData);
+    mock.onGet(urls.order_list).reply(200, mockOrderDataArray);
     const res = await getOrderData();
-    await waitFor(() => expect(res).toEqual(mockOrderData));
+    await waitFor(() => expect(res).toEqual(mockOrderDataArray));
   });
   it("get error from order data", async () => {
     mock.onGet(urls.order_list).networkError();

@@ -8,7 +8,7 @@ import { urls } from "../config";
 import MockAdapter from "axios-mock-adapter";
 import { waitFor } from "@testing-library/react";
 
-describe("testimg getPaymentOptions", () => {
+describe("testing getPaymentOptions", () => {
   let mock: any;
   beforeAll(() => {
     mock = new MockAdapter(axios);

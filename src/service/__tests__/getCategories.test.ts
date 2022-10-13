@@ -5,7 +5,7 @@ import MockAdapter from "axios-mock-adapter";
 import { waitFor } from "@testing-library/react";
 import { mockCategoriesData } from "../../utils/utilsForTests/mockCategoriesData";
 
-describe("testimg getCategories", () => {
+describe("testing getCategories", () => {
   let mock: any;
   beforeAll(() => {
     mock = new MockAdapter(axios);
