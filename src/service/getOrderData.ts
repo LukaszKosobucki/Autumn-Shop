@@ -10,7 +10,9 @@ export const getOrderData = async () => {
       "Content-Type": "application/json;charset=UTF-8",
     },
   };
-  const response = await axios(options).then((response) => response.data);
+  const response = await axios(options)
+    .then((response) => response.data)
+    .catch((err) => console.log(err));
 
   return response;
 };

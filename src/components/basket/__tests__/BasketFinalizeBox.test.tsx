@@ -30,12 +30,12 @@ describe("testing BasketFinalizeBox component", () => {
   });
   it("check if button exist with link true", () => {
     render(wrapper(true));
-    const button = screen.getByText("proceed");
-    expect(button).toBeTruthy();
+    const button = screen.getByTestId("buttonLink");
+    expect(button.nodeName).toBe("A");
   });
   it("check if button exist with link false", () => {
     render(wrapper(false));
     const button = screen.getByText("proceed");
-    expect(button).toBeTruthy();
+    expect(button.nodeName).toBe("SPAN");
   });
 });

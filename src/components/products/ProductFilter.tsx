@@ -9,7 +9,7 @@ import FilterListIcon from "@mui/icons-material/FilterList";
 import { useState, useEffect, useContext } from "react";
 import SortByAlphaIcon from "@mui/icons-material/SortByAlpha";
 import SortIcon from "@mui/icons-material/Sort";
-import { requestCategories } from "../../service/requestCategories";
+import { getCategories } from "../../service/getCategories";
 import { categoryType } from "../../types/categoryType";
 import { dataContext } from "../../ContextProvider";
 import { productFilterInterface } from "../../interfaces/productFilterInterface";
@@ -22,8 +22,8 @@ const ProductFilter = ({ filterByCategory }: productFilterInterface) => {
   const { filter, setOrder, setSort, order, sort, processedData } =
     useContext(dataContext);
   const fetchData = async () => {
-    const responseData = await requestCategories();
-    setCategories(responseData);
+    const responseData = await getCategories();
+    responseData && setCategories(responseData);
   };
 
   const sortByLetter = (): void => {

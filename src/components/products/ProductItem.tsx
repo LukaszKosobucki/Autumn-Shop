@@ -8,7 +8,7 @@ import {
 } from "@mui/material";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import ProductSnackBar from "./ProductSnackBar";
-import { colors } from "../../utils/helpers";
+import { colors } from "../../utils/constants/helpers";
 import { productItemInterface } from "../../interfaces/productItemInterface";
 import { dataContext } from "../../ContextProvider";
 import { useContext } from "react";

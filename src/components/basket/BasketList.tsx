@@ -10,7 +10,7 @@ const BasketList = () => {
     useContext(dataContext);
 
   useEffect(() => {
-    mapBasketData(data, basketData, setBasketProcessedData);
+    setBasketProcessedData(mapBasketData(data, basketData));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data, basketData]);
 

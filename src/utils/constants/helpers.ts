@@ -1,5 +1,5 @@
-import styles from "../palette.module.scss";
-import { colorsInterface } from "../interfaces/colorsInterface";
+import styles from "../../palette.module.scss";
+import { colorsInterface } from "../../interfaces/colorsInterface";
 
 export const colors: colorsInterface = {
   category_1: styles.colorAutumnLight200,

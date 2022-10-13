@@ -1,10 +1,10 @@
 import { describe, it } from "@jest/globals";
 import { basketProcessedType } from "../../types/basketProcessedType";
 import addPricesOfBasketItems from "../addPricesOfBasketItems";
-
+import { mockProductData } from "../../utils/utilsForTests/mockProductData";
 describe("test function addPricesOfBasketItems", () => {
   it("prices correctly sum up even after data change", () => {
-    const mockData: basketProcessedType[] = [
+    const mockProductData: basketProcessedType[] = [
       {
         name: "item",
         price: 20,
@@ -22,6 +22,6 @@ describe("test function addPricesOfBasketItems", () => {
         quantity: 1,
       },
     ];
-    expect(addPricesOfBasketItems(mockData)).toEqual(65);
+    expect(addPricesOfBasketItems(mockProductData)).toEqual(65);
   });
 });

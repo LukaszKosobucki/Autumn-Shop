@@ -3,7 +3,7 @@ import { mapBasketData } from "./mappers/mapBasketData";
 import { getDeliveryOptions } from "./service/getDeliveryOptions";
 import { getOrderData } from "./service/getOrderData";
 import { getPaymentOptions } from "./service/getPaymentOptions";
-import { requestData } from "./service/requestData";
+import { getProductData } from "./service/getProductData";
 import { basketType } from "./types/basketType";
 import { finalizeOptionsType } from "./types/finalizeOptionsType";
 import { orderType } from "./types/orderType";
@@ -46,14 +46,14 @@ const ContextProvider = ({ children }: childrenInterface) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const responseData = await requestData();
-      setData(responseData);
+      const responseData = await getProductData();
+      responseData && setData(responseData);
       const responseDelivery = await getDeliveryOptions();
       responseDelivery && setDeliveryOptions(responseDelivery);
       const responsePayment = await getPaymentOptions();
-      setPaymentOptions(responsePayment);
+      responsePayment && setPaymentOptions(responsePayment);
       const responseOrderData = await getOrderData();
-      setOrderData(responseOrderData);
+      responseOrderData && setOrderData(responseOrderData);
     };
     fetchData();
   }, []);
@@ -63,7 +63,7 @@ const ContextProvider = ({ children }: childrenInterface) => {
   }, [basketData]);
 
   useEffect(() => {
-    mapBasketData(data, basketData, setBasketProcessedData);
+    setBasketProcessedData(mapBasketData(data, basketData));
 
     if (sort === "price") {
       order
