@@ -15,6 +15,13 @@ export const mockProductData: productType[] = [
     id: "item2",
     imgUrl: "url2",
   },
+  {
+    name: "product3",
+    price: 15,
+    category: "category3",
+    id: "item3",
+    imgUrl: "url2",
+  },
 ];
 export const mockProductDataResult: productType[] = [
   {
@@ -33,5 +40,13 @@ export const mockProductDataResult: productType[] = [
     id: "item2",
     imgUrl: "url2",
     key: "item2",
+  },
+  {
+    name: "product3",
+    price: 15,
+    category: "category3",
+    id: "item3",
+    imgUrl: "url2",
+    key: "item3",
   },
 ];

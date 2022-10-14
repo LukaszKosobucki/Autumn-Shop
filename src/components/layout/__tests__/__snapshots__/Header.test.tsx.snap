@@ -154,8 +154,10 @@ exports[`testing <Header/> render Header Renders Correctly 1`] = `
             />
           </svg>
           <span
-            className="MuiBadge-badge MuiBadge-standard MuiBadge-invisible MuiBadge-anchorOriginTopRight MuiBadge-anchorOriginTopRightRectangular MuiBadge-overlapRectangular MuiBadge-colorPrimary BaseBadge-badge BaseBadge-invisible css-1pi4uwz-MuiBadge-badge"
-          />
+            className="MuiBadge-badge MuiBadge-standard MuiBadge-anchorOriginTopRight MuiBadge-anchorOriginTopRightRectangular MuiBadge-overlapRectangular MuiBadge-colorPrimary BaseBadge-badge css-106c1u2-MuiBadge-badge"
+          >
+            3
+          </span>
         </span>
       </a>
     </div>

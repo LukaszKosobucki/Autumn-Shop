@@ -1,5 +1,5 @@
 import { describe, it } from "@jest/globals";
-import increaseBasketItemQuant from "../increaseBasketItemQuant";
+import increaseBasketItemQuant from "../componentsFunctions/increaseBasketItemQuant";
 import { mockBasketData } from "../utilsForTests/mockBasketData";
 describe("test function increaseBasketItemQuant", () => {
   it("item increases in quantity", () => {

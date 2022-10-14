@@ -1,4 +1,4 @@
-import { basketType } from "../types/basketType";
+import { basketType } from "../../types/basketType";
 
 const reduceBasketItemQuant = (
   id: string,

@@ -3,7 +3,7 @@ import { useContext, useEffect, useState } from "react";
 import { dataContext } from "../../ContextProvider";
 import { Link } from "react-router-dom";
 import styles from "../../palette.module.scss";
-import addPricesOfBasketItems from "../../utils/addPricesOfBasketItems";
+import addPricesOfBasketItems from "../../utils/componentsFunctions/addPricesOfBasketItems";
 
 const BasketFinalizeBox = ({ text, link }: { text: string; link: boolean }) => {
   const { basketProcessedData } = useContext(dataContext);

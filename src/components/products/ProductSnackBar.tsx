@@ -20,7 +20,6 @@ const ProductSnackBar = ({ text }: { text: string }) => {
     if (reason === "clickaway") {
       return;
     }
-
     setOpen(false);
   };
   const action = (

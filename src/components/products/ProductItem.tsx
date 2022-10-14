@@ -12,25 +12,10 @@ import { colors } from "../../utils/constants/helpers";
 import { productItemInterface } from "../../interfaces/productItemInterface";
 import { dataContext } from "../../ContextProvider";
 import { useContext } from "react";
-import { basketType } from "../../types/basketType";
+import addItemToBasket from "../../utils/componentsFunctions/addItemToBasket";
 
 const ProductItem = ({ item }: productItemInterface) => {
   const { basketData, setBasketData, setOpen } = useContext(dataContext);
-  const addToBasket = (item: string) => {
-    if (basketData.some((e: basketType) => e.id === item)) {
-      const index = basketData.findIndex((e: basketType) => e.id === item);
-      const newBasketData = basketData;
-      newBasketData[index].quantity += 1;
-      setBasketData([...newBasketData]);
-    } else {
-      setBasketData((basketData: basketType[]) => [
-        ...basketData,
-        { id: item, quantity: 1 },
-      ]);
-    }
-    setOpen(true);
-    localStorage.setItem("basketData", JSON.stringify(basketData));
-  };
 
   return (
     <Card
@@ -75,7 +60,10 @@ const ProductItem = ({ item }: productItemInterface) => {
           >
             <IconButton
               aria-label="delete"
-              onClick={() => addToBasket(item.id)}
+              onClick={() => {
+                setBasketData(addItemToBasket(item.id, basketData).basketData);
+                setOpen(addItemToBasket(item.id, basketData).isOpen);
+              }}
               color="primary"
             >
               <ShoppingCartIcon />

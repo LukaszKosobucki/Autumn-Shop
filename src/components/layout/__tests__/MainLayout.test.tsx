@@ -1,21 +1,21 @@
 import { describe, it } from "@jest/globals";
 import renderer from "react-test-renderer";
-import Header from "../Header";
+import MainLayout from "../MainLayout";
 import { MemoryRouter as Router } from "react-router-dom";
 import { dataContext } from "../../../ContextProvider";
 import { mockContext } from "../../../utils/utilsForTests/mockContext";
 
-describe("testing <Header/> render", () => {
-  it("Header Renders Correctly", () => {
-    const header = renderer
+describe("testing <MainLayout/> render", () => {
+  it("MainLayout Renders Correctly", () => {
+    const mainLayout = renderer
       .create(
         <Router>
           <dataContext.Provider value={mockContext}>
-            <Header />
+            <MainLayout>{}</MainLayout>
           </dataContext.Provider>
         </Router>
       )
       .toJSON();
-    expect(header).toMatchSnapshot();
+    expect(mainLayout).toMatchSnapshot();
   });
 });

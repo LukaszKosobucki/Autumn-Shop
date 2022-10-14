@@ -1,18 +1,19 @@
 import { describe, it } from "@jest/globals";
 import renderer from "react-test-renderer";
-import ContextProvider from "../../../ContextProvider";
+import { dataContext } from "../../../ContextProvider";
 import BasketFinalizeBox from "../BasketFinalizeBox";
 import { MemoryRouter as Router } from "react-router-dom";
 import { render } from "@testing-library/react";
 import { screen } from "@testing-library/dom";
+import { mockContext } from "../../../utils/utilsForTests/mockContext";
 
 describe("testing BasketFinalizeBox component", () => {
   const wrapper = (linkBool: boolean) => {
     return (
       <Router>
-        <ContextProvider>
+        <dataContext.Provider value={mockContext}>
           <BasketFinalizeBox text="proceed" link={true} />
-        </ContextProvider>
+        </dataContext.Provider>
       </Router>
     );
   };

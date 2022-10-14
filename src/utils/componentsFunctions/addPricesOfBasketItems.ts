@@ -1,4 +1,4 @@
-import { basketProcessedType } from "../types/basketProcessedType";
+import { basketProcessedType } from "../../types/basketProcessedType";
 
 const addPricesOfBasketItems = (
   basketProcessedData: basketProcessedType[]

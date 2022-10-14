@@ -1,18 +1,18 @@
+import ProductFilter from "../ProductFilter";
 import { describe, it } from "@jest/globals";
 import renderer from "react-test-renderer";
 import { dataContext } from "../../../ContextProvider";
 import { mockContext } from "../../../utils/utilsForTests/mockContext";
-import BasketList from "../BasketList";
 
-describe("testing BasketList component", () => {
-  it("BasketList Renders Correctly", () => {
-    const basketList = renderer
+describe("testing ProductFilter render", () => {
+  it("ProductFilter Renders Correctly", () => {
+    const productFilter = renderer
       .create(
         <dataContext.Provider value={mockContext}>
-          <BasketList />
+          <ProductFilter filterByCategory={(arg: string) => {}} />
         </dataContext.Provider>
       )
       .toJSON();
-    expect(basketList).toMatchSnapshot();
+    expect(productFilter).toMatchSnapshot();
   });
 });

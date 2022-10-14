@@ -1,9 +1,10 @@
-import { basketType } from "../types/basketType";
+import { basketModalInterface } from "../../interfaces/basketModalInterface";
+import { basketType } from "../../types/basketType";
 
 const deleteBasketItem = (
   id: string,
   basketData: basketType[]
-): { basketData: basketType[]; isOpen: boolean } => {
+): basketModalInterface => {
   if (id && basketData.map((item) => id in item))
     return {
       isOpen: true,

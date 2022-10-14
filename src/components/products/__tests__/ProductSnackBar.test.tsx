@@ -1,18 +1,18 @@
+import ProductSnackBar from "../ProductSnackBar";
 import { describe, it } from "@jest/globals";
 import renderer from "react-test-renderer";
 import { dataContext } from "../../../ContextProvider";
 import { mockContext } from "../../../utils/utilsForTests/mockContext";
-import BasketList from "../BasketList";
 
-describe("testing BasketList component", () => {
-  it("BasketList Renders Correctly", () => {
-    const basketList = renderer
+describe("testing ProductSnackBar render", () => {
+  it("ProductSnackBar Renders Correctly", () => {
+    const productSnackBar = renderer
       .create(
         <dataContext.Provider value={mockContext}>
-          <BasketList />
+          <ProductSnackBar text="Proceed" />
         </dataContext.Provider>
       )
       .toJSON();
-    expect(basketList).toMatchSnapshot();
+    expect(productSnackBar).toMatchSnapshot();
   });
 });

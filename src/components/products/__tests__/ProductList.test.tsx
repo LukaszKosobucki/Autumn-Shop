@@ -1,18 +1,19 @@
+import ProductList from "../ProductList";
 import { describe, it } from "@jest/globals";
 import renderer from "react-test-renderer";
+import { mockProductData } from "../../../utils/utilsForTests/mockProductData";
 import { dataContext } from "../../../ContextProvider";
 import { mockContext } from "../../../utils/utilsForTests/mockContext";
-import BasketList from "../BasketList";
 
-describe("testing BasketList component", () => {
-  it("BasketList Renders Correctly", () => {
-    const basketList = renderer
+describe("testing ProductList render", () => {
+  it("ProductList Renders Correctly", () => {
+    const productList = renderer
       .create(
         <dataContext.Provider value={mockContext}>
-          <BasketList />
+          <ProductList items={mockProductData} />
         </dataContext.Provider>
       )
       .toJSON();
-    expect(basketList).toMatchSnapshot();
+    expect(productList).toMatchSnapshot();
   });
 });

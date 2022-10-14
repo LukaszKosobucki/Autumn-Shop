@@ -1,6 +1,6 @@
 import { describe, it } from "@jest/globals";
 import { basketProcessedType } from "../../types/basketProcessedType";
-import addPricesOfBasketItems from "../addPricesOfBasketItems";
+import addPricesOfBasketItems from "../componentsFunctions/addPricesOfBasketItems";
 import { mockProductData } from "../../utils/utilsForTests/mockProductData";
 describe("test function addPricesOfBasketItems", () => {
   it("prices correctly sum up even after data change", () => {

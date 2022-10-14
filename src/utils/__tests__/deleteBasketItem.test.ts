@@ -1,5 +1,5 @@
 import { describe, it } from "@jest/globals";
-import deleteBasketItem from "../deleteBasketItem";
+import deleteBasketItem from "../componentsFunctions/deleteBasketItem";
 import { mockBasketData } from "../utilsForTests/mockBasketData";
 describe("test function deleteBasketItem", () => {
   it("item deletes from basketData", () => {

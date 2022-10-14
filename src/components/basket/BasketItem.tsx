@@ -13,9 +13,9 @@ import DeleteForeverOutlinedIcon from "@mui/icons-material/DeleteForeverOutlined
 import ProductSnackBar from "../products/ProductSnackBar";
 import { basketItemInterface } from "../../interfaces/basketItemInterface";
 import { useContext } from "react";
-import reduceBasketItemQuant from "../../utils/reduceBasketItemQuant";
-import increaseBasketItemQuant from "../../utils/increaseBasketItemQuant";
-import deleteBasketItem from "../../utils/deleteBasketItem";
+import reduceBasketItemQuant from "../../utils/componentsFunctions/reduceBasketItemQuant";
+import increaseBasketItemQuant from "../../utils/componentsFunctions/increaseBasketItemQuant";
+import deleteBasketItem from "../../utils/componentsFunctions/deleteBasketItem";
 
 const BasketItem = ({ item }: basketItemInterface) => {
   const { basketData, setBasketData, setOpen } = useContext(dataContext);
