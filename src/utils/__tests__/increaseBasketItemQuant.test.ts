@@ -3,19 +3,19 @@ import increaseBasketItemQuant from "../componentsFunctions/increaseBasketItemQu
 import { mockBasketData } from "../utilsForTests/mockBasketData";
 describe("test function increaseBasketItemQuant", () => {
   it("item increases in quantity", () => {
-    expect(increaseBasketItemQuant("item1", mockBasketData).basketData).toEqual(
-      [
-        { id: "item1", quantity: 5 },
-        { id: "item2", quantity: 5 },
-        { id: "item3", quantity: 1 },
-      ]
-    );
     expect(
-      increaseBasketItemQuant("item1", mockBasketData).basketData
+      increaseBasketItemQuant("item_1", mockBasketData).basketData
+    ).toEqual([
+      { id: "item_1", quantity: 5 },
+      { id: "item_2", quantity: 5 },
+      { id: "item_3", quantity: 1 },
+    ]);
+    expect(
+      increaseBasketItemQuant("item_1", mockBasketData).basketData
     ).not.toEqual([
-      { id: "item1", quantity: 4 },
-      { id: "item2", quantity: 5 },
-      { id: "item3", quantity: 1 },
+      { id: "item_1", quantity: 4 },
+      { id: "item_2", quantity: 5 },
+      { id: "item_3", quantity: 1 },
     ]);
   });
 });

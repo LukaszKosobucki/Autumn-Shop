@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`testing OrderItem render OrderItem Renders Correctly 1`] = `
+<div
+  className="MuiGrid-root css-47g6wx-MuiGrid-root"
+>
+  <div
+    className="MuiBox-root css-6p0wtr"
+  >
+    <a
+      className="MuiTypography-root MuiTypography-inherit MuiLink-root MuiLink-underlineAlways css-12gn65i-MuiTypography-root-MuiLink-root"
+      onBlur={[Function]}
+      onClick={[Function]}
+      onFocus={[Function]}
+    >
+      1234
+    </a>
+  </div>
+  <div
+    className="MuiBox-root css-0"
+  >
+    cash
+     / 
+    DHL
+  </div>
+  <div
+    className="MuiBox-root css-14qsb8q"
+  >
+    1/1/2022
+  </div>
+</div>
+`;

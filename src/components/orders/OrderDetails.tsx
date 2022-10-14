@@ -10,7 +10,6 @@ import {
 import { TransitionProps } from "@mui/material/transitions";
 import React, { useContext } from "react";
 import { dataContext } from "../../ContextProvider";
-import { basketType } from "../../types/basketType";
 import { orderType } from "../../types/orderType";
 import { productType } from "../../types/productType";
 
@@ -79,8 +78,8 @@ const OrderDetails = ({
           <Typography variant="h5">Items Orderder</Typography>
           {orderItem.items.map((item) => (
             <DialogContentText key={item.id}>
-              {data[data.findIndex((e: productType) => e.id === item.id)].name},
-              quantity: {item.quantity}
+              {data[data.findIndex((e: productType) => e.id === item.id)]?.name}
+              , quantity: {item.quantity}
             </DialogContentText>
           ))}
         </DialogContent>

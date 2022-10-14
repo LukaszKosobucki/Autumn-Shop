@@ -6,17 +6,12 @@ import {
   InputLabel,
   Typography,
 } from "@mui/material";
-import { UseFormRegister, FieldValues, FieldErrorsImpl } from "react-hook-form";
+import { useFormContext } from "react-hook-form";
 import styles from "../../palette.module.scss";
 import { formData } from "../../utils/formData";
 
-const FinalizeForm = ({
-  register,
-  errors,
-}: {
-  register: UseFormRegister<FieldValues>;
-  errors: FieldErrorsImpl<{ [x: string]: any }>;
-}) => {
+const FinalizeForm = () => {
+  const { register, formState } = useFormContext();
   return (
     <Grid
       sx={{
@@ -70,7 +65,7 @@ const FinalizeForm = ({
                 required: input.required,
               })}
             />
-            {errors[input.name.toLowerCase()] && (
+            {formState.errors[input.name.toLowerCase()] && (
               <Typography
                 color="error"
                 variant="body2"

@@ -4,7 +4,7 @@ import renderer from "react-test-renderer";
 
 describe("testing <ProductItem/> render", () => {
   it("ProductItem Renders Correctly", () => {
-    const productPage = renderer
+    const productItem = renderer
       .create(
         <ProductItem
           item={{
@@ -17,6 +17,6 @@ describe("testing <ProductItem/> render", () => {
         />
       )
       .toJSON();
-    expect(productPage).toMatchSnapshot();
+    expect(productItem).toMatchSnapshot();
   });
 });
