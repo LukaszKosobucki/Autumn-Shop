@@ -1,18 +1,16 @@
 import { Grid, Link, Box } from "@mui/material";
-import { useState } from "react";
 import { orderType } from "../../types/orderType";
-import OrderDetails from "./OrderDetails";
 
-const OrderItem = ({ orderItem }: { orderItem: orderType }) => {
-  const [openDetails, setOpenDetails] = useState<boolean>(false);
-  const handleOpen = (): void => {
-    setOpenDetails(true);
-  };
-  const handleClose = (): void => {
-    setOpenDetails(false);
-  };
+const OrderItem = ({
+  orderItem,
+  handleOpen,
+}: {
+  orderItem: orderType;
+  handleOpen: (arg: orderType) => void;
+}) => {
   return (
     <Grid
+      data-testid="orderItem"
       sx={{
         color: "#3d405b",
         justifyContent: "space-between",
@@ -30,14 +28,13 @@ const OrderItem = ({ orderItem }: { orderItem: orderType }) => {
           my: "0.25rem",
         }}
       >
-        <Link onClick={() => handleOpen()} sx={{ cursor: "pointer" }}>
+        <Link
+          placeholder="buttonLink"
+          onClick={() => handleOpen(orderItem)}
+          sx={{ cursor: "pointer" }}
+        >
           {orderItem.id}
         </Link>
-        <OrderDetails
-          orderItem={orderItem}
-          handleClose={handleClose}
-          openDetails={openDetails}
-        />
       </Box>
       <Box>
         {orderItem.payment_option} / {orderItem.delivery_option}

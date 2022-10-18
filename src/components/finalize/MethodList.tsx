@@ -4,6 +4,7 @@ import { finalizeOptionsType } from "../../types/finalizeOptionsType";
 import { dataContext } from "../../ContextProvider";
 import { useContext } from "react";
 import styles from "../../palette.module.scss";
+import resetFinalizeOptions from "../../utils/componentsFunctions/resetFinalizeOptions";
 
 const MethodList = ({ options }: { options: finalizeOptionsType[] }) => {
   const {
@@ -14,27 +15,6 @@ const MethodList = ({ options }: { options: finalizeOptionsType[] }) => {
   } = useContext(dataContext);
   const isTrue = (): boolean => {
     return options.some((item: finalizeOptionsType) => item.selected === true);
-  };
-  const resetOptions = (): void => {
-    if (
-      deliveryOptions.some(
-        (e: finalizeOptionsType) => e.name === options[0].name
-      )
-    ) {
-      const index = deliveryOptions.findIndex(
-        (e: finalizeOptionsType) => e.selected === true
-      );
-      const newDeliveryOptions = deliveryOptions;
-      newDeliveryOptions[index].selected = !deliveryOptions[index].selected;
-      setDeliveryOptions([...newDeliveryOptions]);
-    } else {
-      const index = paymentOptions.findIndex(
-        (e: finalizeOptionsType) => e.selected === true
-      );
-      const newPaymentOptions = paymentOptions;
-      newPaymentOptions[index].selected = !paymentOptions[index].selected;
-      setPaymentOptions([...newPaymentOptions]);
-    }
   };
 
   return (
@@ -68,7 +48,19 @@ const MethodList = ({ options }: { options: finalizeOptionsType[] }) => {
             />
           ))}
       {isTrue() && (
-        <Button onClick={() => resetOptions()}>
+        <Button
+          data-testid="buttonMethodCard"
+          onClick={() => {
+            const placeholder = resetFinalizeOptions(
+              deliveryOptions,
+              paymentOptions,
+              options
+            );
+
+            setDeliveryOptions(placeholder.deliveryOptions);
+            setPaymentOptions(placeholder.paymentOptions);
+          }}
+        >
           <Typography color="primary" variant="caption">
             Change Options
           </Typography>

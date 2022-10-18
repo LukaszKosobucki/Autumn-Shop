@@ -1,0 +1,101 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`testing <Footer/> render Footer Renders Correctly 1`] = `
+<div
+  className="MuiGrid-root css-1b3rmzp-MuiGrid-root"
+>
+  <div
+    className="MuiBox-root css-0"
+  >
+    <div
+      className="MuiBox-root css-180jf3a"
+    >
+      <span
+        className="MuiTypography-root MuiTypography-caption css-1061lhe-MuiTypography-root"
+      >
+        FAQ
+      </span>
+    </div>
+    <div
+      className="MuiBox-root css-0"
+    >
+      <span
+        className="MuiTypography-root MuiTypography-caption css-1061lhe-MuiTypography-root"
+      >
+        hello world
+      </span>
+    </div>
+    <div
+      className="MuiBox-root css-0"
+    >
+      <span
+        className="MuiTypography-root MuiTypography-caption css-1061lhe-MuiTypography-root"
+      >
+        hello world
+      </span>
+    </div>
+  </div>
+  <div
+    className="MuiBox-root css-0"
+  >
+    <div
+      className="MuiBox-root css-180jf3a"
+    >
+      <span
+        className="MuiTypography-root MuiTypography-caption css-1061lhe-MuiTypography-root"
+      >
+        Contact
+      </span>
+    </div>
+    <div
+      className="MuiBox-root css-0"
+    >
+      <span
+        className="MuiTypography-root MuiTypography-caption css-1061lhe-MuiTypography-root"
+      >
+        hello world
+      </span>
+    </div>
+    <div
+      className="MuiBox-root css-0"
+    >
+      <span
+        className="MuiTypography-root MuiTypography-caption css-1061lhe-MuiTypography-root"
+      >
+        hello world
+      </span>
+    </div>
+  </div>
+  <div
+    className="MuiBox-root css-0"
+  >
+    <div
+      className="MuiBox-root css-180jf3a"
+    >
+      <span
+        className="MuiTypography-root MuiTypography-caption css-1061lhe-MuiTypography-root"
+      >
+        About
+      </span>
+    </div>
+    <div
+      className="MuiBox-root css-0"
+    >
+      <span
+        className="MuiTypography-root MuiTypography-caption css-1061lhe-MuiTypography-root"
+      >
+        hello world
+      </span>
+    </div>
+    <div
+      className="MuiBox-root css-0"
+    >
+      <span
+        className="MuiTypography-root MuiTypography-caption css-1061lhe-MuiTypography-root"
+      >
+        hello world
+      </span>
+    </div>
+  </div>
+</div>
+`;

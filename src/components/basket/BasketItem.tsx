@@ -6,20 +6,23 @@ import {
   Typography,
   IconButton,
 } from "@mui/material";
+import { dataContext } from "../../ContextProvider";
 import AddShoppingCartOutlinedIcon from "@mui/icons-material/AddShoppingCartOutlined";
 import RemoveShoppingCartOutlinedIcon from "@mui/icons-material/RemoveShoppingCartOutlined";
 import DeleteForeverOutlinedIcon from "@mui/icons-material/DeleteForeverOutlined";
 import ProductSnackBar from "../products/ProductSnackBar";
 import { basketItemInterface } from "../../interfaces/basketItemInterface";
+import { useContext } from "react";
+import reduceBasketItemQuant from "../../utils/componentsFunctions/reduceBasketItemQuant";
+import increaseBasketItemQuant from "../../utils/componentsFunctions/increaseBasketItemQuant";
+import deleteBasketItem from "../../utils/componentsFunctions/deleteBasketItem";
 
-const BasketItem = ({
-  item,
-  reduceBasketItemQuant,
-  increaseBasketItemQuant,
-  deleteBasketItem,
-}: basketItemInterface) => {
+const BasketItem = ({ item }: basketItemInterface) => {
+  const { basketData, setBasketData, setOpen } = useContext(dataContext);
+
   return (
     <Card
+      data-testid="basketItem"
       sx={{
         display: "flex",
         flexWrap: "wrap",
@@ -46,7 +49,7 @@ const BasketItem = ({
           <CardMedia
             component="img"
             height="100"
-            image="https://images.unsplash.com/photo-1515471897120-85416077e011?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8Y29mZmVlJTIwYmFnfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+            image={item.imgUrl}
             alt="green iguana"
           />
         </Grid>
@@ -69,8 +72,11 @@ const BasketItem = ({
         }}
       >
         <IconButton
+          data-testid="reduceButton"
           onClick={() => {
-            reduceBasketItemQuant(item.id);
+            setBasketData(
+              reduceBasketItemQuant(item.id, basketData).basketData
+            );
           }}
           color="primary"
         >
@@ -80,16 +86,22 @@ const BasketItem = ({
           quant: {item.quantity}
         </Typography>
         <IconButton
+          data-testid="increaseButton"
           onClick={() => {
-            increaseBasketItemQuant(item.id);
+            setBasketData(
+              increaseBasketItemQuant(item.id, basketData).basketData
+            );
           }}
           color="primary"
         >
           <AddShoppingCartOutlinedIcon fontSize="large" />
         </IconButton>
         <IconButton
+          data-testid="deleteButton"
           onClick={() => {
-            deleteBasketItem(item.id);
+            const placeholder = deleteBasketItem(item.id, basketData);
+            setOpen(placeholder.isOpen);
+            setBasketData(placeholder.basketData);
           }}
           color="primary"
         >

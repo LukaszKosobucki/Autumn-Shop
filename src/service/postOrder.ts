@@ -15,6 +15,6 @@ export const postOrder = async (data: orderType) => {
 
   const response = await axios(options)
     .then((response) => response.status)
-    .catch((e) => console.log(e.response.data));
+    .catch((err) => console.log(err));
   return response;
 };

@@ -1,0 +1,110 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`testing BasketFinalizeBox component Renders Correctly with a link 1`] = `
+<div
+  className="MuiGrid-root css-5jl48k-MuiGrid-root"
+>
+  <span
+    className="MuiTypography-root MuiTypography-caption css-1d9s20a-MuiTypography-root"
+  >
+    Products Price: 
+    205
+    $
+  </span>
+  <span
+    className="MuiTypography-root MuiTypography-caption css-1d9s20a-MuiTypography-root"
+  >
+    Delivery Price: 
+    20
+    $
+  </span>
+  <span
+    className="MuiTypography-root MuiTypography-caption css-1d9s20a-MuiTypography-root"
+  >
+    Total Price: 
+    225
+    $
+  </span>
+  <a
+    className="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-1e6y48t-MuiButtonBase-root-MuiButton-root"
+    data-testid="buttonLink"
+    href="/finalize"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onContextMenu={[Function]}
+    onDragLeave={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    onKeyUp={[Function]}
+    onMouseDown={[Function]}
+    onMouseLeave={[Function]}
+    onMouseUp={[Function]}
+    onTouchEnd={[Function]}
+    onTouchMove={[Function]}
+    onTouchStart={[Function]}
+    tabIndex={0}
+  >
+    <span
+      className="MuiTypography-root MuiTypography-caption css-1d9s20a-MuiTypography-root"
+    >
+      proceed
+    </span>
+    <span
+      className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+    />
+  </a>
+</div>
+`;
+
+exports[`testing BasketFinalizeBox component Renders Correctly without link 1`] = `
+<div
+  className="MuiGrid-root css-5jl48k-MuiGrid-root"
+>
+  <span
+    className="MuiTypography-root MuiTypography-caption css-1d9s20a-MuiTypography-root"
+  >
+    Products Price: 
+    0
+    $
+  </span>
+  <span
+    className="MuiTypography-root MuiTypography-caption css-1d9s20a-MuiTypography-root"
+  >
+    Delivery Price: 
+    20
+    $
+  </span>
+  <span
+    className="MuiTypography-root MuiTypography-caption css-1d9s20a-MuiTypography-root"
+  >
+    Total Price: 
+    20
+    $
+  </span>
+  <a
+    className="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-1e6y48t-MuiButtonBase-root-MuiButton-root"
+    data-testid="buttonLink"
+    href="/finalize"
+    onBlur={[Function]}
+    onClick={[Function]}
+    onContextMenu={[Function]}
+    onDragLeave={[Function]}
+    onFocus={[Function]}
+    onKeyDown={[Function]}
+    onKeyUp={[Function]}
+    onMouseDown={[Function]}
+    onMouseLeave={[Function]}
+    onMouseUp={[Function]}
+    onTouchEnd={[Function]}
+    onTouchMove={[Function]}
+    onTouchStart={[Function]}
+    tabIndex={0}
+  >
+    <span
+      className="MuiTypography-root MuiTypography-caption css-1d9s20a-MuiTypography-root"
+    >
+      proceed
+    </span>
+  </a>
+</div>
+`;

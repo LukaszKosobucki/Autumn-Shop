@@ -6,7 +6,7 @@ import { useContext } from "react";
 import FinalizeForm from "../components/finalize/FinalizeForm";
 import { orderType } from "../types/orderType";
 import { finalizeOptionsType } from "../types/finalizeOptionsType";
-import { useForm } from "react-hook-form";
+import { useForm, FormProvider } from "react-hook-form";
 import { deliveryInformationType } from "../types/deliveryInformationType";
 import { postOrder } from "../service/postOrder";
 import { useNavigate } from "react-router-dom";
@@ -21,7 +21,8 @@ const FinalizePage = () => {
     setOrderData,
     orderData,
   } = useContext(dataContext);
-  const { register, handleSubmit } = useForm<FieldValues>();
+  const methods = useForm<FieldValues>();
+
   const navigate = useNavigate();
 
   const postDataFn = async (
@@ -31,12 +32,18 @@ const FinalizePage = () => {
     const today = new Date(timeElapsed);
     const date = today.toLocaleDateString();
     const orderId: number = Math.floor(Date.now() + Math.random() * 1000);
-    const deliveryOption = await deliveryOptions[
-      deliveryOptions.findIndex((e: finalizeOptionsType) => e.selected === true)
-    ].name;
-    const paymentOption = await paymentOptions[
-      paymentOptions.findIndex((e: finalizeOptionsType) => e.selected === true)
-    ].name;
+    const deliveryOption =
+      deliveryOptions[
+        deliveryOptions.findIndex(
+          (e: finalizeOptionsType) => e.selected === true
+        )
+      ].name;
+    const paymentOption =
+      paymentOptions[
+        paymentOptions.findIndex(
+          (e: finalizeOptionsType) => e.selected === true
+        )
+      ].name;
 
     const postData: orderType = {
       id: orderId,
@@ -57,22 +64,24 @@ const FinalizePage = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit(postDataFn)}>
-      <Grid
-        sx={{
-          flexDirection: "row",
-          minHeight: "100vh",
-          mt: "2.5rem",
-        }}
-      >
-        <Box>
-          <FinalizeForm register={register} />
-          <MethodList options={deliveryOptions} />
-          <MethodList options={paymentOptions} />
-        </Box>
-        <BasketFinalizeBox text="Finalize" link={false} />
-      </Grid>
-    </form>
+    <FormProvider {...methods}>
+      <form onSubmit={methods.handleSubmit(postDataFn)}>
+        <Grid
+          sx={{
+            flexDirection: "row",
+            minHeight: "100vh",
+            mt: "2.5rem",
+          }}
+        >
+          <Box>
+            <FinalizeForm />
+            <MethodList options={deliveryOptions} />
+            <MethodList options={paymentOptions} />
+          </Box>
+          <BasketFinalizeBox text="Finalize" link={false} />
+        </Grid>
+      </form>
+    </FormProvider>
   );
 };
 

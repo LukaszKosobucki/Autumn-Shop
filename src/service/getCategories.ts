@@ -1,9 +1,9 @@
 import axios from "axios";
 import { urls } from "./config";
 
-export const requestBasketData = async () => {
+export const getCategories = async () => {
   const options = {
-    url: urls.basket,
+    url: urls.categories,
     method: "GET",
     headers: {
       Accept: "application/json",
@@ -11,6 +11,8 @@ export const requestBasketData = async () => {
     },
   };
 
-  const response = await axios(options);
-  return response.data;
+  const response = await axios(options)
+    .then((response) => response.data)
+    .catch((err) => console.log(err));
+  return response;
 };

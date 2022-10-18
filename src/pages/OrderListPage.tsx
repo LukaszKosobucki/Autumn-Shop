@@ -19,9 +19,18 @@ const OrderListPage = () => {
       <Typography variant="h3" color="primary">
         --Order List--
       </Typography>
-      <OrderList />
+      {orderData.length > 0 ? (
+        <OrderList />
+      ) : (
+        <Typography color="primary" variant="caption">
+          There is no orders yet, please do a first order to see the history of
+          orders
+        </Typography>
+      )}
+
       {orderData.length - orderLoadLimit > 0 && (
         <Button
+          data-testid="buttonLoadMore"
           onClick={() => {
             setOrderLoadLimit(orderLoadLimit + 20);
           }}

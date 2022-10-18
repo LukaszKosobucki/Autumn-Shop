@@ -1,5 +1,9 @@
-/**
- * @jest-environment jsdom
- */
+import renderer from "react-test-renderer";
+import Footer from "../Footer";
 
-export {};
+describe("testing <Footer/> render", () => {
+  it("Footer Renders Correctly", () => {
+    const footer = renderer.create(<Footer />).toJSON();
+    expect(footer).toMatchSnapshot();
+  });
+});

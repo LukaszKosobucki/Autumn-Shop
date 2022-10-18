@@ -9,10 +9,10 @@ import {
 import CheckBoxOutlinedIcon from "@mui/icons-material/CheckBoxOutlined";
 import { useContext } from "react";
 import { dataContext } from "../../ContextProvider";
-import { finalizeOptionsType } from "../../types/finalizeOptionsType";
 import { methodCardInterface } from "../../interfaces/methodCardInterface";
 import CheckBoxOutlineBlankOutlinedIcon from "@mui/icons-material/CheckBoxOutlineBlankOutlined";
 import colors from "../../palette.module.scss";
+import changeFinalizeOptions from "../../utils/componentsFunctions/changeFinalizeOptions";
 
 const MethodCard = ({ name, imgUrl, selected }: methodCardInterface) => {
   const {
@@ -21,25 +21,10 @@ const MethodCard = ({ name, imgUrl, selected }: methodCardInterface) => {
     paymentOptions,
     setPaymentOptions,
   } = useContext(dataContext);
-  const placeholderOnClick = (): void => {
-    if (deliveryOptions.some((e: finalizeOptionsType) => e.name === name)) {
-      const index = deliveryOptions.findIndex(
-        (e: finalizeOptionsType) => e.name === name
-      );
-      const newDeliveryOptions = deliveryOptions;
-      newDeliveryOptions[index].selected = !deliveryOptions[index].selected;
-      setDeliveryOptions([...newDeliveryOptions]);
-    } else {
-      const index = paymentOptions.findIndex(
-        (e: finalizeOptionsType) => e.name === name
-      );
-      const newPaymentOptions = paymentOptions;
-      newPaymentOptions[index].selected = !paymentOptions[index].selected;
-      setPaymentOptions([...newPaymentOptions]);
-    }
-  };
+
   return (
     <Card
+      data-testid="methodCard"
       sx={{
         display: "flex",
         flexWrap: "wrap",
@@ -82,16 +67,30 @@ const MethodCard = ({ name, imgUrl, selected }: methodCardInterface) => {
 
         {selected ? (
           <IconButton
+            placeholder="buttonDelivery"
             onClick={() => {
-              placeholderOnClick();
+              const placeholder = changeFinalizeOptions(
+                deliveryOptions,
+                paymentOptions,
+                name
+              );
+              setDeliveryOptions(placeholder.deliveryOptions);
+              setPaymentOptions(placeholder.paymentOptions);
             }}
           >
             <CheckBoxOutlinedIcon fontSize="medium" color="primary" />
           </IconButton>
         ) : (
           <IconButton
+            placeholder="buttonPayment"
             onClick={() => {
-              placeholderOnClick();
+              const placeholder = changeFinalizeOptions(
+                deliveryOptions,
+                paymentOptions,
+                name
+              );
+              setDeliveryOptions(placeholder.deliveryOptions);
+              setPaymentOptions(placeholder.paymentOptions);
             }}
           >
             <CheckBoxOutlineBlankOutlinedIcon

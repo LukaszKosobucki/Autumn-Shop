@@ -7,17 +7,16 @@ import {
   IconButton,
 } from "@mui/material";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import { productType } from "../../types/productType";
 import ProductSnackBar from "./ProductSnackBar";
-import { colors } from "../../utils/helpers";
+import { colors } from "../../utils/constants/helpers";
+import { productItemInterface } from "../../interfaces/productItemInterface";
+import { dataContext } from "../../ContextProvider";
+import { useContext } from "react";
+import addItemToBasket from "../../utils/componentsFunctions/addItemToBasket";
 
-const ProductItem = ({
-  item,
-  addToBasket,
-}: {
-  item: productType;
-  addToBasket: (item: string) => void;
-}) => {
+const ProductItem = ({ item }: productItemInterface) => {
+  const { basketData, setBasketData, setOpen } = useContext(dataContext);
+
   return (
     <Card
       sx={{
@@ -34,7 +33,7 @@ const ProductItem = ({
       <CardMedia
         component="img"
         height="250"
-        image="https://images.unsplash.com/photo-1515471897120-85416077e011?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NHx8Y29mZmVlJTIwYmFnfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+        image={item.imgUrl}
         alt="green iguana"
       />
       <CardContent>
@@ -60,8 +59,11 @@ const ProductItem = ({
             }}
           >
             <IconButton
-              aria-label="delete"
-              onClick={() => addToBasket(item.id)}
+              placeholder="buttonAddToBasket"
+              onClick={() => {
+                setBasketData(addItemToBasket(item.id, basketData).basketData);
+                setOpen(addItemToBasket(item.id, basketData).isOpen);
+              }}
               color="primary"
             >
               <ShoppingCartIcon />

@@ -1,4 +1,11 @@
-import { Alert, Button, IconButton, Snackbar } from "@mui/material";
+import {
+  Alert,
+  Button,
+  IconButton,
+  Snackbar,
+  Box,
+  Typography,
+} from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
 import { dataContext } from "../../ContextProvider";
 import { useContext } from "react";
@@ -13,15 +20,17 @@ const ProductSnackBar = ({ text }: { text: string }) => {
     if (reason === "clickaway") {
       return;
     }
-
     setOpen(false);
   };
   const action = (
-    <>
-      <Button color="secondary" size="small" onClick={handleClose}>
-        UNDO
+    <Box>
+      <Button size="small" onClick={handleClose} sx={{ m: 0 }}>
+        <Typography color="secondary" variant="button">
+          UNDO
+        </Typography>
       </Button>
       <IconButton
+        placeholder="buttonCloseSnackBar"
         size="small"
         aria-label="close"
         color="inherit"
@@ -29,7 +38,7 @@ const ProductSnackBar = ({ text }: { text: string }) => {
       >
         <CloseIcon fontSize="small" />
       </IconButton>
-    </>
+    </Box>
   );
 
   return (

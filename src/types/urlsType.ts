@@ -1,4 +1,5 @@
 export type urlsType = {
+  path: string;
   basket: string;
   categories: string;
   items: string;

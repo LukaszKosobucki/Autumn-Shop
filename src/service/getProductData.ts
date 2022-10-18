@@ -2,7 +2,7 @@ import axios from "axios";
 import { urls } from "./config";
 import { mapData } from "../mappers/mapData";
 
-export const requestData = async () => {
+export const getProductData = async () => {
   const options = {
     url: urls.items,
     method: "GET",
@@ -12,9 +12,9 @@ export const requestData = async () => {
     },
   };
 
-  const response = await axios(options).then((response) =>
-    mapData(response.data)
-  );
+  const response = await axios(options)
+    .then((response) => mapData(response.data))
+    .catch((err) => console.log(err));
 
   return response;
 };

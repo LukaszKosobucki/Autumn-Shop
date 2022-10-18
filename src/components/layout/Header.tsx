@@ -1,12 +1,15 @@
-import { Grid, Typography, IconButton, Box } from "@mui/material";
+import { Grid, Typography, IconButton, Box, Badge } from "@mui/material";
 import EmojiFoodBeverageIcon from "@mui/icons-material/EmojiFoodBeverage";
 import AccountBoxIcon from "@mui/icons-material/AccountBox";
 import ListIcon from "@mui/icons-material/List";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { Link } from "react-router-dom";
 import styles from "../../palette.module.scss";
+import { useContext } from "react";
+import { dataContext } from "../../ContextProvider";
 
 const Header = () => {
+  const { basketData } = useContext(dataContext);
   return (
     <Grid
       sx={{
@@ -20,30 +23,31 @@ const Header = () => {
         mb: 0,
       }}
     >
-      <Box>
+      <Box sx={{ display: "flex", flex: 1, justifyContent: "center" }}>
         <IconButton
+          data-testid="buttonLogo"
           color="primary"
           component={Link}
           to="/"
           onClick={() =>
-            window.location.href === "http://localhost:3005/"
-              ? window.location.reload()
-              : null
+            window.location.href === "http://localhost:3005/" &&
+            window.location.reload()
           }
         >
           <EmojiFoodBeverageIcon fontSize="large" />
         </IconButton>
       </Box>
-      <Box>
+      <Box sx={{ justifyContent: "center" }}>
         <Typography variant="h2" color="primary">
           Jesieniara-ecommerce
         </Typography>
       </Box>
       <Grid
         sx={{
-          justifyContent: "space-around",
+          justifyContent: "center",
           alignItems: "center",
           flexDirection: "row",
+          flex: 1,
         }}
       >
         <Box>
@@ -58,7 +62,9 @@ const Header = () => {
         </Box>
         <Box>
           <IconButton color="primary" component={Link} to="/basket">
-            <ShoppingCartIcon fontSize="large" />
+            <Badge badgeContent={basketData.length} color="primary">
+              <ShoppingCartIcon fontSize="large" />
+            </Badge>
           </IconButton>
         </Box>
       </Grid>

@@ -6,24 +6,12 @@ import {
   InputLabel,
   Typography,
 } from "@mui/material";
-import { UseFormRegister, FieldValues } from "react-hook-form";
+import { useFormContext } from "react-hook-form";
 import styles from "../../palette.module.scss";
+import { formData } from "../../utils/formData";
 
-const FinalizeForm = ({
-  register,
-}: {
-  register: UseFormRegister<FieldValues>;
-}) => {
-  const formData = [
-    "Name",
-    "Surname",
-    "Email",
-    "Phone",
-    "ZipCode",
-    "State",
-    "City",
-  ];
-
+const FinalizeForm = () => {
+  const { register, formState } = useFormContext();
   return (
     <Grid
       sx={{
@@ -54,19 +42,42 @@ const FinalizeForm = ({
       <Grid
         sx={{
           bgcolor: styles.colorAutumnLight100,
-          minWidth: "20rem",
+          minWidth: "26rem",
           p: "2.5rem",
         }}
       >
-        {formData.map((text) => (
-          <FormControl required key={text}>
-            <InputLabel htmlFor={text}>{text}</InputLabel>
+        {formData.map((input) => (
+          <FormControl key={input.name} data-testid="formField">
+            <InputLabel color="primary" htmlFor={input.name}>
+              {input.name}
+            </InputLabel>
             <Input
-              id={text}
+              id={input.name}
               color="primary"
-              sx={{ mb: "0.75rem", minWidth: "9.375rem" }}
-              {...register(text.toLowerCase())}
+              sx={{
+                mb: "0.75rem",
+                minWidth: "20rem",
+              }}
+              {...register(input.name.toLowerCase(), {
+                pattern: input.pattern,
+                minLength: input.minLength,
+                maxLength: input.maxLength,
+                required: input.required,
+              })}
             />
+            {formState.errors[input.name.toLowerCase()] && (
+              <Typography
+                data-testid="formError"
+                color="error"
+                variant="body2"
+                sx={{
+                  maxWidth: "20rem",
+                  mb: "0.75rem",
+                }}
+              >
+                {input.error}
+              </Typography>
+            )}
           </FormControl>
         ))}
       </Grid>

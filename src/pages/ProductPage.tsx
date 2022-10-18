@@ -1,38 +1,23 @@
 import { useEffect, useContext } from "react";
 import ProductList from "../components/products/ProductList";
-import { productType } from "../types/productType";
 import ProductFilter from "../components/products/ProductFilter";
 import { Button, Grid, Box, Typography } from "@mui/material";
 import { dataContext } from "../ContextProvider";
 import ProductImageBg from "../components/products/ProductImageBg";
+import filterByCategories from "../utils/componentsFunctions/filterByCategories";
 
 const ProductPage = () => {
   const {
     data,
     setLoadLimit,
     loadLimit,
-    setFilter,
     filter,
     processedData,
     setProcessedData,
   } = useContext(dataContext);
 
-  const setFilterCategories = (category: string): void => {
-    if (filter.includes(category)) {
-      setFilter(filter.filter((item: string) => item !== category));
-    } else setFilter((filter: string[]) => [...filter, category]);
-  };
-
-  const filterByCategories = (): void => {
-    setProcessedData(
-      filter.length > 0
-        ? data.filter((item: productType) => filter.includes(item.category))
-        : data
-    );
-  };
-
   useEffect(() => {
-    filterByCategories();
+    setProcessedData(filterByCategories(filter, data));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data, filter]);
 
@@ -45,11 +30,12 @@ const ProductPage = () => {
           minHeight: "100vh",
         }}
       >
-        <ProductFilter filterByCategory={setFilterCategories} />
+        <ProductFilter />
 
         <ProductList items={processedData} />
         {processedData.length - loadLimit > 0 && (
           <Button
+            data-testid="buttonLoadMore"
             onClick={() => {
               setLoadLimit(loadLimit + 9);
             }}
