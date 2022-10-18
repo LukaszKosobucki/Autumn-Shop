@@ -1,4 +1,3 @@
-import { describe, it } from "@jest/globals";
 import reduceBasketItemQuant from "../componentsFunctions/reduceBasketItemQuant";
 import { mockBasketData } from "../utilsForTests/mockBasketData";
 describe("test function reduceBasketItemQuant", () => {

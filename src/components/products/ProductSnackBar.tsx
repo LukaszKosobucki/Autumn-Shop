@@ -30,6 +30,7 @@ const ProductSnackBar = ({ text }: { text: string }) => {
         </Typography>
       </Button>
       <IconButton
+        placeholder="buttonCloseSnackBar"
         size="small"
         aria-label="close"
         color="inherit"

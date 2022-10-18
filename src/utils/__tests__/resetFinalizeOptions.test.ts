@@ -1,4 +1,3 @@
-import { describe, it } from "@jest/globals";
 import resetFinalizeOptions from "../componentsFunctions/resetFinalizeOptions";
 import {
   mockFinalizeData,

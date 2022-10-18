@@ -6,6 +6,7 @@ exports[`testing MethodList render MethodList Renders Correctly 1`] = `
 >
   <div
     className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root css-xbf7rn-MuiPaper-root-MuiCard-root"
+    data-testid="methodCard"
   >
     <div
       className="MuiGrid-root css-2etixe-MuiGrid-root"
@@ -41,6 +42,7 @@ exports[`testing MethodList render MethodList Renders Correctly 1`] = `
         onTouchEnd={[Function]}
         onTouchMove={[Function]}
         onTouchStart={[Function]}
+        placeholder="buttonDelivery"
         tabIndex={0}
         type="button"
       >
@@ -60,6 +62,7 @@ exports[`testing MethodList render MethodList Renders Correctly 1`] = `
   </div>
   <button
     className="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-1e6y48t-MuiButtonBase-root-MuiButton-root"
+    data-testid="buttonMethodCard"
     disabled={false}
     onBlur={[Function]}
     onClick={[Function]}

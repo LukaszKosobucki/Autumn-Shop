@@ -28,7 +28,11 @@ const OrderItem = ({
           my: "0.25rem",
         }}
       >
-        <Link onClick={() => handleOpen(orderItem)} sx={{ cursor: "pointer" }}>
+        <Link
+          placeholder="buttonLink"
+          onClick={() => handleOpen(orderItem)}
+          sx={{ cursor: "pointer" }}
+        >
           {orderItem.id}
         </Link>
       </Box>

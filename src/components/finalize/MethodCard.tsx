@@ -24,6 +24,7 @@ const MethodCard = ({ name, imgUrl, selected }: methodCardInterface) => {
 
   return (
     <Card
+      data-testid="methodCard"
       sx={{
         display: "flex",
         flexWrap: "wrap",
@@ -66,30 +67,30 @@ const MethodCard = ({ name, imgUrl, selected }: methodCardInterface) => {
 
         {selected ? (
           <IconButton
+            placeholder="buttonDelivery"
             onClick={() => {
-              setDeliveryOptions(
-                changeFinalizeOptions(deliveryOptions, paymentOptions, name)
-                  .deliveryOptions
+              const placeholder = changeFinalizeOptions(
+                deliveryOptions,
+                paymentOptions,
+                name
               );
-              setPaymentOptions(
-                changeFinalizeOptions(deliveryOptions, paymentOptions, name)
-                  .paymentOptions
-              );
+              setDeliveryOptions(placeholder.deliveryOptions);
+              setPaymentOptions(placeholder.paymentOptions);
             }}
           >
             <CheckBoxOutlinedIcon fontSize="medium" color="primary" />
           </IconButton>
         ) : (
           <IconButton
+            placeholder="buttonPayment"
             onClick={() => {
-              setDeliveryOptions(
-                changeFinalizeOptions(deliveryOptions, paymentOptions, name)
-                  .deliveryOptions
+              const placeholder = changeFinalizeOptions(
+                deliveryOptions,
+                paymentOptions,
+                name
               );
-              setPaymentOptions(
-                changeFinalizeOptions(deliveryOptions, paymentOptions, name)
-                  .paymentOptions
-              );
+              setDeliveryOptions(placeholder.deliveryOptions);
+              setPaymentOptions(placeholder.paymentOptions);
             }}
           >
             <CheckBoxOutlineBlankOutlinedIcon

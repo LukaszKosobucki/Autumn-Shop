@@ -16,9 +16,9 @@ const BasketList = () => {
 
   return (
     <Grid>
-      {basketProcessedData.map((item: basketProcessedType) => {
-        return <BasketItem key={item.key} item={item} />;
-      })}
+      {basketProcessedData.map((item: basketProcessedType) => (
+        <BasketItem key={item.key} item={item} />
+      ))}
     </Grid>
   );
 };

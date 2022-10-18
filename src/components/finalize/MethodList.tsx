@@ -49,15 +49,16 @@ const MethodList = ({ options }: { options: finalizeOptionsType[] }) => {
           ))}
       {isTrue() && (
         <Button
+          data-testid="buttonMethodCard"
           onClick={() => {
-            setDeliveryOptions(
-              resetFinalizeOptions(deliveryOptions, paymentOptions, options)
-                .deliveryOptions
+            const placeholder = resetFinalizeOptions(
+              deliveryOptions,
+              paymentOptions,
+              options
             );
-            setPaymentOptions(
-              resetFinalizeOptions(deliveryOptions, paymentOptions, options)
-                .paymentOptions
-            );
+
+            setDeliveryOptions(placeholder.deliveryOptions);
+            setPaymentOptions(placeholder.paymentOptions);
           }}
         >
           <Typography color="primary" variant="caption">

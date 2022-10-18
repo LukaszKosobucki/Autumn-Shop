@@ -1,4 +1,3 @@
-import { describe, it } from "@jest/globals";
 import renderer from "react-test-renderer";
 import { dataContext } from "../../../ContextProvider";
 import BasketFinalizeBox from "../BasketFinalizeBox";

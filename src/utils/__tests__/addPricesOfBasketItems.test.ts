@@ -1,4 +1,3 @@
-import { describe, it } from "@jest/globals";
 import addPricesOfBasketItems from "../componentsFunctions/addPricesOfBasketItems";
 import { mockBasketProcessedDataResult } from "../../utils/utilsForTests/mockBasketData";
 describe("test function addPricesOfBasketItems", () => {

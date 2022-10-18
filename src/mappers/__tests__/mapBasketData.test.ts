@@ -1,5 +1,4 @@
-import { describe, it } from "@jest/globals";
-import { mockProductData } from "../../utils/utilsForTests/mockProductData";
+import { mockProductDataResult } from "../../utils/utilsForTests/mockProductData";
 import { mapBasketData } from "../mapBasketData";
 import {
   mockBasketData,
@@ -8,7 +7,7 @@ import {
 
 describe("test function mapBasketData", () => {
   it("data correctly maps", () => {
-    expect(mapBasketData(mockProductData, mockBasketData)).toEqual(
+    expect(mapBasketData(mockProductDataResult, mockBasketData)).toEqual(
       mockBasketProcessedDataResult
     );
   });

@@ -16,6 +16,7 @@ export const mockBasketProcessedDataResult: basketProcessedType[] = [
     id: "item_1",
     imgUrl: "url1",
     quantity: 4,
+    key: "item_1",
   },
   {
     name: "product2",
@@ -24,6 +25,7 @@ export const mockBasketProcessedDataResult: basketProcessedType[] = [
     id: "item_2",
     imgUrl: "url2",
     quantity: 5,
+    key: "item_2",
   },
   {
     name: "product3",
@@ -32,5 +34,6 @@ export const mockBasketProcessedDataResult: basketProcessedType[] = [
     id: "item_3",
     imgUrl: "url2",
     quantity: 1,
+    key: "item_3",
   },
 ];

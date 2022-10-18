@@ -34,13 +34,13 @@ const BasketFinalizeBox = ({ text, link }: { text: string; link: boolean }) => {
         Total Price: {price + 20}$
       </Typography>
       {link ? (
-        <Button component={Link} to="/finalize" data-testId="buttonLink">
+        <Button component={Link} to="/finalize" data-testid="buttonLink">
           <Typography color="primary" variant="caption">
             {text}
           </Typography>
         </Button>
       ) : (
-        <Button type="submit" data-testId="buttonSubmit">
+        <Button type="submit" data-testid="buttonSubmit">
           <Typography color="primary" variant="caption">
             {text}
           </Typography>

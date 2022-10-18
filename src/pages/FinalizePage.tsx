@@ -32,12 +32,18 @@ const FinalizePage = () => {
     const today = new Date(timeElapsed);
     const date = today.toLocaleDateString();
     const orderId: number = Math.floor(Date.now() + Math.random() * 1000);
-    const deliveryOption = await deliveryOptions[
-      deliveryOptions.findIndex((e: finalizeOptionsType) => e.selected === true)
-    ].name;
-    const paymentOption = await paymentOptions[
-      paymentOptions.findIndex((e: finalizeOptionsType) => e.selected === true)
-    ].name;
+    const deliveryOption =
+      deliveryOptions[
+        deliveryOptions.findIndex(
+          (e: finalizeOptionsType) => e.selected === true
+        )
+      ].name;
+    const paymentOption =
+      paymentOptions[
+        paymentOptions.findIndex(
+          (e: finalizeOptionsType) => e.selected === true
+        )
+      ].name;
 
     const postData: orderType = {
       id: orderId,

@@ -59,7 +59,7 @@ const ProductItem = ({ item }: productItemInterface) => {
             }}
           >
             <IconButton
-              aria-label="delete"
+              placeholder="buttonAddToBasket"
               onClick={() => {
                 setBasketData(addItemToBasket(item.id, basketData).basketData);
                 setOpen(addItemToBasket(item.id, basketData).isOpen);

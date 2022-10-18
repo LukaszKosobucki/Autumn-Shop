@@ -1,4 +1,7 @@
-import { mockBasketData, mockBasketProcessedData } from "./mockBasketData";
+import {
+  mockBasketData,
+  mockBasketProcessedDataResult,
+} from "./mockBasketData";
 import { mockProductData, mockProductDataResult } from "./mockProductData";
 import { mockFinalizeData } from "./mockFinalizeData";
 import { mockOrderDataArray } from "./mockOrderData";
@@ -12,7 +15,7 @@ export const mockContext: contextProviderInterface = {
   data: mockProductData,
   loadLimit: 9,
   setLoadLimit: jest.fn(),
-  basketProcessedData: mockBasketProcessedData,
+  basketProcessedData: mockBasketProcessedDataResult,
   setBasketProcessedData: jest.fn(),
   deliveryOptions: mockFinalizeData,
   setDeliveryOptions: jest.fn(),

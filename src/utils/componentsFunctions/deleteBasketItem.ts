@@ -5,15 +5,16 @@ const deleteBasketItem = (
   id: string,
   basketData: basketType[]
 ): basketModalInterface => {
-  if (id && basketData.map((item) => id in item))
+  if (id && basketData.some((item) => id === item.id))
     return {
       isOpen: true,
       basketData: basketData.filter((item: basketType) => item.id !== id),
     };
-  return {
-    isOpen: false,
-    basketData: basketData,
-  };
+  else
+    return {
+      isOpen: false,
+      basketData: basketData,
+    };
 };
 
 export default deleteBasketItem;

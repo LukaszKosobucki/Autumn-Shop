@@ -8,7 +8,7 @@ exports[`testing BasketFinalizeBox component Renders Correctly with a link 1`] =
     className="MuiTypography-root MuiTypography-caption css-1d9s20a-MuiTypography-root"
   >
     Products Price: 
-    0
+    150
     $
   </span>
   <span
@@ -22,12 +22,12 @@ exports[`testing BasketFinalizeBox component Renders Correctly with a link 1`] =
     className="MuiTypography-root MuiTypography-caption css-1d9s20a-MuiTypography-root"
   >
     Total Price: 
-    20
+    170
     $
   </span>
   <a
     className="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-1e6y48t-MuiButtonBase-root-MuiButton-root"
-    data-testId="buttonLink"
+    data-testid="buttonLink"
     href="/finalize"
     onBlur={[Function]}
     onClick={[Function]}
@@ -83,7 +83,7 @@ exports[`testing BasketFinalizeBox component Renders Correctly without link 1`] 
   </span>
   <a
     className="MuiButtonBase-root MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium css-1e6y48t-MuiButtonBase-root-MuiButton-root"
-    data-testId="buttonLink"
+    data-testid="buttonLink"
     href="/finalize"
     onBlur={[Function]}
     onClick={[Function]}

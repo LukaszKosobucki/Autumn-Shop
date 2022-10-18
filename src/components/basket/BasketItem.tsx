@@ -22,6 +22,7 @@ const BasketItem = ({ item }: basketItemInterface) => {
 
   return (
     <Card
+      data-testid="basketItem"
       sx={{
         display: "flex",
         flexWrap: "wrap",
@@ -71,6 +72,7 @@ const BasketItem = ({ item }: basketItemInterface) => {
         }}
       >
         <IconButton
+          data-testid="reduceButton"
           onClick={() => {
             setBasketData(
               reduceBasketItemQuant(item.id, basketData).basketData
@@ -84,6 +86,7 @@ const BasketItem = ({ item }: basketItemInterface) => {
           quant: {item.quantity}
         </Typography>
         <IconButton
+          data-testid="increaseButton"
           onClick={() => {
             setBasketData(
               increaseBasketItemQuant(item.id, basketData).basketData
@@ -94,9 +97,11 @@ const BasketItem = ({ item }: basketItemInterface) => {
           <AddShoppingCartOutlinedIcon fontSize="large" />
         </IconButton>
         <IconButton
+          data-testid="deleteButton"
           onClick={() => {
-            setOpen(deleteBasketItem(item.id, basketData).isOpen);
-            setBasketData(deleteBasketItem(item.id, basketData).basketData);
+            const placeholder = deleteBasketItem(item.id, basketData);
+            setOpen(placeholder.isOpen);
+            setBasketData(placeholder.basketData);
           }}
           color="primary"
         >

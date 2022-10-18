@@ -1,5 +1,5 @@
 import ProductImageBg from "../ProductImageBg";
-import { describe, it } from "@jest/globals";
+
 import renderer from "react-test-renderer";
 
 describe("testing ProductImageBg render", () => {

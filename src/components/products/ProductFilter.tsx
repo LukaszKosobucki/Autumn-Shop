@@ -12,14 +12,14 @@ import SortIcon from "@mui/icons-material/Sort";
 import { getCategories } from "../../service/getCategories";
 import { categoryType } from "../../types/categoryType";
 import { dataContext } from "../../ContextProvider";
-import { productFilterInterface } from "../../interfaces/productFilterInterface";
+import setFilterCategories from "../../utils/componentsFunctions/setFilterCategories";
 
-const ProductFilter = ({ filterByCategory }: productFilterInterface) => {
+const ProductFilter = () => {
   const [expand, setExpand] = useState<boolean>(false);
   const [categories, setCategories] = useState<categoryType[]>(
     [] as categoryType[]
   );
-  const { filter, setOrder, setSort, order, sort, processedData } =
+  const { filter, setFilter, setOrder, setSort, order, sort, processedData } =
     useContext(dataContext);
   const fetchData = async () => {
     const responseData = await getCategories();
@@ -67,7 +67,7 @@ const ProductFilter = ({ filterByCategory }: productFilterInterface) => {
         <ToggleButtonGroup value={filter} key={item.categoryId}>
           <ToggleButton
             onClick={() => {
-              filterByCategory(item.categoryId);
+              setFilter(setFilterCategories(item.categoryId, filter));
             }}
             value={item.categoryId}
           >
@@ -81,7 +81,7 @@ const ProductFilter = ({ filterByCategory }: productFilterInterface) => {
       <IconButton onClick={() => setExpand(!expand)}>
         <FilterListIcon />
       </IconButton>
-      {expand ? (
+      {expand && (
         <>
           <IconButton onClick={() => sortByPrice()}>
             <SortIcon />
@@ -90,7 +90,7 @@ const ProductFilter = ({ filterByCategory }: productFilterInterface) => {
             <SortByAlphaIcon />
           </IconButton>
         </>
-      ) : null}
+      )}
     </Grid>
   );
 };

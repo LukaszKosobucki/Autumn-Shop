@@ -1,11 +1,18 @@
 import ProductItem from "../ProductItem";
-import { describe, it } from "@jest/globals";
 import renderer from "react-test-renderer";
+import { render, fireEvent } from "@testing-library/react";
+import { screen } from "@testing-library/dom";
+import { dataContext } from "../../../ContextProvider";
+import { mockContext } from "../../../utils/utilsForTests/mockContext";
 
 describe("testing <ProductItem/> render", () => {
-  it("ProductItem Renders Correctly", () => {
-    const productItem = renderer
-      .create(
+  const fn1 = jest.fn();
+  const fn2 = jest.fn();
+  const wrapper = () => {
+    return (
+      <dataContext.Provider
+        value={{ ...mockContext, setBasketData: fn1, setOpen: fn2 }}
+      >
         <ProductItem
           item={{
             name: "product",
@@ -15,8 +22,19 @@ describe("testing <ProductItem/> render", () => {
             imgUrl: "",
           }}
         />
-      )
-      .toJSON();
+      </dataContext.Provider>
+    );
+  };
+
+  it("ProductItem Renders Correctly", () => {
+    const productItem = renderer.create(wrapper()).toJSON();
     expect(productItem).toMatchSnapshot();
+  });
+  it("checks if increase button clicks", () => {
+    render(wrapper());
+    const button = screen.getByPlaceholderText("buttonAddToBasket");
+    fireEvent.click(button);
+    expect(fn1).toHaveBeenCalled();
+    expect(fn2).toHaveBeenCalled();
   });
 });

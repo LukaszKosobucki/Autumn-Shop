@@ -38,7 +38,6 @@ exports[`testing ProductList render ProductList Renders Correctly 1`] = `
           className="MuiGrid-root css-gqim7x-MuiGrid-root"
         >
           <button
-            aria-label="delete"
             className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1kuq5xv-MuiButtonBase-root-MuiIconButton-root"
             disabled={false}
             onBlur={[Function]}
@@ -54,6 +53,7 @@ exports[`testing ProductList render ProductList Renders Correctly 1`] = `
             onTouchEnd={[Function]}
             onTouchMove={[Function]}
             onTouchStart={[Function]}
+            placeholder="buttonAddToBasket"
             tabIndex={0}
             type="button"
           >
@@ -107,7 +107,6 @@ exports[`testing ProductList render ProductList Renders Correctly 1`] = `
           className="MuiGrid-root css-gqim7x-MuiGrid-root"
         >
           <button
-            aria-label="delete"
             className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1kuq5xv-MuiButtonBase-root-MuiIconButton-root"
             disabled={false}
             onBlur={[Function]}
@@ -123,6 +122,7 @@ exports[`testing ProductList render ProductList Renders Correctly 1`] = `
             onTouchEnd={[Function]}
             onTouchMove={[Function]}
             onTouchStart={[Function]}
+            placeholder="buttonAddToBasket"
             tabIndex={0}
             type="button"
           >
@@ -176,7 +176,6 @@ exports[`testing ProductList render ProductList Renders Correctly 1`] = `
           className="MuiGrid-root css-gqim7x-MuiGrid-root"
         >
           <button
-            aria-label="delete"
             className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1kuq5xv-MuiButtonBase-root-MuiIconButton-root"
             disabled={false}
             onBlur={[Function]}
@@ -192,6 +191,7 @@ exports[`testing ProductList render ProductList Renders Correctly 1`] = `
             onTouchEnd={[Function]}
             onTouchMove={[Function]}
             onTouchStart={[Function]}
+            placeholder="buttonAddToBasket"
             tabIndex={0}
             type="button"
           >

@@ -14,7 +14,6 @@ const changeFinalizeOptions = (
     );
     const newDeliveryOptions = deliveryOptions;
     newDeliveryOptions[index].selected = !deliveryOptions[index].selected;
-
     return {
       deliveryOptions: [...newDeliveryOptions],
       paymentOptions: paymentOptions,
@@ -25,7 +24,6 @@ const changeFinalizeOptions = (
     );
     const newPaymentOptions = paymentOptions;
     newPaymentOptions[index].selected = !paymentOptions[index].selected;
-
     return {
       deliveryOptions: deliveryOptions,
       paymentOptions: [...newPaymentOptions],
