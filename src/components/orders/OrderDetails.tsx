@@ -72,7 +72,7 @@ const OrderDetails = ({
 
       <Grid
         sx={{
-          justifyContent: "space-between",
+          justifyContent: "space-evenly",
           backgroundColor: styles.colorAutumnLight100,
           flexDirection: "row",
           width: "37.5rem",
@@ -113,20 +113,21 @@ const OrderDetails = ({
             justifyContent: "flex-start",
             alignItems: "flex-start",
             flexDirection: "column",
+            mr: "3rem",
           }}
         >
           <Typography variant="h5" color="primary">
             Items Orderder
           </Typography>
           {orderItem.items.map((item) => (
-            <DialogContentText
-              data-testid="orderInfoQuantity"
-              key={item.id}
-              color="primary"
-              variant="caption"
-            >
-              {data[data.findIndex((e: productType) => e.id === item.id)]?.name}
-              , quantity: {item.quantity}
+            <DialogContentText data-testid="orderInfoQuantity" key={item.id}>
+              <Typography color="primary" variant="caption">
+                {
+                  data[data.findIndex((e: productType) => e.id === item.id)]
+                    ?.name
+                }
+                , x{item.quantity}
+              </Typography>
             </DialogContentText>
           ))}
         </DialogContent>

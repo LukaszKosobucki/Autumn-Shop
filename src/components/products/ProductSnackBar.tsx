@@ -3,7 +3,7 @@ import {
   Button,
   IconButton,
   Snackbar,
-  Box,
+  Grid,
   Typography,
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
@@ -23,8 +23,12 @@ const ProductSnackBar = ({ text }: { text: string }) => {
     setOpen(false);
   };
   const action = (
-    <Box>
-      <Button size="small" onClick={handleClose} sx={{ m: 0 }}>
+    <Grid
+      sx={{
+        flexDirection: "row",
+      }}
+    >
+      <Button size="small" onClick={handleClose} sx={{ m: 0, p: 0 }}>
         <Typography color="secondary" variant="button">
           UNDO
         </Typography>
@@ -38,7 +42,7 @@ const ProductSnackBar = ({ text }: { text: string }) => {
       >
         <CloseIcon fontSize="small" />
       </IconButton>
-    </Box>
+    </Grid>
   );
 
   return (
