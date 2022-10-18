@@ -47,7 +47,7 @@ const FinalizeForm = () => {
         }}
       >
         {formData.map((input) => (
-          <FormControl key={input.name}>
+          <FormControl key={input.name} data-testid="formField">
             <InputLabel color="primary" htmlFor={input.name}>
               {input.name}
             </InputLabel>
@@ -67,6 +67,7 @@ const FinalizeForm = () => {
             />
             {formState.errors[input.name.toLowerCase()] && (
               <Typography
+                data-testid="formError"
                 color="error"
                 variant="body2"
                 sx={{

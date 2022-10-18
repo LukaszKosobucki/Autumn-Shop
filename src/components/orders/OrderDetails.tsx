@@ -5,6 +5,7 @@ import {
   DialogContentText,
   Slide,
   Typography,
+  IconButton,
   Grid,
 } from "@mui/material";
 import { TransitionProps } from "@mui/material/transitions";
@@ -12,6 +13,7 @@ import React, { useContext } from "react";
 import { dataContext } from "../../ContextProvider";
 import { orderType } from "../../types/orderType";
 import { productType } from "../../types/productType";
+import CloseIcon from "@mui/icons-material/Close";
 
 const Transition = React.forwardRef(function Transition(
   props: TransitionProps & {
@@ -35,12 +37,31 @@ const OrderDetails = ({
 
   return (
     <Dialog
+      data-testid="modal"
       open={openDetails}
       TransitionComponent={Transition}
       keepMounted
       onClose={handleClose}
     >
-      <DialogTitle>{orderItem.id}</DialogTitle>
+      <Grid
+        sx={{
+          justifyContent: "space-between",
+          alignItems: "center",
+          flexDirection: "row",
+          width: "37.5rem",
+          minWidth: "31.25rem",
+        }}
+      >
+        <DialogTitle>{orderItem.id}</DialogTitle>
+        <IconButton
+          onClick={handleClose}
+          color="primary"
+          data-testid="clickClose"
+        >
+          <CloseIcon />
+        </IconButton>
+      </Grid>
+
       <Grid
         sx={{
           justifyContent: "space-between",
@@ -62,6 +83,7 @@ const OrderDetails = ({
           {Object.entries(orderItem.delivery_information).map(
             ([key, value]) => (
               <DialogContentText
+                data-testid="deliveryInfo"
                 key={key}
               >{`${key}: ${value}`}</DialogContentText>
             )
@@ -77,7 +99,7 @@ const OrderDetails = ({
         >
           <Typography variant="h5">Items Orderder</Typography>
           {orderItem.items.map((item) => (
-            <DialogContentText key={item.id}>
+            <DialogContentText data-testid="orderInfoQuantity" key={item.id}>
               {data[data.findIndex((e: productType) => e.id === item.id)]?.name}
               , quantity: {item.quantity}
             </DialogContentText>

@@ -70,6 +70,7 @@ exports[`testing FinalizePage render FinalizePage Renders Correctly 1`] = `
         >
           <div
             className="MuiFormControl-root css-1nrlq1o-MuiFormControl-root"
+            data-testid="formField"
           >
             <label
               className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined MuiFormLabel-colorPrimary css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root"
@@ -99,6 +100,7 @@ exports[`testing FinalizePage render FinalizePage Renders Correctly 1`] = `
           </div>
           <div
             className="MuiFormControl-root css-1nrlq1o-MuiFormControl-root"
+            data-testid="formField"
           >
             <label
               className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined MuiFormLabel-colorPrimary css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root"
@@ -128,6 +130,7 @@ exports[`testing FinalizePage render FinalizePage Renders Correctly 1`] = `
           </div>
           <div
             className="MuiFormControl-root css-1nrlq1o-MuiFormControl-root"
+            data-testid="formField"
           >
             <label
               className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined MuiFormLabel-colorPrimary css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root"
@@ -157,6 +160,7 @@ exports[`testing FinalizePage render FinalizePage Renders Correctly 1`] = `
           </div>
           <div
             className="MuiFormControl-root css-1nrlq1o-MuiFormControl-root"
+            data-testid="formField"
           >
             <label
               className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined MuiFormLabel-colorPrimary css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root"
@@ -186,6 +190,7 @@ exports[`testing FinalizePage render FinalizePage Renders Correctly 1`] = `
           </div>
           <div
             className="MuiFormControl-root css-1nrlq1o-MuiFormControl-root"
+            data-testid="formField"
           >
             <label
               className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined MuiFormLabel-colorPrimary css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root"
@@ -215,6 +220,7 @@ exports[`testing FinalizePage render FinalizePage Renders Correctly 1`] = `
           </div>
           <div
             className="MuiFormControl-root css-1nrlq1o-MuiFormControl-root"
+            data-testid="formField"
           >
             <label
               className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined MuiFormLabel-colorPrimary css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root"
@@ -244,6 +250,7 @@ exports[`testing FinalizePage render FinalizePage Renders Correctly 1`] = `
           </div>
           <div
             className="MuiFormControl-root css-1nrlq1o-MuiFormControl-root"
+            data-testid="formField"
           >
             <label
               className="MuiFormLabel-root MuiInputLabel-root MuiInputLabel-formControl MuiInputLabel-animated MuiInputLabel-outlined MuiFormLabel-colorPrimary css-14s5rfu-MuiFormLabel-root-MuiInputLabel-root"
