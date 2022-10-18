@@ -1,5 +1,4 @@
 import ProductSnackBar from "../ProductSnackBar";
-import renderer from "react-test-renderer";
 import { dataContext } from "../../../ContextProvider";
 import { mockContext } from "../../../utils/utilsForTests/mockContext";
 import { render, fireEvent } from "@testing-library/react";

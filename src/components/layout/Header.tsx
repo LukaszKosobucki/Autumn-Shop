@@ -25,6 +25,7 @@ const Header = () => {
     >
       <Box sx={{ display: "flex", flex: 1, justifyContent: "center" }}>
         <IconButton
+          data-testid="buttonLogo"
           color="primary"
           component={Link}
           to="/"

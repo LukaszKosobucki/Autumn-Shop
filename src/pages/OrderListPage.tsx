@@ -30,6 +30,7 @@ const OrderListPage = () => {
 
       {orderData.length - orderLoadLimit > 0 && (
         <Button
+          data-testid="buttonLoadMore"
           onClick={() => {
             setOrderLoadLimit(orderLoadLimit + 20);
           }}

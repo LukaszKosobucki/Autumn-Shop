@@ -66,6 +66,8 @@ const ProductFilter = () => {
       {categories.map((item: categoryType, index: number) => (
         <ToggleButtonGroup value={filter} key={item.categoryId}>
           <ToggleButton
+            data-testid={item.categoryId}
+            placeholder="buttonFilterCategory"
             onClick={() => {
               setFilter(setFilterCategories(item.categoryId, filter));
             }}
@@ -78,15 +80,24 @@ const ProductFilter = () => {
         </ToggleButtonGroup>
       ))}
 
-      <IconButton onClick={() => setExpand(!expand)}>
+      <IconButton
+        placeholder="buttonSetExpand"
+        onClick={() => setExpand(!expand)}
+      >
         <FilterListIcon />
       </IconButton>
       {expand && (
         <>
-          <IconButton onClick={() => sortByPrice()}>
+          <IconButton
+            placeholder="buttonSortByPrice"
+            onClick={() => sortByPrice()}
+          >
             <SortIcon />
           </IconButton>
-          <IconButton onClick={() => sortByLetter()}>
+          <IconButton
+            placeholder="buttonSortByLetter"
+            onClick={() => sortByLetter()}
+          >
             <SortByAlphaIcon />
           </IconButton>
         </>

@@ -20,6 +20,7 @@ exports[`testing ProductFilter render ProductFilter Renders Correctly 1`] = `
     onTouchEnd={[Function]}
     onTouchMove={[Function]}
     onTouchStart={[Function]}
+    placeholder="buttonSetExpand"
     tabIndex={0}
     type="button"
   >

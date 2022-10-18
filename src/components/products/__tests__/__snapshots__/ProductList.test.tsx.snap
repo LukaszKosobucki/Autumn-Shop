@@ -25,7 +25,7 @@ exports[`testing ProductList render ProductList Renders Correctly 1`] = `
           <span
             className="MuiTypography-root MuiTypography-caption css-1d9s20a-MuiTypography-root"
           >
-            product1
+            a
           </span>
           <h5
             className="MuiTypography-root MuiTypography-h5 css-1invrju-MuiTypography-root"
@@ -94,12 +94,12 @@ exports[`testing ProductList render ProductList Renders Correctly 1`] = `
           <span
             className="MuiTypography-root MuiTypography-caption css-1d9s20a-MuiTypography-root"
           >
-            product2
+            c
           </span>
           <h5
             className="MuiTypography-root MuiTypography-h5 css-1invrju-MuiTypography-root"
           >
-            15
+            25
             $
           </h5>
         </div>
@@ -163,12 +163,12 @@ exports[`testing ProductList render ProductList Renders Correctly 1`] = `
           <span
             className="MuiTypography-root MuiTypography-caption css-1d9s20a-MuiTypography-root"
           >
-            product3
+            b
           </span>
           <h5
             className="MuiTypography-root MuiTypography-h5 css-1invrju-MuiTypography-root"
           >
-            15
+            20
             $
           </h5>
         </div>

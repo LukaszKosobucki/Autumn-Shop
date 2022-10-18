@@ -2,6 +2,6 @@ import addPricesOfBasketItems from "../componentsFunctions/addPricesOfBasketItem
 import { mockBasketProcessedDataResult } from "../../utils/utilsForTests/mockBasketData";
 describe("test function addPricesOfBasketItems", () => {
   it("prices correctly sum up even after data change", () => {
-    expect(addPricesOfBasketItems(mockBasketProcessedDataResult)).toEqual(150);
+    expect(addPricesOfBasketItems(mockBasketProcessedDataResult)).toEqual(205);
   });
 });

@@ -3,6 +3,7 @@
 exports[`testing OrderItem render OrderItem Renders Correctly 1`] = `
 <div
   className="MuiGrid-root css-47g6wx-MuiGrid-root"
+  data-testid="orderItem"
 >
   <div
     className="MuiBox-root css-6p0wtr"

@@ -35,6 +35,7 @@ const ProductPage = () => {
         <ProductList items={processedData} />
         {processedData.length - loadLimit > 0 && (
           <Button
+            data-testid="buttonLoadMore"
             onClick={() => {
               setLoadLimit(loadLimit + 9);
             }}

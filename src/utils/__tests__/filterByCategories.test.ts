@@ -6,15 +6,15 @@ describe("test function filterByCategories", () => {
     const mockCategoryArray: string[] = ["category1", "category2"];
     expect(filterByCategories(mockCategoryArray, mockProductData)).toEqual([
       {
-        name: "product1",
+        name: "a",
         price: 15,
         category: "category1",
         id: "item_1",
         imgUrl: "url1",
       },
       {
-        name: "product2",
-        price: 15,
+        name: "c",
+        price: 25,
         category: "category2",
         id: "item_2",
         imgUrl: "url2",

@@ -11,6 +11,7 @@ const OrderItem = ({
 }) => {
   return (
     <Grid
+      data-testid="orderItem"
       sx={{
         color: "#3d405b",
         justifyContent: "space-between",

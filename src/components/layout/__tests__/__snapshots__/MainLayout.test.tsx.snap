@@ -12,6 +12,7 @@ exports[`testing <MainLayout/> render MainLayout Renders Correctly 1`] = `
     >
       <a
         className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorPrimary MuiIconButton-sizeMedium css-1kuq5xv-MuiButtonBase-root-MuiIconButton-root"
+        data-testid="buttonLogo"
         href="/"
         onBlur={[Function]}
         onClick={[Function]}

@@ -8,7 +8,7 @@ exports[`testing BasketFinalizeBox component Renders Correctly with a link 1`] =
     className="MuiTypography-root MuiTypography-caption css-1d9s20a-MuiTypography-root"
   >
     Products Price: 
-    150
+    205
     $
   </span>
   <span
@@ -22,7 +22,7 @@ exports[`testing BasketFinalizeBox component Renders Correctly with a link 1`] =
     className="MuiTypography-root MuiTypography-caption css-1d9s20a-MuiTypography-root"
   >
     Total Price: 
-    170
+    225
     $
   </span>
   <a

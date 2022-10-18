@@ -10,7 +10,7 @@ describe("testing OrderDetails render", () => {
   //     .create(
   //       <dataContext.Provider value={mockContext}>
   //         <OrderDetails
-  //           openDetails={false}
+  //           openDetails={true}
   //           orderItem={mockOrderData}
   //           handleClose={() => {}}
   //         />
