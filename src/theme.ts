@@ -6,7 +6,24 @@ export const theme = createTheme({
   typography: {
     fontFamily: "Red Rose",
     fontSize: 16,
-
+    h4: {
+      fontSize: "1.5rem",
+      fontFamily: "Red Rose",
+      fontWeight: 700,
+      fontStyle: "normal",
+      lineHeight: "1.75rem",
+      textDecoration: "none",
+      textTransform: "none",
+    },
+    h6: {
+      fontSize: "1rem",
+      fontFamily: "Red Rose",
+      fontWeight: 700,
+      fontStyle: "normal",
+      lineHeight: "19px",
+      textDecoration: "none",
+      textTransform: "none",
+    },
     h5: {
       fontSize: "1.25rem",
       fontFamily: "Red Rose",
