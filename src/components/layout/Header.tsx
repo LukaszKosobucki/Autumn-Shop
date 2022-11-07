@@ -51,7 +51,7 @@ const Header = () => {
         }}
       >
         <Box>
-          <IconButton color="primary">
+          <IconButton color="primary" component={Link} to="/profile">
             <AccountBoxIcon fontSize="large" />
           </IconButton>
         </Box>

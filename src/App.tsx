@@ -8,6 +8,7 @@ import MainLayout from "./components/layout/MainLayout";
 import ContextProvider from "./ContextProvider";
 import { ThemeProvider } from "@mui/material/styles";
 import { theme } from "./theme";
+import ProfilePage from "./pages/ProfilePage";
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
               <Route path="/basket" element={<BasketPage />} />
               <Route path="/order-list" element={<OrderListPage />} />
               <Route path="/finalize" element={<FinalizePage />} />
+              <Route path="/profile" element={<ProfilePage />} />
             </Routes>
           </MainLayout>
         </ContextProvider>

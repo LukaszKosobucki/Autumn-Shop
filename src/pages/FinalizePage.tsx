@@ -11,6 +11,7 @@ import { deliveryInformationType } from "../types/deliveryInformationType";
 import { postOrder } from "../service/postOrder";
 import { useNavigate } from "react-router-dom";
 import { FieldValues } from "react-hook-form";
+import { addDoc, collection } from "firebase/firestore";
 
 const FinalizePage = () => {
   const {
@@ -20,6 +21,8 @@ const FinalizePage = () => {
     setBasketData,
     setOrderData,
     orderData,
+    user,
+    firestore,
   } = useContext(dataContext);
   const methods = useForm<FieldValues>();
 
@@ -53,6 +56,13 @@ const FinalizePage = () => {
       items: basketData,
       delivery_information: deliveryInformation as deliveryInformationType,
     };
+
+    if (user !== null) {
+      const orderCol = collection(firestore, `users/${user?.uid}/orders`);
+      addDoc(orderCol, postData);
+      setBasketData([]);
+      navigate("/", { replace: true });
+    }
 
     const res = await postOrder(postData);
 

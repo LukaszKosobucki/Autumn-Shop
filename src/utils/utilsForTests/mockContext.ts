@@ -6,6 +6,9 @@ import { mockProductData, mockProductDataResult } from "./mockProductData";
 import { mockFinalizeData } from "./mockFinalizeData";
 import { mockOrderDataArray } from "./mockOrderData";
 import { contextProviderInterface } from "../../interfaces/contextProviderInterface";
+import { Firestore } from "firebase/firestore";
+import { NULL } from "sass";
+import { Auth } from "firebase/auth";
 
 export const mockContext: contextProviderInterface = {
   filter: [],
@@ -33,4 +36,8 @@ export const mockContext: contextProviderInterface = {
   setProcessedData: jest.fn(),
   orderLoadLimit: 20,
   setOrderLoadLimit: jest.fn(),
+  firestore: {} as Firestore,
+  auth: {} as Auth,
+  user: null,
+  setUser: jest.fn(),
 };

@@ -4,6 +4,8 @@ import { finalizeOptionsType } from "../types/finalizeOptionsType";
 import { orderType } from "../types/orderType";
 import { productType } from "../types/productType";
 import React from "react";
+import { Firestore } from "firebase/firestore";
+import { Auth, User } from "firebase/auth";
 
 export interface contextProviderInterface {
   filter: string[];
@@ -37,4 +39,8 @@ export interface contextProviderInterface {
   setProcessedData: React.Dispatch<React.SetStateAction<productType[]>>;
   orderLoadLimit: number;
   setOrderLoadLimit: React.Dispatch<React.SetStateAction<number>>;
+  firestore: Firestore;
+  auth: Auth;
+  user: User | null;
+  setUser: React.Dispatch<React.SetStateAction<User | null>>;
 }

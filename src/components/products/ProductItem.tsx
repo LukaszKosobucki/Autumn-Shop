@@ -61,8 +61,9 @@ const ProductItem = ({ item }: productItemInterface) => {
             <IconButton
               placeholder="buttonAddToBasket"
               onClick={() => {
-                setBasketData(addItemToBasket(item.id, basketData).basketData);
-                setOpen(addItemToBasket(item.id, basketData).isOpen);
+                const placeholder = addItemToBasket(item.id, basketData);
+                setBasketData(placeholder.basketData);
+                setOpen(placeholder.isOpen);
               }}
               color="primary"
             >

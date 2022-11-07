@@ -13,18 +13,24 @@ import { getCategories } from "../../service/getCategories";
 import { categoryType } from "../../types/categoryType";
 import { dataContext } from "../../ContextProvider";
 import setFilterCategories from "../../utils/componentsFunctions/setFilterCategories";
+import { collection, onSnapshot } from "firebase/firestore";
 
 const ProductFilter = () => {
   const [expand, setExpand] = useState<boolean>(false);
   const [categories, setCategories] = useState<categoryType[]>(
     [] as categoryType[]
   );
-  const { filter, setFilter, setOrder, setSort, order, sort, processedData } =
-    useContext(dataContext);
-  const fetchData = async () => {
-    const responseData = await getCategories();
-    responseData && setCategories(responseData);
-  };
+  const {
+    filter,
+    setFilter,
+    setOrder,
+    setSort,
+    order,
+    sort,
+    processedData,
+    firestore,
+  } = useContext(dataContext);
+  const categoriesCol = collection(firestore, "categories");
 
   const sortByLetter = (): void => {
     setOrder(!order);
@@ -51,7 +57,10 @@ const ProductFilter = () => {
   }, [sort]);
 
   useEffect(() => {
-    fetchData();
+    onSnapshot(categoriesCol, (snapshot) => {
+      const placeholderForData = snapshot.docs.map((doc) => doc.data());
+      setCategories(placeholderForData as categoryType[]);
+    });
   }, []);
   return (
     <Grid

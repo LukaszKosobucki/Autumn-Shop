@@ -33,7 +33,7 @@ const MethodList = ({ options }: { options: finalizeOptionsType[] }) => {
               option.selected && (
                 <MethodCard
                   name={option.name}
-                  key={option.key}
+                  key={option.name}
                   imgUrl={option.imgUrl}
                   selected={option.selected}
                 />
@@ -42,7 +42,7 @@ const MethodList = ({ options }: { options: finalizeOptionsType[] }) => {
         : options.map((option: finalizeOptionsType) => (
             <MethodCard
               name={option.name}
-              key={option.key}
+              key={option.name}
               imgUrl={option.imgUrl}
               selected={option.selected}
             />
