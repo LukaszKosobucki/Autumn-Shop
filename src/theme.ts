@@ -87,6 +87,7 @@ export const theme = createTheme({
           border: 0,
           margin: "0.4rem",
           transitionDuration: "0.3s",
+          boxShadow: "2px 2px 2px rgba(0, 0, 0, 0.25)",
           "&.Mui-selected": {
             transitionDuration: "0.3s",
             backgroundColor: styles.colorAutumnLeaf500,
@@ -113,7 +114,7 @@ export const theme = createTheme({
           px: 10,
           margin: "0.4rem 0.4rem 0 0 ",
           transitionDuration: "0.3s",
-
+          boxShadow: "2px 2px 2px rgba(0, 0, 0, 0.25)",
           ":hover": {
             boxShadow: " 4px 4px 4px rgba(0, 0, 0, 0.25)",
             backgroundColor: styles.colorAutumnLight200,
@@ -153,6 +154,20 @@ export const theme = createTheme({
           top: "0.5rem",
           border: `2px solid ${styles.colorAutumnDawnAutumnDawn}`,
           padding: "0 0.25rem",
+        },
+      },
+    },
+    MuiInput: {
+      styleOverrides: {
+        root: {
+          marginBottom: "0.75rem",
+          minWidth: "20rem",
+          background: styles.colorAutumnLight100,
+        },
+        input: {
+          "&:-webkit-autofill": {
+            WebkitBoxShadow: `0 0 0 1000px ${styles.colorAutumnLight100} inset`,
+          },
         },
       },
     },

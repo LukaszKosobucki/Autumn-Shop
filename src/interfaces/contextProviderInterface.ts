@@ -6,6 +6,7 @@ import { productType } from "../types/productType";
 import React from "react";
 import { Firestore } from "firebase/firestore";
 import { Auth, User } from "firebase/auth";
+import { IuserCreds } from "./IuserCreds";
 
 export interface contextProviderInterface {
   filter: string[];
@@ -43,4 +44,6 @@ export interface contextProviderInterface {
   auth: Auth;
   user: User | null;
   setUser: React.Dispatch<React.SetStateAction<User | null>>;
+  userCredentials: IuserCreds;
+  setUserCredentials: React.Dispatch<React.SetStateAction<IuserCreds>>;
 }

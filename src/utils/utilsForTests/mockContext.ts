@@ -40,4 +40,6 @@ export const mockContext: contextProviderInterface = {
   auth: {} as Auth,
   user: null,
   setUser: jest.fn(),
+  userCredentials: {},
+  setUserCredentials: jest.fn(),
 };

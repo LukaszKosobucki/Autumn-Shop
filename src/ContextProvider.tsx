@@ -6,6 +6,7 @@ import { orderType } from "./types/orderType";
 import { productType } from "./types/productType";
 import { childrenInterface } from "./interfaces/childrenInterface";
 import { basketProcessedType } from "./types/basketProcessedType";
+import { IuserCreds } from "./interfaces/IuserCreds";
 import { contextProviderInterface } from "./interfaces/contextProviderInterface";
 import firebaseConfig from "./utils/firestore/firestore.config";
 import { initializeApp } from "firebase/app";
@@ -54,6 +55,8 @@ const ContextProvider = ({ children }: childrenInterface) => {
   );
   const [user, setUser] = useState<User | null>(null);
 
+  const [userCredentials, setUserCredentials] = useState<IuserCreds>({});
+
   const firebaseApp = initializeApp(firebaseConfig);
   const firestore = getFirestore(firebaseApp);
   const auth = getAuth(firebaseApp);
@@ -61,20 +64,33 @@ const ContextProvider = ({ children }: childrenInterface) => {
   const paymentOptionsCol = collection(firestore, "paymentOptions");
   const deliveryOptionsCol = collection(firestore, "deliveryOptions");
   const productItemsCol = collection(firestore, "productItems");
-  const orderCol = collection(firestore, `users/${user?.uid}/orders`);
-  // const addCollectionAndDocuments = async (
-  //   collectionKey: string,
-  //   objectsToAdd: productType[]
-  // ) => {
-  //   const collectionRef = collection(firestore, collectionKey);
-  //   const batch = writeBatch(firestore);
-  //   objectsToAdd.forEach((object) => {
-  //     const docRef = doc(collectionRef);
-  //     batch.set(docRef, object);
-  //   });
-  //   await batch.commit();
-  //   console.log("done");
-  // };
+
+  const duzorzeczy = async () => {
+    const userCol = collection(firestore, `users`);
+    try {
+      const docRef = doc(userCol, user?.uid);
+      const docSnap = await getDoc(docRef);
+      if (docSnap.exists()) {
+        const orderCol = collection(firestore, `users/${user?.uid}/orders`);
+        const docsData = await getDocs(orderCol);
+        asynchSetUserCreds(docSnap.data());
+        console.log(userCredentials);
+        setOrderData(docsData.docs.map((doc) => doc.data() as orderType));
+      } else {
+        setDoc(docRef, userCredentials);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+    if (user === null) {
+      setOrderData([]);
+      setUserCredentials({});
+    }
+  };
+
+  const asynchSetUserCreds = (creds: IuserCreds) => {
+    setUserCredentials(creds);
+  };
 
   useEffect(() => {
     onSnapshot(paymentOptionsCol, (snapshot) => {
@@ -90,30 +106,24 @@ const ContextProvider = ({ children }: childrenInterface) => {
     onSnapshot(productItemsCol, (snapshot) => {
       setData(snapshot.docs.map((doc) => doc.data() as productType));
     });
-    user !== null &&
+    const orderCol = collection(firestore, `users/${user?.uid}/orders`);
+    user &&
       onSnapshot(orderCol, (snapshot) => {
-        "robieto";
+        console.log("????");
         setOrderData(snapshot.docs.map((doc) => doc.data() as orderType));
+        console.log(orderData);
       });
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
-    onAuthStateChanged(auth, async (user: User | null) => {
-      setUser(user);
-      const userCol = collection(firestore, `users`);
-      try {
-        const docRef = doc(userCol, user?.uid);
-        const docSnap = await getDoc(docRef);
-        if (docSnap.exists()) {
-          const docsData = await getDocs(orderCol);
-          setOrderData(docsData.docs.map((doc) => doc.data() as orderType));
-        } else {
-          setDoc(docRef, {});
-        }
-      } catch (error) {
-        console.log(error);
-      }
+    duzorzeczy();
+  }, [user]);
+
+  useEffect(() => {
+    onAuthStateChanged(auth, async (currentuser: User | null) => {
+      setUser(currentuser);
     });
   }, []);
 
@@ -125,7 +135,6 @@ const ContextProvider = ({ children }: childrenInterface) => {
     setBasketProcessedData(mapBasketData(data, basketData));
     sortProductItems(data, sort, order);
     setProcessedData(data);
-
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data]);
 
@@ -160,6 +169,8 @@ const ContextProvider = ({ children }: childrenInterface) => {
       auth,
       user,
       setUser,
+      userCredentials,
+      setUserCredentials,
     }),
     [
       filter,
@@ -191,6 +202,8 @@ const ContextProvider = ({ children }: childrenInterface) => {
       auth,
       user,
       setUser,
+      userCredentials,
+      setUserCredentials,
     ]
   );
 

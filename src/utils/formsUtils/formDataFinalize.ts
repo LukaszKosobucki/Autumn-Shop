@@ -1,4 +1,4 @@
-import { formDataType } from "../types/formDataType";
+import { formDataType } from "../../types/formDataType";
 export const formData: formDataType[] = [
   {
     name: "Name",

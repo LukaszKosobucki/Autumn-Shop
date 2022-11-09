@@ -1,3 +1,4 @@
+import { Grid } from "@mui/material";
 import { useContext } from "react";
 import ProfileDetails from "../components/profile/ProfileDetails";
 import SignIn from "../components/profile/SignIn";
@@ -9,10 +10,14 @@ const ProfilePage = () => {
   return (
     <>
       {user === null ? (
-        <>
-          <SignIn />
+        <Grid
+          sx={{
+            flexDirection: "row",
+          }}
+        >
           <SignUp />
-        </>
+          <SignIn />
+        </Grid>
       ) : (
         <ProfileDetails />
       )}
