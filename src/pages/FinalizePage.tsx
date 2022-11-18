@@ -12,6 +12,7 @@ import { useNavigate } from "react-router-dom";
 import { FieldValues } from "react-hook-form";
 import { addDoc, collection } from "firebase/firestore";
 import { deleteBasketItemsFromUser } from "../utils/firestore/deleteBasketItemsFromUser";
+import { motion } from "framer-motion";
 
 const FinalizePage = () => {
   const {
@@ -63,24 +64,30 @@ const FinalizePage = () => {
   };
 
   return (
-    <FormProvider {...methods}>
-      <form onSubmit={methods.handleSubmit(postDataFn)}>
-        <Grid
-          sx={{
-            flexDirection: "row",
-            minHeight: "100vh",
-            mt: "2.5rem",
-          }}
-        >
-          <Box>
-            <FinalizeForm />
-            <MethodList options={deliveryOptions} />
-            <MethodList options={paymentOptions} />
-          </Box>
-          <BasketFinalizeBox text="Finalize" link={false} />
-        </Grid>
-      </form>
-    </FormProvider>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
+      <FormProvider {...methods}>
+        <form onSubmit={methods.handleSubmit(postDataFn)}>
+          <Grid
+            sx={{
+              flexDirection: "row",
+              minHeight: "100vh",
+              mt: "2.5rem",
+            }}
+          >
+            <Box>
+              <FinalizeForm />
+              <MethodList options={deliveryOptions} />
+              <MethodList options={paymentOptions} />
+            </Box>
+            <BasketFinalizeBox text="Finalize" link={false} />
+          </Grid>
+        </form>
+      </FormProvider>
+    </motion.div>
   );
 };
 

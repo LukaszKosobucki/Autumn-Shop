@@ -1,10 +1,11 @@
 import { useEffect, useContext } from "react";
 import ProductList from "../components/products/ProductList";
 import ProductFilter from "../components/products/ProductFilter";
-import { Button, Grid, Box, Typography } from "@mui/material";
+import { Button, Grid, Typography } from "@mui/material";
 import { dataContext } from "../ContextProvider";
 import ProductImageBg from "../components/products/ProductImageBg";
 import filterByCategories from "../utils/componentsFunctions/filterByCategories";
+import { motion } from "framer-motion";
 
 const ProductPage = () => {
   const {
@@ -22,7 +23,12 @@ const ProductPage = () => {
   }, [data, filter]);
 
   return (
-    <Box sx={{ width: "100vw", p: 0 }}>
+    <motion.div
+      style={{ width: "100vw", padding: 0 }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
       <ProductImageBg />
       <Grid
         sx={{
@@ -47,7 +53,7 @@ const ProductPage = () => {
           </Button>
         )}
       </Grid>
-    </Box>
+    </motion.div>
   );
 };
 
