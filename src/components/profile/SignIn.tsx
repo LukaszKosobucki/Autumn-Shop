@@ -14,13 +14,14 @@ import { formDataLogin } from "../../utils/formsUtils/formDataLogin";
 import styles from "../../palette.module.scss";
 
 const SignIn = () => {
-  const { auth } = useContext(dataContext);
+  const { auth, setIsLogged } = useContext(dataContext);
   const onSubmit = (deliveryInformation: FieldValues): void => {
     signInWithEmailAndPassword(
       auth,
       deliveryInformation.email,
       deliveryInformation.password
     );
+    setIsLogged("loggedIn");
   };
   const { register, handleSubmit, formState } = useForm();
   return (

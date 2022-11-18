@@ -18,7 +18,6 @@ const OrderList = () => {
     setOpenDetails(false);
   };
 
-  console.log("ORDEEERRRR", orderData);
   return (
     <Grid sx={{ my: "1.5rem" }}>
       {orderData.slice(0, orderLoadLimit).map((orderItem: orderType) => (

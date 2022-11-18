@@ -1,31 +1,15 @@
-import {
-  Grid,
-  Button,
-  FormControl,
-  Input,
-  InputLabel,
-  Typography,
-} from "@mui/material";
-import { useFormContext } from "react-hook-form";
+import { Grid, Button, Typography } from "@mui/material";
 import styles from "../../palette.module.scss";
-import { formData } from "../../utils/formsUtils/formDataFinalize";
+import { formDataFinalizeForNotLoggedUsers } from "../../utils/formsUtils/formDataFinalizeForNotLoggedUsers";
 import { Link } from "react-router-dom";
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import { dataContext } from "../../ContextProvider";
+import FinalizeFormInput from "./FinalizeFormInput";
+import { formDataFinalizeForLoggedUsers } from "../../utils/formsUtils/formDataFinalizeForLoggedUsers";
 
 const FinalizeForm = () => {
-  const { register, formState } = useFormContext();
-  const { user, userCredentials } = useContext(dataContext);
-  const [isLoading, setIsLoading] = useState<boolean>(false);
-  const returnDefaultValue = (name: string): string => {
-    const plchldr = userCredentials[name];
-    return plchldr;
-  };
-  useEffect(() => {
-    ((Object.keys(userCredentials).length > 0 && user) ||
-      (Object.keys(userCredentials).length === 0 && !user)) &&
-      setIsLoading(true);
-  }, [userCredentials]);
+  const { user } = useContext(dataContext);
+
   return (
     <Grid
       sx={{
@@ -62,38 +46,13 @@ const FinalizeForm = () => {
           p: "2.5rem",
         }}
       >
-        {isLoading &&
-          formData.map((input) => (
-            <FormControl key={input.name} data-testid="formField">
-              <InputLabel color="primary" htmlFor={input.name}>
-                {input.name}
-              </InputLabel>
-              <Input
-                id={input.name}
-                color="primary"
-                defaultValue={returnDefaultValue(input.name.toLowerCase())}
-                {...register(input.name.toLowerCase(), {
-                  pattern: input.pattern,
-                  minLength: input.minLength,
-                  maxLength: input.maxLength,
-                  required: input.required,
-                })}
-              />
-              {formState.errors[input.name.toLowerCase()] && (
-                <Typography
-                  data-testid="formError"
-                  color="error"
-                  variant="body2"
-                  sx={{
-                    maxWidth: "20rem",
-                    mb: "0.75rem",
-                  }}
-                >
-                  {input.error}
-                </Typography>
-              )}
-            </FormControl>
-          ))}
+        {!user
+          ? formDataFinalizeForNotLoggedUsers.map((input) => (
+              <FinalizeFormInput key={input.name} input={input} />
+            ))
+          : formDataFinalizeForLoggedUsers.map((input) => (
+              <FinalizeFormInput key={input.name} input={input} />
+            ))}
       </Grid>
     </Grid>
   );

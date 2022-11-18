@@ -1,8 +1,8 @@
 import { formDataType } from "../../types/formDataType";
-import { formData } from "./formDataFinalize";
+import { formDataFinalizeForNotLoggedUsers } from "./formDataFinalizeForNotLoggedUsers";
 
 export const formDataRegistration: formDataType[] = [
-  ...formData,
+  ...formDataFinalizeForNotLoggedUsers,
   {
     name: "Password",
     pattern: new RegExp(
@@ -12,5 +12,6 @@ export const formDataRegistration: formDataType[] = [
     maxLength: 34,
     required: true,
     error: "Password can not contain white spaces",
+    disable: false,
   },
 ];

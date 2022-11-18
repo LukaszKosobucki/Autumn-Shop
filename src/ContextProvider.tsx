@@ -14,13 +14,15 @@ import {
   collection,
   doc,
   getDoc,
-  getDocs,
   getFirestore,
   onSnapshot,
-  setDoc,
 } from "firebase/firestore";
 import { getAuth, onAuthStateChanged, User } from "firebase/auth";
 import { sortProductItems } from "./utils/componentsFunctions/sortProductItems";
+import { setBasketItemsOfAUser } from "./utils/firestore/setBasketItemsOfAUser";
+import { isLogged } from "./types/isLoggedType";
+import debounce from "lodash.debounce";
+import { userAuthChangeOperations } from "./utils/firestore/userAuthChangeOperations";
 
 export const dataContext = createContext<contextProviderInterface>(
   {} as contextProviderInterface
@@ -30,6 +32,9 @@ const ContextProvider = ({ children }: childrenInterface) => {
   const [basketData, setBasketData] = useState<basketType[]>(
     JSON.parse(localStorage.getItem("basketData") || "[]")
   );
+  const [initBasketData, setInitBasketData] = useState<basketType[]>(
+    [] as basketType[]
+  );
   const [filter, setFilter] = useState<string[]>([]);
   const [data, setData] = useState<productType[]>([]);
   const [loadLimit, setLoadLimit] = useState<number>(9);
@@ -38,7 +43,6 @@ const ContextProvider = ({ children }: childrenInterface) => {
     basketProcessedType[]
   >([]);
   const [processedData, setProcessedData] = useState<productType[]>(data);
-
   const [deliveryOptions, setDeliveryOptions] = useState<finalizeOptionsType[]>(
     []
   );
@@ -54,43 +58,35 @@ const ContextProvider = ({ children }: childrenInterface) => {
     localStorage.getItem("sort") || "price"
   );
   const [user, setUser] = useState<User | null>(null);
-
   const [userCredentials, setUserCredentials] = useState<IuserCreds>({});
-
+  const [isLogged, setIsLogged] = useState<isLogged>("notLoggedInYet");
+  // firebase init
   const firebaseApp = initializeApp(firebaseConfig);
   const firestore = getFirestore(firebaseApp);
   const auth = getAuth(firebaseApp);
-
+  // collections init
   const paymentOptionsCol = collection(firestore, "paymentOptions");
   const deliveryOptionsCol = collection(firestore, "deliveryOptions");
   const productItemsCol = collection(firestore, "productItems");
+  const userCol = collection(firestore, `users`);
 
-  const duzorzeczy = async () => {
-    const userCol = collection(firestore, `users`);
-    try {
-      const docRef = doc(userCol, user?.uid);
-      const docSnap = await getDoc(docRef);
-      if (docSnap.exists()) {
-        const orderCol = collection(firestore, `users/${user?.uid}/orders`);
-        const docsData = await getDocs(orderCol);
-        asynchSetUserCreds(docSnap.data());
-        console.log(userCredentials);
-        setOrderData(docsData.docs.map((doc) => doc.data() as orderType));
-      } else {
-        setDoc(docRef, userCredentials);
-      }
-    } catch (error) {
-      console.log(error);
-    }
-    if (user === null) {
-      setOrderData([]);
-      setUserCredentials({});
-    }
-  };
+  const debouncedPost = useMemo(
+    () =>
+      debounce((basketData, user, firestore, initBasketData, isLogged) => {
+        user &&
+          setBasketItemsOfAUser(firestore, user, basketData, initBasketData);
+        isLogged === "notLoggedInYet" &&
+          localStorage.setItem("basketData", JSON.stringify(basketData));
+        console.log("DEBOUNCE");
+      }, 3000),
+    []
+  );
 
-  const asynchSetUserCreds = (creds: IuserCreds) => {
-    setUserCredentials(creds);
-  };
+  useEffect(() => {
+    console.log("before debounce");
+    debouncedPost(basketData, user, firestore, initBasketData, isLogged);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [basketData]);
 
   useEffect(() => {
     onSnapshot(paymentOptionsCol, (snapshot) => {
@@ -104,32 +100,51 @@ const ContextProvider = ({ children }: childrenInterface) => {
       );
     });
     onSnapshot(productItemsCol, (snapshot) => {
-      setData(snapshot.docs.map((doc) => doc.data() as productType));
+      setData(
+        snapshot.docs.map((doc) => {
+          return { ...doc.data(), id: doc.id, key: doc.id } as productType;
+        })
+      );
     });
     const orderCol = collection(firestore, `users/${user?.uid}/orders`);
     user &&
       onSnapshot(orderCol, (snapshot) => {
-        console.log("????");
         setOrderData(snapshot.docs.map((doc) => doc.data() as orderType));
-        console.log(orderData);
+      });
+    user &&
+      onSnapshot(userCol, async (snapshot) => {
+        const docRef = doc(userCol, user?.uid);
+        const docSnap = await getDoc(docRef);
+        setUserCredentials(docSnap.data() as IuserCreds);
       });
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
-    duzorzeczy();
+    user !== null && setIsLogged("loggedIn");
+    isLogged !== "notLoggedInYet" &&
+      userAuthChangeOperations(
+        firestore,
+        user,
+        setUserCredentials,
+        setOrderData,
+        setBasketData,
+        setInitBasketData,
+        basketData,
+        userCol,
+        userCredentials
+      );
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [user]);
 
   useEffect(() => {
     onAuthStateChanged(auth, async (currentuser: User | null) => {
       setUser(currentuser);
+      currentuser !== null && setIsLogged("loggedIn");
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  useEffect(() => {
-    localStorage.setItem("basketData", JSON.stringify(basketData));
-  }, [basketData]);
 
   useEffect(() => {
     setBasketProcessedData(mapBasketData(data, basketData));
@@ -171,6 +186,9 @@ const ContextProvider = ({ children }: childrenInterface) => {
       setUser,
       userCredentials,
       setUserCredentials,
+      isLogged,
+      setIsLogged,
+      initBasketData,
     }),
     [
       filter,
@@ -204,10 +222,12 @@ const ContextProvider = ({ children }: childrenInterface) => {
       setUser,
       userCredentials,
       setUserCredentials,
+      isLogged,
+      setIsLogged,
+      initBasketData,
     ]
   );
 
-  // const values = {};
   return (
     <dataContext.Provider value={trueValues}>{children}</dataContext.Provider>
   );

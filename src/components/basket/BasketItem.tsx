@@ -18,7 +18,8 @@ import increaseBasketItemQuant from "../../utils/componentsFunctions/increaseBas
 import deleteBasketItem from "../../utils/componentsFunctions/deleteBasketItem";
 
 const BasketItem = ({ item }: basketItemInterface) => {
-  const { basketData, setBasketData, setOpen } = useContext(dataContext);
+  const { basketData, setBasketData, setOpen, user, firestore } =
+    useContext(dataContext);
 
   return (
     <Card

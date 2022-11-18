@@ -7,7 +7,6 @@ import { mockFinalizeData } from "./mockFinalizeData";
 import { mockOrderDataArray } from "./mockOrderData";
 import { contextProviderInterface } from "../../interfaces/contextProviderInterface";
 import { Firestore } from "firebase/firestore";
-import { NULL } from "sass";
 import { Auth } from "firebase/auth";
 
 export const mockContext: contextProviderInterface = {
@@ -42,4 +41,7 @@ export const mockContext: contextProviderInterface = {
   setUser: jest.fn(),
   userCredentials: {},
   setUserCredentials: jest.fn(),
+  isLogged: "notLoggedInYet",
+  setIsLogged: jest.fn(),
+  initBasketData: [],
 };

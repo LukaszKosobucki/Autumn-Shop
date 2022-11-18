@@ -11,7 +11,7 @@ export const mapBasketData = (
   data.map((item: productType) => {
     basketData.map((product: basketType) => {
       if (item.id === product.id) {
-        items.push({ ...item, quantity: product.quantity });
+        items.push({ ...item, quantity: product.quantity, uid: product.uid });
       }
     });
   });

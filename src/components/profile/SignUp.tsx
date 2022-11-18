@@ -7,14 +7,14 @@ import {
   Button,
 } from "@mui/material";
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { useContext, useEffect, useState } from "react";
+import { useContext } from "react";
 import { FieldValues, useForm } from "react-hook-form";
 import { dataContext } from "../../ContextProvider";
 import styles from "../../palette.module.scss";
 import { formDataRegistration } from "../../utils/formsUtils/formDataRegistration";
 
 const SignUp = () => {
-  const { auth, setUserCredentials } = useContext(dataContext);
+  const { auth, setUserCredentials, setIsLogged } = useContext(dataContext);
 
   const onSubmit = async (deliveryInformation: FieldValues): Promise<void> => {
     createUserWithEmailAndPassword(
@@ -22,7 +22,7 @@ const SignUp = () => {
       deliveryInformation.email,
       deliveryInformation.password
     );
-
+    setIsLogged("loggedIn");
     const creds = {
       name: deliveryInformation.name,
       surname: deliveryInformation.surname,

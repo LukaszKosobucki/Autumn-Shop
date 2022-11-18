@@ -9,10 +9,11 @@ const reduceBasketItemQuant = (
     const newBasketData = basketData;
     newBasketData[index].quantity -= 1;
     return { basketData: [...newBasketData] };
-  } else
+  } else {
     return {
       basketData: basketData.filter((item: basketType) => item.id !== id),
     };
+  }
 };
 
 export default reduceBasketItemQuant;
