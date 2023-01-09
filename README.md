@@ -12,9 +12,13 @@
 ### How to check the app by yourself
 
 1. Clone the repo and enter the directory
-`git clone https://github.com/LukaszKosobucki/Autumn-Shop.git
-cd Autumn-Shop`
+```
+git clone https://github.com/LukaszKosobucki/Autumn-Shop.git
+cd Autumn-Shop 
+```
 2. Install all the dependencies and start the client
-`npm install
-npm start`
+```
+npm install
+npm start
+```
 
