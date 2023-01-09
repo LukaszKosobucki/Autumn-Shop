@@ -1,4 +1,6 @@
-# It is React Academy project organized inside company
+### Short Description
+
+It was an inner company React Academy for new employer waiting for their project to be assigned.
 
 ### During the Academy I have learnt and worked on things like: 
 
