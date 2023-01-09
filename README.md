@@ -12,6 +12,7 @@ It was an inner company React Academy for new employer waiting for their project
 * Testing with Jest.
 * Authentication using Firebase Auth.
 * Using React Contex as a state management wrapping the app.
+* Styling was done using mostly Material UI as a helping tool and Scss
 
 ### Where to see the outcome of this project? 
 
