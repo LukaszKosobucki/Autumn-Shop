@@ -2,6 +2,8 @@
 
 It was an inner company React Academy for new employer waiting for their project to be assigned.
 
+<some screenshots of the webpage to be added here> 
+
 ### During the Academy I have learnt and worked on things like: 
 
 * Designing the App from the ground using Figma.
@@ -13,7 +15,7 @@ It was an inner company React Academy for new employer waiting for their project
 
 ### Where to see the outcome of this project? 
 
-You can see the outcome here -> [To Be Added](https://google.com/).
+You can see the wisit the website here -> [To Be Added](https://google.com/).
 
 ### How to check the app by yourself
 
