@@ -11,6 +11,10 @@ It was an inner company React Academy for new employer waiting for their project
 * Authentication using Firebase Auth.
 * Using React Contex as a state management wrapping the app.
 
+### Where to see the outcome of this project? 
+
+You can see the outcome here -> [To Be Added](https://google.com/).
+
 ### How to check the app by yourself
 
 1. Clone the repo and enter the directory
