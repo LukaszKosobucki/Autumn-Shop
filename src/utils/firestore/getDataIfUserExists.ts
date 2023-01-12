@@ -30,7 +30,6 @@ export const getDataIfUserExists = async (
       return { ...doc.data(), uid: doc.id } as basketType;
     })
   );
-  console.log("userCredentials");
   setInitBasketData(
     basketDocsData.docs.map((doc) => {
       return { ...doc.data(), uid: doc.id } as basketType;

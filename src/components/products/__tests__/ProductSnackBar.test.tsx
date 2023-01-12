@@ -13,12 +13,6 @@ describe("testing ProductSnackBar render", () => {
     );
   };
 
-  // it("ProductSnackBar Renders Correctly", () => {
-  //   const productSnackBar = renderer.create(wrapper(true)).toJSON();
-  //   console.log(productSnackBar);
-  //   expect(productSnackBar).toMatchSnapshot();
-  // });
-
   it("checks if snackbar button clicks", () => {
     render(wrapper(true));
     const buttonCloseSnackBar = screen.getByPlaceholderText(

@@ -77,13 +77,11 @@ const ContextProvider = ({ children }: childrenInterface) => {
           setBasketItemsOfAUser(firestore, user, basketData, initBasketData);
         isLogged === "notLoggedInYet" &&
           localStorage.setItem("basketData", JSON.stringify(basketData));
-        console.log("DEBOUNCE");
       }, 3000),
     []
   );
 
   useEffect(() => {
-    console.log("before debounce");
     debouncedPost(basketData, user, firestore, initBasketData, isLogged);
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [basketData]);

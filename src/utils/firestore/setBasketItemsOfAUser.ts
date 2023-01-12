@@ -27,6 +27,4 @@ export const setBasketItemsOfAUser = (
     }
   });
   batch.commit();
-  console.log("added");
-  console.log(basketData);
 };

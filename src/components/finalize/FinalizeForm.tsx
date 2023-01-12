@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { dataContext } from "../../ContextProvider";
 import FinalizeFormInput from "./FinalizeFormInput";
-import { formDataFinalizeForLoggedUsers } from "../../utils/formsUtils/formDataFinalizeForLoggedUsers";
+// import { formDataFinalizeForLoggedUsers } from "../../utils/formsUtils/formDataFinalizeForLoggedUsers";
 
 const FinalizeForm = () => {
   const { user } = useContext(dataContext);
@@ -46,13 +46,9 @@ const FinalizeForm = () => {
           p: "2.5rem",
         }}
       >
-        {!user
-          ? formDataFinalizeForNotLoggedUsers.map((input) => (
-              <FinalizeFormInput key={input.name} input={input} />
-            ))
-          : formDataFinalizeForLoggedUsers.map((input) => (
-              <FinalizeFormInput key={input.name} input={input} />
-            ))}
+        {formDataFinalizeForNotLoggedUsers.map((input) => (
+          <FinalizeFormInput key={input.name} input={input} />
+        ))}
       </Grid>
     </Grid>
   );

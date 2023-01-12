@@ -17,5 +17,5 @@ export const deleteBasketItemsFromUser = (
   });
 
   batch.commit();
-  console.log("deleted");
+ 
 };
