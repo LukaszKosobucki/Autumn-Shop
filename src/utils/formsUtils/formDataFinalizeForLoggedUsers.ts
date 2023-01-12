@@ -1,5 +1,5 @@
-import { formDataType } from "../types/formDataType";
-export const formData: formDataType[] = [
+import { formDataType } from "../../types/formDataType";
+export const formDataFinalizeForLoggedUsers: formDataType[] = [
   {
     name: "Name",
     pattern: new RegExp(/^[a-zA-Z]*$/),
@@ -7,6 +7,7 @@ export const formData: formDataType[] = [
     maxLength: 30,
     required: true,
     error: "Name should contain only letters from alphabet a-z",
+    disable: false,
   },
   {
     name: "Surname",
@@ -15,6 +16,7 @@ export const formData: formDataType[] = [
     maxLength: 30,
     required: true,
     error: "Surname should contain only letters from alphabet a-z",
+    disable: false,
   },
   {
     name: "Email",
@@ -25,6 +27,7 @@ export const formData: formDataType[] = [
     maxLength: 30,
     required: true,
     error: "Email should contain '@', with legit domain and name before '@'",
+    disable: true,
   },
   {
     name: "Phone",
@@ -36,6 +39,7 @@ export const formData: formDataType[] = [
     required: true,
     error:
       "Phone number should contain only numbers with length of 9, and start with +xx / xx / (xx) / xx)",
+    disable: false,
   },
   {
     name: "ZipCode",
@@ -44,6 +48,7 @@ export const formData: formDataType[] = [
     maxLength: 7,
     required: true,
     error: "Zip code should look like this 'xx-xxx'",
+    disable: false,
   },
   {
     name: "State",
@@ -52,6 +57,7 @@ export const formData: formDataType[] = [
     maxLength: 30,
     required: true,
     error: "State should contain only letters from alphabet a-z",
+    disable: false,
   },
   {
     name: "City",
@@ -60,5 +66,6 @@ export const formData: formDataType[] = [
     maxLength: 30,
     required: true,
     error: "City should contain only letters from alphabet a-z",
+    disable: false,
   },
 ];

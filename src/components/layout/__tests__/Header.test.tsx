@@ -15,7 +15,6 @@ describe("testing <Header/> render", () => {
       value: { href: mockLocation, reload: jest.fn() },
     });
   });
-  console.log(location);
   afterAll(() => {
     Object.defineProperty(window, "location", {
       configurable: true,

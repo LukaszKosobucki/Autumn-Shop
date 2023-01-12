@@ -5,4 +5,5 @@ export type formDataType = {
   maxLength: number;
   required: boolean;
   error: string;
+  disable: boolean;
 };

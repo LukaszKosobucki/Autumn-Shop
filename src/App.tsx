@@ -1,14 +1,9 @@
-import React from "react";
-import { ProductPage } from "./pages/ProductPage";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import BasketPage from "./pages/BasketPage";
-import OrderListPage from "./pages/OrderListPage";
-import FinalizePage from "./pages/FinalizePage";
+import { BrowserRouter as Router } from "react-router-dom";
 import MainLayout from "./components/layout/MainLayout";
 import ContextProvider from "./ContextProvider";
 import { ThemeProvider } from "@mui/material/styles";
 import { theme } from "./theme";
-import ProfilePage from "./pages/ProfilePage";
+import AnimatedRoutes from "./components/AnimatedRoutes";
 
 function App() {
   return (
@@ -16,13 +11,7 @@ function App() {
       <Router>
         <ContextProvider>
           <MainLayout>
-            <Routes>
-              <Route path="/" element={<ProductPage />} />
-              <Route path="/basket" element={<BasketPage />} />
-              <Route path="/order-list" element={<OrderListPage />} />
-              <Route path="/finalize" element={<FinalizePage />} />
-              <Route path="/profile" element={<ProfilePage />} />
-            </Routes>
+            <AnimatedRoutes />
           </MainLayout>
         </ContextProvider>
       </Router>

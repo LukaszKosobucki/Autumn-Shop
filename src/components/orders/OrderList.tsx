@@ -17,6 +17,7 @@ const OrderList = () => {
   const handleClose = (): void => {
     setOpenDetails(false);
   };
+
   return (
     <Grid sx={{ my: "1.5rem" }}>
       {orderData.slice(0, orderLoadLimit).map((orderItem: orderType) => (

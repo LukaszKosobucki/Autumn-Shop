@@ -8,10 +8,11 @@ import { orderType } from "../types/orderType";
 import { finalizeOptionsType } from "../types/finalizeOptionsType";
 import { useForm, FormProvider } from "react-hook-form";
 import { deliveryInformationType } from "../types/deliveryInformationType";
-import { postOrder } from "../service/postOrder";
 import { useNavigate } from "react-router-dom";
 import { FieldValues } from "react-hook-form";
 import { addDoc, collection } from "firebase/firestore";
+import { deleteBasketItemsFromUser } from "../utils/firestore/deleteBasketItemsFromUser";
+import { motion } from "framer-motion";
 
 const FinalizePage = () => {
   const {
@@ -19,8 +20,6 @@ const FinalizePage = () => {
     paymentOptions,
     basketData,
     setBasketData,
-    setOrderData,
-    orderData,
     user,
     firestore,
   } = useContext(dataContext);
@@ -28,9 +27,7 @@ const FinalizePage = () => {
 
   const navigate = useNavigate();
 
-  const postDataFn = async (
-    deliveryInformation: FieldValues
-  ): Promise<void> => {
+  const postDataFn = (deliveryInformation: FieldValues): void => {
     const timeElapsed = Date.now();
     const today = new Date(timeElapsed);
     const date = today.toLocaleDateString();
@@ -60,38 +57,37 @@ const FinalizePage = () => {
     if (user !== null) {
       const orderCol = collection(firestore, `users/${user?.uid}/orders`);
       addDoc(orderCol, postData);
+      deleteBasketItemsFromUser(firestore, user, basketData);
       setBasketData([]);
       navigate("/", { replace: true });
-    }
-
-    const res = await postOrder(postData);
-
-    if (res === 201) {
-      setBasketData([]);
-      navigate("/", { replace: true });
-      setOrderData([...orderData, postData]);
     }
   };
 
   return (
-    <FormProvider {...methods}>
-      <form onSubmit={methods.handleSubmit(postDataFn)}>
-        <Grid
-          sx={{
-            flexDirection: "row",
-            minHeight: "100vh",
-            mt: "2.5rem",
-          }}
-        >
-          <Box>
-            <FinalizeForm />
-            <MethodList options={deliveryOptions} />
-            <MethodList options={paymentOptions} />
-          </Box>
-          <BasketFinalizeBox text="Finalize" link={false} />
-        </Grid>
-      </form>
-    </FormProvider>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
+      <FormProvider {...methods}>
+        <form onSubmit={methods.handleSubmit(postDataFn)}>
+          <Grid
+            sx={{
+              flexDirection: "row",
+              minHeight: "100vh",
+              mt: "2.5rem",
+            }}
+          >
+            <Box>
+              <FinalizeForm />
+              <MethodList options={deliveryOptions} />
+              <MethodList options={paymentOptions} />
+            </Box>
+            <BasketFinalizeBox text="Finalize" link={false} />
+          </Grid>
+        </form>
+      </FormProvider>
+    </motion.div>
   );
 };
 

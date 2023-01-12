@@ -6,6 +6,8 @@ import { productType } from "../types/productType";
 import React from "react";
 import { Firestore } from "firebase/firestore";
 import { Auth, User } from "firebase/auth";
+import { IuserCreds } from "./IuserCreds";
+import { isLogged } from "../types/isLoggedType";
 
 export interface contextProviderInterface {
   filter: string[];
@@ -43,4 +45,9 @@ export interface contextProviderInterface {
   auth: Auth;
   user: User | null;
   setUser: React.Dispatch<React.SetStateAction<User | null>>;
+  userCredentials: IuserCreds;
+  setUserCredentials: React.Dispatch<React.SetStateAction<IuserCreds>>;
+  isLogged: isLogged;
+  setIsLogged: React.Dispatch<React.SetStateAction<isLogged>>;
+  initBasketData: basketType[];
 }
