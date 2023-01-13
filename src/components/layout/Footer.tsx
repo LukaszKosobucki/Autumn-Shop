@@ -23,12 +23,12 @@ const Footer = () => {
         </Box>
         <Box>
           <Typography variant="caption" color="secondary">
-            hello world
+            TBA
           </Typography>
         </Box>
         <Box>
           <Typography variant="caption" color="secondary">
-            hello world
+            TBA
           </Typography>
         </Box>
       </Box>
@@ -40,12 +40,12 @@ const Footer = () => {
         </Box>
         <Box>
           <Typography variant="caption" color="secondary">
-            hello world
+            TBA
           </Typography>
         </Box>
         <Box>
           <Typography variant="caption" color="secondary">
-            hello world
+            TBA
           </Typography>
         </Box>
       </Box>
@@ -57,12 +57,12 @@ const Footer = () => {
         </Box>
         <Box>
           <Typography variant="caption" color="secondary">
-            hello world
+            TBA
           </Typography>
         </Box>
         <Box>
           <Typography variant="caption" color="secondary">
-            hello world
+            TBA
           </Typography>
         </Box>
       </Box>

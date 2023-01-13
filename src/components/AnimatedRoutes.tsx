@@ -5,6 +5,7 @@ import ProfilePage from "../pages/ProfilePage";
 import { ProductPage } from "../pages/ProductPage";
 import { AnimatePresence } from "framer-motion";
 import { Route, Routes, useLocation } from "react-router-dom";
+import ForgotPassword from "./profile/ForgotPassword";
 
 const AnimatedRoutes = () => {
   const location = useLocation();
@@ -16,6 +17,7 @@ const AnimatedRoutes = () => {
         <Route path="/order-list" element={<OrderListPage />} />
         <Route path="/finalize" element={<FinalizePage />} />
         <Route path="/profile" element={<ProfilePage />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
       </Routes>
     </AnimatePresence>
   );

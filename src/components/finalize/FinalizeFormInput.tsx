@@ -18,6 +18,8 @@ const FinalizeFormInput = ({ input }: { input: formDataType }) => {
         color="primary"
         disabled={input.disable}
         defaultValue={userCredentials[input.name.toLowerCase()]}
+        type={input.type}
+        autoComplete={input.autocomplete}
         {...register(input.name.toLowerCase(), {
           pattern: input.pattern,
           minLength: input.minLength,

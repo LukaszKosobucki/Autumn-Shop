@@ -2,6 +2,7 @@
   "name": "react-training",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://lukaszkosobucki.github.io/Autumn-Shop",
   "dependencies": {
     "@emotion/react": "^11.10.4",
     "@emotion/styled": "^11.10.4",
@@ -55,11 +56,14 @@
     "eslint": "^8.2.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.25.3",
+    "gh-pages": "^4.0.0",
     "jest-location-mock": "^1.0.9",
     "nock": "^13.2.9",
     "react-test-renderer": "^18.2.0"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test:watch": "jest --watch",

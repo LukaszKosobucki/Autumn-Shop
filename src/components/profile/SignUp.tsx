@@ -7,7 +7,7 @@ import {
   Button,
 } from "@mui/material";
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { FieldValues, useForm } from "react-hook-form";
 import { dataContext } from "../../ContextProvider";
 import styles from "../../palette.module.scss";
@@ -15,13 +15,16 @@ import { formDataRegistration } from "../../utils/formsUtils/formDataRegistratio
 
 const SignUp = () => {
   const { auth, setUserCredentials, setIsLogged } = useContext(dataContext);
+  const [firestoreError, setFirestoreError] = useState("");
 
   const onSubmit = async (deliveryInformation: FieldValues): Promise<void> => {
     createUserWithEmailAndPassword(
       auth,
       deliveryInformation.email,
       deliveryInformation.password
-    );
+    ).catch((e) => {
+      setFirestoreError(e.message);
+    });
     setIsLogged("loggedIn");
     const creds = {
       name: deliveryInformation.name,
@@ -57,6 +60,8 @@ const SignUp = () => {
             <Input
               id={input.name}
               color="primary"
+              type={input.type}
+              autoComplete={input?.autocomplete}
               {...register(input.name.toLowerCase(), {
                 pattern: input.pattern,
                 minLength: input.minLength,
@@ -79,6 +84,16 @@ const SignUp = () => {
             )}
           </FormControl>
         ))}
+        <Typography
+          color="error"
+          variant="body2"
+          sx={{
+            maxWidth: "20rem",
+            mb: "0.75rem",
+          }}
+        >
+          {firestoreError.toString()}
+        </Typography>
         <Button type="submit">Sign Up!</Button>
       </Grid>
     </form>

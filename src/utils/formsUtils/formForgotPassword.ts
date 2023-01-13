@@ -1,4 +1,4 @@
-export const formDataLogin = [
+export const formForgotPassword = [
   {
     name: "Email",
     pattern: new RegExp(
@@ -9,15 +9,5 @@ export const formDataLogin = [
     required: true,
     type: "text",
     error: "Email should contain '@', with legit domain and name before '@'",
-  },
-  {
-    name: "Password",
-    pattern: new RegExp(/ */),
-    minLength: 6,
-    maxLength: 34,
-    required: true,
-    type: "password",
-    error: "Password can not contain white spaces",
-    autocomplete: "off",
   },
 ];

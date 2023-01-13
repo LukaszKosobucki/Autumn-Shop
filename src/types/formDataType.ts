@@ -6,4 +6,6 @@ export type formDataType = {
   required: boolean;
   error: string;
   disable: boolean;
+  type: string;
+  autocomplete?: string;
 };

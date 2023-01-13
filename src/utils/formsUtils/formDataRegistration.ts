@@ -13,5 +13,7 @@ export const formDataRegistration: formDataType[] = [
     required: true,
     error: "Password can not contain white spaces",
     disable: false,
+    type: "password",
+    autocomplete: "off",
   },
 ];

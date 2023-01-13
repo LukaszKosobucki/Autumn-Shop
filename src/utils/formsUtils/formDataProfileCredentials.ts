@@ -8,6 +8,7 @@ export const formDataProfileCredentails: formDataType[] = [
     required: true,
     error: "Name should contain only letters from alphabet a-z",
     disable: false,
+    type: "text",
   },
   {
     name: "Surname",
@@ -17,17 +18,19 @@ export const formDataProfileCredentails: formDataType[] = [
     required: true,
     error: "Surname should contain only letters from alphabet a-z",
     disable: false,
+    type: "text",
   },
   {
     name: "Email",
     pattern: new RegExp(
-      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+      /^(([^<>()[\]\\.,,:\s@"]+(\.[^<>()[\]\\.,,:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
     ),
     minLength: 6,
     maxLength: 30,
     required: true,
     error: "Email should contain '@', with legit domain and name before '@'",
     disable: true,
+    type: "text",
   },
   {
     name: "Phone",
@@ -40,6 +43,7 @@ export const formDataProfileCredentails: formDataType[] = [
     error:
       "Phone number should contain only numbers with length of 9, and start with +xx / xx / (xx) / xx)",
     disable: false,
+    type: "number",
   },
   {
     name: "ZipCode",
@@ -49,6 +53,7 @@ export const formDataProfileCredentails: formDataType[] = [
     required: true,
     error: "Zip code should look like this 'xx-xxx'",
     disable: false,
+    type: "text",
   },
   {
     name: "State",
@@ -58,6 +63,7 @@ export const formDataProfileCredentails: formDataType[] = [
     required: true,
     error: "State should contain only letters from alphabet a-z",
     disable: false,
+    type: "text",
   },
   {
     name: "City",
@@ -67,5 +73,6 @@ export const formDataProfileCredentails: formDataType[] = [
     required: true,
     error: "City should contain only letters from alphabet a-z",
     disable: false,
+    type: "text",
   },
 ];
