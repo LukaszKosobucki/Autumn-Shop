@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/Autumn-Shop/static/css/main.9f916d94.css",
+    "main.js": "/Autumn-Shop/static/js/main.e9387f8a.js",
+    "static/media/red-rose-all-700-normal.woff": "/Autumn-Shop/static/media/red-rose-all-700-normal.56a3a83cb619647198e6.woff",
+    "static/media/red-rose-latin-700-normal.woff2": "/Autumn-Shop/static/media/red-rose-latin-700-normal.66c0063b4f83d4de2706.woff2",
+    "static/media/red-rose-latin-ext-700-normal.woff2": "/Autumn-Shop/static/media/red-rose-latin-ext-700-normal.2b860ea50385cbe5a6e4.woff2",
+    "static/media/red-rose-vietnamese-700-normal.woff2": "/Autumn-Shop/static/media/red-rose-vietnamese-700-normal.7198e64b18cf67d96d38.woff2",
+    "index.html": "/Autumn-Shop/index.html",
+    "main.9f916d94.css.map": "/Autumn-Shop/static/css/main.9f916d94.css.map",
+    "main.e9387f8a.js.map": "/Autumn-Shop/static/js/main.e9387f8a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.9f916d94.css",
+    "static/js/main.e9387f8a.js"
+  ]
+}
