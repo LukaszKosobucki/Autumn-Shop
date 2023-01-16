@@ -13,7 +13,6 @@ const OrderListPage = () => {
       transition={{ delay: 0.3, duration: 0.3 }}
       style={{
         alignItems: "center",
-        height: "100vh",
         width: "100vw",
         display: "flex",
         justifyContent: "center",

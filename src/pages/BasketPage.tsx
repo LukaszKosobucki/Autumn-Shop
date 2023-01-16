@@ -16,7 +16,6 @@ const BasketPage = () => {
       exit={{ opacity: 0 }}
       style={{
         alignItems: "center",
-        height: "100vh",
         width: "100vw",
         display: "flex",
         justifyContent: "center",

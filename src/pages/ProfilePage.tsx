@@ -13,7 +13,6 @@ const ProfilePage = () => {
       transition={{ delay: 0.3, duration: 0.3 }}
       style={{
         width: "100vw",
-        height: "100vh",
         alignItems: "center",
         justifyContent: "center",
         display: "flex",
