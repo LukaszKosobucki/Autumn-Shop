@@ -82,7 +82,7 @@ const FinalizePage = () => {
         width: "100vw",
         justifyContent: "center",
         flexDirection: "row",
-        display: "flex",
+        display: "flex"
       }}
     >
       <FormProvider {...methods}>
