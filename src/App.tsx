@@ -1,4 +1,4 @@
-import { BrowserRouter as Router } from "react-router-dom";
+import { HashRouter as Router } from "react-router-dom";
 import MainLayout from "./components/layout/MainLayout";
 import ContextProvider from "./ContextProvider";
 import { ThemeProvider } from "@mui/material/styles";

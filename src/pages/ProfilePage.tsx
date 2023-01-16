@@ -9,6 +9,15 @@ const ProfilePage = () => {
   const { user } = useContext(dataContext);
   return (
     <motion.div
+      key="profilePage"
+      transition={{ delay: 0.3, duration: 0.2 }}
+      style={{
+        width: "100vw",
+        height: "100vh",
+        alignItems: "center",
+        justifyContent: "center",
+        display: "flex",
+      }}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}

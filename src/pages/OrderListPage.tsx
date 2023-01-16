@@ -9,7 +9,16 @@ const OrderListPage = () => {
     useContext(dataContext);
   return (
     <motion.div
-      style={{ alignItems: "center", minHeight: "100vh", minWidth: "100%" }}
+      key="orderListPage"
+      transition={{ delay: 0.3, duration: 0.2 }}
+      style={{
+        alignItems: "center",
+        height: "100vh",
+        width: "100vw",
+        display: "flex",
+        justifyContent: "center",
+        padding: 0,
+      }}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}

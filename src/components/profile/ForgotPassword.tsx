@@ -6,7 +6,6 @@ import {
   Grid,
   Button,
 } from "@mui/material";
-import { Link } from "react-router-dom";
 import { useContext, useState } from "react";
 import { sendPasswordResetEmail } from "firebase/auth";
 import { FieldValues, useForm } from "react-hook-form";

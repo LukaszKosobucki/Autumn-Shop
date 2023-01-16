@@ -9,9 +9,19 @@ const BasketPage = () => {
   const { basketData } = useContext(dataContext);
   return (
     <motion.div
+      key="basketPage"
+      transition={{ delay: 0.3, duration: 0.2 }}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
+      style={{
+        alignItems: "center",
+        height: "100vh",
+        width: "100vw",
+        display: "flex",
+        justifyContent: "center",
+        padding: 0,
+      }}
     >
       <Grid
         sx={{

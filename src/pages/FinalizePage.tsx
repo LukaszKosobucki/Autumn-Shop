@@ -60,14 +60,30 @@ const FinalizePage = () => {
       deleteBasketItemsFromUser(firestore, user, basketData);
       setBasketData([]);
       navigate("/", { replace: true });
+    } else {
+      const orderCol = collection(
+        firestore,
+        `users/orders-without-account/orders`
+      );
+      addDoc(orderCol, postData);
+      setBasketData([]);
+      navigate("/", { replace: true });
     }
   };
 
   return (
     <motion.div
+      key="finalizePage"
+      transition={{ delay: 0.3, duration: 0.2 }}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
+      style={{
+        width: "100vw",
+        justifyContent: "center",
+        flexDirection: "row",
+        display: "flex",
+      }}
     >
       <FormProvider {...methods}>
         <form onSubmit={methods.handleSubmit(postDataFn)}>
