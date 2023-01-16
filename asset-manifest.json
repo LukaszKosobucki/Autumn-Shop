@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/static/css/main.55751a92.css",
-    "main.js": "/static/js/main.a03b7cda.js",
+    "main.js": "/static/js/main.0962d426.js",
     "static/media/red-rose-all-700-normal.woff": "/static/media/red-rose-all-700-normal.56a3a83cb619647198e6.woff",
     "static/media/red-rose-latin-700-normal.woff2": "/static/media/red-rose-latin-700-normal.66c0063b4f83d4de2706.woff2",
     "static/media/red-rose-latin-ext-700-normal.woff2": "/static/media/red-rose-latin-ext-700-normal.2b860ea50385cbe5a6e4.woff2",
     "static/media/red-rose-vietnamese-700-normal.woff2": "/static/media/red-rose-vietnamese-700-normal.7198e64b18cf67d96d38.woff2",
     "index.html": "/index.html",
     "main.55751a92.css.map": "/static/css/main.55751a92.css.map",
-    "main.a03b7cda.js.map": "/static/js/main.a03b7cda.js.map"
+    "main.0962d426.js.map": "/static/js/main.0962d426.js.map"
   },
   "entrypoints": [
     "static/css/main.55751a92.css",
-    "static/js/main.a03b7cda.js"
+    "static/js/main.0962d426.js"
   ]
 }
