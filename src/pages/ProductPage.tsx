@@ -25,7 +25,7 @@ const ProductPage = () => {
   return (
     <motion.div
       key="productPage"
-      transition={{ delay: 0.3, duration: 0.2 }}
+      transition={{ delay: 0.3, duration: 0.3 }}
       style={{ width: "100vw", padding: 0 }}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}

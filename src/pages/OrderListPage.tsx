@@ -10,7 +10,7 @@ const OrderListPage = () => {
   return (
     <motion.div
       key="orderListPage"
-      transition={{ delay: 0.3, duration: 0.2 }}
+      transition={{ delay: 0.3, duration: 0.3 }}
       style={{
         alignItems: "center",
         height: "100vh",

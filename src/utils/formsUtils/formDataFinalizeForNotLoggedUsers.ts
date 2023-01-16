@@ -43,7 +43,7 @@ export const formDataFinalizeForNotLoggedUsers: formDataType[] = [
     error:
       "Phone number should contain only numbers with length of 9, and start with +xx / xx / (xx) / xx)",
     disable: false,
-    type: "number",
+    type: "tel",
   },
   {
     name: "ZipCode",

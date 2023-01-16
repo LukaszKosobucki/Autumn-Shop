@@ -10,7 +10,7 @@ const BasketPage = () => {
   return (
     <motion.div
       key="basketPage"
-      transition={{ delay: 0.3, duration: 0.2 }}
+      transition={{ delay: 0.3, duration: 0.3 }}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}

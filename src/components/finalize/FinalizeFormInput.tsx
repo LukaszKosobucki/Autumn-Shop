@@ -19,6 +19,7 @@ const FinalizeFormInput = ({ input }: { input: formDataType }) => {
         disabled={input.disable}
         defaultValue={userCredentials[input.name.toLowerCase()]}
         type={input.type}
+        onKeyDown={input.onKeyDown}
         autoComplete={input.autocomplete}
         {...register(input.name.toLowerCase(), {
           pattern: input.pattern,

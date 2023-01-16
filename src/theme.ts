@@ -163,6 +163,7 @@ export const theme = createTheme({
           marginBottom: "0.75rem",
           minWidth: "20rem",
           background: styles.colorAutumnLight100,
+          webkitAppearance: "none",
         },
         input: {
           "&:-webkit-autofill": {

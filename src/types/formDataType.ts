@@ -1,3 +1,5 @@
+import { KeyboardEventHandler } from "react";
+
 export type formDataType = {
   name: string;
   pattern: RegExp;
@@ -8,4 +10,7 @@ export type formDataType = {
   disable: boolean;
   type: string;
   autocomplete?: string;
+  onKeyDown?:
+    | KeyboardEventHandler<HTMLInputElement | HTMLTextAreaElement>
+    | undefined;
 };
